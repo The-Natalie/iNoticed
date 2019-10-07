@@ -1,0 +1,12 @@
+html, body {
+	min-height: 100%;
+}
+
+body {
+	//font-family: 'Lobster Two', cursive;
+	background: black;
+}
+
+h1 {
+	color: #00b300;
+}

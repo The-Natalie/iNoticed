@@ -9,4 +9,18 @@ body {
 h1 {
 	color: #00b300;
 	text-align: center;
+	font-size: 22px;
+}
+
+
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 992px) {
+
+	h1 {
+		font-size: 18px;
+	}
 }

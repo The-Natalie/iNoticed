@@ -51,7 +51,7 @@ div.card-slot {
 
 	div.card-container {
 	background: rgb(0,0,0);
-	background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(39,39,45,1) 20%, rgba(99,104,106,1) 48%, rgba(117,117,126,1) 49%, rgba(0,0,0,1) 100%);
+	background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(39,39,45,1) 26%, rgba(99,104,106,1) 62%, rgba(117,117,126,1) 65%, rgba(0,0,0,1) 94%);
 		background-repeat: no-repeat;
 		background-size: cover;
 		height: 400px;
@@ -60,7 +60,6 @@ div.card-slot {
 	}
 
 	div.card-slot {
-		margin-top: 100px;
 	}
 
 }

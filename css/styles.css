@@ -19,6 +19,13 @@ h2 {
 	font-size: 75px;
 }
 
+div.card-slot {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  border-radius: 2px;
+  width: 100%;
+}
+
 
 
 /* ================================= 

@@ -1,10 +1,10 @@
-
+html, body {
+	min-height: 100%
+}
 
 body {
 	font-family: 'M PLUS Rounded 1c', sans-serif;
 	background: black;
-	background-size: cover;
-	overflow: scroll;
 }
 
 h1 {
@@ -20,10 +20,9 @@ h2 {
 }
 
 div.card-container {
-		position: absolute;
-		width: 400px;
-		height: 550px;
-		left: 300px;
+		width: 40%;
+		height: 55%;
+		left: 30%;
 		border: 3px solid red;
 	}
 
@@ -31,7 +30,7 @@ div.card-slot {
   border-top: 6px solid black;
   border-bottom: 6px solid black;
   border-radius:6px;
-  width: 100px;
+  width: 100%;
 }
 
 
@@ -58,10 +57,9 @@ div.card-slot {
 	}
 
 	div.card-container {
-		margin: auto;
-		width: 400px;
-		height: 550px;
-		left: 300px;
+		width: 40%;
+		height: 55%;
+		left: 30%;
 		border: 3px solid red;
 	}
 

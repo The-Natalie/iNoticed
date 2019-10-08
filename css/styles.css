@@ -39,4 +39,12 @@ h2 {
 	h2 {
 		font-size: 40px;
 	}
+
+	div.card-container {
+		position: absolute;
+		bottom: 0px;
+		width: 25%;
+		margin: auto;
+		border: 3px solid red;
+	}
 }

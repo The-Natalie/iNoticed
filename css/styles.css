@@ -1,6 +1,7 @@
 html {
 	font-family: 'M PLUS Rounded 1c', sans-serif;
 	background: black;
+	background-size: cover;
 }
 
 h1 {
@@ -42,7 +43,6 @@ div.card-slot {
 		background: rgb(2,0,33);
 		background: linear-gradient(180deg, rgba(2,0,33,1) 0%, rgba(39,39,45,1) 45%, rgba(99,104,106,1) 75%, rgba(117,117,126,1) 79%, rgba(8,8,8,1) 100%);
 		background-repeat: no-repeat;
-		background-size: auto;
 	}
 
 	h1 {

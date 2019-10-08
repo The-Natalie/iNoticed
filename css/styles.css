@@ -1,8 +1,5 @@
 html, body {
 	min-height: 100%;
-}
-
-body {
 	background: black;
 	font-family: 'M PLUS Rounded 1c', sans-serif;
 }
@@ -19,10 +16,18 @@ h2 {
 	font-size: 75px;
 }
 
+div.card-container {
+		position: absolute;
+		width: 40%;
+		height: 55%;
+		left: 30%;
+		border: 3px solid red;
+	}
+
 div.card-slot {
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
-  border-radius: 2px;
+  border-top: 6px solid black;
+  border-bottom: 6px solid black;
+  border-radius:6px;
   width: 100%;
 }
 
@@ -49,10 +54,14 @@ div.card-slot {
 
 	div.card-container {
 		position: absolute;
-		bottom: 0px;
 		width: 40%;
 		height: 55%;
 		left: 30%;
 		border: 3px solid red;
 	}
+
+	div.card-slot {
+		margin-top: 100px;
+	}
+
 }

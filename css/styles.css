@@ -23,9 +23,9 @@ h2 {
 
 div.card-container {
 		position: absolute;
-		width: 40%;
-		height: 55%;
-		left: 30%;
+		width: 400px;
+		height: 550px;
+		left: 300px;
 		border: 3px solid red;
 	}
 
@@ -33,7 +33,7 @@ div.card-slot {
   border-top: 6px solid black;
   border-bottom: 6px solid black;
   border-radius:6px;
-  width: 100%;
+  width: 100px;
 }
 
 
@@ -60,10 +60,10 @@ div.card-slot {
 	}
 
 	div.card-container {
-		position: absolute;
-		width: 40%;
-		height: 55%;
-		left: 30%;
+		margin: auto;
+		width: 400px;
+		height: 550px;
+		left: 300px;
 		border: 3px solid red;
 	}
 

@@ -6,6 +6,8 @@ html, body {
 body {
 	font-family: 'M PLUS Rounded 1c', sans-serif;
 	background: black;
+	margin: 0 0;
+
 }
 
 h1 {
@@ -26,12 +28,15 @@ div.card-container {
 		border: 3px solid red;
 	}
 
+div.card-slot-container {
+  with: 400px;
+  margin: auto;
+}
+
 div.card-slot {
   border-top: 6px solid black;
   border-bottom: 6px solid black;
   border-radius:6px;
-  with: 400px;
-  margin: auto;
 }
 
 
@@ -59,9 +64,8 @@ div.card-slot {
 		border: none;
 	}
 
-	div.card-slot {
-		width: 400px;
-		margin-top: 200px;
+	div.card-slot-container {
+		padding-top: 200px;
 	}
 
 }

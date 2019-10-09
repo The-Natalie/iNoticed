@@ -49,6 +49,7 @@ div.card-slot {
 }
 
 div.all-cards {
+	height: 228.5px;
 	padding-top: 80px;
 	z-index: 11;
   position:relative;
@@ -99,9 +100,6 @@ div.card-valued {
 		background-repeat: no-repeat;
 		background-size: cover;
 		margin-top: -40px;
-	}
-
-	div.card-slot-container {
 	}
 
 }

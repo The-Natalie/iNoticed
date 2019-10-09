@@ -24,9 +24,10 @@ h2 {
 	margin-bottom: 0px;
 }
 
+/*  Contains the gradient background  */
 div.card-container {
 		width: 100%;
-		height: 450px;
+		height: 800px;
 		background: rgb(0,0,0);
 		background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(39,39,45,1) 26%, rgba(99,104,106,1) 62%, rgba(117,117,126,1) 65%, rgba(0,0,0,1) 94%);
 		background-repeat: no-repeat;
@@ -35,7 +36,7 @@ div.card-container {
 	}
 
 div.card-slot-container {
-  width: 430px;
+  width: 700px;
   margin: auto;
 }
 
@@ -93,6 +94,7 @@ div.card-valued {
 		font-size: 40px;
 	}
 
+/*  Contains the gradient background  */
 	div.card-container {
 		height: 450px;
 		background: rgb(0,0,0);
@@ -101,5 +103,9 @@ div.card-valued {
 		background-size: cover;
 		margin-top: -40px;
 	}
+
+	div.card-slot-container {
+  	width: 430px;
+}
 
 }

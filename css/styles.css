@@ -66,11 +66,11 @@ div.card-dating, .card-kindness, .card-valued {
 
 div.card-dating {
 	background-image: url("/images/Card_Dating.png");
-	display: none;
 }
 
 div.card-kindness {
 	background-image: url("/images/Card_Kindness.png");
+	display: none;
 }
 
 div.card-valued {

@@ -45,7 +45,7 @@ div.card-dating {
 	background-image: url("/images/Card_Dating.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 200px;
+	height: 228.5px;
 	width: 400px;
 }
 
@@ -75,7 +75,6 @@ div.card-dating {
 	}
 
 	div.card-slot-container {
-		padding-top: 258px;
 	}
 
 }

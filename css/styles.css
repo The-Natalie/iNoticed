@@ -45,6 +45,8 @@ div.card-dating {
 	background-image: url("../images/Card-Dating.png");
 	background-repeat: no-repeat;
 	background-size: cover;
+	height: 200px;
+	width: 400px;
 }
 
 

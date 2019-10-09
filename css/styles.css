@@ -33,9 +33,8 @@ div.card-container {
 		background-size: cover;
 		margin-top: -40px;
 	}
-	}
 
-.card-slot-container {
+div.card-slot-container {
   width: 425px;
   margin: auto;
 }
@@ -88,6 +87,9 @@ div.card-dating {
 		background-repeat: no-repeat;
 		background-size: cover;
 		margin-top: -40px;
+	}
+
+	div.card-slot-container {
 	}
 
 }

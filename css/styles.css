@@ -36,7 +36,7 @@ div.card-container {
 	}
 
 div.card-slot-container {
-  width: 930px;
+  width: 950px;
   margin: auto;
 }
 
@@ -51,7 +51,7 @@ div.card-slot {
 
 div.all-cards {
 	height: 514px;
-	padding-top: 80px;
+	padding-top: 200px;
 	z-index: 11;
   position:relative;
 }

@@ -35,7 +35,7 @@ div.card-container {
 	}
 
 div.card-slot-container {
-  width: 425px;
+  width: 430px;
   margin: auto;
 }
 
@@ -54,8 +54,7 @@ div.all-cards {
   position:relative;
 }
 
-div.card-dating {
-	background-image: url("/images/Card_Dating.png");
+div.card-dating, .card-kindness, .card-valued {
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 228.5px;
@@ -64,6 +63,19 @@ div.card-dating {
 	box-shadow: -7px -11px 12px 17px rgba(0,0,0,0.9);
 }
 
+div.card-dating {
+	background-image: url("/images/Card_Dating.png");
+	display: none;
+}
+
+div.card-kindness {
+	background-image: url("/images/Card_Kindness.png");
+}
+
+div.card-valued {
+	background-image: url("/images/Card_Valued.png");
+	display: none;
+}
 
 
 /* ================================= 

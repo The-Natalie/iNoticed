@@ -41,9 +41,9 @@ div.card-slot-container {
 }
 
 div.card-slot {
-  border-top: 6px solid black;
-  border-bottom: 6px solid black;
-  border-radius:6px;
+  border-top: 12px solid black;
+  border-bottom: 12px solid black;
+  border-radius:12px;
   z-index: 10;
   position:relative;
   margin-top: -3px;
@@ -116,6 +116,12 @@ div.card-valued {
 
 	div.card-slot-container {
   	width: 430px;
+	}
+
+	div.card-slot {
+  	border-top: 6px solid black;
+  	border-bottom: 6px solid black;
+  	border-radius:6px;
 	}
 
 }

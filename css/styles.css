@@ -42,10 +42,11 @@ div.card-slot {
   z-index: 10;
   position:relative;
   margin-top: -3px;
+  margin-left: 1px;
 }
 
 div.all-cards {
-	margin-top: 30px;
+	padding-top: 30px;
 	z-index: 11;
   position:relative;
 }

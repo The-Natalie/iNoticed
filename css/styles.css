@@ -14,7 +14,6 @@ h1 {
 	color: #00b300;
 	text-align: center;
 	font-size: 100px;
-	margin-top:	10px;
 }
 
 h2 {
@@ -36,7 +35,7 @@ div.card-container {
 	}
 
 div.card-slot-container {
-  width: 950px;
+  width: 900px;
   margin: auto;
 }
 
@@ -50,8 +49,8 @@ div.card-slot {
 }
 
 div.all-cards {
-	height: 514px;
-	padding-top: 200px;
+	height: 485.5px;
+	padding-top: 250px;
 	z-index: 11;
   position:relative;
 }
@@ -59,8 +58,8 @@ div.all-cards {
 div.card-dating, .card-kindness, .card-valued {
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 514px;
-	width: 900px;
+	height: 485.5px;
+	width: 850px;
 	margin: auto;
 	box-shadow: -7px -11px 12px 17px rgba(0,0,0,0.9);
 }
@@ -88,6 +87,7 @@ div.card-valued {
 
 	h1 {
 		font-size: 75px;
+		margin-top:	10px;
 	}
 
 	h2 {

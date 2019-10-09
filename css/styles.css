@@ -42,7 +42,7 @@ div.card-slot {
   z-index: 10;
   position:relative;
   margin-top: -3px;
-  margin-left: 1px;
+  margin-left: 2px;
 }
 
 div.all-cards {
@@ -58,7 +58,7 @@ div.card-dating {
 	height: 228.5px;
 	width: 400px;
 	margin: auto;
-	box-shadow: -12px -7px 15px 5px rgba(17,17,17,0.68);
+	box-shadow: -12px -7px 15px 5px rgba(17,17,17,0.8);
 }
 
 

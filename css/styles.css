@@ -45,10 +45,6 @@ div.card-slot-container {
   margin: auto;
 }
 
-div.card-slot {
-	display: none;
-}
-
 div.all-cards {
 	height: 485.5px;
 	padding-top: 270px;
@@ -85,6 +81,10 @@ div.card-valued {
 ==================================== */
 
 @media (min-width: 992px) {
+
+	div.container {
+		max-width: none;
+	}
 
 	h1 {
 		font-size: 75px;

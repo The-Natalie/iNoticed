@@ -84,6 +84,7 @@ div.card-valued {
 
 	div.container {
 		max-width: none;
+		margin: 0 0;
 	}
 
 	h1 {
@@ -119,6 +120,7 @@ div.card-valued {
 
 	div.card-slot-container {
   	width: 430px;
+  	padding-top: 80px;
 	}
 
 	div.card-slot {

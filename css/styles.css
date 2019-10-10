@@ -1,12 +1,12 @@
 html, body {
 	min-height: 100%
-	margin: 0 0;
+	margin: 0px 0px;
 }
 
 body {
 	font-family: 'M PLUS Rounded 1c', sans-serif;
 	background: black;
-	margin: 0 0;
+	margin: 0px 0px;
 
 }
 
@@ -84,7 +84,7 @@ div.card-valued {
 
 	div.container {
 		max-width: none;
-		padding: 0 0;
+		padding: 0px 0px;
 	}
 
 	h1 {
@@ -108,6 +108,10 @@ div.card-valued {
 		margin-top: -40px;
 	}
 
+	div.row {
+		margin-right: 0px;
+		margin-left: 0px;
+	}
 	div.all-cards {
 		height: 228.5px;
 		padding-top: 80px;

@@ -24,8 +24,8 @@ h2 {
 }
 
 h3 {
-	font-size: 45px;
-	color: #063906;
+	font-size: 50px;
+	color: #73a534;
 	text-align: center;
 }
 
@@ -46,12 +46,7 @@ div.card-slot-container {
 }
 
 div.card-slot {
-  border-top: 12px solid black;
-  border-bottom: 12px solid black;
-  border-radius:12px;
-  z-index: 10;
-  position:relative;
-  margin-top: -3px;
+	display: none;
 }
 
 div.all-cards {
@@ -101,7 +96,7 @@ div.card-valued {
 	}
 
 	h3 {
-		font-size: 30px;
+		font-size: 35px;
 	}
 
 /*  Contains the gradient background  */
@@ -127,6 +122,9 @@ div.card-valued {
 	}
 
 	div.card-slot {
+ 	 	z-index: 10;
+ 	 	position:relative;
+  	margin-top: -3px;
   	border-top: 6px solid black;
   	border-bottom: 6px solid black;
   	border-radius:6px;

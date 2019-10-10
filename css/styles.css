@@ -25,7 +25,7 @@ h2 {
 
 h3 {
 	font-size: 50px;
-	color: #73a534;
+	color: #4da534;
 	text-align: center;
 }
 
@@ -99,6 +99,7 @@ div.card-valued {
 
 	h3 {
 		font-size: 35px;
+		font-style: italic;
 	}
 
 /*  Contains the gradient background  */

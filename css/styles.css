@@ -45,34 +45,40 @@ div.card-slot-container {
   margin: auto;
 }
 
-div.all-cards {
+div.arrows-and-cards {
 	height: 485.5px;
 	padding-top: 270px;
 	z-index: 11;
   position:relative;
 }
 
-div.card-dating, .card-kindness, .card-valued {
+div.all-cards {
+	text-align: center;
+}
+
+div#card-dating {
+	background-image: url("/images/Card_Dating.png");
+	box-shadow: -7px -11px 12px 17px rgba(0,0,0,0.9);
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 485.5px;
 	width: 850px;
-	margin: auto;
-	box-shadow: -7px -11px 12px 17px rgba(0,0,0,0.9);
+	display: inline-block;
 }
 
-div.card-dating {
-	background-image: url("/images/Card_Dating.png");
-}
-
-div.card-kindness {
+div#card-kindness {
 	background-image: url("/images/Card_Kindness.png");
-	display: none;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 850px;
+	display: inline-block;
 }
 
-div.card-valued {
+div#card-valued {
 	background-image: url("/images/Card_Valued.png");
-	display: none;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 850px;
+	display: inline-block;
 }
 
 
@@ -114,14 +120,29 @@ div.card-valued {
 		margin-right: 0px;
 		margin-left: 0px;
 	}
-	div.all-cards {
-		height: 228.5px;
+
+	div.arrows-and-cards {
+		height: 229px;
 		padding-top: 80px;
 	}	
 
-	div.card-dating, .card-kindness, .card-valued {
-		height: 228.5px;
+	div#card-dating {
+		height: 229px;
 		width: 400px;
+	}
+
+	div#card-kindness {
+		margin-left: -406px;
+		height: 0px;
+		width: 400px;
+		visibility: hidden;
+	}
+
+	div#card-valued {
+		margin-left: -406px;
+		height: 0px;
+		width: 400px;
+		visibility: hidden;
 	}
 
 	div.card-slot-container {
@@ -142,13 +163,22 @@ div.card-valued {
 		width: 100%;
 		height: 200px;
 		padding-top: 20px;
+		overflow: hidden;
 	}
 
-	h3.caption-kindness {
-		display: none;
+	#caption-dating {
+		position:	relative;
 	}
 
-	h3.caption-valued {
+	#caption-kindness {
+		left: -1000px;
+		position:	relative;
+		display: none;		
+	}
+
+	#caption-valued {
+		left: -1000px;
+		position:	relative;
 		display: none;
 	}
 

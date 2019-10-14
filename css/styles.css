@@ -10,6 +10,12 @@ body {
 
 }
 
+div.container {
+	max-width: none;
+	padding: 0px 0px;
+	margin: 0px 0px;
+}
+
 h1 {
 	font-size: 100px;
 	color: #00b300;
@@ -40,16 +46,16 @@ div.card-container {
 		margin-top: -80px;
 	}
 
-div.card-slot-container {
-  width: 900px;
-  margin: auto;
+div.row {
+	margin-right: 0px;
+	margin-left: 0px;
 }
 
 div.arrows-and-cards {
 	height: 485.5px;
 	padding-top: 270px;
 	z-index: 11;
-  position:relative;
+  position: relative;
 }
 
 div.all-cards {
@@ -81,17 +87,18 @@ div#card-valued {
 	display: inline-block;
 }
 
+div.card-slot-container {
+  width: 900px;
+  margin: auto;
+}
+
 
 /* ================================= 
   Media Queries
 ==================================== */
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
 
-	div.container {
-		max-width: none;
-		padding: 0px 0px;
-	}
 
 	h1 {
 		font-size: 75px;
@@ -114,11 +121,6 @@ div#card-valued {
 		background: rgb(0,0,0);
 		background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(39,39,45,1) 26%, rgba(99,104,106,1) 62%, rgba(117,117,126,1) 65%, rgba(0,0,0,1) 94%);
 		margin-top: -40px;
-	}
-
-	div.row {
-		margin-right: 0px;
-		margin-left: 0px;
 	}
 
 	div.arrows-and-cards {
@@ -152,11 +154,11 @@ div#card-valued {
 
 	div.card-slot {
  	 	z-index: 10;
- 	 	position:relative;
+ 	 	position: relative;
   	margin-top: -3px;
   	border-top: 6px solid black;
   	border-bottom: 6px solid black;
-  	border-radius:6px;
+  	border-radius: 6px;
 	}
 
 	div.captions {

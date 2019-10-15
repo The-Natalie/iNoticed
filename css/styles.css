@@ -179,7 +179,7 @@ div.captions {
 
 
 
-@media only screen  and (min-width : 1224px)
+@media only screen  and (min-width : 1224px) {
 
 	h1 {
 		font-size: 75px;

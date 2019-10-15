@@ -152,7 +152,7 @@ div.captions {
 ==================================== */
 
 
-@media (max-width: 599px) {
+@media only screen  and (max-width: 599px) {
 
 	div.arrows-and-cards {
 		padding-top: 240px;
@@ -179,8 +179,7 @@ div.captions {
 
 
 
-@media (min-width: 900px) {
-
+@media only screen  and (min-width : 1224px)
 
 	h1 {
 		font-size: 75px;

@@ -10,7 +10,7 @@ var valCaption = $('#caption-valued');
 
 // media query event handler
 	if (matchMedia) {
-		const mq = window.matchMedia("(min-width: 900px)");
+		const mq = window.matchMedia("(min-width: 1224px)");
 		mq.addListener(WidthChange);
 		WidthChange(mq);
 	}
@@ -18,7 +18,7 @@ var valCaption = $('#caption-valued');
 	// media query change
 	function WidthChange(mq) {
 		if (mq.matches) {
-	// window width is at least 900px)
+	// window width is at least 1224px
 
 		$('#next').click(function(e) {
 			if ( (kindCard.css('visibility') == 'hidden') && (valCard.css('visibility') == 'hidden')) {
@@ -103,7 +103,7 @@ var valCaption = $('#caption-valued');
 
 
 		} else {
-	// window width is less than 900px
+	// window width is less than 1224px
 
 		$('#next').click(function(e) {
 			if ( (kindCard.css('visibility') == 'hidden') && (valCard.css('visibility') == 'hidden')) {

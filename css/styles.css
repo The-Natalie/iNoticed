@@ -76,6 +76,7 @@ div#card-dating {
 	display: inline-block;
 	z-index: 11;
   position: relative;
+  max-width: 90vw;
 }
 
 div#card-kindness {
@@ -86,6 +87,7 @@ div#card-kindness {
 	visibility: hidden;
 	z-index: 11;
   position: relative;
+  max-width: 90vw;
 }
 
 div#card-valued {
@@ -96,6 +98,7 @@ div#card-valued {
 	visibility: hidden;
 	z-index: 11;
   position: relative;
+  max-width: 90vw;
 }
 
 div.card-slot {

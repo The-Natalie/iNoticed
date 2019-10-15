@@ -13,7 +13,7 @@ $(document).ready(function(){
 	var cardHeight;
 	
 
-	if ($('div.arrows-and-cards').height() > $('div.arrows-and-cards').width()) {
+	if ($('div.arrows-and-cards').width() < 600) {
 		cardHeight = (($('div.arrows-and-cards').height()) - 6) / 2.3;
 	}	else {
 		cardHeight = ($('div.arrows-and-cards').height()) - 6;

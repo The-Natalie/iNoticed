@@ -1,38 +1,39 @@
 html, body {
-	min-height: 100%
-	margin: 0px 0px;
+	min-height: 100%;
+	margin: 0 0;
 }
 
 body {
 	font-family: 'M PLUS Rounded 1c', sans-serif;
-	background: black;
-	margin: 0px 0px;
-
+	font-size: 16px;
+	background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(39,39,45,1) 30%, rgba(101,101,107,1) 66%, rgba(0,0,0,1) 94%); 
+	background-size: cover;	
+	margin: 0 0;
 }
 
 div.container {
 	max-width: none;
-	padding: 0px 0px;
-	margin: 0px 0px;
+	padding: 0 0;
+	margin: 0 0;
 }
 
 h1 {
-	font-size: 80px;
+	font-size: 5em;
 	color: #00b300;
 	text-align: center;
-	margin-top:	25px;
-	margin-bottom: 120px;
+	margin-top:	2vh;
+	margin-bottom: 6vh;
 }
 
 h2 {
-	font-size: 50px;
+	font-size: 3.125em;
 	color: #006600;
 	text-align: center;
-	margin-bottom: 0px;
+	margin-bottom: 0;
 }
 
 h3 {
-	font-size: 40px;
+	font-size: 2.5em;
 	color: #4da534;
 	text-align: center;
 	font-style: italic;
@@ -41,12 +42,8 @@ h3 {
 /*  Contains the gradient background  */
 div.card-container {
 		width: 100%;
-		height: 900px;
-		background: rgb(0,0,0);
-		background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(39,39,45,1) 26%, rgba(99,104,106,1) 62%, rgba(117,117,126,1) 65%, rgba(0,0,0,1) 94%);
-		background-repeat: no-repeat;
-		background-size: cover;
-		margin-top: -250px;
+		height: 99vh;
+		margin-top: -6vh;
 	}
 
 div.row {
@@ -55,8 +52,8 @@ div.row {
 }
 
 div.arrows-and-cards {
-	height: 343px;
-	padding-top: 340px;
+	height: 70vh;
+	padding-top: 20.01vh;
 	z-index: 11;
   position: relative;
 }
@@ -68,6 +65,7 @@ div.all-cards {
 
 div#prev {
 	padding: 0px 0px;
+	cursor: pointer;
 }
 
 div#card-dating {
@@ -75,190 +73,70 @@ div#card-dating {
 	box-shadow: -7px -11px 12px 17px rgba(0,0,0,0.9);
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 480px;
-	height: 273px;
 	display: inline-block;
+	z-index: 11;
+  position: relative;
 }
 
 div#card-kindness {
 	background-image: url("/images/Card_Kindness.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 480px;
-	margin-left: -486px;
 	display: inline-block;
-	height: 0px;
 	visibility: hidden;
+	z-index: 11;
+  position: relative;
 }
 
 div#card-valued {
 	background-image: url("/images/Card_Valued.png");
 	background-repeat: no-repeat;
-	background-size: cover;
-	width: 480px;
-	margin-left: -486px;
+	background-size: cover;	
 	display: inline-block;
-	height: 0px;
 	visibility: hidden;
-}
-
-div#next {
-	padding: 0px 0px;
-}
-
-div.card-slot-container {
-  width: 530px;
-  margin: auto;
-  padding-top: 265px;
+	z-index: 11;
+  position: relative;
 }
 
 div.card-slot {
 	z-index: 10;
 	position: relative;
-	margin-top: -3px;
+	margin-top: -10px;
 	border-top: 8px solid black;
 	border-bottom: 8px solid black;
 	border-radius: 8px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-div.captions {
-	width: 100%;
-	height: 200px;
-	padding-top: 20px;
-	overflow: hidden;
+div#next {
+	padding: 0 0;
+	cursor: pointer;
 }
+
 
 #caption-dating {
 	position:	relative;
+	width: 110vw;
+	height: 50px;
+	margin-top: 10px;
+	overflow: hidden;
 }
 
 #caption-kindness {
-	left: -800px;
 	position:	relative;
 	display: none;		
+	width: 110vw;
+	height: 50px;
+	overflow: hidden;
+	margin-top: 10px;
 }
 
 #caption-valued {
-	left: -800px;
 	position:	relative;
 	display: none;
-}
-
-
-
-
-/* ================================= 
-  Media Queries
-==================================== */
-
-
-@media only screen  and (max-width: 599px) {
-
-	div.arrows-and-cards {
-		padding-top: 240px;
-	}
-
-	div#prev {
-		max-height: 160px;
-	}
-
-	div#next {
-		max-height: 110px;
-		margin-top: -20px;
-	}
-
-	div.card-slot-container  {
-		padding-top: 326px;
-	}
-
-	div.captions {
-		padding-top: 110px;
-	}
-
-}
-
-
-
-@media only screen  and (min-width : 1224px) {
-
-	h1 {
-		font-size: 75px;
-		margin-top:	15px;
-		margin-bottom: 60px;
-	}
-
-	h2 {
-		font-size: 40px;
-	}
-
-	h3 {
-		font-size: 35px;
-	}
-
-/*  Contains the gradient background  */
-	div.card-container {
-		height: 450px;
-		background: rgb(0,0,0);
-		background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(39,39,45,1) 26%, rgba(99,104,106,1) 62%, rgba(117,117,126,1) 65%, rgba(0,0,0,1) 94%);
-		margin-top: -40px;
-	}
-
-	div.arrows-and-cards {
-		height: 229px;
-		padding-top: 80px;
-	}	
-
-	div#prev {
-		padding: 0px 15px;
-	}
-
-	div.all-cards {
-		padding: 0px 15px;
-	}
-
-	div#card-dating {
-		height: 229px;
-		width: 400px;
-	}
-
-	div#card-kindness {
-		margin-left: -406px;
-		width: 400px;
-	}
-
-	div#card-valued {
-		margin-left: -406px;
-		width: 400px;
-	}
-
-	div#next {
-		padding: 0px 15px;
-	}
-
-	div.card-slot-container {
-  	width: 430px;
-  	padding-top: 80px;
-	}
-
-	div.card-slot {
-  	margin-top: -3px;
-  	border-top: 6px solid black;
-  	border-bottom: 6px solid black;
-  	border-radius: 6px;
-	}
-
-	div.captions {
-		height: 200px;
-		padding-top: 20px;
-	}
-
-	#caption-kindness {
-		left: -1000px;		
-	}
-
-	#caption-valued {
-		left: -1000px;
-	}
-
-
+	width: 110vw;
+	height: 50px;
+	overflow: hidden;
+	margin-top: 10px;
 }

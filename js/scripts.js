@@ -10,7 +10,15 @@ $(document).ready(function(){
 	var negScreenWidth = -screenWidth;
 	var plusScreenWidth = '+=' + screenWidth;
 	var minusScreenWidth = '-=' + screenWidth;
-	var cardHeight = ($('div.arrows-and-cards').height()) - 6;
+	var cardHeight;
+	
+
+	if ($('div.arrows-and-cards').height() > $('div.arrows-and-cards').width()) {
+		cardHeight = (($('div.arrows-and-cards').height()) - 6) / 2.3;
+	}	else {
+		cardHeight = ($('div.arrows-and-cards').height()) - 6;
+	}
+
 	var cardWidth = cardHeight * 1.75;
 	var negMarginTop = -cardHeight;
 

@@ -76,8 +76,8 @@ div#card-dating {
 	display: inline-block;
 	z-index: 11;
   position: relative;
-  max-width: 90vw;
-}
+	max-width: 100%;
+  max-height: 100%;}
 
 div#card-kindness {
 	background-image: url("/images/Card_Kindness.png");
@@ -87,7 +87,8 @@ div#card-kindness {
 	visibility: hidden;
 	z-index: 11;
   position: relative;
-  max-width: 90vw;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 div#card-valued {
@@ -98,8 +99,8 @@ div#card-valued {
 	visibility: hidden;
 	z-index: 11;
   position: relative;
-  max-width: 90vw;
-}
+	max-width: 100%;
+  max-height: 100%;}
 
 div.card-slot {
 	z-index: 10;

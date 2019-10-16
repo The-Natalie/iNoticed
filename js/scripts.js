@@ -18,6 +18,11 @@ $(document).ready(function(){
 
 	if (cardWidth > $('div.col-sm-10').width()) {
 		cardWidth = $('div.col-sm-10').width() - 40;
+		$('div.card-slot').css({'border-top': '12px solid black', 'border-bottom': '12px solid black', 'border-radius': '12px'});
+		$('h3').css({'font-size': '3.2em', 'margin-top': '-170', 'height': '70px'});
+		$('h2').css({'font-size': '4.2em'});
+		$('h1').css({'font-size': '5.2em'});		
+		cardSlot.css({'width': cardWidth + 30});
 	}
 
 	var cardSlotMarginTop = cardWidth / 1.75;

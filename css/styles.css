@@ -68,39 +68,31 @@ div#prev {
 	cursor: pointer;
 }
 
-div#card-dating {
-	background-image: url("/images/Card_Dating.png");
-	box-shadow: -7px -11px 12px 17px rgba(0,0,0,0.9);
-	background-repeat: no-repeat;
-	background-size: cover;
+#card-dating {
 	display: inline-block;
 	z-index: 11;
   position: relative;
-	max-width: 100%;
-  max-height: 100%;}
-
-div#card-kindness {
-	background-image: url("/images/Card_Kindness.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	display: inline-block;
-	visibility: hidden;
-	z-index: 11;
-  position: relative;
-  max-width: 100%;
-  max-height: 100%;
+	width: 100%;
+	height: auto;
 }
 
-div#card-valued {
-	background-image: url("/images/Card_Valued.png");
-	background-repeat: no-repeat;
-	background-size: cover;	
+#card-kindness {
 	display: inline-block;
 	visibility: hidden;
 	z-index: 11;
   position: relative;
-	max-width: 100%;
-  max-height: 100%;}
+  width: 100%;
+	height: auto;
+}
+
+#card-valued {	
+	display: inline-block;
+	visibility: hidden;
+	z-index: 11;
+  position: relative;
+	width: 100%;
+	height: auto;
+}
 
 div.card-slot {
 	z-index: 10;

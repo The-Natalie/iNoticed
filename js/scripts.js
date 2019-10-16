@@ -1,10 +1,11 @@
 $(document).ready(function(){
 
-	var dateCard = $('div#card-dating');
+var $ = require('jquery');
+	var dateCard = $('#card-dating');
 	var dateCaption = $('#caption-dating');
-	var kindCard = $('div#card-kindness');
+	var kindCard = $('#card-kindness');
 	var kindCaption = $('#caption-kindness');
-	var valCard = $('div#card-valued');
+	var valCard = $('#card-valued');
 	var valCaption = $('#caption-valued');
 	var screenWidth = $(window).width();
 	var negScreenWidth = -screenWidth;
@@ -13,15 +14,14 @@ $(document).ready(function(){
 	var cardHeight;
 	
 
-	if ($('div.arrows-and-cards').width() < 600) {
+	if ($('div.arrows-and-cards').width() > 900) {
 		cardHeight = (($('div.arrows-and-cards').height()) - 6) / 2.3;
 	}	else {
-		cardHeight = ($('div.arrows-and-cards').height()) - 6;
+		cardHeight = (($('div.arrows-and-cards').height()) - 6) / 1.2;
 	}
 
 	var cardWidth = cardHeight * 1.75;
 	var negMarginTop = -cardHeight;
-
 	dateCard.css({'height': cardHeight, 'width': cardWidth});
 	kindCard.css({'width': cardWidth, 'margin-left': -((cardHeight * 1.75) + 6)});
 	valCard.css({'width': cardWidth, 'margin-left': -((cardHeight * 1.75) + 6)});
@@ -32,17 +32,15 @@ $(document).ready(function(){
 		if ( (kindCard.css('visibility') == 'hidden') && (valCard.css('visibility') == 'hidden')) {
 			kindCaption.css({'left': negScreenWidth});
 			valCaption.css({'left': negScreenWidth});
-			kindCard.css({'height': '0'});
-			valCard.css({'height': '0'});
-			dateCard.animate({'height': '0', 'marginTop': cardHeight}, 1000, 'linear', function() {
-				dateCard.css({'visibility': 'hidden', 'box-shadow': 'none'});					
-			});			
+			// kindCard.css({'height': '0'});
+			// valCard.css({'height': '0'});
+			dateCard.hide("slide", { 'direction': "up" }, 1000);
 			dateCaption.delay(1300).animate({'left': plusScreenWidth}, 2000, 'linear', function() {
 				dateCaption.css({'display': 'none', 'left': negScreenWidth});
 				kindCaption.css({'display': 'block'});
 			});
 			kindCaption.delay(3000).animate({'left': '0px'}, 2000, 'linear');
-			kindCard.css({'visibility': 'visible', 'box-shadow': '-7px -11px 12px 17px rgba(0,0,0,0.9)', 'transition': 'box-shadow .1s', 'transition-delay': '5s', 'height': '0'}).delay(5000).animate({'height': cardHeight, 'marginTop': negMarginTop}, 1000, 'linear');
+			kindCard.delay(5000).show("slide", { 'direction': "down" }, 1000);
 		}	else if ((dateCard.css('visibility') == 'hidden') && (valCard.css('visibility') == 'hidden')) {
 				dateCaption.css({'left': negScreenWidth});
 				valCaption.css({'left': negScreenWidth});

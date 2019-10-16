@@ -12,14 +12,12 @@ $(document).ready(function(){
 	var minusScreenWidth = '-=' + screenWidth;
 	var cardHeight = $('div.arrows-and-cards').height() - 6;
 	var arrowsCardsWidth = $('div.arrows-and-cards').width();
-	var cardWidth = cardHeight * 1.75;
+	var cardWidth = (cardHeight * 1.75) / 1.2;
 	var cardSlot = $('div.card-slot');
 	var emptySpace = $('#space');
 
-	if (arrowsCardsWidth > 900) {
-		cardWidth = cardWidth / 1.2;
-	} else {
-		cardWidth = cardWidth / 2.3;
+	if (cardWidth > $('div.col-sm-10').width()) {
+		cardWidth = $('div.col-sm-10').width() - 40;
 	}
 
 	var cardSlotMarginTop = cardWidth / 1.75;

@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-var $ = require('jquery');
 	var dateCard = $('#card-dating');
 	var dateCaption = $('#caption-dating');
 	var kindCard = $('#card-kindness');
@@ -11,111 +10,110 @@ var $ = require('jquery');
 	var negScreenWidth = -screenWidth;
 	var plusScreenWidth = '+=' + screenWidth;
 	var minusScreenWidth = '-=' + screenWidth;
-	var cardHeight;
-	
+	var cardHeight = $('div.arrows-and-cards').height() - 6;
+	var arrowsCardsWidth = $('div.arrows-and-cards').width();
+	var cardWidth = cardHeight * 1.75;
+	var cardSlot = $('div.card-slot');
+	var emptySpace = $('#space');
 
-	if ($('div.arrows-and-cards').width() > 900) {
-		cardHeight = (($('div.arrows-and-cards').height()) - 6) / 2.3;
-	}	else {
-		cardHeight = (($('div.arrows-and-cards').height()) - 6) / 1.2;
+	if (arrowsCardsWidth > 900) {
+		cardWidth = cardWidth / 1.2;
+	} else {
+		cardWidth = cardWidth / 2.3;
 	}
 
-	var cardWidth = cardHeight * 1.75;
-	var negMarginTop = -cardHeight;
-	dateCard.css({'height': cardHeight, 'width': cardWidth});
-	kindCard.css({'width': cardWidth, 'margin-left': -((cardHeight * 1.75) + 6)});
-	valCard.css({'width': cardWidth, 'margin-left': -((cardHeight * 1.75) + 6)});
-	$('div.card-slot').css({'width': cardWidth + 30});
-
+	var cardSlotMarginTop = cardWidth / 1.75;
+	dateCard.css({'width': cardWidth});
+	kindCard.css({'width': cardWidth});
+	valCard.css({'width': cardWidth});
+	emptySpace.css({'width': cardWidth});
+	cardSlot.css({'width': cardWidth + 30});
+	var negMarginTop = -cardHeight - 10;
 
 	$('div#next').click(function(e) {
-		if ( (kindCard.css('visibility') == 'hidden') && (valCard.css('visibility') == 'hidden')) {
+		if ( (kindCard.css('display') == 'none') && (valCard.css('display') == 'none')) {
 			kindCaption.css({'left': negScreenWidth});
 			valCaption.css({'left': negScreenWidth});
-			// kindCard.css({'height': '0'});
-			// valCard.css({'height': '0'});
-			dateCard.hide("slide", { 'direction': "up" }, 1000);
+			dateCard.hide("slide", { 'direction': "down" }, 1000, function() {
+				emptySpace.show("slide", { 'direction': "down" }, 1000).delay(2000).hide("slide", { 'direction': "down" }, 1000, function(){
+						kindCard.show("slide", { 'direction': "down" }, 1000);
+				});
+			});
 			dateCaption.delay(1300).animate({'left': plusScreenWidth}, 2000, 'linear', function() {
 				dateCaption.css({'display': 'none', 'left': negScreenWidth});
 				kindCaption.css({'display': 'block'});
 			});
 			kindCaption.delay(3000).animate({'left': '0px'}, 2000, 'linear');
-			kindCard.delay(5000).show("slide", { 'direction': "down" }, 1000);
-		}	else if ((dateCard.css('visibility') == 'hidden') && (valCard.css('visibility') == 'hidden')) {
+		}	else if ((dateCard.css('display') == 'none') && (valCard.css('display') == 'none')) {
 				dateCaption.css({'left': negScreenWidth});
 				valCaption.css({'left': negScreenWidth});
-				dateCard.css({'height': '0'});
-				valCard.css({'height': '0'});
-				kindCard.animate({'height': '0', 'marginTop': cardHeight}, 1000, 'linear', function() {
-					kindCard.css({'visibility': 'hidden', 'box-shadow': 'none'});					
-				});			
+				kindCard.hide("slide", { 'direction': "down" }, 1000, function() {
+				emptySpace.show("slide", { 'direction': "down" }, 1000).delay(2000).hide("slide", { 'direction': "down" }, 1000, function(){
+						valCard.show("slide", { 'direction': "down" }, 1000);
+				});
+			});
 				kindCaption.delay(1300).animate({'left': plusScreenWidth}, 2000, 'linear', function() {
 					kindCaption.css({'display': 'none', 'left': negScreenWidth});
 					valCaption.css({'display': 'block'});
 				});
 				valCaption.delay(3000).animate({'left': '0px'}, 2000, 'linear');
-				valCard.css({'visibility': 'visible', 'box-shadow': '-7px -11px 12px 17px rgba(0,0,0,0.9)', 'transition': 'box-shadow .1s', 'transition-delay': '5s', 'height': '0'}).delay(5000).animate({'height': cardHeight, 'marginTop': negMarginTop}, 1000, 'linear');
 		}	else {
 				dateCaption.css({'left': negScreenWidth});
 				kindCaption.css({'left': negScreenWidth});
-				dateCard.css({'height': '0'});
-				kindCard.css({'height': '0'});
-				valCard.animate({'height': '0', 'marginTop': cardHeight}, 1000, 'linear', function() {
-					valCard.css({'visibility': 'hidden', 'box-shadow': 'none'});					
-				});			
+				valCard.hide("slide", { 'direction': "down" }, 1000, function() {
+				emptySpace.show("slide", { 'direction': "down" }, 1000).delay(2000).hide("slide", { 'direction': "down" }, 1000, function(){
+						dateCard.show("slide", { 'direction': "down" }, 1000);
+				});
+			});
 				valCaption.delay(1300).animate({'left': plusScreenWidth}, 2000, 'linear', function() {
 					valCaption.css({'display': 'none', 'left': negScreenWidth});
 					dateCaption.css({'display': 'block'});
 				});
 				dateCaption.delay(3000).animate({'left': '0px'}, 2000, 'linear');
-				dateCard.css({'visibility': 'visible', 'box-shadow': '-7px -11px 12px 17px rgba(0,0,0,0.9)', 'transition': 'box-shadow .1s', 'transition-delay': '5s', 'height': '0'}).delay(5000).animate({'height': cardHeight, 'marginTop': negMarginTop}, 1000, 'linear');
 		}
 	});
 
 
 	$('div#prev').click(function(e) {
-		if ( (kindCard.css('visibility') == 'hidden') && (valCard.css('visibility') == 'hidden')) {
+		if ( (kindCard.css('display') == 'none') && (valCard.css('display') == 'none')) {
 			kindCaption.css({'left': screenWidth});
 			valCaption.css({'left': screenWidth});
-			kindCard.css({'height': '0'});
-			valCard.css({'height': '0'});
-			dateCard.animate({'height': '0', 'marginTop': cardHeight}, 1000, 'linear', function() {
-				dateCard.css({'visibility': 'hidden', 'box-shadow': 'none'});					
-			});			
+			dateCard.hide("slide", { 'direction': "down" }, 1000, function() {
+				emptySpace.show("slide", { 'direction': "down" }, 1000).delay(2000).hide("slide", { 'direction': "down" }, 1000, function(){
+						valCard.show("slide", { 'direction': "down" }, 1000);
+				});
+			});
 			dateCaption.delay(1300).animate({'left': minusScreenWidth}, 2000, 'linear', function() {
 				dateCaption.css({'display': 'none', 'left': screenWidth});
 				valCaption.css({'display': 'block'});
 			});
 			valCaption.delay(3000).animate({'left': '0px'}, 2000, 'linear');
-			valCard.css({'visibility': 'visible', 'box-shadow': '-7px -11px 12px 17px rgba(0,0,0,0.9)', 'transition': 'box-shadow .1s', 'transition-delay': '5s', 'height': '0'}).delay(5000).animate({'height': cardHeight, 'marginTop': negMarginTop}, 1000, 'linear');
-		}	else if ((dateCard.css('visibility') == 'hidden') && (kindCard.css('visibility') == 'hidden')) {
+		}	else if ((dateCard.css('display') == 'none') && (kindCard.css('display') == 'none')) {
 				dateCaption.css({'left': screenWidth});
-				kindCaption.css({'left': screenWidth});		
-				dateCard.css({'height': '0'});
-				kindCard.css({'height': '0'});		
-				valCard.animate({'height': '0', 'marginTop': cardHeight}, 1000, 'linear', function() {
-					valCard.css({'visibility': 'hidden', 'box-shadow': 'none'});					
-				});			
+				kindCaption.css({'left': screenWidth});			
+				valCard.hide("slide", { 'direction': "down" }, 1000, function() {
+				emptySpace.show("slide", { 'direction': "down" }, 1000).delay(2000).hide("slide", { 'direction': "down" }, 1000, function(){
+						kindCard.show("slide", { 'direction': "down" }, 1000);
+				});
+			});
 				valCaption.delay(1300).animate({'left': minusScreenWidth}, 2000, 'linear', function() {
 					valCaption.css({'display': 'none', 'left': screenWidth});
 					kindCaption.css({'display': 'block'});
 				});
 				kindCaption.delay(3000).animate({'left': '0px'}, 2000, 'linear');
-				kindCard.css({'visibility': 'visible', 'box-shadow': '-7px -11px 12px 17px rgba(0,0,0,0.9)', 'transition': 'box-shadow .1s', 'transition-delay': '5s', 'height': '0'}).delay(5000).animate({'height': cardHeight, 'marginTop': negMarginTop}, 1000, 'linear');
 		}	else {
 				dateCaption.css({'left': screenWidth});
 				valCaption.css({'left': screenWidth});
-				dateCard.css({'height': '0'});
-				valCard.css({'height': '0'});
-				kindCard.animate({'height': '0', 'marginTop': cardHeight}, 1000, 'linear', function() {
-					kindCard.css({'visibility': 'hidden', 'box-shadow': 'none'});					
-				});			
+				kindCard.hide("slide", { 'direction': "down" }, 1000, function() {
+				emptySpace.show("slide", { 'direction': "down" }, 1000).delay(2000).hide("slide", { 'direction': "down" }, 1000, function(){
+						dateCard.show("slide", { 'direction': "down" }, 1000);
+				});
+			});
 				kindCaption.delay(1300).animate({'left': minusScreenWidth}, 2000, 'linear', function() {
 					kindCaption.css({'display': 'none', 'left': screenWidth});
 					dateCaption.css({'display': 'block'});
 				});
 				dateCaption.delay(3000).animate({'left': '0px'}, 2000, 'linear');
-				dateCard.css({'visibility': 'visible', 'box-shadow': '-7px -11px 12px 17px rgba(0,0,0,0.9)', 'transition': 'box-shadow .1s', 'transition-delay': '5s', 'height': '0'}).delay(5000).animate({'height': cardHeight, 'marginTop': negMarginTop}, 1000, 'linear');
 		}
 	});
 

@@ -113,9 +113,9 @@ div.card-slot {
 	z-index: 10;
 	position: relative;
 	margin-top: -10px;
-	border-top: 8px solid black;
-	border-bottom: 8px solid black;
-	border-radius: 8px;
+	border-top: 12px solid black;
+	border-bottom: 12px solid black;
+	border-radius: 12px;
 	margin-left: auto;
 	margin-right: auto;
 }

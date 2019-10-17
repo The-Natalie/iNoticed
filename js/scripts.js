@@ -120,9 +120,12 @@ $(document).ready(function(){
 		}
 	});
 
+ 
 
+	$('input.button').click(function(e) {
+	
 
-var frmvalidator = new Validator("contactform"); frmvalidator.addValidation("name","req","Please provide your name"); frmvalidator.addValidation("email","req","Please provide your email"); frmvalidator.addValidation("email","email", "Please enter a valid email address"); 
-
+    $('p.form-submitted').html('Your form has been submitted');
+	});
 });
 

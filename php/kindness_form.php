@@ -7,14 +7,12 @@ if(empty($_POST['name'])  ||
     $errors .= "\n Error: all fields are required";
 }
 
-
-if (isset($_POST['Submit'])) {
-	$selected_radio = $_POST['cards'];
-}
-
+$selected_radio = '';
 $name = $_POST['name']; 
 $email_address = $_POST['email']; 
-$cards = $_POST['cards']
+if (isset($_POST['cards'])) {
+	$selected_radio = $_POST['cards'];
+};
 
 if (!preg_match(
 "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i", 
@@ -27,7 +25,7 @@ if( empty($errors))
 {
 	$to = $myemail; 
 	$email_subject = "Kindness cards request from: $name";
-	$email_body = "\n Name: $name You have received a new message. ".
+	$email_body = "You have received a new message. ".
 	" Here are the details:\n Name: $name \n Email: $email_address ".
 	" Number of cards requested: \n $cards "; 
 	

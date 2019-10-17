@@ -187,3 +187,8 @@ div#card-request-form {
   background-color: #6fcb7b;
   color: #595959;
 }
+
+p.form-submitted {
+	font-size: 1em;
+	color: #369643;
+}

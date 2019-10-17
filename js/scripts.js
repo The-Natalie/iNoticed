@@ -124,6 +124,17 @@ $(document).ready(function(){
 
 	$('input.button').click(function(e) {
 	
+    $.ajax({
+        url: '/php/kindness-form.php',
+        type: 'POST',
+        data: {
+            email: 'natalie.diana.hall@gmail.com',
+            message: 'hello world!'
+        },
+        success: function(msg) {
+            alert('Email Sent');
+        }               
+		});
 
     $('p.form-submitted').html('Your form has been submitted');
 	});

@@ -150,3 +150,40 @@ div#next {
 	overflow: hidden;
 	margin-top: 10px;
 }
+
+
+
+/* ================================= 
+Kindness Page
+==================================== */
+
+#kindness {
+	background: linear-gradient(307deg, rgba(111,203,123,1) 0%, rgba(177,207,181,1) 25%, rgba(191,213,194,1) 50%, rgba(149,208,157,1) 75%, rgba(111,203,123,1) 100%); 
+	background-size: cover;	
+}
+
+div.kindness-ps {
+	padding: 10ch;
+}
+
+.kindness-ps p {
+	font-size: 1.35em;
+	color: #595959;
+}
+
+div#card-request-form {
+	margin-left: auto;
+  margin-right: auto;
+  padding: 3ch 30ch;
+}
+
+.button {
+	font-size: 1.35em;
+	color: #595959;
+	border: 2px solid #6fcb7b;
+}
+
+.button:hover {
+  background-color: #6fcb7b;
+  color: #595959;
+}

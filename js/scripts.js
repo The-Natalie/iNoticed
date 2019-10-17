@@ -138,9 +138,10 @@ $(document).ready(function(){
 				},
 				function(data) {
 					alert(data);
+					$('#kindness-form')[0].reset(); // To reset form fields
+					$('p.form-submitted').html('Your form has been submitted');
 				}
 				);
-				$('p.form-submitted').html('Your form has been submitted');
 		}
 
 	});

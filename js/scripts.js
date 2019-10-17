@@ -124,19 +124,25 @@ $(document).ready(function(){
 
 	$('input.button').click(function(e) {
 	
-    $.ajax({
-        url: '/php/kindness-form.php',
-        type: 'POST',
-        data: {
-            email: 'natalie.diana.hall@gmail.com',
-            message: 'hello world!'
-        },
-        success: function(msg) {
-            alert('Email Sent');
-        }               
-		});
+    var name = $("#form-name").val();
+		var email = $("#form-email").val();
+		var cardsRequested = $("input[type=radio]:checked").val();
+		if (name == '' || email == '' || cardsRequested == '') {
+    	$('p.form-submitted').html('Please complete all fields');
+		} else {
+			// Returns successful data submission message when the entered information is stored in database.
+				$.post("kindness-form.php", {
+				name1: name,
+				email1: email,
+				cards1: cardsRequested
+				},
+				function(data) {
+					alert(data);
+				}
+				);
+				$('p.form-submitted').html('Your form has been submitted');
+		}
 
-    $('p.form-submitted').html('Your form has been submitted');
 	});
 });
 

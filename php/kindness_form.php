@@ -1,15 +1,40 @@
 <?php
-// Establishing connection with server by passing "server_name", "user_id", "password".
-$connection = mysql_connect("mysql.inoticed.org", "ndhall", "natabata14");
-// Selecting Database by passing "database_name" and above connection variable.
-mysql_select_db("inoticed_kindness_cards_requests", $connection);
-$name2=$_POST['name1']; 
-$email2=$_POST['email1'];
-$cardsRequested2=$_POST['cardsRequested1'];
-$query = mysql_query("INSERT INTO kindness_cards VALUES ($name2, $email2, $cardsRequested2)"); //Insert query
-if($query){
-echo "Data Submitted succesfully";
+$name=$_POST['name']; 
+$email=$_POST['email'];
+$cards=$_POST['cards'];
+if (!empty($name)){
+if (!empty($email)){
+$host = "mysql.inoticed.org";
+$dbusername = "ndhall";
+$dbpassword = "natabata14";
+$dbname = "inoticed_kindness_cards_requests";
+// Create connection
+$conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
+if (mysqli_connect_error()){
+die('Connect Error ('. mysqli_connect_errno() .') '
+. mysqli_connect_error());
 }
-mysql_close($connection); // Connection Closed.
+else{
+$sql = "INSERT INTO account (name, email, cards)
+values ('$name','$email', '$cards')";
+if ($conn->query($sql)){
+echo "New record is inserted sucessfully";
+}
+else{
+echo "Error: ". $sql ."
+". $conn->error;
+}
+$conn->close();
+}
+}
+else{
+echo "Name should not be empty";
+die();
+}
+}
+else{
+echo "Email should not be empty";
+die();
+}
 ?>
 

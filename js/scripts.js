@@ -124,10 +124,12 @@ $(document).ready(function(){
 
 	$('input.button').click(function(e) {
 		e.preventDefault();
+		var form = $('form')[0]; 
+		var formData = new FormData(form);
 		$.ajax({
       url: "kindness_form.php",
 			type: 'POST',
-			data: new FormData( this ),
+			data: formData,
 			cache: false,
 			dataType: "json",
 			success: function(r){

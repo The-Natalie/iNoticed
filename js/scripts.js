@@ -127,7 +127,7 @@ $(document).ready(function(){
 		var form = document.getElementById('kindness-form');
 		var formData = new FormData(form);
 		$.ajax({
-      url: "kindness_form.php",
+      url: "/php/kindness_form.php",
 			type: 'POST',
 			data: formData,
 			cache: false,

@@ -124,7 +124,7 @@ $(document).ready(function(){
 
 	$('input.button').click(function(e) {
 		e.preventDefault();
-		var form = $('form')[0]; 
+		var form = document.getElementById('kindness-form');
 		var formData = new FormData(form);
 		$.ajax({
       url: "kindness_form.php",

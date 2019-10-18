@@ -132,6 +132,8 @@ $(document).ready(function(){
 			data: formData,
 			cache: false,
 			dataType: "json",
+			processData: false,
+			contentType: false,
 			success: function(r){
 				if (true) {
 					$('p.form-submitted').html("Your form has been submitted");		

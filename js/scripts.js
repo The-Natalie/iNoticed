@@ -120,7 +120,6 @@ $(document).ready(function(){
 		}
 	});
 
- 
 
 	$('input.button').click(function(e) {
 		e.preventDefault();
@@ -143,6 +142,13 @@ $(document).ready(function(){
 			});
 			$('p.form-submitted').html("Your form has been submitted");		
 		}
+	});
+
+
+	$("p.firstWord").html(function(){
+  	var text= $(this).text().trim().split(" ");
+  	var first = text.shift();
+  	return (text.length > 0 ? "<span class='style-first'>"+ first + "</span> " : first) + text.join(" ");
 	});
 
 });

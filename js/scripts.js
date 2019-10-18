@@ -126,21 +126,23 @@ $(document).ready(function(){
 		e.preventDefault();
 		var form = document.getElementById('kindness-form');
 		var formData = new FormData(form);
-		$.ajax({
-      url: "/php/kindness_form.php",
-			type: 'POST',
-			data: formData,
-			cache: false,
-			dataType: "json",
-			processData: false,
-			contentType: false,
-			success: function(r){
-				if (true) {
-					$('p.form-submitted').html("Your form has been submitted");		
-				}	
-		}
+		var name = document.getElementById("form-name").value;
+		var email = document.getElementById("form-email").value;
 
-		});
+		if (name == '' || email == '') {
+			$('p.form-submitted').html("Please complete all fields");		
+		} else {
+			$.ajax({
+	      url: "/php/kindness_form.php",
+				type: 'POST',
+				data: formData,
+				cache: false,
+				dataType: "json",
+				processData: false,
+				contentType: false
+			});
+			$('p.form-submitted').html("Your form has been submitted");		
+		}
 	});
 
 });

@@ -22,6 +22,11 @@ if (mysqli_connect_error()){
 		values ('$name','$email', '$cardsRequested')";
 		if ($conn->query($sql)){
 			echo "New record is inserted sucessfully";
+			$to_email = 'kindness@inoticed.org';
+			$subject = 'New Kindness Card Request';
+			$message = '$name would like $cardsRequested. Please contact $name at $email.';
+			$headers = 'From: kindness@inoticed.org';
+			mail($to_email,$subject,$message,$headers);
 		}
 		else{
 			echo "Error: ". $sql ."
@@ -40,13 +45,6 @@ echo "Email should not be empty";
 die();
 }
 }
-
-
-$to_email = 'kindness@inoticed.org';
-$subject = 'New Kindness Card Request';
-$message = '$name would like $cardsRequested. Please contact $name at $email.';
-$headers = 'From: kindness@inoticed.org';
-mail($to_email,$subject,$message,$headers);
 
 ?>
 

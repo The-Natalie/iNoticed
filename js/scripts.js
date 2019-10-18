@@ -135,9 +135,7 @@ $(document).ready(function(){
 			success: function(r){
 				if (true) {
 					$('p.form-submitted').html("Your form has been submitted");		
-				}	else {
-					$('p.form-submitted').html("Please complete all fields");		
-				}
+				}	
 		}
 
 		});

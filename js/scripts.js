@@ -125,7 +125,7 @@ $(document).ready(function(){
 	$('input.button').click(function(e) {
     var name = $("#form-name").val();
 		var email = $("#form-email").val();
-		var  = $("input[type=radio]:checked").val();
+		var cardsRequested = $("input[type=radio]:checked").val();
       $.ajax({ 
         method: "POST",
         url: "kindness_form.php",

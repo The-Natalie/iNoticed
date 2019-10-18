@@ -177,7 +177,7 @@ div.kindness-ps {
   transition: all 2s ease;
 }
 
-.kindness-page-img:hover, .kindness-page-img:active {
+.kindness-page-img:hover {
 	height: 50%;
 	width: 50%;
 }

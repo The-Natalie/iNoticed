@@ -123,29 +123,23 @@ $(document).ready(function(){
  
 
 	$('input.button').click(function(e) {
-    var name = $("#form-name").val();
-		var email = $("#form-email").val();
-		var cardsRequested = $("input[type=radio]:checked").val();
-      $.ajax({ 
-        method: "POST",
-        url: "kindness_form.php",
-        data: {"name": name, "email": email, "cardsRequested": cardsRequested},
+		e.preventDefault();
+		$.ajax({
+      url: "kindness_form.php",
+			type: 'POST',
+			data: new FormData( this ),
+			cache: false,
+			dataType: "json",
+			success: function(r){
+				if (true) {
+					$('p.form-submitted').html("Your form has been submitted");		
+				}	else {
+					$('p.form-submitted').html("Please complete all fields");		
+				}
+		}
 
-      }).done(function( data ) { 
-        var result = $.parseJSON(data); 
-        var str = '';
-        if(result == 1) {
-          str = 'Your form has been submitted';
-        }else{
-          str = 'Please complete all fields'; 
-        }
-      $('p.form-submitted').html(str);
+		});
 
-      });
+
 	});
-
-
-
-
-});
 

@@ -18,15 +18,16 @@ if (mysqli_connect_error()){
 	. mysqli_connect_error());
 }
 	else{
+		$to_email = 'kindness@inoticed.org';
+		$subject = 'New Kindness Card Request';
+		$message = '$name would like $cardsRequested. Please contact $name at $email.';
+		$headers = 'From: kindness@inoticed.org';
+		mail($to_email,$subject,$message,$headers);
+		
 		$sql = "INSERT INTO kindness_cards (name, email, cardsRequested)
 		values ('$name','$email', '$cardsRequested')";
 		if ($conn->query($sql)){
 			echo "New record is inserted sucessfully";
-			$to_email = 'kindness@inoticed.org';
-			$subject = 'New Kindness Card Request';
-			$message = '$name would like $cardsRequested. Please contact $name at $email.';
-			$headers = 'From: kindness@inoticed.org';
-			mail($to_email,$subject,$message,$headers);
 		}
 		else{
 			echo "Error: ". $sql ."

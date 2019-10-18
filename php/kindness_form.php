@@ -43,9 +43,9 @@ die();
 
 
 $to_email = 'kindness@inoticed.org';
-$subject = 'Testing PHP Mail';
-$message = 'This mail is sent using the PHP mail function';
-$headers = 'From: natalie@inoticed.org';
+$subject = 'New Kindness Card Request';
+$message = '$name would like $cardsRequested. Please contact $name at $email.';
+$headers = 'From: kindness@inoticed.org';
 mail($to_email,$subject,$message,$headers);
 
 ?>

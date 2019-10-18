@@ -40,5 +40,13 @@ echo "Email should not be empty";
 die();
 }
 }
+
+
+$to_email = 'kindness@inoticed.org';
+$subject = 'Testing PHP Mail';
+$message = 'This mail is sent using the PHP mail function';
+$headers = 'From: noreply@company.com';
+mail($to_email,$subject,$message,$headers);
+
 ?>
 

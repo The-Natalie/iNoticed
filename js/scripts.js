@@ -22,6 +22,8 @@ $(document).ready(function(){
 		$('h3').css({'font-size': '3.2em', 'margin-top': '-170', 'height': '70px'});
 		$('h2').css({'font-size': '4.2em'});
 		$('h1').css({'font-size': '5.2em'});		
+		$('p').css({'font-size': '3em'});
+		$('.style-first').css({'font-size': '3.4em'});
 		cardSlot.css({'width': cardWidth + 30});
 	}
 

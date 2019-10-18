@@ -177,14 +177,15 @@ div.kindness-ps {
   transition: all 2s ease;
 }
 
-.kindness-page-img:hover {
+.kindness-page-img:hover, .kindness-page-img:active {
 	height: 50%;
 	width: 50%;
 }
 
 .kindness-ps p {
-	font-size: 1.35em;
+	font-size: 1.25em;
 	color: #595959;
+	font-style: bold;
 }
 
 div#card-request-form {
@@ -210,7 +211,7 @@ p.form-submitted {
 }
 
 .style-first {
-	font-size: 1.2em;
+	font-size: 1.35em;
 	color: #cc7171;
 	font-style: italic;
 }

@@ -11,7 +11,7 @@ body {
 	margin: 0 0;
 }
 
-div.container {
+.container {
 	max-width: none;
 	padding: 0 0;
 	margin: 0 0;
@@ -39,32 +39,32 @@ h3 {
 	font-style: italic;
 }
 
-div.card-container {
+.card-container {
 		width: 100%;
 		height: 99vh;
 		margin-top: -6vh;
 		overflow: hidden;
 	}
 
-div.row {
-	margin-right: 0px;
-	margin-left: 0px;
+.row {
+	margin-right: 0;
+	margin-left: 0;
 }
 
-div.arrows-and-cards {
+.arrows-and-cards {
 	height: 70vh;
 	padding-top: 20.01vh;
 	z-index: 11;
   position: relative;
 }
 
-div.all-cards {
+.all-cards {
 	text-align: center;
-	padding: 0px 0px;
+	padding: 0 0;
 }
 
-div#prev {
-	padding: 0px 0px;
+#prev {
+	padding: 0 0;
 	cursor: pointer;
 }
 
@@ -108,10 +108,10 @@ div#prev {
   opacity: 0;
 }
 
-div.card-slot {
+.card-slot {
 	z-index: 10;
 	position: relative;
-	margin-top: -10px;
+	margin-top: -10;
 	border-top: 8px solid black;
 	border-bottom: 8px solid black;
 	border-radius: 8px;
@@ -119,7 +119,7 @@ div.card-slot {
 	margin-right: auto;
 }
 
-div#next {
+#next {
 	padding: 0 0;
 	cursor: pointer;
 }
@@ -128,8 +128,8 @@ div#next {
 #caption-dating {
 	position:	relative;
 	width: 110vw;
-	height: 50px;
-	margin-top: 10px;
+	height: 50;
+	margin-top: 10;
 	overflow: hidden;
 }
 
@@ -137,18 +137,18 @@ div#next {
 	position:	relative;
 	display: none;		
 	width: 110vw;
-	height: 50px;
+	height: 50;
 	overflow: hidden;
-	margin-top: 10px;
+	margin-top: 10;
 }
 
 #caption-valued {
 	position:	relative;
 	display: none;
 	width: 110vw;
-	height: 50px;
+	height: 50;
 	overflow: hidden;
-	margin-top: 10px;
+	margin-top: 10;
 }
 
 
@@ -162,13 +162,13 @@ Kindness Page
 	background-size: cover;	
 }
 
-div.kindness-ps {
+.kindness-ps {
 	padding: 3ch 10ch 10ch 10ch;
 }
 
 .kindness-page-img {
 	float: right;
-	margin: 0 0 5px 20px;
+	margin: 0 0 5px 20;
 	height: 25%;
 	width: 25%;
 	-webkit-transition: all 2s ease;
@@ -185,10 +185,10 @@ div.kindness-ps {
 .kindness-ps p {
 	font-size: 1.25em;
 	color: #595959;
-	font-style: bold;
+  font-weight: 900;
 }
 
-div#card-request-form {
+#card-request-form {
 	margin-left: auto;
   margin-right: auto;
   padding: 3ch 30ch;
@@ -205,7 +205,7 @@ div#card-request-form {
   color: #595959;
 }
 
-p.form-submitted {
+.form-submitted {
 	font-size: 1em;
 	color: #369643;
 }

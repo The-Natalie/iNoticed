@@ -1,10 +1,10 @@
 <?php
 $name=$_POST['name']; 
 $email=$_POST['email'];
-$cards=$_POST['cards'];
+$cardsRequested=$_POST['cardsRequested'];
 if (!empty($name)){
 if (!empty($email)){
-if (!empty($cards)){
+if (!empty($cardsRequested)){
 $host = "mysql.inoticed.org";
 $dbusername = "ndhall";
 $dbpassword = "natabata14";
@@ -17,7 +17,7 @@ die('Connect Error ('. mysqli_connect_errno() .') '
 }
 else{
 $sql = "INSERT INTO kindness_cards (name, email, cardsRequested)
-values ('$name','$email', '$cards')";
+values ('$name','$email', '$cardsRequested')";
 if ($conn->query($sql)){
 echo "New record is inserted sucessfully";
 }

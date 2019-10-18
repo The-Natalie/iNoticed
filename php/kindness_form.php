@@ -12,14 +12,13 @@ $cardsRequested=$_POST['cardsRequested'];
 $sql = "INSERT INTO kindness_cards (name, email, cardsRequested) values ('$name','$email', '$cardsRequested')";
 $stmt   = $conn->prepare($sql);
 
-$stmt->bind_param('sss', $name, $email, $cardsRequested);
+$stmt->bind_param($name, $email, $cardsRequested);
 
   if($stmt->execute()){
 
      $result = 1;
 
   }
-
 
 echo $result;
 

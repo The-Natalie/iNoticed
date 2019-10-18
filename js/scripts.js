@@ -145,7 +145,7 @@ $(document).ready(function(){
 	});
 
 
-	$("p.firstWord").html(function(){
+	$("p.firstWord").html(function(e){
   	var text= $(this).text().trim().split(" ");
   	var first = text.shift();
   	return (text.length > 0 ? "<span class='style-first'>"+ first + "</span> " : first) + text.join(" ");

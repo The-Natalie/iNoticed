@@ -122,30 +122,30 @@ $(document).ready(function(){
 
  
 
-	// $('input.button').click(function(e) {
-	
- //    var name = $("#form-name").val();
-	// 	var email = $("#form-email").val();
-	// 	var cardsRequested = $("input[type=radio]:checked").val();
-	// 	if (name == '' || email == '' || cardsRequested == '') {
-	// 		e.preventDefault();
- //      e.stopPropagation();
- //    	$('p.form-submitted').html('Please complete all fields');
-	// 	} else {
-	// 		// Returns successful data submission message when the entered information is stored in database.
-	// 			$.post("kindness-form.php", {
-	// 			name1: name,
-	// 			email1: email,
-	// 			cardsRequested1: cardsRequested
-	// 			},
-	// 			function(data) {
-	// 				alert(data);
-	// 				$('#kindness-form')[0].reset(); // To reset form fields
-	// 				$('p.form-submitted').html('Your form has been submitted');
-	// 			}
-	// 			);
-	// 	}
+	$('input.button').click(function(e) {
+    var name = $("#form-name").val();
+		var email = $("#form-email").val();
+		var  = $("input[type=radio]:checked").val();
+      $.ajax({ 
+        method: "POST",
+        url: "kindness_form.php",
+        data: {"name": name, "email": email, "cardsRequested": cardsRequested},
 
-	// });
+      }).done(function( data ) { 
+        var result = $.parseJSON(data); 
+        var str = '';
+        if(result == 1) {
+          str = 'Your form has been submitted';
+        }else{
+          str = 'Please complete all fields'; 
+        }
+      $('p.form-submitted').html(str);
+
+      });
+	});
+
+
+
+
 });
 

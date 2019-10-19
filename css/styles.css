@@ -135,7 +135,7 @@ h3 {
 .card-slot {
 	z-index: 10;
 	position: relative;
-	margin-top: -10;
+	margin-top: -10px;
 	border-top: 8px solid black;
 	border-bottom: 8px solid black;
 	border-radius: 8px;
@@ -152,8 +152,8 @@ h3 {
 #caption-dating {
 	position:	relative;
 	width: 110vw;
-	height: 50;
-	margin-top: 10;
+	height: 50px;
+	margin-top: 10px;
 	overflow: hidden;
 }
 
@@ -161,18 +161,18 @@ h3 {
 	position:	relative;
 	display: none;		
 	width: 110vw;
-	height: 50;
+	height: 50px;
 	overflow: hidden;
-	margin-top: 10;
+	margin-top: 10px;
 }
 
 #caption-valued {
 	position:	relative;
 	display: none;
 	width: 110vw;
-	height: 50;
+	height: 50px;
 	overflow: hidden;
-	margin-top: 10;
+	margin-top: 10px;
 }
 
 
@@ -192,7 +192,7 @@ Kindness Page
 
 .kindness-page-img {
 	float: right;
-	margin: 0 0 5px 20;
+	margin: 0 0 5px 20px;
 	height: 25%;
 	width: 25%;
 	-webkit-transition: all 2s ease;

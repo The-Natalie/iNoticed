@@ -21,7 +21,7 @@ $(document).ready(function(){
 		$('div.card-slot').css({'border-top': '12px solid black', 'border-bottom': '12px solid black', 'border-radius': '12px'});
 		$('h3').css({'font-size': '3.2em', 'margin-top': '-170', 'height': '70px'});
 		$('h2').css({'font-size': '4.2em'});
-		$('h1').css({'font-size': '5.2em'});		
+		$('h1').css({'font-size': '5.2em'});	
 		cardSlot.css({'width': cardWidth + 30});
 	}
 
@@ -121,7 +121,9 @@ $(document).ready(function(){
 	});
 
 
-	$('input.button').click(function(e) {
+
+//Kindness form
+	$('#kindness-form input.button').click(function(e) {
 		e.preventDefault();
 		var form = document.getElementById('kindness-form');
 		var formData = new FormData(form);
@@ -143,6 +145,35 @@ $(document).ready(function(){
 			$('p.form-submitted').html("Your form has been submitted");		
 		}
 	});
+//end Kindness form
+
+
+
+//Valued form
+	$('#valued-form input.button').click(function(e) {
+		e.preventDefault();
+		var form = document.getElementById('valued-form');
+		var formData = new FormData(form);
+		var name = document.getElementById("form-name").value;
+		var email = document.getElementById("form-email").value;
+
+		if (name == '' || email == '') {
+			$('p.form-submitted').html("Please complete all fields");		
+		} else {
+			$.ajax({
+	      url: "/php/valued.php",
+				type: 'POST',
+				data: formData,
+				cache: false,
+				dataType: "json",
+				processData: false,
+				contentType: false
+			});
+			$('p.form-submitted').html("Your form has been submitted");		
+		}
+	});
+//end Valued form
+
 
 
 	$("p.firstWord").html(function(e){
@@ -150,6 +181,18 @@ $(document).ready(function(){
   	var first = text.shift();
   	return (text.length > 0 ? "<span class='style-first'>"+ first + "</span> " : first) + text.join(" ");
 	});
+
+	$(".valued-page-img").hover(function() {
+		$(".inline-space").animate({"padding-left": "3vw"}, 1000);
+	}, function() {
+		$(".inline-space").animate({"padding-left": "8vw"}, 1000);
+	});
+
+	$(".valued-page-img").click(function() {
+		$(".inline-space").animate({"padding-left": "3vw"}, 1000);
+	});
+
+
 
 
 
@@ -177,7 +220,7 @@ $(window).on('resize', function(){
 	particlesJS("particle-container", {
 	  "particles": {
 	    "number": {
-	      "value": 300,
+	      "value": 100,
 	      "density": {
 	        "enable": true,
 	        "value_area": 800

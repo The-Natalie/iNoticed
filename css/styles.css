@@ -51,7 +51,7 @@ a:hover {
 	text-decoration: none;
 }
 
-.kindness-ps {
+.div-of-ps {
 	padding: 3ch 10ch 10ch 10ch;
 }
 
@@ -83,9 +83,7 @@ p, input.kindness-ps  {
   font-weight: 900;
 }
 
-.kindness-page-img {
-	float: right;
-	margin: 0 0 5px 20px;
+.kindness-page-img, .valued-page-img {
 	height: 25%;
 	width: 25%;
 	-webkit-transition: all 2s ease;
@@ -94,7 +92,17 @@ p, input.kindness-ps  {
   transition: all 2s ease;
 }
 
-.kindness-page-img:hover {
+.kindness-page-img {
+	float: right;
+	margin: 0 0 5px 20px;
+}
+
+.valued-page-img {
+	float: left;
+	margin: 0 20px 5px 0;
+}
+
+.kindness-page-img:hover, .valued-page-img:hover {
 	height: 50%;
 	width: 50%;
 }
@@ -125,6 +133,10 @@ p.form-submitted {
 	font-size: 1.35em;
 	color: #cc7171;
 	font-style: italic;
+}
+
+.inline-space {
+	padding-left: 8vw;
 }
 
 

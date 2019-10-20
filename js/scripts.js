@@ -161,7 +161,7 @@ $(document).ready(function(){
 			$('p.form-submitted').html("Please complete all fields");		
 		} else {
 			$.ajax({
-	      url: "/php/valued-form.php",
+	      url: "/php/valued_form.php",
 				type: 'POST',
 				data: formData,
 				cache: false,

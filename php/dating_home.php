@@ -7,10 +7,10 @@ if (!isset($_SESSION['loggedin'])) {
 	exit();
 } 
 
-if ($account['activation_code'] !== 'activated') {
-	header('Location: /please_activate.html');
-	exit();
-} 
+// if ($account['activation_code'] !== 'activated') {
+// 	header('Location: /please_activate.html');
+// 	exit();
+// } 
 ?>
 
 <!DOCTYPE html>

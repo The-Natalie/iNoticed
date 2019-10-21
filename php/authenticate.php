@@ -3,7 +3,7 @@ session_start();
 $host = "mysql.inoticed.org";
 $dbusername = "ndhall";
 $dbpassword = "natabata14";
-$dbname = "inoticed_cards_requests";
+$dbname = "inoticed_dating";
 // Create connection
 $conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
 if ( mysqli_connect_errno() ) {

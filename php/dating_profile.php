@@ -6,6 +6,11 @@ if (!isset($_SESSION['loggedin'])) {
 	header('Location: /dating_sign_in.html');
 	exit();
 }
+
+if ($account['activation_code'] !== 'activated') {
+		echo 'Your account hasn\'t been activated. Please check your email to activate your account first.';
+} 
+
 $DATABASE_HOST = 'mysql.inoticed.org';
 $DATABASE_USER = 'ndhall';
 $DATABASE_PASS = 'natabata14';

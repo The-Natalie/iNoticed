@@ -5,7 +5,11 @@ session_start();
 if (!isset($_SESSION['loggedin'])) {
 	header('Location: /dating_sign_in.html');
 	exit();
-}
+} 
+
+if ($account['activation_code'] !== 'activated') {
+		echo 'Your account hasn\'t been activated. Please check your email to activate your account first.';
+} 
 ?>
 
 <!DOCTYPE html>

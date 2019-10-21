@@ -171,9 +171,9 @@ p.form-submitted {
 		font-size: 1.6em;
 }
 
-/* ================================= 
+/* ====================================================================================
 Home Page
-==================================== */
+======================================================================================= */
 
 #home {
 	background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(39,39,45,1) 30%, rgba(101,101,107,1) 66%, rgba(0,0,0,1) 94%); 
@@ -298,9 +298,9 @@ Home Page
 }
 
 
-/* ================================= 
+/* ====================================================================================
 Login Page
-==================================== */
+======================================================================================= */
 
 .login {
 	width: 400px;
@@ -354,10 +354,67 @@ Login Page
 }
 
 
+/* ====================================================================================
+Account Creation Page
+======================================================================================= */
 
-/* ================================= 
+.register {
+	width: 400px;
+	background-color: #e9fbe9;
+	box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+	margin: 100px auto;
+}
+.register h1 {
+	text-align: center;
+	color: #5b6574;
+	font-size: 24px;
+	padding: 20px 0 20px 0;
+	border-bottom: 1px solid #c7cad1;
+}
+.register form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-top: 20px;
+}
+.register form label {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	background-color: #e9fbe9;
+	color: #ffffff;
+}
+.register form input[type="password"], .register form input[type="text"], .register form input[type="email"] {
+	width: 310px;
+	height: 50px;
+	border: 1px solid #dee0e4;
+	margin-bottom: 20px;
+	padding: 0 15px;
+}
+.register form input[type="submit"] {
+	width: 100%;
+	padding: 15px;
+	margin-top: 20px;
+	background-color: #e9fbe9;
+	border: 0;
+	cursor: pointer;
+	font-weight: bold;
+	color: #ffffff;
+	transition: background-color 0.2s;
+}
+.register form input[type="submit"]:hover {
+	background-color: #21c421;
+  transition: background-color 0.2s;
+}
+
+
+
+
+/* ====================================================================================
 Dating Home PHP Page
-==================================== */
+======================================================================================= */
 
 .navtop {
 	background-color: #2f3947;
@@ -427,3 +484,5 @@ body.loggedin {
 	padding: 5px;
 	margin: 0 0 10px 0;
 }
+
+

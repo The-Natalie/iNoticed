@@ -383,7 +383,7 @@ Account Creation Page
 	align-items: center;
 	width: 50px;
 	height: 50px;
-	background-color: #e9fbe9;
+	background-color: #4ae04a;
 	color: #ffffff;
 }
 .register form input[type="password"], .register form input[type="text"], .register form input[type="email"] {
@@ -397,7 +397,7 @@ Account Creation Page
 	width: 100%;
 	padding: 15px;
 	margin-top: 20px;
-	background-color: #e9fbe9;
+	background-color: #4ae04a;
 	border: 0;
 	cursor: pointer;
 	font-weight: bold;

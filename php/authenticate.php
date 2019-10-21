@@ -24,6 +24,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
 	$stmt->execute();
 	// Store the result so we can check if the account exists in the database.
 	$stmt->store_result();
+}
 
 if ($stmt->num_rows > 0) {
 	$stmt->bind_result($id, $password);
@@ -45,6 +46,4 @@ if ($stmt->num_rows > 0) {
 	echo 'Incorrect username!';
 }
 $stmt->close();
-
-}
 ?>

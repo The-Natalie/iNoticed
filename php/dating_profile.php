@@ -8,8 +8,10 @@ if (!isset($_SESSION['loggedin'])) {
 }
 
 if ($account['activation_code'] !== 'activated') {
-		echo 'Your account hasn\'t been activated. Please check your email to activate your account first.';
+	header('Location: /please_activate.html');
+	exit();
 } 
+?>
 
 $DATABASE_HOST = 'mysql.inoticed.org';
 $DATABASE_USER = 'ndhall';

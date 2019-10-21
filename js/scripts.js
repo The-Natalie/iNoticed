@@ -328,7 +328,8 @@ $(window).on('resize', function(){
 	  "retina_detect": true
 	});
 
-
+//Stop particles.js after 2 mins
+setTimeout( function(){ $("div#particle-container").remove("#particle-container"); }, 120000 );
 
 
 

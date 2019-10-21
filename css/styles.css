@@ -32,11 +32,14 @@ body {
 }
 
 .nav {
-	width: 100%;
 	height: 10ch;
 	font-size: 1em;
 	font-weight: 900;
 	color: #00b300;
+}
+
+.nav {
+	width: 100%;
 }
 
 .nav a {
@@ -49,6 +52,15 @@ a:hover {
 	color: #b5ffc3;
 	font-size: 1.15em;
 	text-decoration: none;
+}
+
+.dating-nav {
+	float: left;
+}
+
+.sign-in-nav {
+	float: right;
+	text-align: right;
 }
 
 .div-of-ps {
@@ -87,7 +99,7 @@ p, input.kindness-ps  {
   font-weight: 900;
 }
 
-.kindness-page-img, .valued-page-img {
+.dating-page-img, .kindness-page-img, .valued-page-img {
 	height: 25%;
 	width: 25%;
 	-webkit-transition: all 2s ease;
@@ -97,7 +109,7 @@ p, input.kindness-ps  {
   cursor: pointer;
 }
 
-.kindness-page-img {
+.dating-page-img, .kindness-page-img {
 	float: right;
 	margin: 0 0 5px 20px;
 }
@@ -107,7 +119,7 @@ p, input.kindness-ps  {
 	margin: 0 20px 5px 0;
 }
 
-.kindness-page-img:hover, .valued-page-img:hover {
+.dating-page-img:hover, .kindness-page-img:hover, .valued-page-img:hover {
 	height: 50%;
 	width: 50%;
 }
@@ -144,6 +156,20 @@ p.form-submitted {
 	padding-left: 8vw;
 }
 
+.create-account-button {
+	color: white;
+	display: block;
+	margin: 0 auto;
+	font-weight: 900;
+	font-size: 1.35em;
+	background-color: #4ae04a; 
+	border: 5px solid white;
+  padding: 20px 15px;
+}
+
+.create-account-button:hover {
+		font-size: 1.6em;
+}
 
 /* ================================= 
 Home Page

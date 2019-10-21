@@ -10,7 +10,7 @@ if (!empty($cardsRequested)){
 $host = "mysql.inoticed.org";
 $dbusername = "ndhall";
 $dbpassword = "natabata14";
-$dbname = "inoticed_kindness_cards_requests";
+$dbname = "inoticed_cards_requests";
 // Create connection
 $conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
 if (mysqli_connect_error()){

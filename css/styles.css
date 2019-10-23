@@ -177,7 +177,7 @@ p/*, input.kindness-ps*/  {
 	padding-left: 8vw;
 }
 
-.create-account-button {
+button.create-account-button {
 	color: white;
 	display: block;
 	margin: 0 auto;
@@ -188,10 +188,16 @@ p/*, input.kindness-ps*/  {
   padding: 20px 15px;
   -webkit-box-shadow: 5px 5px 8px 0px rgba(0,0,0,0.69); 
 	box-shadow: 5px 5px 8px 0px rgba(0,0,0,0.69);
+	text-decoration: none;
 }
 
-.create-account-button:hover {
-		font-size: 1.6em;
+button.create-account-button:hover {
+	font-size: 1.6em;
+	text-decoration: none;
+}
+
+.div-of-ps a:hover {
+	text-decoration: none;
 }
 
 /* ====================================================================================

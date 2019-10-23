@@ -116,7 +116,7 @@ h1 {
 
 h2 {
 	font-size: 3.125em;
-	color: #006600;
+	color: #009900;
 	text-align: center;
 	margin-bottom: 0;
 }
@@ -211,10 +211,9 @@ Home Page
 }
 
 .card-container {
-		width: 100%;
-		height: 80vh;
-		margin-top: -6vh;
-		overflow: hidden;
+	width: 100%;
+	height: 80vh;
+	overflow: hidden;
 	}
 
 .row {
@@ -246,46 +245,33 @@ Home Page
 }
 
 #card-dating {
+	background-image: url("/images/Card_Dating.png");
+	box-shadow: 7px -11px 12px 17px rgba(0,0,0,0.9);
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: inline-block;
 	z-index: 11;
   position: relative;
-	width: 100%;
-	height: auto;
-	margin-left: auto;
-  margin-right: auto;
-  box-shadow: -7px -11px 12px 17px rgba(0,0,0,0.9);
 }
 
 #card-kindness {
-	display: none;
+	background-image: url("/images/Card_Kindness.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: inline-block;
+	visibility: hidden;
 	z-index: 11;
   position: relative;
-  width: 100%;
-	height: auto;
-	margin-left: auto;
-  margin-right: auto;
-  box-shadow: -7px -11px 12px 17px rgba(0,0,0,0.9);
 }
 
 #card-valued {	
-	display: none;
+	background-image: url("/images/Card_Valued.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: inline-block;
+	visibility: hidden;
 	z-index: 11;
   position: relative;
-	width: 100%;
-	height: auto;
-	margin-left: auto;
-  margin-right: auto;
-  box-shadow: -7px -11px 12px 17px rgba(0,0,0,0.9);
-}
-
-#space {
-	display: none;
-	z-index: 11;
-  position: relative;
-	width: 100%;
-	height: auto;
-	margin-left: auto;
-  margin-right: auto;
-  opacity: 0;
 }
 
 .card-slot {

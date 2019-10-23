@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+// Home page card slider
 	var dateCard = $('#card-dating');
 	var dateCaption = $('#caption-dating');
 	var kindCard = $('#card-kindness');
@@ -120,6 +121,8 @@ $(document).ready(function(){
 		}
 	});
 
+//End of Home page card slider
+
 
 
 //Kindness form
@@ -145,7 +148,7 @@ $(document).ready(function(){
 			$('p.form-submitted').html("Your form has been submitted");		
 		}
 	});
-//end Kindness form
+//End of Kindness form
 
 
 
@@ -169,19 +172,25 @@ $(document).ready(function(){
 				processData: false,
 				contentType: false
 			});
-			$('p.form-submitted').html("Your form has been submitted");		
+			$('p.form-submitted').html("Your form has been submitted successfully");		
 		}
 	});
-//end Valued form
+//End of Valued form
 
 
 
+
+//first word style for <p>
 	$("p.firstWord").html(function(e){
   	var text= $(this).text().trim().split(" ");
   	var first = text.shift();
   	return (text.length > 0 ? "<span class='style-first'>"+ first + "</span> " : first) + text.join(" ");
 	});
+// End of first word style for <p>
 
+
+
+//card image enlargement animation
 	$(".valued-page-img").hover(function() {
 		$(".inline-space").animate({"padding-left": "3vw"}, 1000);
 	}, function() {
@@ -191,6 +200,7 @@ $(document).ready(function(){
 	$(".valued-page-img").click(function() {
 		$(".inline-space").animate({"padding-left": "3vw"}, 1000);
 	});
+//End of card image enlargement animation
 
 
 
@@ -198,6 +208,9 @@ $(document).ready(function(){
 
 
 //************Particles.js************//
+
+if (document.getElementById('particle-container')) {
+
 var body = document.body;
 var html = document.documentElement;
 
@@ -330,7 +343,7 @@ $(window).on('resize', function(){
 
 //Stop particles.js after 2 mins
 setTimeout( function(){ $("div#particle-container").remove("#particle-container"); }, 120000 );
-
+	}
 
 
 });

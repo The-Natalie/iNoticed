@@ -7,7 +7,7 @@ html, body {
 body {
 	background: linear-gradient(307deg, rgba(111,203,123,1) 0%, rgba(177,207,181,1) 25%, rgba(191,213,194,1) 50%, rgba(149,208,157,1) 75%, rgba(111,203,123,1) 100%); 
 	background-size: cover;	
-	font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-family: 'Poppins', sans-serif;
 	font-size: 16px;
 	margin: 0 0;
 }
@@ -31,40 +31,78 @@ body {
 	z-index: -11;
 }
 
-.nav {
-	height: 10ch;
-	font-size: 1em;
-	font-weight: 900;
-	color: #00b300;
+.nav-light {
+	background-color: #303636;
 }
 
-.nav {
+.nav-dark {
+	background-color: #24242a;
+}
+
+.nav-dark, .nav-light {
+	height: 8ex;
 	width: 100%;
+	display: flex;
+	justify-content: space-between;
 }
 
-.nav a {
-	padding-right: 15px;
-	padding-left: 15px;
+.nav-left {
+	padding: 0;
+	margin: 0;
+	float: left;
+}
+
+.nav-dark .nav-left .title a, .nav-light .nav-left .title a {
+	font-size: 1.5em;
+	text-decoration: none;
+	color: #66ff66;
+	font-weight: normal;
+}
+
+.nav-right {
+	padding: 0;
+	margin: 0;
+	float: right;
+	text-align: right;
+	display: flex;
+}
+
+.nav-right a {
+	display: inline-flex;
+	align-items: center;
+	margin: auto;
+}
+
+.nav-left a, .nav-right a {
+	padding: 0 20px;
+	text-decoration: none;
 	color: white;
+	font-weight: bold;
 }
 
-a:hover {
+.nav-right a i {
+	padding: 2px 8px 0 0;
+}
+
+.nav-dark .nav-right a:hover, .nav-dark .nav-left a:hover {
+	color: #66ff66;
+	font-size: 1.15em;
+	text-decoration: none;
+}
+
+.nav-light .nav-right a:hover, .nav-light .nav-left a:hover {
 	color: #b5ffc3;
 	font-size: 1.15em;
 	text-decoration: none;
 }
 
-.dating-nav {
-	float: left;
-}
-
-.sign-in-nav {
-	float: right;
-	text-align: right;
+.nav-light .nav-left .title a:hover, .nav-dark .nav-left .title a:hover {
+	font-size: 1.8em;
+	color: #66ff66;
 }
 
 .div-of-ps {
-	padding: 3ch 10ch 10ch 10ch;
+	padding: 4ex 10ex 10ex 10ex;
 }
 
 h1 {
@@ -73,6 +111,7 @@ h1 {
 	text-align: center;
 	margin-top:	2vh;
 	margin-bottom: 6vh;
+	text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.90);
 }
 
 h2 {
@@ -93,10 +132,10 @@ h3 {
 	font-style: italic;
 }
 
-p, input.kindness-ps  {
+p/*, input.kindness-ps*/  {
 	font-size: 1.25em;
-	color: #595959;
-  font-weight: 900;
+	color: #262626;
+  font-weight: bold;
 }
 
 .dating-page-img, .kindness-page-img, .valued-page-img {
@@ -107,6 +146,8 @@ p, input.kindness-ps  {
   -ms-transition: all 2s ease;
   transition: all 2s ease;
   cursor: pointer;
+	-webkit-box-shadow: 5px 5px 15px 5px #000000; 
+	box-shadow: 5px 5px 15px 5px #000000;
 }
 
 .dating-page-img, .kindness-page-img {
@@ -124,31 +165,11 @@ p, input.kindness-ps  {
 	width: 50%;
 }
 
-#card-request-form {
-	margin-left: auto;
-  margin-right: auto;
-  padding: 3ch 30ch;
-}
 
-.button {
-	font-size: 1.35em;
-	color: #595959;
-	border: 2px solid #6fcb7b;
-}
-
-.button:hover {
-  background-color: #6fcb7b;
-  color: #595959;
-}
-
-p.form-submitted {
-	font-size: 1em;
-	color: #369643;
-}
 
 .style-first {
 	font-size: 1.35em;
-	color: #cc7171;
+	color: #c25656;
 	font-style: italic;
 }
 
@@ -160,11 +181,13 @@ p.form-submitted {
 	color: white;
 	display: block;
 	margin: 0 auto;
-	font-weight: 900;
+	font-weight: bold;
 	font-size: 1.35em;
-	background-color: #4ae04a; 
+	background-color: #21c421; 
 	border: 5px solid white;
   padding: 20px 15px;
+  -webkit-box-shadow: 5px 5px 8px 0px rgba(0,0,0,0.69); 
+	box-shadow: 5px 5px 8px 0px rgba(0,0,0,0.69);
 }
 
 .create-account-button:hover {
@@ -179,10 +202,6 @@ Home Page
 	background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(39,39,45,1) 30%, rgba(101,101,107,1) 66%, rgba(0,0,0,1) 94%); 
 	background-size: cover;	
 	font-size: 16px;
-}
-
-#home .nav a:hover {
-	color: #66ff66;
 }
 
 .card-container {
@@ -214,6 +233,12 @@ Home Page
 	cursor: pointer;
 }
 
+#prev h1 {
+	-webkit-box-shadow: 5px 5px 8px 0px rgba(0,0,0,0.69); 
+	box-shadow: 5px 5px 8px 0px rgba(0,0,0,0.69);
+	text-shadow: none;
+}
+
 #card-dating {
 	z-index: 11;
   position: relative;
@@ -221,6 +246,7 @@ Home Page
 	height: auto;
 	margin-left: auto;
   margin-right: auto;
+  box-shadow: -7px -11px 12px 17px rgba(0,0,0,0.9);
 }
 
 #card-kindness {
@@ -231,6 +257,7 @@ Home Page
 	height: auto;
 	margin-left: auto;
   margin-right: auto;
+  box-shadow: -7px -11px 12px 17px rgba(0,0,0,0.9);
 }
 
 #card-valued {	
@@ -241,6 +268,7 @@ Home Page
 	height: auto;
 	margin-left: auto;
   margin-right: auto;
+  box-shadow: -7px -11px 12px 17px rgba(0,0,0,0.9);
 }
 
 #space {
@@ -270,6 +298,11 @@ Home Page
 	cursor: pointer;
 }
 
+#next h1 {
+	-webkit-box-shadow: 5px 5px 8px 0px rgba(0,0,0,0.69); 
+	box-shadow: -5px 5px 8px 0px rgba(0,0,0,0.69);
+	text-shadow: none;
+}
 
 #caption-dating {
 	position:	relative;
@@ -298,115 +331,87 @@ Home Page
 }
 
 
+
+
+
 /* ====================================================================================
-Login Page
+FORMS -- Card Requests, Login, & Account Creation
 ======================================================================================= */
 
-.login {
-	width: 400px;
+.login, .register, #card-request-form {
+	width: 45.5ex;
 	background-color: #e9fbe9;
-	box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 5px 5px 8px 0px rgba(0,0,0,0.69); 
+	box-shadow: 5px 5px 8px 0px rgba(0,0,0,0.69);
 	margin: 100px auto;
 }
-.login h1 {
+
+.login h1, .register h1, #card-request-form h1 {
 	text-align: center;
-	color: #5b6574;
-	font-size: 24px;
+	color: #009900;
+	font-size: 2em;
 	padding: 20px 0 20px 0;
-	border-bottom: 1px solid #c7cad1;
+	border-bottom: 1px solid #9da2af;
+	margin-bottom: 0;
+	font-weight: bold;
+	text-shadow: none;
 }
-.login form {
+
+.login form, .register form, #card-request-form form {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	padding-top: 20px;
 }
-.login form label {
+
+#card-request-form form p {
+	width: 100%;
+	margin-left: 20px;
+	margin-bottom: 0;
+	padding-top: 10px;
+}
+
+#card-request-form form input[type="radio"] {
+	margin-left: 10ex;
+}
+
+.login form label, .register form label, #card-request-form form label {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 50px;
 	height: 50px;
-	background-color: #4ae04a;
+	background-color: #21c421;
 	color: #ffffff;
 }
-.login form input[type="password"], .login form input[type="text"] {
+
+.login form input[type="password"], .login form input[type="text"], .register form input[type="password"], .register form input[type="text"], .register form input[type="email"], #card-request-form form input[type="text"], #card-request-form form input[type="email"] {
 	width: 310px;
 	height: 50px;
-	border: 1px solid #dee0e4;
+	border: 1px solid #9da2af;
 	margin-bottom: 20px;
 	padding: 0 15px;
 }
-.login form input[type="submit"] {
+
+p.form-submitted {
+	font-size: 1em;
+	color: #009900;
+}
+
+.login form input[type="submit"], .register form input[type="submit"], input.button {
+	font-size: 1.5em;
 	width: 100%;
 	padding: 15px;
 	margin-top: 20px;
-	background-color: #4ae04a;
+	background-color: #21c421;
 	border: 0;
 	cursor: pointer;
 	font-weight: bold;
 	color: #ffffff;
-	transition: background-color 0.2s;
-}
-.login form input[type="submit"]:hover {
-	background-color: #21c421;
-  transition: background-color 0.2s;
 }
 
-
-/* ====================================================================================
-Account Creation Page
-======================================================================================= */
-
-.register {
-	width: 400px;
-	background-color: #e9fbe9;
-	box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
-	margin: 100px auto;
-}
-.register h1 {
-	text-align: center;
-	color: #5b6574;
-	font-size: 24px;
-	padding: 20px 0 20px 0;
-	border-bottom: 1px solid #c7cad1;
-}
-.register form {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	padding-top: 20px;
-}
-.register form label {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 50px;
-	height: 50px;
+.login form input[type="submit"]:hover, .register form input[type="submit"]:hover, input.button:hover {
 	background-color: #4ae04a;
-	color: #ffffff;
-}
-.register form input[type="password"], .register form input[type="text"], .register form input[type="email"] {
-	width: 310px;
-	height: 50px;
-	border: 1px solid #dee0e4;
-	margin-bottom: 20px;
-	padding: 0 15px;
-}
-.register form input[type="submit"] {
-	width: 100%;
-	padding: 15px;
-	margin-top: 20px;
-	background-color: #4ae04a;
-	border: 0;
-	cursor: pointer;
-	font-weight: bold;
-	color: #ffffff;
-	transition: background-color 0.2s;
-}
-.register form input[type="submit"]:hover {
-	background-color: #21c421;
-  transition: background-color 0.2s;
 }
 
 
@@ -416,42 +421,6 @@ Account Creation Page
 Dating Home PHP Page
 ======================================================================================= */
 
-.navtop {
-	background-color: #2f3947;
-	height: 60px;
-	width: 100%;
-	border: 0;
-}
-.navtop div {
-	display: flex;
-	margin: 0 auto;
-	width: 1000px;
-	height: 100%;
-}
-.navtop div h1, .navtop div a {
-	display: inline-flex;
-	align-items: center;
-}
-.navtop div h1 {
-	flex: 1;
-	font-size: 24px;
-	padding: 0;
-	margin: 0;
-	color: #eaebed;
-	font-weight: normal;
-}
-.navtop div a {
-	padding: 0 20px;
-	text-decoration: none;
-	color: #c1c4c8;
-	font-weight: bold;
-}
-.navtop div a i {
-	padding: 2px 8px 0 0;
-}
-.navtop div a:hover {
-	color: #eaebed;
-}
 body.loggedin {
 	background-color: #f3f4f7;
 }

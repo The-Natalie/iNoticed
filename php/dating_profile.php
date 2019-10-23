@@ -38,6 +38,7 @@ $stmt->close();
 		<title>Profile Page</title>
 		<link rel="stylesheet" type="text/css" href="/css/styles.css"> 
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+		<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"> 
 	</head>
 	<body class="loggedin">
 		<nav class="navtop">

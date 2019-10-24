@@ -20,8 +20,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             $email = $email;
         } else {
             if(!filter_var($input_email, FILTER_VALIDATE_EMAIL)){
-                header("location: /php/account_settings.php");
-                $php_results = "Email is not valid. Please enter a valid email.";
+                echo = "Email is not valid. Please enter a valid email.";
             } else{
                 $email = $input_email;
             }
@@ -33,8 +32,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             $password = $password;
         } else {
             if (strlen($_POST['new-password']) > 25 || strlen($_POST['new-password']) < 5) {
-                header("location: /php/account_settings.php");
-                $php_results = "Password must be between 5 and 25 characters long. Please try again.";
+                echo = "Password must be between 5 and 25 characters long. Please try again.";
             } else{
                 $password = $input_password;
             }
@@ -113,8 +111,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 }
                 
             } else{
-                header("location: /php/account_settings.php");
-                $php_results = "Oops! Something went wrong. Please try again later.";
+                echo = "Oops! Something went wrong. Please try again later.";
             }
         }
         

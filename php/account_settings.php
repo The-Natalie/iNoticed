@@ -73,16 +73,18 @@ $stmt->close();
 				<br />
 				<button class="update-info-button" type="button">Update password or email  <i class="far fa-edit"></i></button>
 				<div id="update-info-form">
-					<form method="post" action="/php/update_info.php">
-						<p style="font-style: 0.8em;">Your current password is required to change information.<br>
+					<form method="post" action="/php/update.php">
+						<p style="font-size: 0.8em;">Your current password is required to change information.<br>
 							 Only enter info in the field(s) you'd like to change, and leave the other field(s) blank.</p>
-						<input type="email" name="new-email" placeholder="New Email" id="new-email"><br />
-						<input id="new_password" name="new_password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="New Password"><br />
-						<input id="password_two" name="password_two" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Confirm New Password"><br />
+						<input type="email" name="email" placeholder="New Email"><br />
+						<input name="new-password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="New Password"><br />
+						<input name="password_two" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Confirm New Password"><br />
 						<input id="password" name="password" type="password" placeholder="Current Password" required><br />
 						<input type="submit" value="Submit" name="update-info">
 					</form>	
 				</div>
+				<br />
+				<p style="color: #009900;"><?php echo $php_results; ?></p>
 				<br />
 				<p style="font-size: 1em;">If  you'd like to receive a set of cards to pass on to others, fill out the form below, and we'll be in touch with you ASAP.<br>
 				A  tiny fee will be required, which we will inform you of before your order is finalized. Of course, if you think the fee is too much, you may choose to opt out.</p>

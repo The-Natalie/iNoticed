@@ -29,15 +29,22 @@ if (strlen($_POST['new-password']) > 25 || strlen($_POST['password']) < 5) {
 		. mysqli_connect_error());
 	}
 		else{
+		// We don't have the password or email info stored in sessions so instead we can get the results from the database.
+		$stmt = $conn->prepare('SELECT password, email FROM accounts WHERE id = ?');
+		// In this case we can use the account ID to get the account info.
+		$stmt->bind_param('i', $_SESSION['id']);
+		$stmt->execute();
+		$stmt->bind_result($password, $email);
+		$stmt->fetch();
 
 		$id=$_SESSION['id']; 
 		$email=$_POST['new-email'];
-		$password = password_hash($_POST['new-password'], PASSWORD_DEFAULT);
+		$newPassword = password_hash($_POST['new-password'], PASSWORD_DEFAULT);
 
 		if (!empty($email)) {
 			$sql = "UPDATE accounts SET email='$email' WHERE id='$id'";
 			$param = 'Email updated successfully';
-		} else (!empty($password)) {
+		} else (!empty($newPassword)) {
 			$sql = "UPDATE accounts SET password='$password' WHERE id='$id'";
 			$param2 = 'Password updated successfully';
 		}

@@ -7,26 +7,22 @@ if (!isset($_SESSION['loggedin'])) {
 	exit();
 }
 
-// if ($account['activation_code'] !== 'activated') {
-// 	header('Location: /please_activate.html');
-// 	exit();
-// } 
+require_once "dating_config.php";
 
-$DATABASE_HOST = 'mysql.inoticed.org';
-$DATABASE_USER = 'ndhall';
-$DATABASE_PASS = 'natabata14';
-$DATABASE_NAME = 'inoticed_dating';
-$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-if (mysqli_connect_errno()) {
-	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
-}
-// We don't have the password or email info stored in sessions so instead we can get the results from the database.
-$stmt = $con->prepare('SELECT password, email FROM accounts WHERE id = ?');
-// In this case we can use the account ID to get the account info.
+//Email activation check
+$stmt = $con->prepare('SELECT activation_code, password, email FROM accounts WHERE id = ?');
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
-$stmt->bind_result($password, $email);
+$stmt->store_result();
+$stmt->bind_result($activation_code, $password, $email);
 $stmt->fetch();
+if ($activation_code == 'activated') {
+// user activated
+} else {
+// user not activated, redirect or display msg
+	header('Location: /please_activate.html');
+}
+
 $stmt->close();
 ?>
 

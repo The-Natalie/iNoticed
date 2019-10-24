@@ -41,7 +41,7 @@ $stmt->close();
 		<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">  
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 	</head>
-	<body class="loggedin">
+	<body id="loggedin">
 
 		<div class="nav-light">
 			<div class="nav-left">
@@ -57,7 +57,7 @@ $stmt->close();
 		</div>
 
 		<div class="content">
-			<h2>Profile Page</h2>
+			<h2>Account Settings</h2>
 			<div>
 				<p>Your account details are below:</p>
 				<table>
@@ -74,8 +74,40 @@ $stmt->close();
 						<td><?=$email?></td>
 					</tr>
 				</table>
+				<br />
+				<button class="update-info-button" type="button">Update password or email  <i class="far fa-edit"></i></button>
+				<div id="update-info-form">
+					<form method="post" action="/php/update-info.php">
+						<p style="font-style: 0.8em;">Your current password is required to change information.<br>
+							 Only enter info in the field(s) you'd like to change, and leave the other field(s) blank.</p>
+						<input type="email" name="new-email" placeholder="New Email" id="new-email"><br />
+						<input id="new_password" name="new_password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="New Password"><br />
+						<input id="password_two" name="password_two" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Confirm New Password"><br />
+						<input id="password" name="password" type="password" placeholder="Current Password" required><br />
+						<input type="submit" value="Submit" name="update-info">
+					</form>	
+				</div>
+				<br />
+				<p style="font-size: 1em;">If  you'd like to receive a set of cards to pass on to others, fill out the form below, and we'll be in touch with you ASAP.<br>
+				A  tiny fee will be required, which we will inform you of before your order is finalized. Of course, if you think the fee is too much, you may choose to opt out.</p>
 			</div>
 		</div>
+
+		<div id="card-request-form">
+			<h1>Dating Card Request</h1>
+			<form id="dating-card-form" method="post"> 
+				<p><input type="radio" name="cardsRequested" value="20cards" checked> 20 cards</p>
+				<p><input type="radio" name="cardsRequested" value="50cards"> 50 cards</p>
+				<p style="margin-bottom: 20px;"><input type="radio" name="cardsRequested" value="100cards"> 100 cards</p>
+				<label for="name"><i class="fas fa-user"></i></label>
+				<input id="form-name" type="text" name="name" placeholder="Name">
+				<label for="email"><i class="fas fa-envelope"></i></label>
+				<input id="form-email" type="email" name="email" placeholder="Email">	
+				<p class="form-submitted"></p>
+				<input class="button" type="submit" value="Submit">
+			</form>
+		</div>
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 		<script
 			  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
@@ -83,7 +115,6 @@ $stmt->close();
 			  crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-		<script language="JavaScript" src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="/js/scripts.js"></script>
 	</body>
 </html>

@@ -58,7 +58,7 @@ if ($stmt = $con->prepare('INSERT INTO accounts (username, password, email, acti
 	$activate_link = 'http://inoticed.org/php/activate.php?email=' . $_POST['email'] . '&code=' . $uniqid;
 	$message = '<p>Please click the following link to activate your account: <a href="' . $activate_link . '">' . $activate_link . '</a></p>';
 	mail($_POST['email'], $subject, $message, $headers);
-	$param = 'Your account has been created. Please check your email to activate your account';
+	$param = 'Your account has been created. Please check your email to activate your account, then sign in.';
 } else {
 	// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
 	$param =  'Could not prepare statement. Try again. If you\'ve tried multiple times, contact dating@inoticed.org with the details of the problem';
@@ -90,12 +90,9 @@ $con->close();
 				<div class="title"><a href="/">iNoticed</a></div>
 			</div>
 			<div class="nav-right">
-				<a href="/php/dating_home.php"><i class="fas fa-envelope"></i>Home</a>
-				<a href="/php/messages.php"><i class="fas fa-envelope"></i>Messages</a>
-				<a href="/php/dating_profile.php"><i class="fas fa-address-card"></i>My Profile</a>
-				<a href="/php/account_settings.php"><i class="fas fa-cog"></i>Account Settings</a>
-				<a href="/php/dating_logout.php"><i class="fas fa-sign-out-alt"></i>Log Out</a>
-			</div>
+					<a href="/account_creation.html"><i class="fas fa-user-plus"></i>Create Account</a>
+					<a href="/dating_sign_in.html"><i class="fas fa-sign-in-alt"></i>Sign In</a>
+				</div>
 		</div>
 
 		<div class="content">

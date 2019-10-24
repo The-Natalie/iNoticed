@@ -15,6 +15,15 @@ $dbpassword = "natabata14";
 $dbname = "inoticed_cards_requests";
 // Create connection
 $conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
+
+if (!filter_var($_POST['new-email'], FILTER_VALIDATE_EMAIL)) {
+				die ($param ='Email is not valid. Please enter a valid email.');
+}
+
+if (strlen($_POST['new-password']) > 25 || strlen($_POST['password']) < 5) {
+					die ($param2 ='Password must be between 5 and 25 characters long. Please try again.');
+}
+
 	if (mysqli_connect_error()){
 		die($param='Connect Error ('. mysqli_connect_errno() .') '
 		. mysqli_connect_error());
@@ -22,29 +31,17 @@ $conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
 		else{
 
 		$id=$_SESSION['id']; 
-		$email=$_POST['email'];
-		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+		$email=$_POST['new-email'];
+		$password = password_hash($_POST['new-password'], PASSWORD_DEFAULT);
 
-		if (!empty($email)){
-			if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-				die ($param ='Email is not valid. Please enter a valid email.');
-			} else {
-				$sql = "UPDATE accounts SET email='$email' WHERE id='$id'";
-				$param = 'Email updated successfully';
-				$param2 = '';
-			} 
-		} elseif (!empty($password)) {
-				if (strlen($_POST['password']) > 25 || strlen($_POST['password']) < 5) {
-					die ($param2 ='Password must be between 5 and 25 characters long. Please try again.');
-				} else { 
-					$sql = "UPDATE accounts SET password='$password' WHERE id='$id'";
-					$param2 = 'Password updated successfully ';
-				}
-		} else {
-		       $param = 'Data not updated, try again.';
-		       $param2 = '';
-		  }
-		   mysqli_close($connect);
+		if (!empty($email)) {
+			$sql = "UPDATE accounts SET email='$email' WHERE id='$id'";
+			$param = 'Email updated successfully';
+		} else (!empty($password)) {
+			$sql = "UPDATE accounts SET password='$password' WHERE id='$id'";
+			$param2 = 'Password updated successfully';
+		}
+		mysqli_close($conn);
 		}
 }
 ?>

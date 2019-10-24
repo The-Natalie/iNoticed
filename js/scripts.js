@@ -17,11 +17,7 @@ $(document).ready(function(){
 	var negMarginTop = -cardHeight;
 
 
-
-
-
-
-
+// Home page card slider
 	if (cardWidth > $('div.col-sm-10').width()) {
 		cardWidth = $('div.col-sm-10').width() - 40;
 		cardHeight = cardWidth / 1.75;
@@ -32,14 +28,11 @@ $(document).ready(function(){
 		cardSlot.css({'width': cardWidth + 30});
 	}
 
-	
 	dateCard.css({'height': cardHeight, 'width': cardWidth});
 	kindCard.css({'width': cardWidth, 'margin-left': -((cardHeight * 1.75) + 6)});
 	valCard.css({'width': cardWidth, 'margin-left': -((cardHeight * 1.75) + 6)});
 	cardSlot.css({'width': cardWidth + 30});
 
-
-// Home page card slider
 	$('div#next').click(function(e) {
 		if ( (kindCard.css('visibility') == 'hidden') && (valCard.css('visibility') == 'hidden')) {
 			kindCaption.css({'left': negScreenWidth});
@@ -228,8 +221,6 @@ $(document).ready(function(){
 
 
 
-
-
 //first word style for <p>
 	$("p.firstWord").html(function(e){
   	var text= $(this).text().trim().split(" ");
@@ -252,6 +243,11 @@ $(document).ready(function(){
 	});
 //End of card image enlargement animation
 
+
+//Update info form
+	$('button.update-info-button').click(function(e) {
+		$("#update-info-form").css({"display": "block"});
+	});
 
 
 

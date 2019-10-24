@@ -79,8 +79,8 @@ $stmt->close();
 						<input type="email" name="email" placeholder="New Email"><br />
 						<input name="new-password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="New Password"><br />
 						<input name="password_two" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Confirm New Password"><br />
-						<input id="password" name="password" type="password" placeholder="Current Password" required><br />
-						<input type="submit" value="Submit" name="update-info">
+<!-- 						<input id="password" name="password" type="password" placeholder="Current Password" ><br />
+ -->						<input type="submit" value="Submit" name="update-info">
 					</form>	
 				</div>
 				<br />

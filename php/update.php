@@ -11,8 +11,8 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Get hidden input value
     $id = $_POST["id"];
 
-    //Verify current password is correct
-    if (password_verify($_POST['password'], $password)) {
+    // //Verify current password is correct
+    // if (password_verify($_POST['password'], $password)) {
         
         // Validate email
         $input_email = trim($_POST["email"]);
@@ -71,10 +71,10 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         // Close connection
         mysqli_close($link);
 
-    } else {
-         header("location: /php/account_settings.php");
-        $php_results = "Your current password is incorrect.";
-    }
+    // } else {
+    //      header("location: /php/account_settings.php");
+    //     $php_results = "Your current password is incorrect.";
+    // }
 
 } else{
     // Check existence of id parameter before processing further

@@ -16,12 +16,11 @@ $stmt->execute();
 $stmt->store_result();
 $stmt->bind_result($activation_code);
 $stmt->fetch();
-if ($activation_code == 'activated') {
-// user activated
-} else {
+if ($activation_code == '') {
 // user not activated, redirect or display msg
 	header('Location: /please_activate.html');
-} 
+}
+
 ?>
 
 <!DOCTYPE html>

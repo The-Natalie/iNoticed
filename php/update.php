@@ -6,7 +6,7 @@ require_once "dating_config.php";
  
 // Define variables and initialize with empty values
 $email = $password = "";
-$php_results = "";
+echo = "";
  
 // Processing form data when form is submitted
 if(isset($_POST["id"]) && !empty($_POST["id"])){
@@ -57,12 +57,10 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 // Attempt to execute the prepared statement
                 if(mysqli_stmt_execute($stmt)){
                     // Records updated successfully. Redirect to landing page
-                    header("location: /php/account_settings.php");
-                    $php_results = "Change(s) updated successfully.";
+                    echo = "Change(s) updated successfully.";
                     exit();
                 } else { 
-                    header("location: /php/account_settings.php");
-                    $php_results = "Something went wrong. Please try again later.";
+                    echo = "Something went wrong. Please try again later.";
                 }
             }
              
@@ -75,7 +73,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
 
     // } else {
     //      header("location: /php/account_settings.php");
-    //     $php_results = "Your current password is incorrect.";
+    //     echo = "Your current password is incorrect.";
     // }
 
 } else{
@@ -107,8 +105,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     $password = $row["password"];
                 } else{
                     // URL doesn't contain valid id. 
-                    header("location: /php/account_settings.php");
-                    $php_results = "Please sign out, sign back in, and try again.";                    
+                    echo = "Please sign out, sign back in, and try again.";                    
                     exit();
                 }
                 
@@ -124,8 +121,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         mysqli_close($link);
     }  else{
         // URL doesn't contain id parameter. 
-        header("location: /php/account_settings.php");
-        $php_results = "Please sign out, sign back in, and try again.";
+        echo = "URL doesn't contain id parameter. Please sign out, sign back in, and try again.";
         exit();
     }
 }

@@ -1,4 +1,6 @@
-<?php
+<?
+session_start();
+
 // Include config file
 require_once "dating_config.php";
  

@@ -2,9 +2,7 @@
 session_start();
 
 // Include config file
-require_once "dating_config.php";
-
-require_once "dating_config.php";
+require_once "/php/dating_config.php";
 
 //Email activation check
 $stmt = $con->prepare('SELECT activation_code FROM accounts WHERE id = ?');

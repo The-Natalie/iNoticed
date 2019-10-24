@@ -73,7 +73,7 @@ $stmt->close();
 				<br />
 				<button class="update-info-button" type="button">Update password or email  <i class="far fa-edit"></i></button>
 				<div id="update-info-form">
-					<form method="post" action="/php/update-info.php">
+					<form method="post" action="/php/update_info.php">
 						<p style="font-style: 0.8em;">Your current password is required to change information.<br>
 							 Only enter info in the field(s) you'd like to change, and leave the other field(s) blank.</p>
 						<input type="email" name="new-email" placeholder="New Email" id="new-email"><br />

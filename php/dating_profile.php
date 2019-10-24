@@ -7,10 +7,22 @@ if (!isset($_SESSION['loggedin'])) {
 	exit();
 }
 
-// if ($account['activation_code'] !== 'activated') {
-// 	header('Location: /please_activate.html');
-// 	exit();
-// } 
+require_once "dating_config.php";
+
+
+$stmt = $con->prepare('SELECT activation_code FROM accounts WHERE id = ?');
+$stmt->bind_param('i', $_SESSION['id']);
+$stmt->execute();
+$stmt->store_result();
+$stmt->bind_result($activation_code);
+$stmt->fetch();
+if ($activation_code == 'activated') {
+// user activated
+} else {
+// user not activated, redirect or display msg
+	header('Location: /please_activate.html');
+}
+
 
 $DATABASE_HOST = 'mysql.inoticed.org';
 $DATABASE_USER = 'ndhall';

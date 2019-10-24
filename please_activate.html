@@ -7,15 +7,22 @@
 		<link rel="stylesheet" type="text/css" href="/css/styles.css"> 
 		<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">  
 	</head>
-
-	<body>
+	<body id="loggedin">
 		<div class="container">
-			<div id="particle-container"></div>			
-			<div class="nav" style="display: block;">
-				<div class="dating-nav"><a href="/">Home</a>  |  <a href="/dating.html">Dating</a>  |  <a href="/kindness.html">Kindness</a>  |  <a href="/valued.html">Valued</a></div>
-				<div class="not-signed-in-nav"><a href="/account_creation.html">Create Account</a>  |  <a href="/dating_sign_in.html">Sign In</a> </div>
-<!-- 				<div class="signed-in-nav"><a href="/php/messages.php">Messages</a> |  <a href="/php/dating_profile">My Profile</a>  |  <a href="/php/account_settings.php">Account Settings</a>  |  <a href="/php/dating_logout.php">Log Out</a></div>
- -->			</div>
+
+			<div class="nav-light">
+				<div class="nav-left">
+					<div class="title"><a href="/">iNoticed</a></div>
+				</div>
+				<div class="nav-right">
+					<a href="/php/dating_home.php"><i class="fas fa-envelope"></i>Home</a>
+					<a href="/php/messages.php"><i class="fas fa-envelope"></i>Messages</a>
+					<a href="/php/dating_profile.php"><i class="fas fa-address-card"></i>My Profile</a>
+					<a href="/php/account_settings.php"><i class="fas fa-cog"></i>Account Settings</a>
+					<a href="/php/dating_logout.php"><i class="fas fa-sign-out-alt"></i>Log Out</a>
+				</div>
+			</div>
+
 			<div class="div-of-ps">
 				<p class="firstWord" style="text-align: center;">Your account hasn't been activated. Please check your email to activate your account first!</p>
 			</div>

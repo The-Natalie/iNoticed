@@ -410,22 +410,25 @@ p.form-submitted {
 
 
 /* ====================================================================================
-Dating Home PHP Page
+Dating Sub Pages
 ======================================================================================= */
 
-body.loggedin {
-	background-color: #f3f4f7;
+#loggedin {
+	background: none;
+	background-color: #84ff84;
+	background-size: cover;	
+	font-size: 16px;
 }
 .content {
-	width: 1000px;
+	width: 115ex;
 	margin: 0 auto;
 }
 .content h2 {
 	margin: 0;
 	padding: 25px 0;
-	font-size: 22px;
-	border-bottom: 1px solid #e0e0e3;
-	color: #4a536e;
+	color: #1D4F5B;
+	font-weight: 1000;
+	font-size: 2.5em;
 }
 .content > p, .content > div {
 	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
@@ -438,7 +441,7 @@ body.loggedin {
 }
 .content > p table td:first-child, .content > div table td:first-child {
 	font-weight: bold;
-	color: #4a536e;
+	color: #262626;
 	padding-right: 15px;
 }
 .content > div p {

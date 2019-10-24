@@ -1,43 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html>
+	<head>
+		<meta charset="utf-8">
 		<title>iNoticed | Dating</title>
-		<meta charset="utf-8">  
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="/css/styles.css"> 
-		<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">  
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+		<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"> 
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"> 
 	</head>
-	<body id="home">
+	<body id="loggedin">
 
-		<div class="nav-dark">
+		<div class="nav-light">
 			<div class="nav-left">
 				<div class="title"><a href="/">iNoticed</a></div>
-				<a href="/dating.html">Dating</a>
-				<a href="/kindness.html">Kindness</a>
-				<a href="/valued.html">Valued</a>
 			</div>
 			<div class="nav-right">
-				<a href="/account_creation.html"><i class="fas fa-user-plus"></i>Create Account</a>
-				<a href="/dating_sign_in.html"><i class="fas fa-sign-in-alt"></i>Sign In</a>
+				<a href="/php/dating_home.php"><i class="fas fa-envelope"></i>Home</a>
+				<a href="/php/messages.php"><i class="fas fa-envelope"></i>Messages</a>
+				<a href="/php/dating_profile.php"><i class="fas fa-address-card"></i>My Profile</a>
+				<a href="/php/account_settings.php"><i class="fas fa-cog"></i>Account Settings</a>
+				<a href="/php/dating_logout.php"><i class="fas fa-sign-out-alt"></i>Log Out</a>
 			</div>
 		</div>
 
-		<div class="login">
-			<h1>Sign In</h1>
-			<form action="/php/authenticate.php" method="post">
-				<label for="username">
-					<i class="fas fa-user"></i>
-				</label>
-				<input type="text" name="username" placeholder="Username" id="username" required>
-
-				<label for="password">
-					<i class="fas fa-lock"></i>
-				</label>
-				<input type="password" name="password" placeholder="Password" id="password" required>
-
-				<input type="submit" value="Submit">
-			</form>
+		<div class="content">
+			<h2>Home Page</h2>
+			<p>Welcome back, <?=$_SESSION['name']?>!</p>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 		<script

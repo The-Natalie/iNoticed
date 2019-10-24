@@ -136,16 +136,50 @@ $(document).ready(function(){
 
 
 
-//Kindness form
+//Dading card request form
+	$('#dating-card-form input.button').click(function(e) {
+		e.preventDefault();
+		var form = document.getElementById('dating-card-form');
+		var formData = new FormData(form);
+		var name = document.getElementById("form-name").value;
+		var email = document.getElementById("form-email").value;
+		var emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+		if (name == '' || email == '') {
+			$('p.form-submitted').html("Please complete all fields");		
+		} else if(!email.match(emailFormat)) {
+			$('p.form-submitted').html("Please enter a valid email address");		
+		} else {
+			$.ajax({
+	      url: "/php/dating-card_form.php",
+				type: 'POST',
+				data: formData,
+				cache: false,
+				dataType: "json",
+				processData: false,
+				contentType: false
+			});
+			$('p.form-submitted').html("Your form has been submitted");		
+		}
+	});
+//End of Dating card request form
+
+
+
+
+//Kindness card request form
 	$('#kindness-form input.button').click(function(e) {
 		e.preventDefault();
 		var form = document.getElementById('kindness-form');
 		var formData = new FormData(form);
 		var name = document.getElementById("form-name").value;
 		var email = document.getElementById("form-email").value;
+		var emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 		if (name == '' || email == '') {
 			$('p.form-submitted').html("Please complete all fields");		
+		} else if(!email.match(emailFormat)) {
+			$('p.form-submitted').html("Please enter a valid email address");		
 		} else {
 			$.ajax({
 	      url: "/php/kindness_form.php",
@@ -159,20 +193,23 @@ $(document).ready(function(){
 			$('p.form-submitted').html("Your form has been submitted");		
 		}
 	});
-//End of Kindness form
+//End of Kindness card request form
 
 
 
-//Valued form
+//Valued card request form
 	$('#valued-form input.button').click(function(e) {
 		e.preventDefault();
 		var form = document.getElementById('valued-form');
 		var formData = new FormData(form);
 		var name = document.getElementById("form-name").value;
 		var email = document.getElementById("form-email").value;
+		var emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 		if (name == '' || email == '') {
 			$('p.form-submitted').html("Please complete all fields");		
+		} else if(!email.match(emailFormat)) {
+			$('p.form-submitted').html("Please enter a valid email address");		
 		} else {
 			$.ajax({
 	      url: "/php/valued_form.php",
@@ -186,7 +223,9 @@ $(document).ready(function(){
 			$('p.form-submitted').html("Your form has been submitted successfully");		
 		}
 	});
-//End of Valued form
+//End of Valued card request form
+
+
 
 
 

@@ -134,12 +134,6 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
 ?>
 
 
-
-*************************************************new password doesn't match when logging in
-*************************************************can only change 1 thing
-
-
-
 <!DOCTYPE html>
 <html>
   <head>

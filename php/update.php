@@ -63,7 +63,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         // Check input errors before inserting in database
         if(empty($php_results)){
             // Prepare an update statement
-            $sql = "UPDATE accounts SET email=?, password=? WHERE id=$id;"
+            $sql = "UPDATE accounts SET email=?, password=? WHERE id=?";
              
             if($stmt = mysqli_prepare($con, $sql)){
                 // Bind variables to the prepared statement as parameters

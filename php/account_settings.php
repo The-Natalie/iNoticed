@@ -69,7 +69,13 @@ $stmt->close();
 						<td>Username:</td>
 						<td><?=$_SESSION['name']?></td>
 					</tr>
+					<tr>
+						<td>Email:</td>
+						<td><?=$email?></td>
+					</tr>
 				</table>
+				<br />
+
 				<button class="update-email-button" type="button">Update email  <i class="far fa-edit"></i></button>
 				<div id="update-email-form">
 					<form method="post" action="/php/update_email.php">
@@ -80,13 +86,8 @@ $stmt->close();
  						<input type="submit" value="Submit">
 					</form>	
 				</div>
+				<br />
 
-				<table>	
-					<tr>
-						<td>Email:</td>
-						<td><?=$email?></td>
-					</tr>
-				</table>
 				<button class="update-password-button" type="button">Update password  <i class="far fa-edit"></i></button>
 				<div id="update-password-form">				
 					<form method="post" action="/php/update_password.php">

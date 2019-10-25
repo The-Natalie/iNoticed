@@ -85,7 +85,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
 
 } else{
     // Check existence of id parameter before processing further
-    if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
+    if(isset($_GET["id"])){
         // Get URL parameter
         $id =  trim($_GET["id"]);
         
@@ -131,6 +131,8 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         exit();
     }
 }
+mysqli_stmt_close($stmt);
+mysqli_close($con);
 ?>
 
 

@@ -79,8 +79,8 @@ $stmt->close();
 				<button class="update-email-button" type="button">Update email  <i class="far fa-edit"></i></button>
 				<div id="update-email-form">
 					<form method="post" action="/php/update_email.php">
-						<p style="font-size: 0.8em;">Your current password is required to change information.</p>
-						<input type="email" name="email" placeholder="New Email"><br />
+<!-- 						<p style="font-size: 0.8em;">Your current password is required to change information.</p  -->
+ 								<input type="email" name="email" placeholder="New Email"><br />
 <!-- 						<input id="password" name="password" type="password" placeholder="Current Password" ><br /-->
 						<input type="hidden" name="id" value="<?php echo $id; ?>"/>
  						<input style="margin-top: 10px;" type="submit" value="Submit">
@@ -91,12 +91,12 @@ $stmt->close();
 				<button class="update-password-button" type="button">Update password  <i class="far fa-edit"></i></button>
 				<div id="update-password-form">				
 					<form method="post" action="/php/update_password.php">
-						<p style="font-size: 0.8em;">Your current password is required to change information.</p>
-						<input name="new-password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="New Password"><br />
+<!-- 						<p style="font-size: 0.8em;">Your current password is required to change information.</p  -->
+ 								<input name="new-password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="New Password"><br />
 						<input name="password_two" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Confirm New Password"><br />
 <!-- 						<input id="password" name="password" type="password" placeholder="Current Password" ><br /-->
 						<input type="hidden" name="id" value="<?php echo $id; ?>"/>
- 						<input style="margin-top: 10px;" type="submit" value="Submit">
+ 						<input type="submit" value="Submit">
 					</form>	
 				</div>
 

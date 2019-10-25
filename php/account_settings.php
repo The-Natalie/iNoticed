@@ -73,10 +73,6 @@ $stmt->close();
 						<td>Email:</td>
 						<td><?=$email?></td>
 					</tr>
-					<tr>
-						<td>id:</td>
-						<td><?=$id?></td>
-					</tr>
 				</table>
 				<br />
 				<button class="update-info-button" type="button">Update password or email  <i class="far fa-edit"></i></button>

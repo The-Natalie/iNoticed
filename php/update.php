@@ -49,7 +49,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         }   
         
         // Validate password
-        $input_password = password_hash($_POST["password"]);
+        $input_password = password_hash($_POST["password"], PASSWORD_DEFAULT);
         if(empty($input_password)){
             $password = $password;
         } else {

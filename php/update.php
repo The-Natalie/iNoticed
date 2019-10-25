@@ -57,7 +57,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             // Prepare an update statement
             $sql = "UPDATE accounts SET email=?, password=? WHERE id=?";
              
-            if($stmt = mysqli_prepare($link, $sql)){
+            if($stmt = mysqli_prepare($con, $sql)){
                 // Bind variables to the prepared statement as parameters
                 mysqli_stmt_bind_param($stmt, "sssi", $param_email, $param_password, $param_id);
                 
@@ -81,7 +81,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         }
         
         // Close connection
-        mysqli_close($link);
+        mysqli_close($con);
 
     // } else {
     //      header("location: /php/account_settings.php");
@@ -96,7 +96,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         
         // Prepare a select statement
         $sql = "SELECT * FROM accounts WHERE id = ?";
-        if($stmt = mysqli_prepare($link, $sql)){
+        if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "i", $param_id);
             
@@ -130,7 +130,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         mysqli_stmt_close($stmt);
         
         // Close connection
-        mysqli_close($link);
+        mysqli_close($con);
     }  else{
         // URL doesn't contain id parameter. 
         echo = "URL doesn't contain id parameter. Please sign out, sign back in, and try again.";

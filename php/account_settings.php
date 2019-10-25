@@ -108,7 +108,6 @@ $stmt->close();
               <p>Are you sure you want to delete your account and profile? Everything will be erased, and it can't be undone.</p><br>
             <p>
               <input type="submit" value="Yes" class="btn btn-danger">
-              <a href="account_settings.php" class="btn btn-default">No</a>
             </p>
            </form>  
          </div>      

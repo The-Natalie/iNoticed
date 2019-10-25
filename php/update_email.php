@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 
 $DATABASE_HOST = 'mysql.inoticed.org';
 $DATABASE_USER = 'ndhall';

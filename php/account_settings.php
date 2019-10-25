@@ -98,10 +98,13 @@ $stmt->close();
 						<input type="hidden" name="id" value="<?php echo $id; ?>"/>
  						<input type="submit" value="Submit">
 					</form>	
-				</div>/php/delete.php">
+				</div>
 				<br />
 				<br />
-				<a href="/php/delete.php"><button type="button">Delete account  <i class="far fa-edit"></i></button></a>
+				<form method="post" action="/php/delete.php">
+						<input type="hidden" name="id" value="<?php echo $id; ?>"/>
+ 						<input style="margin-top: 10px;" type="submit" value="Delete account">
+				</form>
 				<br />
 				<br />
 				<p style="font-size: 1em;">If  you'd like to receive a set of cards to pass on to others, fill out the form below, and we'll be in touch with you ASAP.<br>

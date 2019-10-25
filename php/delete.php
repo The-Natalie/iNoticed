@@ -3,7 +3,16 @@
 if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Include config file
 
-    require_once "/php/dating_config.php";
+    $DATABASE_HOST = 'mysql.inoticed.org';
+    $DATABASE_USER = 'ndhall';
+    $DATABASE_PASS = 'natabata14';
+    $DATABASE_NAME = 'inoticed_dating';
+    // Try and connect using the info above.
+    $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+    if ( mysqli_connect_errno() ) {
+        // If there is an error with the connection, stop the script and display the error.
+        die ('Failed to connect to MySQL: ' . mysqli_connect_error());
+    }    
     
     // Prepare a delete statement
     $sql = "DELETE FROM accounts WHERE id = ?";

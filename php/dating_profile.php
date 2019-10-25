@@ -21,7 +21,6 @@ if ($activation_code == '') {
 	header('Location: /please_activate.html');
 }
 
-
 $DATABASE_HOST = 'mysql.inoticed.org';
 $DATABASE_USER = 'ndhall';
 $DATABASE_PASS = 'natabata14';

@@ -449,12 +449,12 @@ Dating Sub Pages
 	margin: 0 0 10px 0;
 }
 
-.update-info-button {
+.update-email-button, .update-password-button {
 	cursor: pointer;
 	margin-bottom: 15px;
 }
 
-#update-info-form {
+#update-email-form, #update-password-form {
 	padding-top: 10px;
 	padding-bottom: 15px;
 	display: none;
@@ -462,7 +462,7 @@ Dating Sub Pages
 	border-bottom: 2px solid #9da2af;
 }
 
-#update-info-form p {
+#update-email-form p, #update-password-form p {
 	font-size: 1em;
 }
 

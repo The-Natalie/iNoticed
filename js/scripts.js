@@ -244,11 +244,15 @@ $(document).ready(function(){
 //End of card image enlargement animation
 
 
-//Update info form
-	$('button.update-info-button').click(function(e) {
-		$("#update-info-form").css({"display": "block"});
+//Update email form
+	$('button.update-email-button').click(function(e) {
+		$("#update-email-form").css({"display": "block"});
 	});
 
+//Update password form
+	$('button.update-password-button').click(function(e) {
+		$("#update-password-form").css({"display": "block"});
+	});
 
 
 

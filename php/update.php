@@ -13,13 +13,13 @@ if ( mysqli_connect_errno() ) {
 }
 
 //Email activation check
-$stmt = $con->prepare('SELECT activation_code FROM accounts WHERE id = ?');
+$stmt = $con->prepare('SELECT activation_code, password, email FROM accounts WHERE id = ?');
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
 $stmt->store_result();
-$stmt->bind_result($activation_code);
+$stmt->bind_result($activation_code, $password, $email);
 $stmt->fetch();
-if ($activation_code == 'activated') {
+if ($activation_code == '') {
 // user not activated, redirect or display msg
     header('Location: /please_activate.html');
 }

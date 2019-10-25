@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 $DATABASE_HOST = 'mysql.inoticed.org';

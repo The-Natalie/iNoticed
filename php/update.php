@@ -9,8 +9,8 @@ $DATABASE_NAME = 'inoticed_dating';
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 if ( mysqli_connect_errno() ) {
     // If there is an error with the connection, stop the script and display the error.
-    header('Location: /php/account_settings.php');
     $php_results = 'Failed to connect to MySQL: ' . mysqli_connect_error();
+    header('Location: /php/account_settings.php');
     exit();
 }
 
@@ -45,8 +45,8 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             $email = $email;
         } else {
             if(!filter_var($input_email, FILTER_VALIDATE_EMAIL)){
-                header('Location: /php/account_settings.php');
                 $php_results = "Email is not valid. Please enter a valid email.";
+                header('Location: /php/account_settings.php');
             } else{
                 $email = $input_email;
             }
@@ -58,8 +58,8 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             $password = $password;
         } else {
             if (strlen($_POST['new-password']) > 25 || strlen($_POST['new-password']) < 5) {
-                header('Location: /php/account_settings.php');
                 $php_results = "Password must be between 5 and 25 characters long. Please try again.";
+                header('Location: /php/account_settings.php');
             } else{
                 $password = $input_password;
             }
@@ -82,12 +82,12 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 // Attempt to execute the prepared statement
                 if(mysqli_stmt_execute($stmt)){
                     // Records updated successfully. Redirect to landing page
-                    header('Location: /php/account_settings.php');
                     $php_results = "Change(s) updated successfully.";
+                    header('Location: /php/account_settings.php');
                     exit();
                 } else { 
-                    header('Location: /php/account_settings.php');
                     $php_results = "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem";
+                    header('Location: /php/account_settings.php');
                 }
             }
              
@@ -132,14 +132,14 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     $password = $row["password"];
                 } else{
                     // URL doesn't contain valid id. 
-                    header('Location: /php/account_settings.php');
                 $php_results = "Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem";                    
-                    exit();
+                header('Location: /php/account_settings.php');
+                exit();
                 }
                 
             } else{
-               header('Location: /php/account_settings.php');
                 $php_results = "Oops! Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem";
+                header('Location: /php/account_settings.php');
             }
         }
         
@@ -150,8 +150,8 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         mysqli_close($con);
     }  else{
         // URL doesn't contain id parameter. 
-        header('Location: /php/account_settings.php');
         $php_results = "URL doesn't contain id parameter. Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem";
+        header('Location: /php/account_settings.php');
         exit();
     }
 }

@@ -26,7 +26,7 @@ if ($activation_code == 'activated') {
  
 // Define variables and initialize with empty values
 $email = $password = "";
-echo = "";
+// echo "";
  
 // Processing form data when form is submitted
 if(isset($_POST["id"]) && !empty($_POST["id"])){
@@ -42,7 +42,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             $email = $email;
         } else {
             if(!filter_var($input_email, FILTER_VALIDATE_EMAIL)){
-                echo = "Email is not valid. Please enter a valid email.";
+                echo "Email is not valid. Please enter a valid email.";
             } else{
                 $email = $input_email;
             }
@@ -54,7 +54,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             $password = $password;
         } else {
             if (strlen($_POST['new-password']) > 25 || strlen($_POST['new-password']) < 5) {
-                echo = "Password must be between 5 and 25 characters long. Please try again.";
+                echo "Password must be between 5 and 25 characters long. Please try again.";
             } else{
                 $password = $input_password;
             }
@@ -77,10 +77,10 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 // Attempt to execute the prepared statement
                 if(mysqli_stmt_execute($stmt)){
                     // Records updated successfully. Redirect to landing page
-                    echo = "Change(s) updated successfully.";
+                    echo "Change(s) updated successfully.";
                     exit();
                 } else { 
-                    echo = "Something went wrong. Please try again later.";
+                    echo "Something went wrong. Please try again later.";
                 }
             }
              
@@ -93,7 +93,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
 
     // } else {
     //      header("location: /php/account_settings.php");
-    //     echo = "Your current password is incorrect.";
+    //     echo "Your current password is incorrect.";
     // }
 
 } else{
@@ -125,12 +125,12 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     $password = $row["password"];
                 } else{
                     // URL doesn't contain valid id. 
-                    echo = "Please sign out, sign back in, and try again.";                    
+                    echo "Please sign out, sign back in, and try again.";                    
                     exit();
                 }
                 
             } else{
-                echo = "Oops! Something went wrong. Please try again later.";
+                echo "Oops! Something went wrong. Please try again later.";
             }
         }
         
@@ -141,7 +141,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         mysqli_close($con);
     }  else{
         // URL doesn't contain id parameter. 
-        echo = "URL doesn't contain id parameter. Please sign out, sign back in, and try again.";
+        echo "URL doesn't contain id parameter. Please sign out, sign back in, and try again.";
         exit();
     }
 }

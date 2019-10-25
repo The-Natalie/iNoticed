@@ -89,7 +89,6 @@ $stmt->close();
 					</form>	
 				</div>
 				<br />
-				<p style="color: #009900;"><?php echo $php_results; ?></p>
 				<br />
 				<p style="font-size: 1em;">If  you'd like to receive a set of cards to pass on to others, fill out the form below, and we'll be in touch with you ASAP.<br>
 				A  tiny fee will be required, which we will inform you of before your order is finalized. Of course, if you think the fee is too much, you may choose to opt out.</p>

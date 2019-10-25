@@ -10,7 +10,6 @@ $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_
 if ( mysqli_connect_errno() ) {
     // If there is an error with the connection, stop the script and display the error.
     $php_results = 'Failed to connect to MySQL: ' . mysqli_connect_error();
-    header('Location: /php/account_settings.php');
     exit();
 }
 
@@ -46,7 +45,6 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         } else {
             if(!filter_var($input_email, FILTER_VALIDATE_EMAIL)){
                 $php_results = "Email is not valid. Please enter a valid email.";
-                header('Location: /php/account_settings.php');
             } else{
                 $email = $input_email;
             }
@@ -59,7 +57,6 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         } else {
             if (strlen($_POST['new-password']) > 25 || strlen($_POST['new-password']) < 5) {
                 $php_results = "Password must be between 5 and 25 characters long. Please try again.";
-                header('Location: /php/account_settings.php');
             } else{
                 $password = $input_password;
             }
@@ -83,11 +80,9 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 if(mysqli_stmt_execute($stmt)){
                     // Records updated successfully. Redirect to landing page
                     $php_results = "Change(s) updated successfully.";
-                    header('Location: /php/account_settings.php');
                     exit();
                 } else { 
                     $php_results = "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem";
-                    header('Location: /php/account_settings.php');
                 }
             }
              
@@ -133,13 +128,11 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 } else{
                     // URL doesn't contain valid id. 
                 $php_results = "Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem";                    
-                header('Location: /php/account_settings.php');
                 exit();
                 }
                 
             } else{
                 $php_results = "Oops! Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem";
-                header('Location: /php/account_settings.php');
             }
         }
         
@@ -151,9 +144,51 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     }  else{
         // URL doesn't contain id parameter. 
         $php_results = "URL doesn't contain id parameter. Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem";
-        header('Location: /php/account_settings.php');
         exit();
     }
 }
 ?>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>iNoticed | Dating</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css"> 
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"> 
+  </head>
+  <body class="loggedin">
+
+    <div class="nav-light">
+      <div class="nav-left">
+        <div class="title"><a href="/">iNoticed</a></div>
+      </div>
+      <div class="nav-right">
+        <a href="/php/dating_home.php"><i class="fas fa-envelope"></i>Home</a>
+        <a href="/php/messages.php"><i class="fas fa-envelope"></i>Messages</a>
+        <a href="/php/dating_profile.php"><i class="fas fa-address-card"></i>My Profile</a>
+        <a href="/php/account_settings.php"><i class="fas fa-cog"></i>Account Settings</a>
+        <a href="/php/dating_logout.php"><i class="fas fa-sign-out-alt"></i>Log Out</a>
+      </div>
+    </div>
+
+    <div class="content">
+      <h2>Profile Page</h2>
+      <div>
+        <p><?php echo $php_results; ?></p>            
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <script
+          src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+          integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+          crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/scripts.js"></script>
+  </body>
+</html>
  

@@ -254,6 +254,10 @@ $(document).ready(function(){
 		$("#update-password-form").css({"display": "block"});
 	});
 
+//Delete account form
+	$('button.delete-account-button').click(function(e) {
+		$("#delete-account-form").css({"display": "block"});
+	});
 
 
 

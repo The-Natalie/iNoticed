@@ -101,10 +101,17 @@ $stmt->close();
 				</div>
 				<br />
 				<br />
-				<form method="post" action="/php/delete.php">
-						<input type="hidden" name="id" value="<?php echo $id; ?>"/>
- 						<input style="margin-top: 10px;" type="submit" value="Delete account">
-				</form>
+				<button class="delete-account-button" type="button">Delete account  <i class="fas fa-exclamation-triangle"></i></button>
+				<div id="delete-account-form">            
+					<form action="/php/delete.php" method="post">
+            <input type="hidden" name="id" value="<?php echo trim($_GET["id"]); ?>"/>
+              <p>Are you sure you want to delete your account and profile? Everything will be erased, and it can't be undone.</p><br>
+            <p>
+              <input type="submit" value="Yes" class="btn btn-danger">
+              <a href="account_settings.php" class="btn btn-default">No</a>
+            </p>
+           </form>  
+         </div>      
 				<br />
 				<br />
 				<p style="font-size: 1em;">If  you'd like to receive a set of cards to pass on to others, fill out the form below, and we'll be in touch with you ASAP.<br>

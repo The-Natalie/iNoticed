@@ -133,7 +133,6 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
 }
 ?>
 
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -162,8 +161,8 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     <div class="content">
       <h2>Profile Page</h2>
       <div>
-        <p><?php echo $php_results; ?></p>            
-      </div>
+<!--         <p><?php echo $php_results; ?></p>            
+ -->      </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 

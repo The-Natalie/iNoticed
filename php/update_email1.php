@@ -44,7 +44,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Records updated successfully. Redirect to landing page
-                $php_results = "Records updated successfully";        
+                echo "Records updated successfully";        
                 exit();
             } else{
                 echo "Something went wrong. Please try again later.";
@@ -133,7 +133,6 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
 
       <div class="content">
       <h2>Home Page</h2>
-        <p><?php echo $php_results; ?></p>            
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
     <script

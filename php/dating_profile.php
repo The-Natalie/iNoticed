@@ -7,20 +7,6 @@ if (!isset($_SESSION['loggedin'])) {
 	exit();
 }
 
-require_once "/php/dating_config.php";
-
-//Email activation check
-$stmt = $con->prepare('SELECT activation_code FROM accounts WHERE id = ?');
-$stmt->bind_param('i', $_SESSION['id']);
-$stmt->execute();
-$stmt->store_result();
-$stmt->bind_result($activation_code);
-$stmt->fetch();
-if ($activation_code == '') {
-// user not activated, redirect or display msg
-	header('Location: /please_activate.html');
-}
-
 $DATABASE_HOST = 'mysql.inoticed.org';
 $DATABASE_USER = 'ndhall';
 $DATABASE_PASS = 'natabata14';

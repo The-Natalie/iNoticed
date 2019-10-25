@@ -7,28 +7,28 @@ if (!isset($_SESSION['loggedin'])) {
 	exit();
 } 
 
-$DATABASE_HOST = 'mysql.inoticed.org';
-$DATABASE_USER = 'ndhall';
-$DATABASE_PASS = 'natabata14';
-$DATABASE_NAME = 'inoticed_dating';
-// Try and connect using the info above.
-$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-if ( mysqli_connect_errno() ) {
-	// If there is an error with the connection, stop the script and display the error.
-	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
-}
+// $DATABASE_HOST = 'mysql.inoticed.org';
+// $DATABASE_USER = 'ndhall';
+// $DATABASE_PASS = 'natabata14';
+// $DATABASE_NAME = 'inoticed_dating';
+// // Try and connect using the info above.
+// $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+// if ( mysqli_connect_errno() ) {
+// 	// If there is an error with the connection, stop the script and display the error.
+// 	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
+// }
 
-//Email activation check
-$stmt = $con->prepare('SELECT activation_code FROM accounts WHERE id = ?');
-$stmt->bind_param('i', $_SESSION['id']);
-$stmt->execute();
-$stmt->store_result();
-$stmt->bind_result($activation_code);
-$stmt->fetch();
-if ($activation_code == '') {
-// user not activated, redirect or display msg
-	header('Location: /please_activate.html');
-}
+// //Email activation check
+// $stmt = $con->prepare('SELECT activation_code FROM accounts WHERE id = ?');
+// $stmt->bind_param('i', $_SESSION['id']);
+// $stmt->execute();
+// $stmt->store_result();
+// $stmt->bind_result($activation_code);
+// $stmt->fetch();
+// if ($activation_code == '') {
+// // user not activated, redirect or display msg
+// 	header('Location: /please_activate.html');
+// }
 
 ?>
 

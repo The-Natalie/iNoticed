@@ -18,17 +18,18 @@ if ( mysqli_connect_errno() ) {
 	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
-//Email activation check
-$stmt = $con->prepare('SELECT activation_code, password, email, id FROM accounts WHERE id = ?');
+$stmt = $con->prepare('SELECT password, email, id FROM accounts WHERE id = ?');
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
 $stmt->store_result();
-$stmt->bind_result($activation_code, $password, $email, $id);
+$stmt->bind_result($password, $email, $id);
 $stmt->fetch();
-if ($activation_code == '') {
-// user not activated, redirect or display msg
-	header('Location: /please_activate.html');
-}
+
+//Email activation check
+// if ($activation_code == '') {
+// // user not activated, redirect or display msg
+// 	header('Location: /please_activate.html');
+// }
 
 $stmt->close();
 ?>

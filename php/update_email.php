@@ -1,5 +1,5 @@
 <?php
-// session_start();
+session_start();
 
 $DATABASE_HOST = 'mysql.inoticed.org';
 $DATABASE_USER = 'ndhall';
@@ -132,6 +132,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
 }
 mysqli_stmt_close($stmt);
 mysqli_close($con);
+$stmt->close();
 ?>
 
 <!DOCTYPE html>

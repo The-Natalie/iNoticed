@@ -23,7 +23,7 @@ $stmt = $con->prepare('SELECT activation_code, password, email, id FROM accounts
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
 $stmt->store_result();
-$stmt->bind_result($id, $activation_code, $password, $email);
+$stmt->bind_result($activation_code, $password, $email, $id);
 $stmt->fetch();
 if ($activation_code == '') {
 // user not activated, redirect or display msg

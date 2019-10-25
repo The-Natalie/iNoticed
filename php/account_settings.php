@@ -83,7 +83,7 @@ $stmt->close();
 						<input type="email" name="email" placeholder="New Email"><br />
 <!-- 						<input id="password" name="password" type="password" placeholder="Current Password" ><br /-->
 						<input type="hidden" name="id" value="<?php echo $id; ?>"/>
- 						<input type="submit" value="Submit">
+ 						<input style="margin-top: 10px;" type="submit" value="Submit">
 					</form>	
 				</div>
 				<br />
@@ -96,7 +96,7 @@ $stmt->close();
 						<input name="password_two" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Confirm New Password"><br />
 <!-- 						<input id="password" name="password" type="password" placeholder="Current Password" ><br /-->
 						<input type="hidden" name="id" value="<?php echo $id; ?>"/>
- 						<input type="submit" value="Submit">
+ 						<input style="margin-top: 10px;" type="submit" value="Submit">
 					</form>	
 				</div>
 

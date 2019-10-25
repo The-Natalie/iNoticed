@@ -99,7 +99,9 @@ $stmt->close();
  						<input type="submit" value="Submit">
 					</form>	
 				</div>
-
+				<br />
+				<br />
+				<button action="/php/delete.php" type="button">Delete account  <i class="far fa-edit"></i></button>
 				<br />
 				<br />
 				<p style="font-size: 1em;">If  you'd like to receive a set of cards to pass on to others, fill out the form below, and we'll be in touch with you ASAP.<br>

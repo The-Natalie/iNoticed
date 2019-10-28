@@ -25,10 +25,10 @@ if (isset($_GET['email'], $_GET['code'])) {
 				$newcode = 'activated';
 				$stmt->bind_param('sss', $newcode, $_GET['email'], $_GET['code']);
 				$stmt->execute();
-				echo 'Your account is now activated, you can now login!<br><a href="/dating_sign_in.html">Login</a>';
+				header('Location: /activated.html');
 			}
 		} else {
-			echo 'The account is already activated or doesn\'t exist!';
+			header('Location: /activate_error.html');
 		}
 	}
 }

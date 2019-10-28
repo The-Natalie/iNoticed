@@ -27,10 +27,10 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         // Attempt to execute the prepared statement
         if(mysqli_stmt_execute($stmt)){
             // Records deleted successfully. Redirect to landing page
-            header("location: /inoticed.org");
+            header("location: /account_closed.html");
             exit();
         } else{
-            echo "Oops! Something went wrong. Please try again later.";
+            echo "Oops! Something went wrong. Please try again later.<br><a href='/php/account_settings.php'>Go Back</a>";
         }
     }
      
@@ -43,7 +43,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Check existence of id parameter
     if(empty(trim($_GET["id"]))){
         // URL doesn't contain id parameter. Redirect to error page
-        echo "URL doesn't contain id parameter";
+        echo "URL doesn't contain id parameter.<br><a href='/php/account_settings.php'>Go Back</a>";
         exit();
     }
 }

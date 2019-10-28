@@ -36,7 +36,7 @@ $stmt->close();
 		<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"> 
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"> 
 	</head>
-	<body class="loggedin">
+	<body id="loggedin">
 
 		<div class="nav-light">
 			<div class="nav-left">

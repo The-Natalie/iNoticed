@@ -41,10 +41,10 @@ if ($stmt->num_rows > 0) {
 		$_SESSION['id'] = $id;
 		header('Location: dating_home.php');
 	} else {
-		echo 'Incorrect password!';
+		header('Location: /sign_in_error.html');
 	}
 } else {
-	echo 'Incorrect username!';
+	header('Location: /sign_in_error.html');;
 }
 $stmt->close();
 ?>

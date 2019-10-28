@@ -26,35 +26,37 @@ $stmt->fetch();
 // }
  
 // Define variables and initialize with empty values
-$email = '';
-$php_results = '';
- 
+$email = "";
+$is_error = "";
+
 // Processing form data when form is submitted
-if(isset($_POST['id']) && !empty($_POST['id'])){
+if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Get hidden input value
-    $id = $_POST['id'];
+    $id = $_POST["id"];
 
     // //Verify current password is correct
     // if (password_verify($_POST['password'], $password)) {
         
         // Validate email
-        $input_email = trim($_POST['email']);
+        $input_email = trim($_POST["email"]);
         if(empty($input_email)){
-          die ($php_results = 'Please enter an email.');
+          echo "Please enter an email.<br><a href='/php/account_settings.php'>Go Back</a";
+          $is_error = "1";
         } elseif(!filter_var($input_email, FILTER_VALIDATE_EMAIL)){
-            die ($php_results = 'Email is not valid. Please enter a valid email.');
+            echo "Email is not valid. Please enter a valid email.<br><a href='/php/account_settings.php'>Go Back</a";
+            $is_error = "1";
         } else{
             $email = $input_email;
         }
 
         // Check input errors before inserting in database
-        if(empty($php_results)){
+        if(empty($is_error)){
             // Prepare an update statement
-            $sql = 'UPDATE accounts SET email=? WHERE id=?';
+            $sql = "UPDATE accounts SET email=? WHERE id=?";
              
             if($stmt = mysqli_prepare($con, $sql)){
                 // Bind variables to the prepared statement as parameters
-                mysqli_stmt_bind_param($stmt, 'si', $param_email, $param_id);
+                mysqli_stmt_bind_param($stmt, "si", $param_email, $param_id);
                 
                 // Set parameters
                 $param_email = $email;
@@ -63,9 +65,11 @@ if(isset($_POST['id']) && !empty($_POST['id'])){
                 // Attempt to execute the prepared statement
                 if(mysqli_stmt_execute($stmt)){
                     // Records updated successfully. Redirect to landing page
-                    die ($php_results = 'Your email has been updated sucessfully.');
+                    header('Location: /email_updated.html');
+                    exit();
                 } else { 
-                    $php_results = 'Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem';
+                    echo "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a";
+                    $is_error = "1";
                 }
             }
              
@@ -77,21 +81,21 @@ if(isset($_POST['id']) && !empty($_POST['id'])){
         mysqli_close($con);
 
     // } else {
-    //      header('location: /php/account_settings.php');
-    //     echo 'Your current password is incorrect.';
+    //      header("location: /php/account_settings.php");
+    //     echo "Your current password is incorrect.";
     // }
 
 } else{
     // Check existence of id parameter before processing further
-    if(isset($_GET['id'])){
+    if(isset($_GET["id"])){
         // Get URL parameter
-        $id =  trim($_GET['id']);
+        $id =  trim($_GET["id"]);
         
         // Prepare a select statement
-        $sql = 'SELECT * FROM accounts WHERE id = ?';
+        $sql = "SELECT * FROM accounts WHERE id = ?";
         if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, 'i', $param_id);
+            mysqli_stmt_bind_param($stmt, "i", $param_id);
             
             // Set parameters
             $param_id = $id;
@@ -106,14 +110,17 @@ if(isset($_POST['id']) && !empty($_POST['id'])){
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     
                     // Retrieve individual field value
-                    $email = $row['email'];
+                    $email = $row["email"];
                 } else{
                     // URL doesn't contain valid id. 
-                die ($php_results = 'Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem');                    
+                echo "Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a";                    
+                $is_error = "1";
+                exit();
                 }
                 
             } else{
-                die ($php_results = 'Oops! Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem');
+                echo "Oops! Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a";
+                $is_error = "1";
             }
         }
         
@@ -124,49 +131,10 @@ if(isset($_POST['id']) && !empty($_POST['id'])){
         mysqli_close($con);
     }  else{
         // URL doesn't contain id parameter. 
-        die ($php_results = 'URL doesn\'t contain id parameter. Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem');
+        echo "URL doesn't contain id parameter. Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a";
+        $is_error = "1";
+        exit();
     }
 }
 
 ?>
-
-
-<!DOCTYPE html>
-<html lang='en'>
-  <head>
-    <title>iNoticed | Dating</title>
-    <meta charset='utf-8'>  
-    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
-    <link rel='stylesheet' type='text/css' href='/css/styles.css'> 
-    <link href='https://fonts.googleapis.com/css?family=Poppins&display=swap' rel='stylesheet'>  
-  </head>
-  <body id='loggedin'>
-
-      <div class='nav-light'>
-        <div class='nav-left'>
-          <div class='title'><a href='/'>iNoticed</a></div>
-        </div>
-        <div class='nav-right'>
-          <a href='/php/dating_home.php'><i class='fas fa-envelope'></i>Home</a>
-          <a href='/php/messages.php'><i class='fas fa-envelope'></i>Messages</a>
-          <a href='/php/dating_profile.php'><i class='fas fa-address-card'></i>My Profile</a>
-          <a href='/php/account_settings.php'><i class='fas fa-cog'></i>Account Settings</a>
-          <a href='/php/dating_logout.php'><i class='fas fa-sign-out-alt'></i>Log Out</a>
-        </div>
-      </div>
-
-        <div class='content'>
-            <h2>Email Update</h2>
-            <p><?php echo $php_results; ?></p>
-        </div>
-
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script> 
-    <script
-        src='https://code.jquery.com/ui/1.12.1/jquery-ui.min.js'
-        integrity='sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU='
-        crossorigin='anonymous'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous'></script>
-    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous'></script>
-    <script type='text/javascript' src='/js/scripts.js'></script>
-  </body>
-</html>

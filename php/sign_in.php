@@ -39,7 +39,7 @@ if ($stmt->num_rows > 0) {
 		$_SESSION['loggedin'] = TRUE;
 		$_SESSION['name'] = $_POST['username'];
 		$_SESSION['id'] = $id;
-		header('Location: dating_home.php');
+		header('Location: /php/dating_home.php');
 	} else {
 		header('Location: /sign_in_error.html');
 	}

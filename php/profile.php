@@ -58,7 +58,6 @@ $stmt->close();
  						<input style="margin-top: 10px;" type="submit" value="Submit">
 					</form>	
 				</div>
-				generate url w/ username at the end for sharing
 				need to create new table for profile info that shares the same id from accounts table.
 				need to pull info from profile info and displaty it in the forms, so that when they edit their profile they won't have to update every field every time.  
 				first name -text field

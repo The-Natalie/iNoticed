@@ -45,7 +45,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
 		// Username already exists
 		$param = 'Username exists, please choose another';
 	} else {
-		// Username doesnt exists, insert new account
+		// Username doesnt exist, insert new account
 if ($stmt = $con->prepare('INSERT INTO accounts (username, password, email, activation_code) VALUES (?, ?, ?, ?)')) {
 	// We do not want to expose passwords in our database, so hash the password and use password_verify when a user logs in.
 	$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -59,6 +59,16 @@ if ($stmt = $con->prepare('INSERT INTO accounts (username, password, email, acti
 	$message = '<p>Please click the following link to activate your account: <a href="' . $activate_link . '">' . $activate_link . '</a></p>';
 	mail($_POST['email'], $subject, $message, $headers);
 	$param = 'Your account has been created. Please check your email to activate your account, then sign in.';
+		if ($stmt->execute()) {
+	    $id = $stmt->insert_id;
+	    $insert = $conn->prepare('INSERT INTO profiles (id) VALUES(?)');
+	    $insert->bind_param('i', $id);
+	    if ($insert->execute()) {
+	        echo 'data inserted successfully';
+	    } else {
+	        printf('Errormessage: %s\n', $mysqli->error);
+	    }
+    }
 } else {
 	// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
 	$param =  'Could not prepare statement. Try again. If you\'ve tried multiple times, contact dating@inoticed.org with the details of the problem';

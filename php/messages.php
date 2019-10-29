@@ -5,26 +5,32 @@ session_start();
 if (!isset($_SESSION['loggedin'])) {
 	header('Location: /dating_sign_in.html');
 	exit();
-}
+} 
 
-$DATABASE_HOST = 'mysql.inoticed.org';
-$DATABASE_USER = 'ndhall';
-$DATABASE_PASS = 'natabata14';
-$DATABASE_NAME = 'inoticed_dating';
-$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-if (mysqli_connect_errno()) {
-	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
-}
-// We don't have the password or email info stored in sessions so instead we can get the results from the database.
-$stmt = $con->prepare('SELECT password, email FROM accounts WHERE id = ?');
-// In this case we can use the account ID to get the account info.
-$stmt->bind_param('i', $_SESSION['id']);
-$stmt->execute();
-$stmt->bind_result($password, $email);
-$stmt->fetch();
-$stmt->close();
+// $DATABASE_HOST = 'mysql.inoticed.org';
+// $DATABASE_USER = 'ndhall';
+// $DATABASE_PASS = 'natabata14';
+// $DATABASE_NAME = 'inoticed_dating';
+// // Try and connect using the info above.
+// $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+// if ( mysqli_connect_errno() ) {
+// 	// If there is an error with the connection, stop the script and display the error.
+// 	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
+// }
+
+// //Email activation check
+// $stmt = $con->prepare('SELECT activation_code FROM accounts WHERE id = ?');
+// $stmt->bind_param('i', $_SESSION['id']);
+// $stmt->execute();
+// $stmt->store_result();
+// $stmt->bind_result($activation_code);
+// $stmt->fetch();
+// if ($activation_code == '') {
+// // user not activated, redirect or display msg
+// 	header('Location: /please_activate.html');
+// }
+
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -45,29 +51,16 @@ $stmt->close();
 			<div class="nav-right">
 				<a href="/php/dating_home.php"><i class="fas fa-envelope"></i>Home</a>
 				<a href="/php/messages.php"><i class="fas fa-envelope"></i>Messages</a>
-				<a href="/php/dating_profile.php"><i class="fas fa-address-card"></i>My Profile</a>
+				<a href="/php/profile.php"><i class="fas fa-address-card"></i>My Profile</a>
 				<a href="/php/account_settings.php"><i class="fas fa-cog"></i>Account Settings</a>
 				<a href="/php/dating_logout.php"><i class="fas fa-sign-out-alt"></i>Log Out</a>
 			</div>
 		</div>
 
 		<div class="content">
-			<h2>Profile Page</h2>
-			<div>
-				<p>Your account details are below:</p>
-				<table>
-					<tr>
-						<td>Username:</td>
-						<td><?=$_SESSION['name']?></td>
-					</tr>
-					<tr>
-						<td>Email:</td>
-						<td><?=$email?></td>
-					</tr>
-				</table>
-			</div>
+			<h2>Home Page</h2>
+			<p>Welcome back, <?=$_SESSION['name']?>!</p>
 		</div>
-
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 		<script
 			  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"

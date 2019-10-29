@@ -261,7 +261,7 @@ $(document).ready(function(){
 
 
 //Generate url with username on the end
-	$('button.generate-url-button').click(function(e) {
+	$('.generate-url-button').click(function(e) {
 		var usernameVal = '<?php echo $username; ?>';
 		var uniqueURL = 'inoticed.org/profile/' + usernameVal;
 		$('p#unique-url').html(uniqueURL);

@@ -264,11 +264,10 @@ $(document).ready(function(){
 	$('button.generate-url-button').click(function(e) {
 		var usernameVal = '<?php echo $username; ?>';
 		var uniqueURL = 'inoticed.org/profile/' + usernameVal;
-		$('p#uniqueURL').html(uniqueURL);
+		$('p#unique-url').html(uniqueURL);
 		$('div#generate-url').css({'display': 'block'});
 	});
 
-	var val = "<?php echo $val ?>";
 
 
 

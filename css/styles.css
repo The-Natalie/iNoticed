@@ -466,3 +466,10 @@ Dating Sub Pages
 	font-size: 1em;
 }
 
+p #unique-url {
+	margin-top: -10px;
+	margin-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+

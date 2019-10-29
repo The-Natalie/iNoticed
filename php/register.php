@@ -51,14 +51,7 @@ if ($stmt = $con->prepare('INSERT INTO accounts (username, password, email, acti
 	$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 	$uniqid = uniqid();
 	$stmt->bind_param('ssss', $_POST['username'], $password, $_POST['email'], $uniqid);
-	$stmt->execute();
-	$from    = 'dating@inoticed.org';
-	$subject = 'Account Activation Required';
-	$headers = 'From: ' . $from . "\r\n" . 'Reply-To: ' . $from . "\r\n" . 'X-Mailer: PHP/' . phpversion() . "\r\n" . 'MIME-Version: 1.0' . "\r\n" . 'Content-Type: text/html; charset=UTF-8' . "\r\n";
-	$activate_link = 'http://inoticed.org/php/activate.php?email=' . $_POST['email'] . '&code=' . $uniqid;
-	$message = '<p>Please click the following link to activate your account: <a href="' . $activate_link . '">' . $activate_link . '</a></p>';
-	mail($_POST['email'], $subject, $message, $headers);
-	$param = 'Your account has been created. Please check your email to activate your account, then sign in.';
+	
 		if ($stmt->execute()) {
 	    $id = $stmt->insert_id;
 	    $insert = $conn->prepare('INSERT INTO profiles (id) VALUES(?)');
@@ -69,6 +62,14 @@ if ($stmt = $con->prepare('INSERT INTO accounts (username, password, email, acti
 	        printf('Errormessage: %s\n', $mysqli->error);
 	    }
     }
+  $stmt->execute();
+	$from    = 'dating@inoticed.org';
+	$subject = 'Account Activation Required';
+	$headers = 'From: ' . $from . "\r\n" . 'Reply-To: ' . $from . "\r\n" . 'X-Mailer: PHP/' . phpversion() . "\r\n" . 'MIME-Version: 1.0' . "\r\n" . 'Content-Type: text/html; charset=UTF-8' . "\r\n";
+	$activate_link = 'http://inoticed.org/php/activate.php?email=' . $_POST['email'] . '&code=' . $uniqid;
+	$message = '<p>Please click the following link to activate your account: <a href="' . $activate_link . '">' . $activate_link . '</a></p>';
+	mail($_POST['email'], $subject, $message, $headers);
+	$param = 'Your account has been created. Please check your email to activate your account, then sign in.';
 } else {
 	// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
 	$param =  'Could not prepare statement. Try again. If you\'ve tried multiple times, contact dating@inoticed.org with the details of the problem';

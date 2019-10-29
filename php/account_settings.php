@@ -77,7 +77,7 @@ $stmt->close();
 				<br />
 				<form>
 					<input id="get-username" type="hidden" name="id" value="<?php echo $username; ?>"/>
-					<input class="generate-url-button" type="submit">Generate profile url  <i class="far fa-edit"></i></input>
+					<input class="generate-url-button" type="submit" value="Generate profile url"></input>
 				</form>
 				<div id="generate-url">
 					<p>Your url is:</p>

@@ -46,23 +46,12 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
 		$param = 'Username exists, please choose another';
 	} else {
 		// Username doesnt exist, insert new account
-if ($stmt = $con->prepare('INSERT INTO accounts (username, password, email, activation_code) VALUES (?, ?, ?, ?)')) {
+if ($stmt = $con->prepare('INSERT INTO accounts (username, password, email, activation_code) VALUES (?, ?, ?, ?)') ('INSERT INTO profiles (id) VALUES(LAST_INSERT_ID()')) {
 	// We do not want to expose passwords in our database, so hash the password and use password_verify when a user logs in.
 	$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 	$uniqid = uniqid();
 	$stmt->bind_param('ssss', $_POST['username'], $password, $_POST['email'], $uniqid);
-	
-		if ($stmt->execute()) {
-	    $id = $stmt->insert_id;
-	    $insert = $conn->prepare('INSERT INTO profiles (id) VALUES(?)');
-	    $insert->bind_param('i', $id);
-	    if ($insert->execute()) {
-	        echo 'data inserted successfully';
-	    } else {
-	        printf('Errormessage: %s\n', $mysqli->error);
-	    }
-    }
-  $stmt->execute();
+	$stmt->execute();
 	$from    = 'dating@inoticed.org';
 	$subject = 'Account Activation Required';
 	$headers = 'From: ' . $from . "\r\n" . 'Reply-To: ' . $from . "\r\n" . 'X-Mailer: PHP/' . phpversion() . "\r\n" . 'MIME-Version: 1.0' . "\r\n" . 'Content-Type: text/html; charset=UTF-8' . "\r\n";

@@ -462,7 +462,7 @@ Dating Sub Pages
 	border-bottom: 2px solid #9da2af;
 }
 
-#update-email-form p, #update-password-form p, #delete-account-form p, #edit-profile-form p. div #generate-url p {
+#update-email-form p, #update-password-form p, #delete-account-form p, #edit-profile-form p. #generate-url p {
 	font-size: 1em;
 }
 

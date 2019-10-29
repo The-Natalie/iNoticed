@@ -271,7 +271,7 @@ $(document).ready(function(){
 
 //Profile navigation change based on if user is signed in or out
 var navVal;
-	if (document.getElementById('user-state').value !== null) {
+	if (document.getElementById('user-state').value !== null || document.getElementById('user-state').value !== undefined) {
 		navVal = document.getElementById('user-state').value;
 		if (navVal == 'signed-out-nav') {
 			$('div.nav-light').html('<div class="nav-left"><div class="title"><a href="/">iNoticed</a></div><a href="/dating.html">Dating</a><a href="/kindness.html">Kindness</a><a href="/valued.html">Valued</a></div><div class="nav-right"><a href="/account_creation.html"><i class="fas fa-user-plus"></i>Create Account</a><a href="/dating_sign_in.html"><i class="fas fa-sign-in-alt"></i>Sign In</a></div>');

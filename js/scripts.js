@@ -270,15 +270,17 @@ $(document).ready(function(){
 
 
 //Profile navigation change based on if user is signed in or out
-	var navVal = document.getElementById('user-state').value;
-	if (navVal == 'signed-out-nav') {
-		$('div.nav-light').html('<div class="nav-left"><div class="title"><a href="/">iNoticed</a></div><a href="/dating.html">Dating</a><a href="/kindness.html">Kindness</a><a href="/valued.html">Valued</a></div><div class="nav-right"><a href="/account_creation.html"><i class="fas fa-user-plus"></i>Create Account</a><a href="/dating_sign_in.html"><i class="fas fa-sign-in-alt"></i>Sign In</a></div>');
-	} 
+var navVal;
+	if (document.getElementById('user-state').value != null) {
+		navVal = document.getElementById('user-state').value;
+		if (navVal == 'signed-out-nav') {
+			$('div.nav-light').html('<div class="nav-left"><div class="title"><a href="/">iNoticed</a></div><a href="/dating.html">Dating</a><a href="/kindness.html">Kindness</a><a href="/valued.html">Valued</a></div><div class="nav-right"><a href="/account_creation.html"><i class="fas fa-user-plus"></i>Create Account</a><a href="/dating_sign_in.html"><i class="fas fa-sign-in-alt"></i>Sign In</a></div>');
+		} 
 
-	if (navVal == 'signed-in-nav') {
-		$('div.nav-light').html('<div class="nav-left"><div class="title"><a href="/">iNoticed</a></div></div><div class="nav-right"><a href="/php/dating_home.php"><i class="fas fa-envelope"></i>Home</a><a href="/php/messages.php"><i class="fas fa-envelope"></i>Messages</a><a href="/php/profile.php"><i class="fas fa-address-card"></i>My Profile</a><a href="/php/account_settings.php"><i class="fas fa-cog"></i>Account Settings</a><a href="/php/dating_logout.php"><i class="fas fa-sign-out-alt"></i>Log Out</a></div>');
+		if (navVal == 'signed-in-nav') {
+			$('div.nav-light').html('<div class="nav-left"><div class="title"><a href="/">iNoticed</a></div></div><div class="nav-right"><a href="/php/dating_home.php"><i class="fas fa-envelope"></i>Home</a><a href="/php/messages.php"><i class="fas fa-envelope"></i>Messages</a><a href="/php/profile.php"><i class="fas fa-address-card"></i>My Profile</a><a href="/php/account_settings.php"><i class="fas fa-cog"></i>Account Settings</a><a href="/php/dating_logout.php"><i class="fas fa-sign-out-alt"></i>Log Out</a></div>');
+	}
 }
-
 
 			
 		

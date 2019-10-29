@@ -1,7 +1,10 @@
 <?php
-// Process delete operation after confirmation
-if(isset($_POST["id"]) && !empty($_POST["id"])){
-    // Include config file
+session_start();
+// If the user is not logged in redirect to the login page...
+if (!isset($_SESSION['loggedin'])) {
+    header('Location: /dating_sign_in.html');
+    exit();
+}
 
     $DATABASE_HOST = 'mysql.inoticed.org';
     $DATABASE_USER = 'ndhall';
@@ -14,15 +17,22 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         die ('Failed to connect to MySQL: ' . mysqli_connect_error());
     }    
 
+    $stmt = $con->prepare('SELECT id FROM accounts WHERE id = ?');
+    $stmt->bind_param('i', $_SESSION['id']);
+    $stmt->execute();
+    $stmt->store_result();
+    $stmt->bind_result($id);
+    $stmt->fetch();
+
     // Prepare a delete statement
-    $sql = "DELETE FROM accounts WHERE id = ?";
+    $sql = "DELETE FROM accounts WHERE id = $id";
     
     if($stmt = mysqli_prepare($con, $sql)){
         // Bind variables to the prepared statement as parameters
         mysqli_stmt_bind_param($stmt, "i", $param_id);
         
         // Set parameters
-        $param_id = trim($_POST["id"]);
+        $param_id = trim($id);
         
         // Attempt to execute the prepared statement
         if(mysqli_stmt_execute($stmt)){
@@ -39,12 +49,5 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     
     // Close connection
     mysqli_close($con);
-} else{
-    // Check existence of id parameter
-    if(empty(trim($_GET["id"]))){
-        // URL doesn't contain id parameter. Redirect to error page
-        echo "URL doesn't contain id parameter.<br><a href='/php/account_settings.php'>Go Back</a>";
-        exit();
-    }
-}
+
 ?>

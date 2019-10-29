@@ -18,11 +18,11 @@ if ( mysqli_connect_errno() ) {
 	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
-$stmt = $con->prepare('SELECT password, email, id FROM accounts WHERE id = ?');
+$stmt = $con->prepare('SELECT password, email, id, username FROM accounts WHERE id = ?');
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
 $stmt->store_result();
-$stmt->bind_result($password, $email, $id);
+$stmt->bind_result($password, $email, $id, $username);
 $stmt->fetch();
 
 //Email activation check
@@ -75,7 +75,16 @@ $stmt->close();
 					</tr>
 				</table>
 				<br />
-
+				<form>
+					<input id="get-username" type="hidden" name="id" value="<?php echo $username; ?>"/>
+					<input class="generate-url-button" type="submit">Generate profile url  <i class="far fa-edit"></i></input>
+				</form>
+				<div id="generate-url">
+					<p>Your url is:</p>
+					<p id="unique-url"></p>
+					<p>This url is used on the card you pass out to others, so that they can view your profile.</p>
+				</div>
+				<br />
 				<button class="update-email-button" type="button">Update email  <i class="far fa-edit"></i></button>
 				<div id="update-email-form">
 					<form method="post" action="/php/update_email.php">

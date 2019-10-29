@@ -449,12 +449,12 @@ Dating Sub Pages
 	margin: 0 0 10px 0;
 }
 
-.update-email-button, .update-password-button, .delete-account-button {
+.update-email-button, .update-password-button, .delete-account-button, .edit-profile-button, .generate-url-button {
 	cursor: pointer;
 	margin-bottom: 15px;
 }
 
-#update-email-form, #update-password-form, #delete-account-form {
+#update-email-form, #update-password-form, #delete-account-form, #edit-profile-form, #generate-url div {
 	padding-top: 10px;
 	padding-bottom: 15px;
 	display: none;
@@ -462,7 +462,7 @@ Dating Sub Pages
 	border-bottom: 2px solid #9da2af;
 }
 
-#update-email-form p, #update-password-form p, #delete-account-form p {
+#update-email-form p, #update-password-form p, #delete-account-form p, #edit-profile-form p. #generate-url div p {
 	font-size: 1em;
 }
 

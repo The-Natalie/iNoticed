@@ -260,6 +260,17 @@ $(document).ready(function(){
 	});
 
 
+//Generate url with username on the end
+	$('button.generate-url-button').click(function(e) {
+		var usernameVal = document.getElementById('get-username').value;
+		var uniqueURL = 'inoticed.org/profile/' + usernameVal;
+		$('p#uniqueURL').html(uniqueURL);
+		$('div#generate-url').css({'display': 'block'});
+	});
+
+
+
+
 
 //************Particles.js************//
 

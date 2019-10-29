@@ -3,8 +3,9 @@
 session_start();
 // If the user is not logged in redirect to the login page...
 if (!isset($_SESSION['loggedin'])) {
-	header('Location: /dating_sign_in.html');
-	exit();
+	$user_state = 'signed-out-nav';
+} else {
+	$user_state = 'signed-in-nav';
 }
 
 $DATABASE_HOST = 'mysql.inoticed.org';
@@ -37,18 +38,8 @@ $stmt->close();
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"> 
 	</head>
 	<body id="loggedin">
-
+		<input id=user-state type="hidden" value="<?php echo $user_state; ?>"/>
 		<div class="nav-light">
-			<div class="nav-left">
-				<div class="title"><a href="/">iNoticed</a></div>
-			</div>
-			<div class="nav-right">
-				<a href="/php/dating_home.php"><i class="fas fa-envelope"></i>Home</a>
-				<a href="/php/messages.php"><i class="fas fa-envelope"></i>Messages</a>
-				<a href="/php/profile.php"><i class="fas fa-address-card"></i>My Profile</a>
-				<a href="/php/account_settings.php"><i class="fas fa-cog"></i>Account Settings</a>
-				<a href="/php/dating_logout.php"><i class="fas fa-sign-out-alt"></i>Log Out</a>
-			</div>
 		</div>
 
 		<div class="content">

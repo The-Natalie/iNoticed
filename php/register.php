@@ -77,8 +77,7 @@ $stmt->execute();
 $stmt->store_result();
 $stmt->bind_result($id);
 $stmt->fetch();
-$sql .=("INSERT INTO orders(customer_id, product_description, delivery_mode, course_cost) select customer_id, '$mysql_desc', '$mysql_mode', '$mysql_cost' from customer_details;");
-$sql = "INSERT INTO profiles (id) SELECT id FROM accounts WHERE id = $id";
+$sql = "INSERT INTO profiles (id) SELECT id FROM accounts WHERE id = '$id'";
 if ($con->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {

@@ -76,7 +76,7 @@ $stmt->store_result();
 $stmt->bind_result($id);
 $stmt->fetch();
 
-$sql = "INSERT INTO profiles (id) VALUES ($id)";
+$sql = "INSERT INTO profiles ('id') VALUES ($id)";
 if (mysqli_query($con, $sql)) {
   echo "New record created successfully";
 } else {

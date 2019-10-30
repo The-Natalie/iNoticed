@@ -456,7 +456,7 @@ else if ((zip_in.val().length == 5) )
 
 // Make HTTP Request
 $.ajax({
-url: "http://api.zippopotam.us/us/" + zip_in.val(),
+url: "https://api.zippopotam.us/us/" + zip_in.val(),
 cache: false,
 dataType: "json",
 type: "GET",

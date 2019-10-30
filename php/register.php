@@ -66,8 +66,8 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
 			$stmt->bind_result($id);
 			$stmt->fetch();
 
-			$sql = "INSERT INTO profiles (id) VALUES ($_SESSION['id'])";
-			if (mysqli_query($conn, $sql)) {
+			$sql = "INSERT INTO profiles (id) VALUES ($id)";
+			if (mysqli_query($con, $sql)) {
 		    echo "New record created successfully";
 			} else {
 			    echo "Error: " . $sql . "<br>" . mysqli_error($con);

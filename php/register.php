@@ -45,6 +45,19 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
 		// Username already exists
 		$param = 'Username exists, please choose another';
 	} else {
+		$stmt = $con->prepare('SELECT id FROM accounts WHERE id = ?');
+		$stmt->bind_param('i', $_SESSION['id']);
+		$stmt->execute();
+		$stmt->store_result();
+		$stmt->bind_result($id);
+		$stmt->fetch();
+
+		$sql = "INSERT INTO profiles (id) VALUES ($id)";
+		if (mysqli_query($conn, $sql)) {
+	    echo "New record created successfully";
+		} else {
+		    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+		}
 		// Username doesnt exist, insert new account
 		if ($stmt = $con->prepare('INSERT INTO accounts (username, password, email, activation_code) VALUES (?, ?, ?, ?)')) {
 			// We do not want to expose passwords in our database, so hash the password and use password_verify when a user logs in.
@@ -58,20 +71,6 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
 			$activate_link = 'http://inoticed.org/php/activate.php?email=' . $_POST['email'] . '&code=' . $uniqid;
 			$message = '<p>Please click the following link to activate your account: <a href="' . $activate_link . '">' . $activate_link . '</a></p>';
 			mail($_POST['email'], $subject, $message, $headers);
-
-			$stmt = $con->prepare('SELECT id FROM accounts WHERE id = ?');
-			$stmt->bind_param('i', $_SESSION['id']);
-			$stmt->execute();
-			$stmt->store_result();
-			$stmt->bind_result($id);
-			$stmt->fetch();
-
-			$sql = "INSERT INTO profiles (id) VALUES ($id)";
-			if (mysqli_query($conn, $sql)) {
-		    echo "New record created successfully";
-			} else {
-			    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-			}
 			$param = 'Your account has been created. Please check your email to activate your account, then sign in.';
 		} else {
 			// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.

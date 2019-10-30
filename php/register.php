@@ -58,7 +58,7 @@ if ($stmt = $con->prepare('INSERT INTO accounts (username, password, email, acti
 	$activate_link = 'http://inoticed.org/php/activate.php?email=' . $_POST['email'] . '&code=' . $uniqid;
 	$message = '<p>Please click the following link to activate your account: <a href="' . $activate_link . '">' . $activate_link . '</a></p>';
 	mail($_POST['email'], $subject, $message, $headers);
-	$stmt = $con->prepare('INSERT INTO profiles (id) VALUES("LAST_INSERT_ID()")');
+	INSERT INTO profiles (id) VALUES("LAST_INSERT_ID()");
 	$param = 'Your account has been created. Please check your email to activate your account, then sign in.';
 } else {
 	// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.

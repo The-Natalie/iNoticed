@@ -69,19 +69,20 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
 	// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
 	$param =  'Could not prepare statement. Try again. If you\'ve tried multiple times, contact dating@inoticed.org with the details of the problem';
 }
-$stmt = $con->prepare('SELECT id FROM accounts WHERE id = ?');
+$stmt = $con2->prepare('SELECT id FROM accounts WHERE id = ?');
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
 $stmt->store_result();
 $stmt->bind_result($id);
 $stmt->fetch();
 
-$sql = "INSERT INTO profiles ('id') VALUES ($id)";
-if (mysqli_query($con, $sql)) {
+$sql2 = "INSERT INTO profiles (id) VALUES ($id)";
+if (mysqli_query($con2, $sql2)) {
   echo "New record created successfully";
 } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($con);
+    echo "Error: " . $sql2 . "<br>" . mysqli_error($con2);
 }
+$con2->close();
 $con->close();
 ?>
 

@@ -72,12 +72,11 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
 }
 
 $stmt = $con->prepare('SELECT id FROM accounts WHERE id = ?');
-$stmt->bind_param('i', $_SESSION['id']);
+$stmt->bind_param("i",$id);
+$id = (int) $_SESSION['id'];
 $stmt->execute();
-$stmt->store_result();
-$stmt->bind_result($id);
-$stmt->fetch();
-$sql = 'INSERT INTO profiles (id) SELECT id FROM accounts WHERE id = ?';
+$result = $stmt->get_result();
+$sql = 'INSERT INTO profiles (id) SELECT id FROM accounts WHERE id = $id';
 if ($con->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {

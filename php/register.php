@@ -59,6 +59,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
 			$message = '<p>Please click the following link to activate your account: <a href="' . $activate_link . '">' . $activate_link . '</a></p>';
 			mail($_POST['email'], $subject, $message, $headers);
 			$param = 'Your account has been created. Please check your email to activate your account, then sign in.';
+
 		} else {
 			// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
 			$param =  'Could not prepare statement. Try again. If you\'ve tried multiple times, contact dating@inoticed.org with the details of the problem';
@@ -69,20 +70,19 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
 	// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
 	$param =  'Could not prepare statement. Try again. If you\'ve tried multiple times, contact dating@inoticed.org with the details of the problem';
 }
-$stmt = $con2->prepare('SELECT id FROM accounts WHERE id = ?');
+$stmt = $con->prepare('SELECT id FROM accounts WHERE id = ?');
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
 $stmt->store_result();
 $stmt->bind_result($id);
 $stmt->fetch();
 
-$sql2 = "INSERT INTO profiles (id) VALUES ($id)";
-if (mysqli_query($con2, $sql2)) {
-  echo "New record created successfully";
+$sql = "INSERT INTO profiles (id) VALUES ($id)";
+if ($con->query($sql) === TRUE) {
+    echo "New record created successfully";
 } else {
-    echo "Error: " . $sql2 . "<br>" . mysqli_error($con2);
+    echo "Error: " . $sql . "<br>" . $conn->error;
 }
-$con2->close();
 $con->close();
 ?>
 

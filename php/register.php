@@ -78,7 +78,7 @@ $stmt->store_result();
 $stmt->bind_result($id);
 $stmt->fetch();
 
-$sql = "INSERT INTO profiles (id) VALUES ('22')";
+$sql = "INSERT INTO profiles (id) SELECT id FROM accounts WHERE id = $id";
 if ($con->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {

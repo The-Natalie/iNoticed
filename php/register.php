@@ -70,16 +70,15 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
 	// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
 	$param =  'Could not prepare statement. Try again. If you\'ve tried multiple times, contact dating@inoticed.org with the details of the problem';
 }
-$id = "";
+
 $stmt = $con->prepare('SELECT id FROM accounts WHERE id = ?');
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
 $stmt->store_result();
 $stmt->bind_result($id);
 $stmt->fetch();
-$id = "$_SESSION['id']";
 
-$sql = "INSERT INTO profiles (id) VALUES ($id)";
+$sql = "INSERT INTO profiles (id) VALUES ('22')";
 if ($con->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {

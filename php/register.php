@@ -46,11 +46,12 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
 		$param = 'Username exists, please choose another';
 	} else {
 		// Username doesnt exist, insert new account
-		if ($stmt = $con->prepare('INSERT INTO accounts (username, password, email, activation_code) VALUES (?, ?, ?, ?)')) {
+		if ($stmt = $con->prepare('INSERT INTO accounts (id, username, password, email, activation_code) VALUES (?, ?, ?, ?)')) {
 			// We do not want to expose passwords in our database, so hash the password and use password_verify when a user logs in.
 			$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 			$uniqid = uniqid();
-			$stmt->bind_param('ssss', $_POST['username'], $password, $_POST['email'], $uniqid);
+			$id = (int) $_SESSION['id'];
+			$stmt->bind_param('issss', $id, $_POST['username'], $password, $_POST['email'], $uniqid);
 			$stmt->execute();
 			$from    = 'dating@inoticed.org';
 			$subject = 'Account Activation Required';
@@ -71,11 +72,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
 	$param =  'Could not prepare statement. Try again. If you\'ve tried multiple times, contact dating@inoticed.org with the details of the problem';
 }
 
-$stmt = $con->prepare('SELECT id FROM accounts WHERE id = ?');
-$stmt->bind_param("i",$id);
-$id = (int) $_SESSION['id'];
-$stmt->execute();
-$result = $stmt->get_result();
+
 $sql = "INSERT INTO profiles (id) VALUES ('$id')";
 if ($con->query($sql) === TRUE) {
     echo "New record created successfully";

@@ -81,7 +81,7 @@ $sql = "INSERT INTO profiles (id) VALUES ($id)";
 if ($con->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Error: " . $sql . "<br>" . $con->error;
 }
 $con->close();
 ?>

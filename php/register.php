@@ -76,7 +76,7 @@ $stmt->bind_param("i",$id);
 $id = (int) $_SESSION['id'];
 $stmt->execute();
 $result = $stmt->get_result();
-$sql = 'INSERT INTO profiles (id) SELECT id FROM accounts WHERE id = "$id"';
+$sql = 'INSERT INTO profiles (id) SELECT id FROM accounts WHERE id = /'$_SESSION["id"]/'';
 if ($con->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
@@ -85,7 +85,6 @@ if ($con->query($sql) === TRUE) {
 $con->close();
 ?>
 
-$q = "SELECT * FROM ". $tablename ." WHERE 'id'='". $rand."'";
 
 <!DOCTYPE html>
 <html>

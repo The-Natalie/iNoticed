@@ -454,7 +454,7 @@ Dating Sub Pages
 	margin-bottom: 15px;
 }
 
-#update-email-form, #update-password-form, #delete-account-form, #edit-profile-form, div #generate-url {
+#update-email-form, #update-password-form, #delete-account-form, div #generate-url {
 	padding-top: 10px;
 	padding-bottom: 15px;
 	display: none;

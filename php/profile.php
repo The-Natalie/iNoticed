@@ -48,7 +48,7 @@ $stmt->close();
 		<div class="content">
 			<h2>Profile Page</h2>
 			<div>
-				<button type="button">Edit profile  <i class="far fa-edit"></i></button>
+				<a href="/php/edit_profile.php"><button type="button">Edit profile  <i class="far fa-edit"></i></button></a>
 				<br />
 				<br />
 				<p>Edit Profile:</p>

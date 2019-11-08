@@ -11,8 +11,8 @@ if ( mysqli_connect_errno() ) {
 	die ($param = 'Failed to connect to MySQL: ' . mysqli_connect_error());
 }
  
-// Prepare an insert statement
-$sql = "INSERT INTO accounts (first_name, age, gender, feet, inches, eyes, hair, smoke, drugs, transportation, intention, zip, city, state, profession, education, ethnicity, religion, marital_status, kids, want_kids, about_me) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+// Prepare an update statement
+$sql = "UPDATE accounts first_name=?, age=?, gender=?, feet=?, inches=?, eyes=?, hair=?, smoke=?, drugs=?, transportation=?, intention=?, zip=?, city=?, state=?, profession=?, education=?, ethnicity=?, religion=?, marital_status=?, kids=?, want_kids=?, about_me=? WHERE id=?";
  
 if($stmt = mysqli_prepare($con, $sql)){
     // Bind variables to the prepared statement as parameters
@@ -44,7 +44,7 @@ if($stmt = mysqli_prepare($con, $sql)){
     
     // Attempt to execute the prepared statement
     if(mysqli_stmt_execute($stmt)){
-        $param = "Records inserted successfully.";
+        $param = "Your profile has been updated successfully.";
     } else{
         $param = "ERROR: Could not execute query: $sql. " . mysqli_error($con);
     }

@@ -12,7 +12,7 @@ if ( mysqli_connect_errno() ) {
 }
  
 // Prepare an update statement
-$sql = "UPDATE accounts first_name=?, age=?, gender=?, feet=?, inches=?, eyes=?, hair=?, smoke=?, drugs=?, transportation=?, intention=?, zip=?, city=?, state=?, profession=?, education=?, ethnicity=?, religion=?, marital_status=?, kids=?, want_kids=?, about_me=? WHERE id=?";
+$sql = "UPDATE accounts SET first_name=?, age=?, gender=?, feet=?, inches=?, eyes=?, hair=?, smoke=?, drugs=?, transportation=?, intention=?, zip=?, city=?, state=?, profession=?, education=?, ethnicity=?, religion=?, marital_status=?, kids=?, want_kids=?, about_me=? WHERE id=?";
  
 if($stmt = mysqli_prepare($con, $sql)){
     // Bind variables to the prepared statement as parameters

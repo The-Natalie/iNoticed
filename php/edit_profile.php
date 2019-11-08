@@ -18,11 +18,11 @@ if (mysqli_connect_errno()) {
 }
 
 //Get data from database
-$stmt = $con->prepare('SELECT id, first_name, age, gender, feet, inches, eyes, hair, intention, zip, city, state, profession, education, ethnicity, religion, marital_status, kids, want_kids, about_me FROM accounts WHERE id = ?');
+$stmt = $con->prepare('SELECT id, first_name, age, gender, feet, inches, eyes, hair, smoke, drugs, transportation, intention, zip, city, state, profession, education, ethnicity, religion, marital_status, kids, want_kids, about_me FROM accounts WHERE id = ?');
 // In this case we can use the account ID to get the account info.
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
-$stmt->bind_result($id, $first_name, $age, $gender, $feet, $inches, $eyes, $hair, $intention, $zip, $city, $state, $profession, $education, $ethnicity, $religion, $marital_status, $kids, $want_kids, $about_me);
+$stmt->bind_result($id, $first_name, $age, $gender, $feet, $inches, $eyes, $hair, $smoke, $drugs, $transportation, $intention, $zip, $city, $state, $profession, $education, $ethnicity, $religion, $marital_status, $kids, $want_kids, $about_me);
 $stmt->fetch();
 $stmt->close();
 ?>
@@ -41,22 +41,28 @@ $stmt->close();
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"> 
 	</head>
 	<body id="loggedin">
-		<input id=user-state type="hidden" value="<?php echo $user_state; ?>"/>
+
 		<div class="nav-light">
+			<div class="nav-left">
+				<div class="title"><a href="/">iNoticed</a></div>
+			</div>
+			<div class="nav-right">
+				<a href="/php/dating_home.php"><i class="fas fa-envelope"></i>Home</a>
+				<a href="/php/messages.php"><i class="fas fa-envelope"></i>Messages</a>
+				<a href="/php/profile.php"><i class="fas fa-address-card"></i>My Profile</a>
+				<a href="/php/account_settings.php"><i class="fas fa-cog"></i>Account Settings</a>
+				<a href="/php/dating_logout.php"><i class="fas fa-sign-out-alt"></i>Log Out</a>
+			</div>
 		</div>
 
 		<div class="content">
-			<h2>Profile Page</h2>
+			<h2>Edit Profile</h2>
 			<div>
-				<button type="button">Edit profile  <i class="far fa-edit"></i></button>
-				<br />
-				<br />
-				<p>Edit Profile:</p>
-				<form method="post" action="/php/edit_profile.php">
-						<p>First Name:  <input type="text" name="first_name" size="20" value="<?php echo $first_name; ?>" required></p>
-						<p>Age:  <input type="number" name="age" maxlength="3" size="3" value="<?php echo $age; ?>" required></p>
-						<p>Gender:&npsb;&npsb;
- 						<select name="gender" size="1" value="<?php echo $gender; ?>" required>
+				<form id="edit_profile" method="post" action="/php/updated_profile.php">
+					<p>First Name:  <input id ="first_name" type="text" name="first_name" size="20" required/></p>
+					<p>Age:  <input id="age" type="number" name="age" maxlength="3" size="3" required/></p>
+					<p>Gender:&nbsp;&nbsp;
+ 						<select id="gender" name="gender" size="1" required>
  							<option value="">[Choose Option Below]</option>
 					    <option value="female">Female</option>
 					    <option value="male">Male</option>
@@ -68,8 +74,8 @@ $stmt->close();
 					    <option value="gender-trans">Gender Transition</option>
 					  </select>
 					</p>
-					<p>Height:&npsb;&npsb;
-						<select name="feet" size="1" value="<?php echo $feet; ?>" required>
+					<p>Height:&nbsp;&nbsp;
+						<select id="feet" name="feet" size="1" required>
 							<option value="">Feet</option>
 					    <option value="f2">2</option>
 					    <option value="f3">3</option>
@@ -78,7 +84,7 @@ $stmt->close();
 					    <option value="f6">6</option>
 					    <option value="f7">7</option>
 				  	</select>
-				  	<select name="inches" size="1" value="<?php echo $inches; ?>" required>
+				  	<select id="inches" name="inches" size="1" required>
 				  		<option value="">Inches</option>
 				  		<option value="i0">0</option>
 				  		<option value="i1">1</option>
@@ -95,8 +101,8 @@ $stmt->close();
 					    <option value="i12">12</option>
 				  	</select>
 				  </p>
-			  	<p>Eye Color:&npsb;&npsb;
-						<select name="eyes" size="1" value="<?php echo $eyes; ?>" required>
+			  	<p>Eye Color:&nbsp;&nbsp;
+						<select id="eyes" name="eyes" size="1" required>
 							<option value="">[Choose]</option>
 					    <option value="blue">Blue</option>
 					    <option value="green">Green</option>
@@ -107,8 +113,8 @@ $stmt->close();
 					    <option value="fake-color">Colored Contacts</option>
 			  		</select>
 			  	</p>
-			  	<p>Hair Color:&npsb;&npsb;
-						<select name="hair" size="1" value="<?php echo $hair; ?>" required>
+			  	<p>Hair Color:&nbsp;&nbsp;
+						<select id="hair" name="hair" size="1" required>
 							<option value="">[Choose]</option>
 					    <option value="blond">Blond</option>
 					    <option value="brown">Brown</option>
@@ -119,8 +125,29 @@ $stmt->close();
 					    <option value="fake-color">Unnatural Color</option>
 			  		</select>
 			  	</p>
-			  	<p>What kind of relationship I'm looking for:&npsb;&npsb;
-						<select name="intention" size="1" value="<?php echo $intention; ?>" required>
+			  	<p>Do I smoke:&nbsp;&nbsp;
+						<select id="smoke" name="smoke" size="1" required>
+							<option value="">[Choose]</option>
+					    <option value="yes">Yes</option>
+					    <option value="no">No</option>
+			  		</select>
+			  	</p>
+			  	<p>Do I do drugs:&nbsp;&nbsp;
+						<select id="drugs" name="drugs" size="1" required>
+							<option value="">[Choose]</option>
+					    <option value="yes">Yes</option>
+					    <option value="no">No</option>
+			  		</select>
+			  	</p>
+			  	<p>Do I own a car/truck/motorcycle/something with a motor to get me around:&nbsp;&nbsp;
+						<select id="transportation" name="transportation" size="1" required>
+							<option value="">[Choose]</option>
+					    <option value="yes">Yes</option>
+					    <option value="no">No</option>
+			  		</select>
+			  	</p>
+			  	<p>What kind of relationship I'm looking for:&nbsp;&nbsp;
+						<select id="intention" name="intention" size="1" required>
 							<option value="">[Choose]</option>
 					    <option value="serious">Serious/Long Term</option>
 					    <option value="dating">Dating/Short Term</option>
@@ -134,23 +161,23 @@ $stmt->close();
 						<fieldset>
 							<div id="zipbox" class="control-group">
 								<label for="zip">Zip  </label>
-								<input type="text" class=” pattern="[0-9]*" name="zip" id="zip" value="<?php echo $zip; ?>" required/>
+								<input id="zip" type="text" pattern="[0-9]*" name="zip" required/>
 							</div>
 							<div>
 								<div id="citybox" class="control-group">
 									<label for="city">City  </label>
-									<input type="text" name="city" id="city" value="<?php echo $city; ?>" required>
+									<input id="city" type="text" name="city" required/>
 								</div>
 								<div id="statebox" class="control-group">
 									<label for="state">State  </label>
-									<input type="text" name="state" id="state" value="<?php echo $state; ?>" required/>
+									<input id="state" type="text" name="state" required/>
 								</div>
 							</div>
 						</fieldset>
 					</p>
-					<p>Profession:  <input type="text" name="profession" size="25" value="<?php echo $profession; ?>" required></p>
-					<p>Highest level of education:&npsb;&npsb;
-						<select name="education" size="1" value="<?php echo $education; ?>" required>
+					<p>Profession:  <input id="profession" type="text" name="profession" size="25" required/></p>
+					<p>Highest level of education:&nbsp;&nbsp;
+						<select id="education" name="education" size="1" required>
 							<option value="">[Choose]</option>
 					    <option value="pre-highS">Some High School or Lower</option>
 					    <option value="highS">High School Degree/GED</option>
@@ -161,8 +188,8 @@ $stmt->close();
 					    <option value="doctor">Doctoral Degree</option>
 			  		</select>
 			  	</p>
-			  	<p>Ethnicity:&npsb;&npsb;
-			  		<select name="ethnicity" size="1" value="<?php echo $ethnicity; ?>" required>
+			  	<p>Ethnicity:&nbsp;&nbsp;
+			  		<select id="ethnicity" name="ethnicity" size="1" required>
 			  			<option value="">[Choose]</option>
 					    <option value="asian">Asian</option>
 					    <option value="black">Black/African</option>
@@ -174,9 +201,9 @@ $stmt->close();
 					    <option value="other">Other</option>
 			  		</select>
 			  	</p>
-						<p>Religion<input type="text" name="religion" size="30" value="<?php echo $religion; ?>" required></p>
-						<p>Marital status:&npsb;&npsb;
-			  		<select name="marital_status" size="1" value="<?php echo $marital_status; ?>" required>
+					<p>Religion<input id="religion" type="text" name="religion" size="30" required/></p>
+					<p>Marital status:&nbsp;&nbsp;
+			  		<select id="marital_status" name="marital_status" size="1" required>
 			  			<option value="">[Choose]</option>
 					    <option value="single">Single</option>
 					    <option value="relationship">In a Relationship</option>
@@ -187,8 +214,8 @@ $stmt->close();
 					    <option value="widowed">Widowed</option>
 			  		</select>
 			  	</p>
-			  	<p>Have kids (if yes, how many)?:&npsb;&npsb;
-			  		<select name="kids" size="1" value="<?php echo $kids; ?>" required>
+			  	<p>Have kids (if yes, how many)?:&nbsp;&nbsp;
+			  		<select id="kids" name="kids" size="1" required>
 			  			<option value="">[Choose]</option>
 					    <option value="yes1-2">Yes, 1 or 2</option>
 					    <option value="yes3-4">Yes, 3 or 4</option>
@@ -197,16 +224,16 @@ $stmt->close();
 					    <option value="no">No</option>
 			  		</select>
 			  	</p>
-			  	<p>Want kids?:&npsb;&npsb;
-			  		<select name="want_kids" size="1" value="<?php echo $want_kids; ?>" required>
+			  	<p>Want kids?:&nbsp;&nbsp;
+			  		<select id="want_kids" name="want_kids" size="1" required>
 			  			<option value="">[Choose]</option>
 					    <option value="yes">Yes</option>
 					    <option value="no">No</option>
 			  		</select>
 			  	</p>
-			  	<p>About me and what I'm looking for:<input type="text" name="about_me" size="1000" value="<?php echo $about_me; ?>" required></p>
+			  	<p>About me and what I'm looking for:<input id="about_me" type="text" name="about_me" size="1000" required/></p>
 					<input type="hidden" name="id" value="<?php echo $id; ?>"/>
-					<input style="margin-top: 10px;" type="submit" value="Submit">
+					<input style="margin-top: 10px;" type="submit" value="Submit"/>
 				</form>	
 			</div>
 		</div>
@@ -219,5 +246,6 @@ $stmt->close();
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="/js/scripts.js"></script>
+		<script type="text/javascript" src="/js/edit_profile.js"></script>
 	</body>
 </html>

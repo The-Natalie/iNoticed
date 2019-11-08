@@ -53,10 +53,8 @@ $stmt->close();
 
 	if (feet == null || feet === "") {
 		$("#feet option[value='']").attr('selected', 'selected'); 
-		console.log("null = " + feet);
 	} else {
 		$("#feet option[value='" + feet + "']").attr('selected', 'selected'); 
-		console.log("not null = " + feet);
 	}
 
 	if (inches == null || inches === "") {
@@ -339,7 +337,6 @@ $stmt->close();
 			  	</p>
 			  	<p>About me and what I'm looking for:</p>
 			  	<textarea id="about_me" type="text" name="about_me" value="<?=$about_me?>" required style="min-width:75%;" rows="10"></textarea><br />
-					<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 					<input style="margin-top: 10px;" type="submit" value="Submit"/>
 				</form>	
 			</div>

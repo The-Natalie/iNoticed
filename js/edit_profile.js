@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 	var first_name = "<?php echo $first_name; ?>";
 	var age = "<?php echo $age; ?>";
-	var gender = "<?php echo $gender; ?>";   
+	var gender = "<?=$gender?>";   
 	var feet = "<?php echo $feet; ?>";
 	var inches = "<?php echo $inches; ?>";
 	var eyes = "<?php echo $eyes; ?>"; 

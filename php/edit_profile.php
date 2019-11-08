@@ -58,7 +58,8 @@ $stmt->close();
 		<div class="content">
 			<h2>Edit Profile</h2>
 			<div>
-				 <p>Gender = <?=$gender?></p> 
+				 <p>Gender = <?=$gender?> <br />
+				 first name = <?=$first_name?></p> 
 				<form id="edit_profile" method="post" action="/php/updated_profile.php">
 					<p>First Name:  <input id ="first_name" type="text" name="first_name" size="20" required/></p>
 					<p>Age:  <input id="age" type="number" name="age" maxlength="3" size="3" required/></p>

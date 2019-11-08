@@ -61,8 +61,8 @@ $stmt->close();
 				 <p>Gender = <?=$gender?> <br />
 				 first name = <?=$first_name?></p> 
 				<form id="edit_profile" method="post" action="/php/updated_profile.php">
-					<p>First Name:  <input id ="first_name" type="text" name="first_name" size="20" value="<?=$first_name?>" required/></p>
-					<p>Age:  <input id="age" type="number" name="age" maxlength="3" size="3" value="<?=$age?>" required/></p>
+					<p>First Name:&nbsp;&nbsp;<input id ="first_name" type="text" name="first_name" size="20" value="<?=$first_name?>" required/></p>
+					<p>Age:&nbsp;&nbsp;<input id="age" type="number" name="age" maxlength="3" size="3" value="<?=$age?>" required/></p>
 					<p>Gender:&nbsp;&nbsp;
  						<select id="gender" name="gender" size="1" required>
  							<option value="">[Choose Option Below]</option>
@@ -162,22 +162,22 @@ $stmt->close();
 					<p>Location (enter your zip and the rest will be completed automatically):
 						<fieldset>
 							<div id="zipbox" class="control-group">
-								<label for="zip">Zip  </label>
-								<input id="zip" type="text" pattern="[0-9]*" name="zip" required/>
+								<label for="zip">Zip:&nbsp;&nbsp;</label>
+								<input id="zip" type="text" pattern="[0-9]*" name="zip" value="<?=$zip?>" required/>
 							</div>
 							<div>
 								<div id="citybox" class="control-group">
-									<label for="city">City  </label>
-									<input id="city" type="text" name="city" required/>
+									<label for="city">City:&nbsp;&nbsp;</label>
+									<input id="city" type="text" name="city" value="<?=$city?>" required/>
 								</div>
 								<div id="statebox" class="control-group">
-									<label for="state">State  </label>
-									<input id="state" type="text" name="state" required/>
+									<label for="state">State:&nbsp;&nbsp;</label>
+									<input id="state" type="text" name="state" value="<?=$state?>" required/>
 								</div>
 							</div>
 						</fieldset>
 					</p>
-					<p>Profession:  <input id="profession" type="text" name="profession" size="25" required/></p>
+					<p>Profession:&nbsp;&nbsp;<input id="profession" type="text" name="profession" size="25" value="<?=$profession?>" required/></p>
 					<p>Highest level of education:&nbsp;&nbsp;
 						<select id="education" name="education" size="1" required>
 							<option value="">[Choose]</option>
@@ -203,7 +203,7 @@ $stmt->close();
 					    <option value="other">Other</option>
 			  		</select>
 			  	</p>
-					<p>Religion  <input id="religion" type="text" name="religion" size="30" value="<?=$religion?>" required/></p>
+					<p>Religion:&nbsp;&nbsp;<input id="religion" type="text" name="religion" size="30" value="<?=$religion?>" required/></p>
 					<p>Marital status:&nbsp;&nbsp;
 			  		<select id="marital_status" name="marital_status" size="1" required>
 			  			<option value="">[Choose]</option>
@@ -233,7 +233,7 @@ $stmt->close();
 					    <option value="no">No</option>
 			  		</select>
 			  	</p>
-			  	<p>About me and what I'm looking for:<input id="about_me" type="text" name="about_me" size="1000" required/></p>
+			  	<p>About me and what I'm looking for:&nbsp;&nbsp;<textarea id="about_me" type="text" name="about_me" value="<?=$about_me?>" required style="max-width:75%;" rows="10"></textarea></p>
 					<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 					<input style="margin-top: 10px;" type="submit" value="Submit"/>
 				</form>	
@@ -248,5 +248,6 @@ $stmt->close();
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="/js/scripts.js"></script>
+		<script type="text/javascript" src="/js/edit_profile.js"></script>
 	</body>
 </html>

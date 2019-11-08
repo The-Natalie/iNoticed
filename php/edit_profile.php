@@ -203,7 +203,7 @@ $stmt->close();
 					    <option value="other">Other</option>
 			  		</select>
 			  	</p>
-					<p>Religion<input id="religion" type="text" name="religion" size="30" required/></p>
+					<p>Religion  <input id="religion" type="text" name="religion" size="30" value="<?=$religion?>" required/></p>
 					<p>Marital status:&nbsp;&nbsp;
 			  		<select id="marital_status" name="marital_status" size="1" required>
 			  			<option value="">[Choose]</option>

@@ -19,13 +19,11 @@ $(document).ready(function(){
 		$("#gender option[value='']").attr('selected', 'selected'); 
 		console.log("null = " + gender);
 		console.log("null, variable = <?=$gender?>");
-		console.log("null, variable = " + <?=$gender?>);
 		console.log("null, variable = <?php echo $gender; ?>");
 	} else {
 		$("#gender option[value='" + gender + "']").attr('selected', 'selected'); 
 		console.log("not null = " + gender);
 		console.log("not null, variable = <?=$gender?>");
-		console.log("not null, variable = " + <?=$gender?>);
 		console.log("not null, variable = <?php echo $gender; ?>");
 	}
 

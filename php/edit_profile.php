@@ -233,7 +233,9 @@ $stmt->close();
 					    <option value="no">No</option>
 			  		</select>
 			  	</p>
-			  	<p>About me and what I'm looking for:&nbsp;&nbsp;<textarea id="about_me" type="text" name="about_me" value="<?=$about_me?>" required style="max-width:75%;" rows="10"></textarea></p>
+			  	<p>About me and what I'm looking for:<br />
+			  		<textarea id="about_me" type="text" name="about_me" value="<?=$about_me?>" required style="max-width:75%;" rows="10"></textarea>
+			  	</p>
 					<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 					<input style="margin-top: 10px;" type="submit" value="Submit"/>
 				</form>	

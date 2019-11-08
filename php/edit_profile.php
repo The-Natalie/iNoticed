@@ -164,8 +164,6 @@ $stmt->close();
 		<div class="content">
 			<h2>Edit Profile</h2>
 			<div>
-				 <p>Gender = <?=$gender?> <br />
-				 first name = <?=$first_name?></p> 
 				<form id="edit_profile" method="post" action="/php/updated_profile.php">
 					<p>First Name:&nbsp;&nbsp;<input id ="first_name" type="text" name="first_name" size="20" value="<?=$first_name?>" required/></p>
 					<p>Age:&nbsp;&nbsp;<input id="age" type="number" name="age" maxlength="3" size="3" value="<?=$age?>" required/></p>
@@ -340,7 +338,7 @@ $stmt->close();
 			  		</select>
 			  	</p>
 			  	<p>About me and what I'm looking for:</p>
-			  	<textarea id="about_me" type="text" name="about_me" value="<?=$about_me?>" required style="max-width:75%;" rows="10"></textarea>
+			  	<textarea id="about_me" type="text" name="about_me" value="<?=$about_me?>" required style="min-width:75%;" rows="10"></textarea><br />
 					<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 					<input style="margin-top: 10px;" type="submit" value="Submit"/>
 				</form>	

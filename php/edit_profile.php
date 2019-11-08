@@ -31,36 +31,32 @@ $stmt->close();
 <script type="text/javascript">$(document).ready(function(){
 
 	var gender = "<?=$gender?>";   
-	var feet = "<?php echo $feet; ?>";
-	var inches = "<?php echo $inches; ?>";
-	var eyes = "<?php echo $eyes; ?>"; 
-	var hair = "<?php echo $hair; ?>"; 
-	var smoke = "<?php echo $smoke; ?>";
-	var drugs = "<?php echo $drugs; ?>";
-	var tranportation = "<?php echo $tranportation; ?>";
-	var intention = "<?php echo $intention; ?>"; 
-	var education = "<?php echo $education; ?>"; 
-	var ethnicity = "<?php echo $ethnicity; ?>";
-	var marital_status = "<?php echo $marital_status; ?>"; 
-	var kids = "<?php echo $kids; ?>"; 
-	var want_kids = "<?php echo $want_kids; ?>"; 
+	var feet = "<?=$feet;?>";
+	var inches = "<?=$inches;?>";
+	var eyes = "<?=$eyes;?>"; 
+	var hair = "<?=$hair;?>"; 
+	var smoke = "<?=$smoke;?>";
+	var drugs = "<?=$drugs;?>";
+	var tranportation = "<?=$tranportation;?>";
+	var intention = "<?=$intention;?>"; 
+	var education = "<?=$education;?>"; 
+	var ethnicity = "<?=$ethnicity;?>";
+	var marital_status = "<?=$marital_status;?>"; 
+	var kids = "<?=$kids;?>"; 
+	var want_kids = "<?=$want_kids;?>"; 
 
 	if (gender == null || gender === "") {
 		$("#gender option[value='']").attr('selected', 'selected'); 
-		console.log("null = " + gender);
-		console.log("null, variable = <?=$gender?>");
-		console.log("null, variable = <?php echo $gender; ?>");
 	} else {
 		$("#gender option[value='" + gender + "']").attr('selected', 'selected'); 
-		console.log("not null = " + gender);
-		console.log("not null, variable = <?=$gender?>");
-		console.log("not null, variable = <?php echo $gender; ?>");
 	}
 
 	if (feet == null || feet === "") {
 		$("#feet option[value='']").attr('selected', 'selected'); 
+		console.log("null = " + feet);
 	} else {
 		$("#feet option[value='" + feet + "']").attr('selected', 'selected'); 
+		console.log("not null = " + feet);
 	}
 
 	if (inches == null || inches === "") {

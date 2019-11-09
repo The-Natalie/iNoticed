@@ -40,6 +40,7 @@ $religion = "";
 $marital_status = "";
 $kids = "";
 $want_kids = "";
+$about_me = "";
 $is_error = "";
 
 // Processing form data when form is submitted
@@ -69,6 +70,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         $input_marital_status = trim($_POST["marital_status"]);
         $input_kids = trim($_POST["kids"]);
         $input_want_kids = trim($_POST["want_kids"]);
+        $input_about_me = trim($_POST["about_me"]);
 
         $first_name = $input_first_name;
         $age = $input_age;
@@ -91,15 +93,16 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         $marital_status = $input_marital_status;
         $kids = $input_kids;
         $want_kids = $input_want_kids;
+        $about_me = $input_about_me;
 
         // Check input errors before inserting in database
         if(empty($is_error)){
             // Prepare an update statement
-            $sql = "UPDATE accounts SET first_name=?, age=?, gender=?, feet=?, inches=?, eyes=?, hair=?, smoke=?, drugs=?, transportation=?, intention=?, zip=?, city=?, state=?, profession=?, education=?, ethnicity=?, religion=?, marital_status=?, kids=?, want_kids=? WHERE id=?";
+            $sql = "UPDATE accounts SET first_name=?, age=?, gender=?, feet=?, inches=?, eyes=?, hair=?, smoke=?, drugs=?, transportation=?, intention=?, zip=?, city=?, state=?, profession=?, education=?, ethnicity=?, religion=?, marital_status=?, kids=?, want_kids=?, about_me=? WHERE id=?";
              
             if($stmt = mysqli_prepare($con, $sql)){
                 // Bind variables to the prepared statement as parameters
-                mysqli_stmt_bind_param($stmt, "sisssssssssisssssssssi", $param_first_name, $param_age, $param_gender, $param_feet, $param_inches, $param_eyes, $param_hair, $param_smoke, $param_drugs, $param_transportation, $param_intention, $param_zip, $param_city, $param_state, $param_profession, $param_education, $param_ethnicity, $param_religion, $param_marital_status, $param_kids, $param_want_kids, $param_id);
+                mysqli_stmt_bind_param($stmt, "sisssssssssissssssssssi", $param_first_name, $param_age, $param_gender, $param_feet, $param_inches, $param_eyes, $param_hair, $param_smoke, $param_drugs, $param_transportation, $param_intention, $param_zip, $param_city, $param_state, $param_profession, $param_education, $param_ethnicity, $param_religion, $param_marital_status, $param_kids, $param_want_kids, $param_about_me, $param_id);
                 
                 // Set parameters
                 $param_first_name = $first_name;
@@ -123,6 +126,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 $param_marital_status = $marital_status;
                 $param_kids = $kids;
                 $param_want_kids = $want_kids;
+                $param_about_me = $about_me;
                 $param_id = $id;
                 
                 // Attempt to execute the prepared statement

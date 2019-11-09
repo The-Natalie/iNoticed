@@ -30,6 +30,9 @@ $smoke = "";
 $drugs = "";
 $transportation = "";
 $intention = "";
+$zip = "";
+$city = "";
+$state = "";
 $is_error = "";
 
 // Processing form data when form is submitted
@@ -49,6 +52,9 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         $input_drugs = trim($_POST["drugs"]);
         $input_transportation = trim($_POST["transportation"]);
         $input_intention = trim($_POST["intention"]);
+        $input_zip = trim($_POST["zip"]);
+        $input_city = trim($_POST["city"]);
+        $input_state = trim($_POST["state"]);
 
         $first_name = $input_first_name;
         $age = $input_age;
@@ -61,15 +67,18 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         $drugs = $input_drugs;
         $transportation = $input_transportation;
         $intention = $input_intention;
+        $zip = $input_zip;
+        $city = $input_city;
+        $state = $input_state;
 
         // Check input errors before inserting in database
         if(empty($is_error)){
             // Prepare an update statement
-            $sql = "UPDATE accounts SET first_name=?, age=?, gender=?, feet=?, inches=?, eyes=?, hair=?, smoke=?, drugs=?, transportation=?, intention=? WHERE id=?";
+            $sql = "UPDATE accounts SET first_name=?, age=?, gender=?, feet=?, inches=?, eyes=?, hair=?, smoke=?, drugs=?, transportation=?, intention=?, zip=?, city=?, state=? WHERE id=?";
              
             if($stmt = mysqli_prepare($con, $sql)){
                 // Bind variables to the prepared statement as parameters
-                mysqli_stmt_bind_param($stmt, "sisssssssssi", $param_first_name, $param_age, $param_gender, $param_feet, $param_inches, $param_eyes, $param_hair, $param_smoke, $param_drugs, $param_transportation, $param_intention, $param_id);
+                mysqli_stmt_bind_param($stmt, "sisssssssssissi", $param_first_name, $param_age, $param_gender, $param_feet, $param_inches, $param_eyes, $param_hair, $param_smoke, $param_drugs, $param_transportation, $param_intention, $param_zip, $param_city, $param_state, $param_id);
                 
                 // Set parameters
                 $param_first_name = $first_name;
@@ -83,6 +92,9 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 $param_drugs = $drugs;
                 $param_transportation = $transportation;
                 $param_intention = $intention;
+                $param_zip = $zip;
+                $param_city = $city;
+                $param_state = $state;
                 $param_id = $id;
                 
                 // Attempt to execute the prepared statement

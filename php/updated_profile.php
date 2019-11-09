@@ -11,7 +11,7 @@ if ( mysqli_connect_errno() ) {
 	die ($param = 'Failed to connect to MySQL: ' . mysqli_connect_error());
 }
  
-$stmt = $con->prepare('SELECT id FROM accounts WHERE id = ?');
+$stmt = $con->prepare('SELECT id FROM accounts WHERE id = "4"');
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
 $stmt->store_result();

@@ -53,7 +53,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         // Check input errors before inserting in database
         if(empty($is_error)){
             // Prepare an update statement
-            $sql = "UPDATE accounts SET first_name=?, age=?, gender=?, feet=?, inches=?, eyes=?, hair=?, smoke=?, drugs=?, transportation=?, intention=?, zip=?, city=?, state=?, profession=?, education=?, ethnicity=?, religion=?, marital_status=?, kids=?, want_kids=?, about_me=? WHERE id=4";
+            $sql = "UPDATE accounts SET first_name=?, age=?, gender=?, feet=?, inches=?, eyes=?, hair=?, smoke=?, drugs=?, transportation=?, intention=?, zip=?, city=?, state=?, profession=?, education=?, ethnicity=?, religion=?, marital_status=?, kids=?, want_kids=?, about_me=? WHERE id='4'";
              
             if($stmt = mysqli_prepare($con, $sql)){
                 // Bind variables to the prepared statement as parameters

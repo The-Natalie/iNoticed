@@ -336,7 +336,7 @@ $stmt->close();
 			  		</select>
 			  	</p>
 			  	<p>About me and what I'm looking for:</p>
-			  	<textarea id="about_me" name="about_me" placeholder="<?=$about_me?>" style="min-width:75%;" rows="10"></textarea><br />
+			  	<textarea id="about_me" name="about_me" style="min-width:75%;" rows="10"><?=$about_me?></textarea><br />
 					<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 					<input style="margin-top: 10px;" type="submit" value="Submit"/>
 				</form>	

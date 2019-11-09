@@ -11,7 +11,7 @@ if ( mysqli_connect_errno() ) {
 	die ($param = 'Failed to connect to MySQL: ' . mysqli_connect_error());
 }
  
-$stmt = $con->prepare('SELECT id FROM accounts WHERE id = "4"');
+$stmt = $con->prepare('SELECT id FROM accounts WHERE id = ?');
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
 $stmt->store_result();
@@ -22,27 +22,6 @@ $stmt->fetch();
  
 // Define variables and initialize with empty values
 $first_name = "";
-$age = "";
-$gender = "";
-$feet = "";
-$inches = "";
-$eyes = "";
-$hair = "";
-$smoke = "";
-$drugs = "";
-$transportation = "";
-$intention = "";
-$zip = "";
-$city = "";
-$state = "";
-$profession = "";
-$education = "";
-$ethnicity = "";
-$religion = "";
-$marital_status = "";
-$kids = "";
-$want_kids = "";
-$about_me = "";
 $is_error = "";
 
 // Processing form data when form is submitted
@@ -53,43 +32,22 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         // Check input errors before inserting in database
         if(empty($is_error)){
             // Prepare an update statement
-            $sql = "UPDATE accounts SET first_name=?, age=?, gender=?, feet=?, inches=?, eyes=?, hair=?, smoke=?, drugs=?, transportation=?, intention=?, zip=?, city=?, state=?, profession=?, education=?, ethnicity=?, religion=?, marital_status=?, kids=?, want_kids=?, about_me=? WHERE id='4'";
+            $sql = "UPDATE accounts SET first_name=? WHERE id=?";
              
             if($stmt = mysqli_prepare($con, $sql)){
                 // Bind variables to the prepared statement as parameters
-                mysqli_stmt_bind_param($stmt, "sisssssssssissssssssssi", $param_first_name, $param_age, $param_gender, $param_feet, $param_inches, $param_eyes, $param_hair, $param_smoke, $param_drugs, $param_transportation, $param_intention, $param_zip, $param_city, $param_state, $param_profession, $param_education, $param_ethnicity, $param_religion, $param_marital_status, $param_kids, $param_want_kids, $param_about_me, $param_id);
+                mysqli_stmt_bind_param($stmt, "si", $param_first_name, $param_id);
                 
                 // Set parameters
                 $param_first_name = $first_name;
-                $param_age = $age;
-                $param_gender = $gender;
-                $param_feet = $feet;
-                $param_inches = $inches;
-                $param_eyes = $eyes;
-                $param_hair = $hair;
-                $param_smoke = $smoke;
-                $param_drugs = $drugs;
-                $param_transportation = $transportation;
-                $param_intention = $intention;
-                $param_zip = $zip;
-                $param_city = $city;
-                $param_state = $state;
-                $param_profession = $profession;
-                $param_education = $education;
-                $param_ethnicity = $ethnicity;
-                $param_religion = $religion;
-                $param_marital_status = $marital_status;
-                $param_kids = $kids;
-                $param_want_kids = $want_kids;
-                $param_about_me = $about_me;
                 $param_id = $id;
                 
                 // Attempt to execute the prepared statement
                 if(mysqli_stmt_execute($stmt)){
-                    // Records updated successfully.
+                    // Records updated successfully. Redirect to landing page
                     $param = "Your profile has been updated successfully.";
                 } else { 
-                    $param = "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem. (after records updated successfully)";
+                    $param = "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
                     $is_error = "1";
                 }
             }
@@ -109,7 +67,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         $id =  trim($_GET["id"]);
         
         // Prepare a select statement
-        $sql = "SELECT * FROM accounts WHERE id = '4'";
+        $sql = "SELECT * FROM accounts WHERE id = ?";
         if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "i", $param_id);

@@ -86,10 +86,10 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 
                 // Attempt to execute the prepared statement
                 if(mysqli_stmt_execute($stmt)){
-                    // Records updated successfully. Redirect to landing page
+                    // Records updated successfully.
                     $param = "Your profile has been updated successfully.";
                 } else { 
-                    $param = "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
+                    $param = "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem. (after records updated successfully)";
                     $is_error = "1";
                 }
             }

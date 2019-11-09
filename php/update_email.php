@@ -40,10 +40,10 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         // Validate email
         $input_email = trim($_POST["email"]);
         if(empty($input_email)){
-          echo "Please enter an email.<br><a href='/php/account_settings.php'>Go Back</a";
+          echo "Please enter an email.<br><a href='/php/account_settings.php'>Go Back</a>";
           $is_error = "1";
         } elseif(!filter_var($input_email, FILTER_VALIDATE_EMAIL)){
-            echo "Email is not valid. Please enter a valid email.<br><a href='/php/account_settings.php'>Go Back</a";
+            echo "Email is not valid. Please enter a valid email.<br><a href='/php/account_settings.php'>Go Back</a>";
             $is_error = "1";
         } else{
             $email = $input_email;
@@ -68,7 +68,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     header('Location: /email_updated.html');
                     exit();
                 } else { 
-                    echo "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a";
+                    echo "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a>";
                     $is_error = "1";
                 }
             }
@@ -113,13 +113,13 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     $email = $row["email"];
                 } else{
                     // URL doesn't contain valid id. 
-                echo "Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a";                    
+                echo "Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a>";                    
                 $is_error = "1";
                 exit();
                 }
                 
             } else{
-                echo "Oops! Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a";
+                echo "Oops! Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a>";
                 $is_error = "1";
             }
         }
@@ -131,7 +131,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         mysqli_close($con);
     }  else{
         // URL doesn't contain id parameter. 
-        echo "URL doesn't contain id parameter. Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a";
+        echo "URL doesn't contain id parameter. Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a>";
         $is_error = "1";
         exit();
     }

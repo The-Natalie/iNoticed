@@ -430,12 +430,7 @@ setTimeout( function(){ $("div#particle-container").remove("#particle-container"
 //zip code, city, and state insert 
 	$(function() {
 
-	$(document).ready( function()
-	{
-	$('#citybox').hide();
-	$('#statebox').hide();
-
-	});
+	
 
 	// OnKeyDown Function
 	$("#zip").keyup(function() {

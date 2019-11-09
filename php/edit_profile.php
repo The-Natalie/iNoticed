@@ -37,7 +37,7 @@ $stmt->close();
 	var hair = "<?=$hair;?>"; 
 	var smoke = "<?=$smoke;?>";
 	var drugs = "<?=$drugs;?>";
-	var tranportation = "<?=$tranportation;?>";
+	var transportation = "<?=$transportation;?>";
 	var intention = "<?=$intention;?>"; 
 	var education = "<?=$education;?>"; 
 	var ethnicity = "<?=$ethnicity;?>";
@@ -87,10 +87,10 @@ $stmt->close();
 		$("#drugs option[value='" + drugs + "']").attr('selected', 'selected'); 
 	}
 
-	if (tranportation == null || tranportation === "") {
-		$("#tranportation option[value='']").attr('selected', 'selected'); 
+	if (transportation == null || transportation === "") {
+		$("#transportation option[value='']").attr('selected', 'selected'); 
 	} else {
-		$("#tranportation option[value='" + tranportation + "']").attr('selected', 'selected'); 
+		$("#transportation option[value='" + transportation + "']").attr('selected', 'selected'); 
 	}
 
 	if (intention == null || intention === "") {

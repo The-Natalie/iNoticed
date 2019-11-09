@@ -33,6 +33,9 @@ $intention = "";
 $zip = "";
 $city = "";
 $state = "";
+$profession = "";
+$education = "";
+$ethnicity = "";
 $is_error = "";
 
 // Processing form data when form is submitted
@@ -55,6 +58,9 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         $input_zip = trim($_POST["zip"]);
         $input_city = trim($_POST["city"]);
         $input_state = trim($_POST["state"]);
+        $input_profession = trim($_POST["profession"]);
+        $input_education = trim($_POST["education"]);
+        $input_ethnicity = trim($_POST["ethnicity"]);
 
         $first_name = $input_first_name;
         $age = $input_age;
@@ -70,15 +76,18 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         $zip = $input_zip;
         $city = $input_city;
         $state = $input_state;
+        $profession = $input_profession;
+        $education = $input_education;
+        $ethnicity = $input_ethnicity;
 
         // Check input errors before inserting in database
         if(empty($is_error)){
             // Prepare an update statement
-            $sql = "UPDATE accounts SET first_name=?, age=?, gender=?, feet=?, inches=?, eyes=?, hair=?, smoke=?, drugs=?, transportation=?, intention=?, zip=?, city=?, state=? WHERE id=?";
+            $sql = "UPDATE accounts SET first_name=?, age=?, gender=?, feet=?, inches=?, eyes=?, hair=?, smoke=?, drugs=?, transportation=?, intention=?, zip=?, city=?, state=?, profession=?, education=?, ethnicity=? WHERE id=?";
              
             if($stmt = mysqli_prepare($con, $sql)){
                 // Bind variables to the prepared statement as parameters
-                mysqli_stmt_bind_param($stmt, "sisssssssssissi", $param_first_name, $param_age, $param_gender, $param_feet, $param_inches, $param_eyes, $param_hair, $param_smoke, $param_drugs, $param_transportation, $param_intention, $param_zip, $param_city, $param_state, $param_id);
+                mysqli_stmt_bind_param($stmt, "sisssssssssisssssi", $param_first_name, $param_age, $param_gender, $param_feet, $param_inches, $param_eyes, $param_hair, $param_smoke, $param_drugs, $param_transportation, $param_intention, $param_zip, $param_city, $param_state, $param_profession, $param_education, $param_ethnicity, $param_id);
                 
                 // Set parameters
                 $param_first_name = $first_name;
@@ -95,6 +104,9 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 $param_zip = $zip;
                 $param_city = $city;
                 $param_state = $state;
+                $param_profession = $profession;
+                $param_education = $education;
+                $param_ethnicity = $ethnicity;
                 $param_id = $id;
                 
                 // Attempt to execute the prepared statement

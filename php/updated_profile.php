@@ -28,6 +28,8 @@ $eyes = "";
 $heir = "";
 $smoke = "";
 $drugs = "";
+$transportation = "";
+$intention = "";
 $is_error = "";
 
 // Processing form data when form is submitted
@@ -45,6 +47,8 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         $input_hair = trim($_POST["hair"]);
         $input_smoke = trim($_POST["smoke"]);
         $input_drugs = trim($_POST["drugs"]);
+        $input_transportation = trim($_POST["transportation"]);
+        $input_intention = trim($_POST["intention"]);
 
         $first_name = $input_first_name;
         $age = $input_age;
@@ -55,15 +59,17 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         $hair = $input_hair;
         $smoke = $input_smoke;
         $drugs = $input_drugs;
+        $transportation = $input_transportation;
+        $intention = $input_intention;
 
         // Check input errors before inserting in database
         if(empty($is_error)){
             // Prepare an update statement
-            $sql = "UPDATE accounts SET first_name=?, age=?, gender=?, feet=?, inches=?, eyes=?, hair=?, smoke=?, drugs=? WHERE id=?";
+            $sql = "UPDATE accounts SET first_name=?, age=?, gender=?, feet=?, inches=?, eyes=?, hair=?, smoke=?, drugs=?, transportation=?, intention=? WHERE id=?";
              
             if($stmt = mysqli_prepare($con, $sql)){
                 // Bind variables to the prepared statement as parameters
-                mysqli_stmt_bind_param($stmt, "sisssssssi", $param_first_name, $param_age, $param_gender, $param_feet, $param_inches, $param_eyes, $param_hair, $param_smoke, $param_drugs, $param_id);
+                mysqli_stmt_bind_param($stmt, "sisssssssssi", $param_first_name, $param_age, $param_gender, $param_feet, $param_inches, $param_eyes, $param_hair, $param_smoke, $param_drugs, $param_transportation, $param_intention, $param_id);
                 
                 // Set parameters
                 $param_first_name = $first_name;
@@ -75,6 +81,8 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 $param_hair = $hair;
                 $param_smoke = $smoke;
                 $param_drugs = $drugs;
+                $param_transportation = $transportation;
+                $param_intention = $intention;
                 $param_id = $id;
                 
                 // Attempt to execute the prepared statement

@@ -21,6 +21,7 @@ $stmt->fetch();
 // Define variables and initialize with empty values
 $first_name = "";
 $age = "";
+$gender = "";
 $is_error = "";
 
 // Processing form data when form is submitted
@@ -31,21 +32,25 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         // Validate (I removed validation because html does it, but left the other info)
         $input_first_name = trim($_POST["first_name"]);
         $input_age = trim($_POST["age"]);
+        $input_gender = trim($_POST["gender"]);
+
         $first_name = $input_first_name;
         $age = $input_age;
+        $gender = $input_gender;
 
         // Check input errors before inserting in database
         if(empty($is_error)){
             // Prepare an update statement
-            $sql = "UPDATE accounts SET first_name=?, age=? WHERE id=?";
+            $sql = "UPDATE accounts SET first_name=?, age=?, gender=? WHERE id=?";
              
             if($stmt = mysqli_prepare($con, $sql)){
                 // Bind variables to the prepared statement as parameters
-                mysqli_stmt_bind_param($stmt, "sii", $param_first_name, $param_age, $param_id);
+                mysqli_stmt_bind_param($stmt, "siis", $param_first_name, $param_age, $param_gender, $param_id);
                 
                 // Set parameters
                 $param_first_name = $first_name;
                 $param_age = $age;
+                $param_gender = $gender;
                 $param_id = $id;
                 
                 // Attempt to execute the prepared statement

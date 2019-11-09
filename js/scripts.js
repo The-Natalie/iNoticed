@@ -456,8 +456,7 @@ setTimeout( function(){ $("div#particle-container").remove("#particle-container"
 	type: "GET",
 	success: function(result, success) {
 	// Make the city and state boxes visible
-	$('#citybox').slideDown();
-	$('#statebox').slideDown();
+
 
 	// US Zip Code Records Officially Map to only 1 Primary Location
 	places = result['places'][0];

@@ -164,7 +164,7 @@ $stmt->close();
 			<div>
 				<form id="edit_profile" method="post" action="/php/updated_profile.php">
 					<p>First Name:&nbsp;&nbsp;<input id ="first_name" type="text" name="first_name" size="20" value="<?=$first_name?>" required/></p>
-					<p>Age:&nbsp;&nbsp;<input id="age" type="number" name="age" maxlength="3" size="3" value="<?=$age?>" required/></p>
+					<p>Age:&nbsp;&nbsp;<input id="age" type="number" name="age" min="13" max="125" size="3" value="<?=$age?>" required/></p>
 					<p>Gender:&nbsp;&nbsp;
  						<select id="gender" name="gender" size="1" required>
  							<option value="">[Choose Option Below]</option>

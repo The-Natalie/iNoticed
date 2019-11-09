@@ -54,11 +54,10 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 
                 // Attempt to execute the prepared statement
                 if(mysqli_stmt_execute($stmt)){
-                    // Records updated successfully. Redirect to landing page
-                    header('Location: /email_updated.html');
-                    exit();
+                    // Records updated successfully. 
+                    $param = "Your email has been updated sucessfully.";
                 } else { 
-                    echo "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a>";
+                    $param = "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a>";
                     $is_error = "1";
                 }
             }
@@ -103,13 +102,13 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     $email = $row["email"];
                 } else{
                     // URL doesn't contain valid id. 
-                echo "Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a>";                    
+                $param = "Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a>";                    
                 $is_error = "1";
                 exit();
                 }
                 
             } else{
-                echo "Oops! Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a>";
+                $param = "Oops! Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a>";
                 $is_error = "1";
             }
         }
@@ -121,10 +120,49 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         mysqli_close($con);
     }  else{
         // URL doesn't contain id parameter. 
-        echo "URL doesn't contain id parameter. Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a>";
+        $param = "URL doesn't contain id parameter. Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a>";
         $is_error = "1";
-        exit();
     }
 }
 
 ?>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>iNoticed | Dating</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css"> 
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"> 
+  </head>
+  <body id="loggedin">
+
+    <div class="nav-light">
+      <div class="nav-left">
+        <div class="title"><a href="/">iNoticed</a></div>
+      </div>
+      <div class="nav-right">
+        <a href="/php/dating_home.php"><i class="fas fa-envelope"></i>Home</a>
+        <a href="/php/messages.php"><i class="fas fa-envelope"></i>Messages</a>
+        <a href="/php/profile.php"><i class="fas fa-address-card"></i>My Profile</a>
+        <a href="/php/account_settings.php"><i class="fas fa-cog"></i>Account Settings</a>
+        <a href="/php/dating_logout.php"><i class="fas fa-sign-out-alt"></i>Log Out</a>
+      </div>
+    </div>
+
+    <div class="content">
+      <h2>Email Update Results</h2>
+      <p><?php echo $param; ?></p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <script
+        src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/scripts.js"></script>
+  </body>
+</html>

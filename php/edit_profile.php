@@ -163,10 +163,10 @@ $stmt->close();
 			<h2>Edit Profile</h2>
 			<div>
 				<form id="edit_profile" method="post" action="/php/updated_profile.php">
-					<p>First Name:&nbsp;&nbsp;<input id ="first_name" type="text" name="first_name" size="20" value="<?=$first_name?>"  /></p>
-					<p>Age:&nbsp;&nbsp;<input id="age" type="number" name="age" maxlength="3" size="3" value="<?=$age?>"  /></p>
+					<p>First Name:&nbsp;&nbsp;<input id ="first_name" type="text" name="first_name" size="20" value="<?=$first_name?>" required/></p>
+					<p>Age:&nbsp;&nbsp;<input id="age" type="number" name="age" maxlength="3" size="3" value="<?=$age?>" required/></p>
 					<p>Gender:&nbsp;&nbsp;
- 						<select id="gender" name="gender" size="1"  >
+ 						<select id="gender" name="gender" size="1" required>
  							<option value="">[Choose Option Below]</option>
 					    <option value="female">Female</option>
 					    <option value="male">Male</option>
@@ -179,7 +179,7 @@ $stmt->close();
 					  </select>
 					</p>
 					<p>Height:&nbsp;&nbsp;
-						<select id="feet" name="feet" size="1"  >
+						<select id="feet" name="feet" size="1" required>
 							<option value="">Feet</option>
 					    <option value="f2">2</option>
 					    <option value="f3">3</option>
@@ -188,7 +188,7 @@ $stmt->close();
 					    <option value="f6">6</option>
 					    <option value="f7">7</option>
 				  	</select>
-				  	<select id="inches" name="inches" size="1"  >
+				  	<select id="inches" name="inches" size="1" required>
 				  		<option value="">Inches</option>
 				  		<option value="i0">0</option>
 				  		<option value="i1">1</option>
@@ -206,7 +206,7 @@ $stmt->close();
 				  	</select>
 				  </p>
 			  	<p>Eye Color:&nbsp;&nbsp;
-						<select id="eyes" name="eyes" size="1"  >
+						<select id="eyes" name="eyes" size="1" required>
 							<option value="">[Choose]</option>
 					    <option value="blue">Blue</option>
 					    <option value="green">Green</option>
@@ -218,7 +218,7 @@ $stmt->close();
 			  		</select>
 			  	</p>
 			  	<p>Hair Color:&nbsp;&nbsp;
-						<select id="hair" name="hair" size="1"  >
+						<select id="hair" name="hair" size="1" required>
 							<option value="">[Choose]</option>
 					    <option value="blond">Blond</option>
 					    <option value="brown">Brown</option>
@@ -230,28 +230,28 @@ $stmt->close();
 			  		</select>
 			  	</p>
 			  	<p>Do I smoke:&nbsp;&nbsp;
-						<select id="smoke" name="smoke" size="1"  >
+						<select id="smoke" name="smoke" size="1" required>
 							<option value="">[Choose]</option>
 					    <option value="yes">Yes</option>
 					    <option value="no">No</option>
 			  		</select>
 			  	</p>
 			  	<p>Do I do drugs:&nbsp;&nbsp;
-						<select id="drugs" name="drugs" size="1"  >
+						<select id="drugs" name="drugs" size="1" required>
 							<option value="">[Choose]</option>
 					    <option value="yes">Yes</option>
 					    <option value="no">No</option>
 			  		</select>
 			  	</p>
 			  	<p>Do I own a car/truck/motorcycle/something with a motor to get me around:&nbsp;&nbsp;
-						<select id="transportation" name="transportation" size="1"  >
+						<select id="transportation" name="transportation" size="1" required>
 							<option value="">[Choose]</option>
 					    <option value="yes">Yes</option>
 					    <option value="no">No</option>
 			  		</select>
 			  	</p>
 			  	<p>What kind of relationship I'm looking for:&nbsp;&nbsp;
-						<select id="intention" name="intention" size="1"  >
+						<select id="intention" name="intention" size="1" required>
 							<option value="">[Choose]</option>
 					    <option value="serious">Serious/Long Term</option>
 					    <option value="dating">Dating/Short Term</option>
@@ -265,23 +265,23 @@ $stmt->close();
 						<fieldset>
 							<div id="zipbox" class="control-group">
 								<label for="zip">Zip:&nbsp;&nbsp;</label>
-								<input id="zip" type="text" pattern="[0-9]*" name="zip" value="<?=$zip?>"  />
+								<input id="zip" type="text" pattern="[0-9]*" name="zip" value="<?=$zip?>" required/>
 							</div>
 							<div>
 								<div id="citybox" class="control-group">
 									<label for="city">City:&nbsp;&nbsp;</label>
-									<input id="city" type="text" name="city" value="<?=$city?>"  />
+									<input id="city" type="text" name="city" value="<?=$city?>" required/>
 								</div>
 								<div id="statebox" class="control-group">
 									<label for="state">State:&nbsp;&nbsp;</label>
-									<input id="state" type="text" name="state" value="<?=$state?>"  />
+									<input id="state" type="text" name="state" value="<?=$state?>" required/>
 								</div>
 							</div>
 						</fieldset>
 					</p>
-					<p>Profession:&nbsp;&nbsp;<input id="profession" type="text" name="profession" size="25" value="<?=$profession?>"  /></p>
+					<p>Profession:&nbsp;&nbsp;<input id="profession" type="text" name="profession" size="25" value="<?=$profession?>" required/></p>
 					<p>Highest level of education:&nbsp;&nbsp;
-						<select id="education" name="education" size="1"  >
+						<select id="education" name="education" size="1" required>
 							<option value="">[Choose]</option>
 					    <option value="pre-highS">Some High School or Lower</option>
 					    <option value="highS">High School Degree/GED</option>
@@ -293,7 +293,7 @@ $stmt->close();
 			  		</select>
 			  	</p>
 			  	<p>Ethnicity:&nbsp;&nbsp;
-			  		<select id="ethnicity" name="ethnicity" size="1"  >
+			  		<select id="ethnicity" name="ethnicity" size="1" required>
 			  			<option value="">[Choose]</option>
 					    <option value="asian">Asian</option>
 					    <option value="black">Black/African</option>
@@ -305,9 +305,9 @@ $stmt->close();
 					    <option value="other">Other</option>
 			  		</select>
 			  	</p>
-					<p>Religion:&nbsp;&nbsp;<input id="religion" type="text" name="religion" size="30" value="<?=$religion?>"  /></p>
+					<p>Religion:&nbsp;&nbsp;<input id="religion" type="text" name="religion" size="30" value="<?=$religion?>" required/></p>
 					<p>Marital status:&nbsp;&nbsp;
-			  		<select id="marital_status" name="marital_status" size="1"  >
+			  		<select id="marital_status" name="marital_status" size="1" required>
 			  			<option value="">[Choose]</option>
 					    <option value="single">Single</option>
 					    <option value="relationship">In a Relationship</option>
@@ -319,7 +319,7 @@ $stmt->close();
 			  		</select>
 			  	</p>
 			  	<p>Have kids (if yes, how many)?:&nbsp;&nbsp;
-			  		<select id="kids" name="kids" size="1"  >
+			  		<select id="kids" name="kids" size="1" required>
 			  			<option value="">[Choose]</option>
 					    <option value="yes1-2">Yes, 1 or 2</option>
 					    <option value="yes3-4">Yes, 3 or 4</option>
@@ -329,7 +329,7 @@ $stmt->close();
 			  		</select>
 			  	</p>
 			  	<p>Want kids?:&nbsp;&nbsp;
-			  		<select id="want_kids" name="want_kids" size="1"  >
+			  		<select id="want_kids" name="want_kids" size="1" required>
 			  			<option value="">[Choose]</option>
 					    <option value="yes">Yes</option>
 					    <option value="no">No</option>

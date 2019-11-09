@@ -32,22 +32,8 @@ $is_error = "";
 // Processing form data when form is submitted
 if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Get hidden input value
-    $id = $_POST["id"];
-
-    // //Verify current password is correct
-    // if (password_verify($_POST['password'], $password)) {
+    $id = $_POST["id"];    
         
-        // Validate email
-        $input_email = trim($_POST["email"]);
-        if(empty($input_email)){
-          echo "Please enter an email.<br><a href='/php/account_settings.php'>Go Back</a>";
-          $is_error = "1";
-        } elseif(!filter_var($input_email, FILTER_VALIDATE_EMAIL)){
-            echo "Email is not valid. Please enter a valid email.<br><a href='/php/account_settings.php'>Go Back</a>";
-            $is_error = "1";
-        } else{
-            $email = $input_email;
-        }
 
         // Check input errors before inserting in database
         if(empty($is_error)){

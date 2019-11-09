@@ -11,54 +11,17 @@ if ( mysqli_connect_errno() ) {
 	die ($param = 'Failed to connect to MySQL: ' . mysqli_connect_error());
 }
  
-// Prepare an update statement
-$sql = "UPDATE accounts SET first_name='$first_name', age='$age', gender='$gender', feet='$feet', inches='$inches', eyes='$eyes', hair='$hair', smoke='$smoke', drugs='$drugs', transportation='$transportation', intention='$intention', zip='$zip', city='$city', state='$state', profession='$profession', education='$education', ethnicity='$ethnicity', religion='$religion', marital_status='$marital_status', kids='$kids', want_kids='$want_kids', about_me='$about_me' WHERE id='4'";
+// Prepare an insert statement
+$sql = "UPDATE accounts SET first_name='$first_name', age='$age', gender='$gender', feet='$feet', inches='$inches', eyes='$eyes', hair='$hair', smoke='$smoke', drugs='$drugs', transportation='$transportation', intention='$intention', zip='$zip', city='$city', state='$state', profession='$profession', education='$education', ethnicity='$ethnicity', religion='$religion', marital_status='$marital_status', kids='$kids', want_kids='$want_kids', about_me='$about_me' WHERE id='" . $_SESSION['id'] . "' ";
  
-if($stmt = mysqli_prepare($con, $sql)){
-    // Bind variables to the prepared statement as parameters
-    mysqli_stmt_bind_param($stmt, "sisssssssssissssssssss", $first_name, $age, $gender, $feet, $inches, $eyes, $hair, $smoke, $drugs, $transportation, $intention, $zip, $city, $state, $profession, $education, $ethnicity, $religion, $marital_status, $kids, $want_kids, $about_me);
-    
-    // Set parameters
-    $first_name = $_REQUEST['first_name'];
-    $age = $_REQUEST['age'];
-    $gender = $_REQUEST['gender'];
-    $feet = $_REQUEST['feet'];
-    $inches = $_REQUEST['inches'];
-    $eyes = $_REQUEST['eyes'];
-    $hair = $_REQUEST['hair'];
-    $smoke = $_REQUEST['smoke'];
-    $drugs = $_REQUEST['drugs'];
-    $transportation = $_REQUEST['transportation'];
-    $intention = $_REQUEST['intention'];
-    $zip = $_REQUEST['zip'];
-    $city = $_REQUEST['city'];
-    $state = $_REQUEST['state'];
-    $profession = $_REQUEST['profession'];
-    $education = $_REQUEST['education'];
-    $ethnicity = $_REQUEST['ethnicity'];
-    $religion = $_REQUEST['religion'];
-    $marital_status = $_REQUEST['marital_status'];
-    $kids = $_REQUEST['kids'];
-    $want_kids = $_REQUEST['want_kids'];
-    $about_me = $_REQUEST['about_me'];
-    
-    // Attempt to execute the prepared statement
-    if(mysqli_stmt_execute($stmt)){
-        $param = "Your profile has been updated successfully.";
-    } else{
-        $param = "ERROR: Could not execute query: $sql. " . mysqli_error($con);
-    }
-} else{
-    $param = "ERROR: Could not prepare query: $sql. " . mysqli_error($con);
+if ($con->query($sql) === TRUE) {
+    echo "Record updated successfully";
+} else {
+    echo "Error updating record: " . $conn->error;
 }
- 
-// Close statement
-mysqli_stmt_close($stmt);
- 
-// Close connection
-mysqli_close($con);
-?>
 
+$conn->close();
+?>
 
 <!DOCTYPE html>
 <html>

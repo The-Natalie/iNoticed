@@ -32,7 +32,14 @@ $is_error = "";
 // Processing form data when form is submitted
 if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Get hidden input value
-    $id = $_POST["id"];    
+    $id = $_POST["id"];
+
+    // //Verify current password is correct
+    // if (password_verify($_POST['password'], $password)) {
+        
+        // Validate email
+        $input_email = trim($_POST["email"]);
+        $email = $input_email;
         
 
         // Check input errors before inserting in database

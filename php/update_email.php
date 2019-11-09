@@ -33,11 +33,8 @@ $is_error = "";
 if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Get hidden input value
     $id = $_POST["id"];
-
-    // //Verify current password is correct
-    // if (password_verify($_POST['password'], $password)) {
         
-        // Validate email
+        // Validate email (I removed validation because html does it, but left the other info)
         $input_email = trim($_POST["email"]);
         $email = $input_email;
         

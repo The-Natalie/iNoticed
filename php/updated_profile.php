@@ -12,7 +12,7 @@ if ( mysqli_connect_errno() ) {
 }
  
 // Prepare an insert statement
-$sql = "UPDATE accounts SET first_name='$first_name', age='$age', gender='$gender', feet='$feet', inches='$inches', eyes='$eyes', hair='$hair', smoke='$smoke', drugs='$drugs', transportation='$transportation', intention='$intention', zip='$zip', city='$city', state='$state', profession='$profession', education='$education', ethnicity='$ethnicity', religion='$religion', marital_status='$marital_status', kids='$kids', want_kids='$want_kids', about_me='$about_me' WHERE id='" . $_SESSION['id'] . "' ";
+$sql = "UPDATE accounts SET first_name='" . $_REQUEST['first_name'] . "', age='" . $_REQUEST['age'] . "', gender='" . $_REQUEST['gender'] . "', feet='" . $_REQUEST['feet'] . "', inches='" . $_REQUEST['inches'] . "', eyes='" . $_REQUEST['eyes'] . "', hair='" . $_REQUEST['hair'] . "', smoke='" . $_REQUEST['smoke'] . "', drugs='" . $_REQUEST['drugs'] . "', transportation='" . $_REQUEST['transportation'] . "', intention='" . $_REQUEST['intention'] . "', zip='" . $_REQUEST['zip'] . "', city='" . $_REQUEST['city'] . "', state='" . $_REQUEST['state'] . "', profession='" . $_REQUEST['profession'] . "', education='" . $_REQUEST['education'] . "', ethnicity='" . $_REQUEST['ethnicity'] . "', religion='" . $_REQUEST['religion'] . "', marital_status='" . $_REQUEST['marital_status'] . "', kids='" . $_REQUEST['kids'] . "', want_kids='" . $_REQUEST['want_kids'] . "', about_me='" . $_REQUEST['about_me'] . "' WHERE id='" . $_SESSION['id'] . "' ";
  
 if ($con->query($sql) === TRUE) {
     echo "Record updated successfully";

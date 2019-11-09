@@ -17,8 +17,6 @@ $stmt->execute();
 $stmt->store_result();
 $stmt->bind_result($id);
 $stmt->fetch();
-
-
  
 // Define variables and initialize with empty values
 $first_name = "";
@@ -28,6 +26,11 @@ $is_error = "";
 if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Get hidden input value
     $id = $_POST["id"];
+        
+        // Validate first_name (I removed validation because html does it, but left the other info)
+        $input_first_name = trim($_POST["first_name"]);
+        $first_name = $input_first_name;
+        
 
         // Check input errors before inserting in database
         if(empty($is_error)){
@@ -45,9 +48,9 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 // Attempt to execute the prepared statement
                 if(mysqli_stmt_execute($stmt)){
                     // Records updated successfully. Redirect to landing page
-                    $param = "Your profile has been updated successfully.";
+                    $param = "Your profile has been updated sucessfully.";
                 } else { 
-                    $param = "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
+                    $param = "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a>";
                     $is_error = "1";
                 }
             }
@@ -88,12 +91,12 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     $first_name = $row["first_name"];
                 } else{
                     // URL doesn't contain valid id. 
-                $param = "Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.";                    
+                $param = "Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a>";                    
                 $is_error = "1";
                 }
                 
             } else{
-                $param = "Oops! Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
+                $param = "Oops! Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a>";
                 $is_error = "1";
             }
         }
@@ -105,13 +108,12 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         mysqli_close($con);
     }  else{
         // URL doesn't contain id parameter. 
-        $param = "URL doesn't contain id parameter. Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.";
+        $param = "URL doesn't contain id parameter. Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a>";
         $is_error = "1";
     }
 }
 
 ?>
-
 
 
 <!DOCTYPE html>

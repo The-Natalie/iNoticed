@@ -1,5 +1,12 @@
 <?php
+// We need to use sessions, so you should always start sessions using the below code.
 session_start();
+// If the user is not logged in redirect to the login page...
+if (!isset($_SESSION['loggedin'])) {
+    header('Location: /sign_in.html');
+    exit();
+}
+
 
 $DATABASE_HOST = 'mysql.inoticed.org';
 $DATABASE_USER = 'ndhall';
@@ -9,7 +16,7 @@ $DATABASE_NAME = 'inoticed_dating';
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 if ( mysqli_connect_errno() ) {
     // If there is an error with the connection, stop the script and display the error.
-    die ('Failed to connect to MySQL: ' . mysqli_connect_error());
+    die ('Let dating@inoticed.org know the details of this error: Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
 $stmt = $con->prepare('SELECT password, id FROM accounts WHERE id = ?');
@@ -40,10 +47,10 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         // Validate password
         $input_password = password_hash($_POST["new-password"], PASSWORD_DEFAULT);
         if(empty($input_password)){
-          $param = "Please enter a password.<br><a href='/php/account_settings.php'>Go Back</a>";
+          $param = "Please enter a password.";
           $is_error = "1";
         } elseif(strlen($_POST['new-password']) > 25 || strlen($_POST['new-password']) < 5) {
-            $param = "Password must be between 5 and 25 characters long. Please try again.<br><a href='/php/account_settings.php'>Go Back</a>";
+            $param = "Password must be between 5 and 25 characters long. Please try again.";
             $is_error = "1";
         } else{
             $password = $input_password;
@@ -67,7 +74,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     // Records updated successfully. Redirect to landing page
                     $param = "Your email has been updated sucessfully.";
                 } else { 
-                    $param = "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a>";
+                    $param = "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
                     $is_error = "1";
                 }
             }
@@ -112,12 +119,12 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     $password = $row["password"];
                 } else{
                     // URL doesn't contain valid id. 
-                $param = "Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a>";                    
+                $param = "Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.<br>";                    
                 $is_error = "1";
                 }
                 
             } else{
-                $param = "Oops! Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a>";
+                $param = "Oops! Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
                 $is_error = "1";
             }
         }
@@ -129,10 +136,15 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         mysqli_close($con);
     }  else{
         // URL doesn't contain id parameter. 
-        $param = "URL doesn't contain id parameter. Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.<br><a href='/php/account_settings.php'>Go Back</a>";
+        $param = "URL doesn't contain id parameter. Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.";
         $is_error = "1";
     }
 }
+// Close statement
+        mysqli_stmt_close($stmt);
+        
+        // Close connection
+        mysqli_close($con);
 ?>
 
 
@@ -148,17 +160,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
   </head>
   <body id="loggedin">
 
-    <div class="nav-light">
-      <div class="nav-left">
-        <div class="title"><a href="/">iNoticed</a></div>
-      </div>
-      <div class="nav-right">
-        <a href="/php/dating_home.php"><i class="fas fa-envelope"></i>Home</a>
-        <a href="/php/messages.php"><i class="fas fa-envelope"></i>Messages</a>
-        <a href="/php/profile.php"><i class="fas fa-address-card"></i>My Profile</a>
-        <a href="/php/account_settings.php"><i class="fas fa-cog"></i>Account Settings</a>
-        <a href="/php/dating_logout.php"><i class="fas fa-sign-out-alt"></i>Log Out</a>
-      </div>
+    <div class="nav-light dating-signed-in-nav">
     </div>
 
     <div class="content">

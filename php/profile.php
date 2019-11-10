@@ -1,12 +1,14 @@
 <?php
 // We need to use sessions, so you should always start sessions using the below code.
 session_start();
-// If the user is not logged in redirect to the login page...
+
+// This determines what a visitor can see based on whether or not they're signed in
 if (!isset($_SESSION['loggedin'])) {
 	$user_state = 'signed-out-nav';
 } else {
 	$user_state = 'signed-in-nav';
 }
+
 
 $DATABASE_HOST = 'mysql.inoticed.org';
 $DATABASE_USER = 'ndhall';
@@ -14,15 +16,15 @@ $DATABASE_PASS = 'natabata14';
 $DATABASE_NAME = 'inoticed_dating';
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 if (mysqli_connect_errno()) {
-	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
+	die ('Let dating@inoticed.org know the details of this error: Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
 //Get data from database
-$stmt = $con->prepare('SELECT id, first_name, age, gender, feet, inches, eyes, hair, intention, zip, city, state, profession, education, ethnicity, religion, marital_status, kids, want_kids, about_me FROM accounts WHERE id = ?');
+$stmt = $con->prepare('SELECT id, first_name, age, gender, feet, inches, eyes, hair, smoke, drugs, transportation, intention, zip, city, state, profession, education, ethnicity, religion, marital_status, kids, want_kids, about_me FROM accounts WHERE id = ?');
 // In this case we can use the account ID to get the account info.
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
-$stmt->bind_result($id, $first_name, $age, $gender, $feet, $inches, $eyes, $hair, $intention, $zip, $city, $state, $profession, $education, $ethnicity, $religion, $marital_status, $kids, $want_kids, $about_me);
+$stmt->bind_result($id, $first_name, $age, $gender, $feet, $inches, $eyes, $hair, $smoke, $drugs, $transportation, $intention, $zip, $city, $state, $profession, $education, $ethnicity, $religion, $marital_status, $kids, $want_kids, $about_me);
 $stmt->fetch();
 $stmt->close();
 ?>
@@ -46,9 +48,9 @@ $stmt->close();
 		</div>
 
 		<div class="content">
-			<h2>Profile Page</h2>
-			<div>
-				<a href="/php/edit_profile.php"><button type="button">Edit profile  <i class="far fa-edit"></i></button></a>
+			<h2><?php echo $first_name; ?>'s Profile Page</h2>
+			<div class="profile">
+				<a href="/php/profile.php"><button type="button">Edit profile  <i class="fas fa-user"></i></button></a>
 				<br />
 				<br />
 				<p>Edit Profile:</p>

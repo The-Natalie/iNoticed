@@ -84,14 +84,8 @@ body {
 	padding: 2px 8px 0 0;
 }
 
-.nav-dark .nav-right a:hover, .nav-dark .nav-left a:hover {
+.nav-right a:hover, .nav-left a:hover {
 	color: #66ff66;
-	font-size: 1.15em;
-	text-decoration: none;
-}
-
-.nav-light .nav-right a:hover, .nav-light .nav-left a:hover {
-	color: #b5ffc3;
 	font-size: 1.15em;
 	text-decoration: none;
 }

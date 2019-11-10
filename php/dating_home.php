@@ -3,32 +3,9 @@
 session_start();
 // If the user is not logged in redirect to the login page...
 if (!isset($_SESSION['loggedin'])) {
-	header('Location: /dating_sign_in.html');
+	header('Location: /sign_in.html');
 	exit();
 } 
-
-// $DATABASE_HOST = 'mysql.inoticed.org';
-// $DATABASE_USER = 'ndhall';
-// $DATABASE_PASS = 'natabata14';
-// $DATABASE_NAME = 'inoticed_dating';
-// // Try and connect using the info above.
-// $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-// if ( mysqli_connect_errno() ) {
-// 	// If there is an error with the connection, stop the script and display the error.
-// 	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
-// }
-
-// //Email activation check
-// $stmt = $con->prepare('SELECT activation_code FROM accounts WHERE id = ?');
-// $stmt->bind_param('i', $_SESSION['id']);
-// $stmt->execute();
-// $stmt->store_result();
-// $stmt->bind_result($activation_code);
-// $stmt->fetch();
-// if ($activation_code == '') {
-// // user not activated, redirect or display msg
-// 	header('Location: /please_activate.html');
-// }
 
 ?>
 
@@ -44,17 +21,7 @@ if (!isset($_SESSION['loggedin'])) {
 	</head>
 	<body id="loggedin">
 
-		<div class="nav-light">
-			<div class="nav-left">
-				<div class="title"><a href="/">iNoticed</a></div>
-			</div>
-			<div class="nav-right">
-				<a href="/php/dating_home.php"><i class="fas fa-envelope"></i>Home</a>
-				<a href="/php/messages.php"><i class="fas fa-envelope"></i>Messages</a>
-				<a href="/php/profile.php"><i class="fas fa-address-card"></i>My Profile</a>
-				<a href="/php/account_settings.php"><i class="fas fa-cog"></i>Account Settings</a>
-				<a href="/php/dating_logout.php"><i class="fas fa-sign-out-alt"></i>Log Out</a>
-			</div>
+		<div class="nav-light dating-signed-in-nav">
 		</div>
 
 		<div class="content">

@@ -1,5 +1,30 @@
 $(document).ready(function(){
 
+	//Navigations:
+	var datingLink = "/dating.html";
+	var kindnessLink = "/kindness.html";
+	var valuedLink = "/valued.html";
+	var createAccountLink = "/account_creation.html";
+	var signInLink = "/sign_in.html";
+	// var datingSignedInHomeLink = "/php/dating_home.php";
+	var messagesLink = "/php/messages.php";
+	var editProfileLink = "/php/edit_profile.php";
+	var accountSettingsLink = "/php/account_settings.php";
+	var logoutLink = "/php/logout.php";
+
+
+	//Home, Kindness and Valued pages navs:
+	$('.home-nav').html('<div class="nav-left"><div class="title"><a href="/">iNoticed</a></div><a href="' + datingLink + '">Dating</a><a href="' + kindnessLink + '">Kindness</a><a href="' + valuedLink + '">Valued</a></div>');
+
+	//Dating Signed Out pages nav:
+		$('.dating-signed-out-nav').html('<div class="nav-left"><div class="title"><a href="/">iNoticed</a></div><a href="' + datingLink + '">Dating</a><a href="' + kindnessLink + '">Kindness</a><a href="' + valuedLink + '">Valued</a></div><div class="nav-right"><a href="' + createAccountLink + '"><i class="fas fa-user-plus"></i>Create Account</a><a href="' + signInLink + '"><i class="fas fa-sign-in-alt"></i>Sign In</a></div>');
+
+	//Dating Signed in pages nav:
+		$('.dating-signed-in-nav').html('<a href="' + messagesLink + '"><i class="fas fa-envelope"></i>Messages</a><a href="' + editProfileLink + '"><i class="fas fa-address-card"></i>Edit Profile</a><a href="' + accountSettingsLink + '"><i class="fas fa-cog"></i>Account Settings</a><a href="' + logoutLink + '"><i class="fas fa-sign-out-alt"></i>Log Out</a></div>');
+
+
+
+	// Home page card slider
 	var dateCard = $('#card-dating');
 	var dateCaption = $('#caption-dating');
 	var kindCard = $('#card-kindness');
@@ -16,8 +41,6 @@ $(document).ready(function(){
 	var emptySpace = $('#space');
 	var negMarginTop = -cardHeight;
 
-
-// Home page card slider
 	if (cardWidth > $('div.col-sm-10').width()) {
 		cardWidth = $('div.col-sm-10').width() - 40;
 		cardHeight = cardWidth / 1.75;
@@ -125,11 +148,11 @@ $(document).ready(function(){
 				dateCard.css({'visibility': 'visible', 'box-shadow': '7px -11px 12px 17px rgba(0,0,0,0.9)', 'transition': 'box-shadow .1s', 'transition-delay': '5s', 'height': '0'}).delay(5000).animate({'height': cardHeight, 'marginTop': negMarginTop}, 1000, 'linear');
 		}
 	});
-//End of Home page card slider
+	//End of Home page card slider
 
 
 
-//Dading card request form
+	//Dading card request form
 	$('#dating-card-form input.button').click(function(e) {
 		e.preventDefault();
 		var form = document.getElementById('dating-card-form');
@@ -155,12 +178,12 @@ $(document).ready(function(){
 			$('p.form-submitted').html("Your form has been submitted");		
 		}
 	});
-//End of Dating card request form
+	//End of Dating card request form
 
 
 
 
-//Kindness card request form
+	//Kindness card request form
 	$('#kindness-form input.button').click(function(e) {
 		e.preventDefault();
 		var form = document.getElementById('kindness-form');
@@ -186,11 +209,11 @@ $(document).ready(function(){
 			$('p.form-submitted').html("Your form has been submitted");		
 		}
 	});
-//End of Kindness card request form
+	//End of Kindness card request form
 
 
 
-//Valued card request form
+	//Valued card request form
 	$('#valued-form input.button').click(function(e) {
 		e.preventDefault();
 		var form = document.getElementById('valued-form');
@@ -216,22 +239,22 @@ $(document).ready(function(){
 			$('p.form-submitted').html("Your form has been submitted successfully");		
 		}
 	});
-//End of Valued card request form
+	//End of Valued card request form
 
 
 
 
-//first word style for <p>
+	//first word style for <p>
 	$("p.firstWord").html(function(e){
   	var text= $(this).text().trim().split(" ");
   	var first = text.shift();
   	return (text.length > 0 ? "<span class='style-first'>"+ first + "</span> " : first) + text.join(" ");
 	});
-// End of first word style for <p>
+	// End of first word style for <p>
 
 
 
-//card image enlargement animation
+	//card image enlargement animation
 	$(".valued-page-img").hover(function() {
 		$(".inline-space").animate({"padding-left": "3vw"}, 1000);
 	}, function() {
@@ -241,26 +264,26 @@ $(document).ready(function(){
 	$(".valued-page-img").click(function() {
 		$(".inline-space").animate({"padding-left": "3vw"}, 1000);
 	});
-//End of card image enlargement animation
+	//End of card image enlargement animation
 
 
-//Update email form
+	//Update email form
 	$('button.update-email-button').click(function(e) {
 		$("#update-email-form").css({"display": "block"});
 	});
 
-//Update password form
+	//Update password form
 	$('button.update-password-button').click(function(e) {
 		$("#update-password-form").css({"display": "block"});
 	});
 
-//Delete account form
+	//Delete account form
 	$('button.delete-account-button').click(function(e) {
 		$("#delete-account-form").css({"display": "block"});
 	});
 
 
-//Generate url with username on the end
+	//Generate url with username on the end
 	$('.generate-url-button').click(function(e) {
 		var usernameVal = document.getElementById('get-username').value;
 		var uniqueURL = 'inoticed.org/profile/' + usernameVal;
@@ -269,18 +292,18 @@ $(document).ready(function(){
 	});
 
 
-//Profile navigation change based on if user is signed in or out
-var navVal;
-	if (document.getElementById('user-state')) {
-		navVal = document.getElementById('user-state').value;
-		if (navVal == 'signed-out-nav') {
-			$('div.nav-light').html('<div class="nav-left"><div class="title"><a href="/">iNoticed</a></div><a href="/dating.html">Dating</a><a href="/kindness.html">Kindness</a><a href="/valued.html">Valued</a></div><div class="nav-right"><a href="/account_creation.html"><i class="fas fa-user-plus"></i>Create Account</a><a href="/dating_sign_in.html"><i class="fas fa-sign-in-alt"></i>Sign In</a></div>');
-		} 
+	//Profile navigation change based on if user is signed in or out
+	var navVal;
+		if (document.getElementById('user-state')) {
+			navVal = document.getElementById('user-state').value;
+			if (navVal == 'signed-out-nav') {
+				$('div.nav-light').html('<div class="nav-left"><div class="title"><a href="/">iNoticed</a></div><a href="/dating.html">Dating</a><a href="/kindness.html">Kindness</a><a href="/valued.html">Valued</a></div><div class="nav-right"><a href="/account_creation.html"><i class="fas fa-user-plus"></i>Create Account</a><a href="/dating_sign_in.html"><i class="fas fa-sign-in-alt"></i>Sign In</a></div>');
+			} 
 
-		if (navVal == 'signed-in-nav') {
-			$('div.nav-light').html('<div class="nav-left"><div class="title"><a href="/">iNoticed</a></div></div><div class="nav-right"><a href="/php/dating_home.php"><i class="fas fa-envelope"></i>Home</a><a href="/php/messages.php"><i class="fas fa-envelope"></i>Messages</a><a href="/php/profile.php"><i class="fas fa-address-card"></i>My Profile</a><a href="/php/account_settings.php"><i class="fas fa-cog"></i>Account Settings</a><a href="/php/dating_logout.php"><i class="fas fa-sign-out-alt"></i>Log Out</a></div>');
-	}
-}
+			if (navVal == 'signed-in-nav') {
+				$('div.nav-light').html('<div class="nav-left"><div class="title"><a href="/">iNoticed</a></div></div><div class="nav-right"><a href="/php/dating_home.php"><i class="fas fa-envelope"></i>Home</a><a href="/php/messages.php"><i class="fas fa-envelope"></i>Messages</a><a href="/php/profile.php"><i class="fas fa-address-card"></i>My Profile</a><a href="/php/account_settings.php"><i class="fas fa-cog"></i>Account Settings</a><a href="/php/dating_logout.php"><i class="fas fa-sign-out-alt"></i>Log Out</a></div>');
+			}
+		}
 
 			
 
@@ -420,55 +443,47 @@ $(window).on('resize', function(){
 	  "retina_detect": true
 	});
 
-//Stop particles.js after 2 mins
-setTimeout( function(){ $("div#particle-container").remove("#particle-container"); }, 120000 );
+	//Stop particles.js after 2 mins
+	setTimeout( function(){ $("div#particle-container").remove("#particle-container"); }, 120000 );
 	}
+//End of particles.js
 
 
-});
 
-//zip code, city, and state insert 
+//zip code, city, and state insert from zippopotam.us
 	$(function() {
 
-	
+		// OnKeyDown Function
+		$("#zip").keyup(function() {
+			var zip_in = $(this);
+			var zip_box = $('#zipbox');
 
-	// OnKeyDown Function
-	$("#zip").keyup(function() {
-	var zip_in = $(this);
-	var zip_box = $('#zipbox');
+			if (zip_in.val().length<5) {
+				zip_box.removeClass('error success');
+			} else if ( zip_in.val().length>5) {
+				zip_box.addClass('error').removeClass('success');
+			} else if ((zip_in.val().length == 5) ) {
+				// Make HTTP Request
+				$.ajax({
+					url: "https://api.zippopotam.us/us/" + zip_in.val(),
+					cache: false,
+					dataType: "json",
+					type: "GET",
+					success: function(result, success) {
+						// US Zip Code Records Officially Map to only 1 Primary Location
+						places = result['places'][0];
+						$("#city").val(places['place name']);
+						$("#state").val(places['state']);
+						zip_box.addClass('success').removeClass('error');
+					},
+					error: function(result, success) {
+						zip_box.removeClass('success').addClass('error');
+					}
+				});
+			}
+		});
 
-	if (zip_in.val().length<5)
-	{
-	zip_box.removeClass('error success');
-	}
-	else if ( zip_in.val().length>5)
-	{
-	zip_box.addClass('error').removeClass('success');
-	}
-	else if ((zip_in.val().length == 5) )
-	{
-
-	// Make HTTP Request
-	$.ajax({
-	url: "https://api.zippopotam.us/us/" + zip_in.val(),
-	cache: false,
-	dataType: "json",
-	type: "GET",
-	success: function(result, success) {
-	// Make the city and state boxes visible
-
-
-	// US Zip Code Records Officially Map to only 1 Primary Location
-	places = result['places'][0];
-	$("#city").val(places['place name']);
-	$("#state").val(places['state']);
-	zip_box.addClass('success').removeClass('error');
-	},
-	error: function(result, success) {
-	zip_box.removeClass('success').addClass('error');
-	}
 	});
-	}
-	});
+	//End of zippopotam.us
 
 });

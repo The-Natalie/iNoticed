@@ -3,9 +3,8 @@
 session_start();
 // If the user is not logged in redirect to the login page...
 if (!isset($_SESSION['loggedin'])) {
-	$user_state = 'signed-out-nav';
-} else {
-	$user_state = 'signed-in-nav';
+	header('Location: /sign_in.html');
+	exit();
 }
 
 $DATABASE_HOST = 'mysql.inoticed.org';
@@ -14,7 +13,7 @@ $DATABASE_PASS = 'natabata14';
 $DATABASE_NAME = 'inoticed_dating';
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 if (mysqli_connect_errno()) {
-	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
+	die ('Let dating@inoticed.org know the details of this error: Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
 //Get data from database
@@ -146,22 +145,16 @@ $stmt->close();
 	</head>
 	<body id="loggedin">
 
-		<div class="nav-light">
-			<div class="nav-left">
-				<div class="title"><a href="/">iNoticed</a></div>
-			</div>
-			<div class="nav-right">
-				<a href="/php/dating_home.php"><i class="fas fa-envelope"></i>Home</a>
-				<a href="/php/messages.php"><i class="fas fa-envelope"></i>Messages</a>
-				<a href="/php/profile.php"><i class="fas fa-address-card"></i>My Profile</a>
-				<a href="/php/account_settings.php"><i class="fas fa-cog"></i>Account Settings</a>
-				<a href="/php/dating_logout.php"><i class="fas fa-sign-out-alt"></i>Log Out</a>
-			</div>
+		<div class="nav-light dating-signed-in-nav">
 		</div>
 
 		<div class="content">
 			<h2>Edit Profile</h2>
 			<div>
+				<a href="/php/profile.php"><button type="button">View my profile  <i class="far fa-edit"></i></button></a>
+				<br />
+				<br />
+				<p>Edit Profile:</p>
 				<form id="edit_profile" method="post" action="/php/updated_profile.php">
 					<p>First Name:&nbsp;&nbsp;<input id ="first_name" type="text" name="first_name" size="20" value="<?=$first_name?>" required/></p>
 					<p>Age:&nbsp;&nbsp;<input id="age" type="number" name="age" min="13" max="125" size="3" value="<?=$age?>" required/></p>

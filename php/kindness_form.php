@@ -14,7 +14,7 @@ $dbname = "inoticed_cards_requests";
 // Create connection
 $conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
 if (mysqli_connect_error()){
-	die('Connect Error ('. mysqli_connect_errno() .') '
+	die('Let dating@inoticed.org know the details of this error: Connect Error ('. mysqli_connect_errno() .') '
 	. mysqli_connect_error());
 }
 	else{
@@ -29,7 +29,7 @@ if (mysqli_connect_error()){
 			mail($to_email,$subject,$message,$headers);
 		}
 		else{
-			echo "Error: ". $sql ."
+			echo "Let dating@inoticed.org know the details of this error: Error: ". $sql ."
 			". $conn->error;
 		}
 		$conn->close();

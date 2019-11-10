@@ -8,7 +8,7 @@ $DATABASE_NAME = 'inoticed_dating';
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 if ( mysqli_connect_errno() ) {
 	// If there is an error with the connection, stop the script and display the error.
-	die ($param = 'Failed to connect to MySQL: ' . mysqli_connect_error());
+	die ($param = 'Let dating@inoticed.org know the details of this error: Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
 // Now we check if the data was submitted, isset() function will check if the data exists.
@@ -70,7 +70,11 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
 	// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
 	$param =  'Could not prepare statement. Try again. If you\'ve tried multiple times, contact dating@inoticed.org with the details of the problem';
 }
-
+// Close statement
+    mysqli_stmt_close($stmt);
+    
+    // Close connection
+    mysqli_close($con);
 ?>
 
 
@@ -86,14 +90,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
 	</head>
 	<body id="loggedin">
 
-		<div class="nav-light">
-			<div class="nav-left">
-				<div class="title"><a href="/">iNoticed</a></div>
-			</div>
-			<div class="nav-right">
-					<a href="/account_creation.html"><i class="fas fa-user-plus"></i>Create Account</a>
-					<a href="/dating_sign_in.html"><i class="fas fa-sign-in-alt"></i>Sign In</a>
-				</div>
+		<div class="nav-light dating-signed-out-nav">
 		</div>
 
 		<div class="content">

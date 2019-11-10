@@ -20,7 +20,7 @@ $(document).ready(function(){
 		$('.dating-signed-out-nav').html('<div class="nav-left"><div class="title"><a href="/">iNoticed</a></div><a href="' + datingLink + '">Dating</a><a href="' + kindnessLink + '">Kindness</a><a href="' + valuedLink + '">Valued</a></div><div class="nav-right"><a href="' + createAccountLink + '"><i class="fas fa-user-plus"></i>Create Account</a><a href="' + signInLink + '"><i class="fas fa-sign-in-alt"></i>Sign In</a></div>');
 
 	//Dating Signed in pages nav:
-		$('.dating-signed-in-nav').html('<div class="nav-left"><div class="title"><a href="/">iNoticed</a></div><div class="nav-right"><a href="' + messagesLink + '"><i class="fas fa-envelope"></i>Messages</a><a href="' + editProfileLink + '"><i class="fas fa-address-card"></i>Edit Profile</a><a href="' + accountSettingsLink + '"><i class="fas fa-cog"></i>Account Settings</a><a href="' + logoutLink + '"><i class="fas fa-sign-out-alt"></i>Log Out</a></div>');
+		$('.dating-signed-in-nav').html('<div class="nav-left"><div class="title"><a href="/">iNoticed</a></div></div><div class="nav-right"><a href="' + messagesLink + '"><i class="fas fa-envelope"></i>Messages</a><a href="' + editProfileLink + '"><i class="fas fa-address-card"></i>Edit Profile</a><a href="' + accountSettingsLink + '"><i class="fas fa-cog"></i>Account Settings</a><a href="' + logoutLink + '"><i class="fas fa-sign-out-alt"></i>Log Out</a></div>');
 
  
 

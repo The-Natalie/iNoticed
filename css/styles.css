@@ -473,3 +473,29 @@ Dating Sub Pages
 	font-weight: 500;
 }
 
+div.profile-page {
+	padding: 0;
+}
+
+.main-profile-img {
+	width: 100%;
+	margin-top: 15px;
+}
+
+.profile-left {
+	background-color: #368B9F;
+}
+
+.profile-left p {
+	font-size: 1em;
+}
+
+.profile-name {
+	text-align: center;
+	color: #368B9F;
+}
+
+div.profile-info p {
+	font-size: 1em;
+}
+

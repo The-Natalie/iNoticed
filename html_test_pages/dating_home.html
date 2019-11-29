@@ -10,23 +10,46 @@
 	</head>
 	<body id="loggedin">
 
-		<div class="nav-light">
-			<div class="nav-left">
-				<div class="title"><a href="/">iNoticed</a></div>
-			</div>
-			<div class="nav-right">
-				<a href="/php/dating_home.php"><i class="fas fa-envelope"></i>Home</a>
-				<a href="/php/messages.php"><i class="fas fa-envelope"></i>Messages</a>
-				<a href="/php/dating_profile.php"><i class="fas fa-address-card"></i>My Profile</a>
-				<a href="/php/account_settings.php"><i class="fas fa-cog"></i>Account Settings</a>
-				<a href="/php/dating_logout.php"><i class="fas fa-sign-out-alt"></i>Log Out</a>
-			</div>
+		<div class="nav-light dating-signed-in-nav">
 		</div>
 
 		<div class="content">
-			<h2>Home Page</h2>
-			<p>Welcome back, <?=$_SESSION['name']?>!</p>
+			<div class="profile-page row">	
+				<div class="profile-left col-md-4">
+					<img height="250" class="main-profile-img">
+					<p>Age: <?=$age?></p>
+					<p>Identifiles as: <?=$gender?></p>
+					<p>Profession: <?=$profession?></p>
+					<p>Lives in: <?=$city?>, <?=$state?></p>
+					<p>What <?=$first_name?> is looking for: <?=$intention?></p>
+				</div>	
+				<div class="profile-right col-md-8">
+					<h2 class="profile-name"><?=$first_name?>'s Profile</h2>
+					<h4>Summary:</h4>
+					<p><?=$about_me?></p>
+					<div class="profile-info row">
+						<div class="col-md-6" style="padding: 0;">
+							<p><?=$marital_status?></p>
+							<p>Highest level of education: <?=$education?></p>	
+							<p>Height: <?=$feet?>' <?=$inches?>"</p>
+							<p>Eye color: <?=$eyes?></p>
+							<p>Smokes: <?=$smoke?></p>
+							<p>Has kids: <?=$kids?></p>
+							
+						</div>
+						<div class="col-md-6" style="padding: 0;">
+							<p>Ethnicity: <?=$ethnicity?></p>
+							<p>Religion: <?=$religion?></p>
+							<p>Owns a car/truck/etc: <?=$transportation?></p>
+							<p>Hair color: <?=$hair?></p>
+							<p>Drugs: <?=$drugs?></p>
+							<p>Wants kids: <?=$want_kids?></p>
+						</div>	
+					</div>
+				</div>		
+			</div>
 		</div>
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 		<script
 			  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
@@ -34,7 +57,6 @@
 			  crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-		<script language="JavaScript" src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="/js/scripts.js"></script>
 	</body>
 </html>

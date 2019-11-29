@@ -43,173 +43,44 @@ $stmt->close();
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"> 
 	</head>
 	<body id="loggedin">
-		<input id=user-state type="hidden" value="<?php echo $user_state; ?>"/>
-		<div class="nav-light">
+
+		<div class="nav-light dating-signed-in-nav">
 		</div>
 
 		<div class="content">
-			<h2><?php echo $first_name; ?>'s Profile Page</h2>
-			<div class="profile">
-				<a href="/php/profile.php"><button type="button">Edit profile  <i class="fas fa-user"></i></button></a>
-				<br />
-				<br />
-				<p>Edit Profile:</p>
-				<form method="post" action="/php/edit_profile.php">
-						<p>First Name:  <input type="text" name="first_name" size="20" value="<?php echo $first_name; ?>" required></p>
-						<p>Age:  <input type="number" name="age" maxlength="3" size="3" value="<?php echo $age; ?>" required></p>
-						<p>Gender:&npsb;&npsb;
- 						<select name="gender" size="1" value="<?php echo $gender; ?>" required>
- 							<option value="">[Choose Option Below]</option>
-					    <option value="female">Female</option>
-					    <option value="male">Male</option>
-					    <option value="queer">Queer</option>
-					    <option value="nonbinary">Nonbinary</option>
-					    <option value="genderfluid">Genderfluid</option>
-					    <option value="agender">Agender/Gender-Neutral</option>
-					    <option value="transgender">Transgender</option>
-					    <option value="gender-trans">Gender Transition</option>
-					  </select>
-					</p>
-					<p>Height:&npsb;&npsb;
-						<select name="feet" size="1" value="<?php echo $feet; ?>" required>
-							<option value="">Feet</option>
-					    <option value="f2">2</option>
-					    <option value="f3">3</option>
-					    <option value="f4">4</option>
-					    <option value="f5">5</option>
-					    <option value="f6">6</option>
-					    <option value="f7">7</option>
-				  	</select>
-				  	<select name="inches" size="1" value="<?php echo $inches; ?>" required>
-				  		<option value="">Inches</option>
-				  		<option value="i0">0</option>
-				  		<option value="i1">1</option>
-					    <option value="i2">2</option>
-					    <option value="i3">3</option>
-					    <option value="i4">4</option>
-					    <option value="i5">5</option>
-					    <option value="i6">6</option>
-					    <option value="i7">7</option>
-					    <option value="i8">8</option>
-					    <option value="i9">9</option>
-					    <option value="i10">10</option>
-					    <option value="i11">11</option>
-					    <option value="i12">12</option>
-				  	</select>
-				  </p>
-			  	<p>Eye Color:&npsb;&npsb;
-						<select name="eyes" size="1" value="<?php echo $eyes; ?>" required>
-							<option value="">[Choose]</option>
-					    <option value="blue">Blue</option>
-					    <option value="green">Green</option>
-					    <option value="brown">Brown</option>
-					    <option value="hazel">Hazel</option>
-					    <option value="grey">Grey</option>
-					    <option value="blue-green">Blue & Green</option>
-					    <option value="fake-color">Colored Contacts</option>
-			  		</select>
-			  	</p>
-			  	<p>Hair Color:&npsb;&npsb;
-						<select name="hair" size="1" value="<?php echo $hair; ?>" required>
-							<option value="">[Choose]</option>
-					    <option value="blond">Blond</option>
-					    <option value="brown">Brown</option>
-					    <option value="red">Red</option>
-					    <option value="black">Black</option>
-					    <option value="white">White</option>
-					    <option value="grey">Grey</option>
-					    <option value="fake-color">Unnatural Color</option>
-			  		</select>
-			  	</p>
-			  	<p>What kind of relationship I'm looking for:&npsb;&npsb;
-						<select name="intention" size="1" value="<?php echo $intention; ?>" required>
-							<option value="">[Choose]</option>
-					    <option value="serious">Serious/Long Term</option>
-					    <option value="dating">Dating/Short Term</option>
-					    <option value="marriage">Marriage</option>
-					    <option value="looking">Just Looking</option>
-					    <option value="hookup">Hookup</option>
-					    <option value="fwb">Friends With Benefits</option>
-			  		</select>
-			  	</p>
-					<p>Location (enter your zip and the rest will be completed automatically):
-						<fieldset>
-							<div id="zipbox" class="control-group">
-								<label for="zip">Zip  </label>
-								<input type="text" class=” pattern="[0-9]*" name="zip" id="zip" value="<?php echo $zip; ?>" required/>
-							</div>
-							<div>
-								<div id="citybox" class="control-group">
-									<label for="city">City  </label>
-									<input type="text" name="city" id="city" value="<?php echo $city; ?>" required>
-								</div>
-								<div id="statebox" class="control-group">
-									<label for="state">State  </label>
-									<input type="text" name="state" id="state" value="<?php echo $state; ?>" required/>
-								</div>
-							</div>
-						</fieldset>
-					</p>
-					<p>Profession:  <input type="text" name="profession" size="25" value="<?php echo $profession; ?>" required></p>
-					<p>Highest level of education:&npsb;&npsb;
-						<select name="education" size="1" value="<?php echo $education; ?>" required>
-							<option value="">[Choose]</option>
-					    <option value="pre-highS">Some High School or Lower</option>
-					    <option value="highS">High School Degree/GED</option>
-					    <option value="pre-coll">Some College</option>
-					    <option value="associate">Associate's Degree</option>
-					    <option value="bachelor">Bachelor's Degree</option>
-					    <option value="master">Master's Degree</option>
-					    <option value="doctor">Doctoral Degree</option>
-			  		</select>
-			  	</p>
-			  	<p>Ethnicity:&npsb;&npsb;
-			  		<select name="ethnicity" size="1" value="<?php echo $ethnicity; ?>" required>
-			  			<option value="">[Choose]</option>
-					    <option value="asian">Asian</option>
-					    <option value="black">Black/African</option>
-					    <option value="white">Caucasian</option>
-					    <option value="hispanic">Hispanic/Latino</option>
-					    <option value="native">Native American</option>
-					    <option value="pacific">Pacific Islander</option>
-					    <option value="mixed">Mixed Race</option>
-					    <option value="other">Other</option>
-			  		</select>
-			  	</p>
-						<p>Religion<input type="text" name="religion" size="30" value="<?php echo $religion; ?>" required></p>
-						<p>Marital status:&npsb;&npsb;
-			  		<select name="marital_status" size="1" value="<?php echo $marital_status; ?>" required>
-			  			<option value="">[Choose]</option>
-					    <option value="single">Single</option>
-					    <option value="relationship">In a Relationship</option>
-					    <option value="engaged">Engaged</option>
-					    <option value="married">Married</option>
-					    <option value="divorced">Divorced</option>
-					    <option value="seperated">Seperated</option>
-					    <option value="widowed">Widowed</option>
-			  		</select>
-			  	</p>
-			  	<p>Have kids (if yes, how many)?:&npsb;&npsb;
-			  		<select name="kids" size="1" value="<?php echo $kids; ?>" required>
-			  			<option value="">[Choose]</option>
-					    <option value="yes1-2">Yes, 1 or 2</option>
-					    <option value="yes3-4">Yes, 3 or 4</option>
-					    <option value="yes5-6">Yes, 5 or 6</option>
-					    <option value="yes7-plus">Yes, 7+</option>
-					    <option value="no">No</option>
-			  		</select>
-			  	</p>
-			  	<p>Want kids?:&npsb;&npsb;
-			  		<select name="want_kids" size="1" value="<?php echo $want_kids; ?>" required>
-			  			<option value="">[Choose]</option>
-					    <option value="yes">Yes</option>
-					    <option value="no">No</option>
-			  		</select>
-			  	</p>
-			  	<p>About me and what I'm looking for:<input type="text" name="about_me" size="1000" value="<?php echo $about_me; ?>" required></p>
-					<input type="hidden" name="id" value="<?php echo $id; ?>"/>
-					<input style="margin-top: 10px;" type="submit" value="Submit">
-				</form>	
+			<div class="profile-page row">	
+				<div class="profile-left col-md-4">
+					<img height="250" class="main-profile-img">
+					<p>Age: <?=$age?></p>
+					<p>Identifiles as: <?=$gender?></p>
+					<p>Profession: <?=$profession?></p>
+					<p>Lives in: <?=$city?>, <?=$state?></p>
+					<p>What <?=$first_name?> is looking for: <?=$intention?></p>
+				</div>	
+				<div class="profile-right col-md-8">
+					<h2 class="profile-name"><?=$first_name?>'s Profile</h2>
+					<h4>Summary:</h4>
+					<p><?=$about_me?></p>
+					<div class="profile-info row">
+						<div class="col-md-6" style="padding: 0;">
+							<p><?=$marital_status?></p>
+							<p>Highest level of education: <?=$education?></p>	
+							<p>Height: <?=$feet?>' <?=$inches?>"</p>
+							<p>Eye color: <?=$eyes?></p>
+							<p>Smokes: <?=$smoke?></p>
+							<p>Has kids: <?=$kids?></p>
+							
+						</div>
+						<div class="col-md-6" style="padding: 0;">
+							<p>Ethnicity: <?=$ethnicity?></p>
+							<p>Religion: <?=$religion?></p>
+							<p>Owns a car/truck/etc: <?=$transportation?></p>
+							<p>Hair color: <?=$hair?></p>
+							<p>Drugs: <?=$drugs?></p>
+							<p>Wants kids: <?=$want_kids?></p>
+						</div>	
+					</div>
+				</div>		
 			</div>
 		</div>
 

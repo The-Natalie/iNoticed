@@ -26,6 +26,9 @@ $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
 $stmt->bind_result($id, $first_name, $age, $gender, $feet, $inches, $eyes, $hair, $smoke, $drugs, $transportation, $intention, $zip, $city, $state, $profession, $education, $ethnicity, $religion, $marital_status, $kids, $want_kids, $about_me);
 $stmt->fetch();
+
+$aboutme = nl2br($about_me);
+
 $stmt->close();
 ?>
 
@@ -60,7 +63,7 @@ $stmt->close();
 				<div class="profile-right col-md-8">
 					<h2 class="profile-name"><?=$first_name?>'s Profile</h2>
 					<p>Summary:</p>
-					<textarea style="font-size:1em;" disabled><?=$about_me?></textarea>
+					<p style="font-size: 1em;"><?php echo $aboutme; ?></p>
 					<div class="profile-info row">
 						<div class="col-md-6" style="padding: 0;">
 							<p>Marital status: <?=$marital_status?></p>

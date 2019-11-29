@@ -161,41 +161,41 @@ $stmt->close();
 					<p>Gender:&nbsp;&nbsp;
  						<select id="gender" name="gender" size="1" required>
  							<option value="">[Choose Option Below]</option>
-					    <option value="female">Female</option>
-					    <option value="male">Male</option>
-					    <option value="queer">Queer</option>
-					    <option value="nonbinary">Nonbinary</option>
-					    <option value="genderfluid">Genderfluid</option>
-					    <option value="agender">Agender/Gender-Neutral</option>
-					    <option value="transgender">Transgender</option>
-					    <option value="gender-trans">Gender Transition</option>
+					    <option value="Female">Female</option>
+					    <option value="Male">Male</option>
+					    <option value="Queer">Queer</option>
+					    <option value="Nonbinary">Nonbinary</option>
+					    <option value="Genderfluid">Genderfluid</option>
+					    <option value="Agender">Agender/Gender-Neutral</option>
+					    <option value="Transgender">Transgender</option>
+					    <option value="Gender Transition">Gender Transition</option>
 					  </select>
 					</p>
 					<p>Height:&nbsp;&nbsp;
 						<select id="feet" name="feet" size="1" required>
 							<option value="">Feet</option>
-					    <option value="f2">2</option>
-					    <option value="f3">3</option>
-					    <option value="f4">4</option>
-					    <option value="f5">5</option>
-					    <option value="f6">6</option>
-					    <option value="f7">7</option>
+					    <option value="2">2</option>
+					    <option value="3">3</option>
+					    <option value="4">4</option>
+					    <option value="5">5</option>
+					    <option value="6">6</option>
+					    <option value="7">7</option>
 				  	</select>
 				  	<select id="inches" name="inches" size="1" required>
 				  		<option value="">Inches</option>
-				  		<option value="i0">0</option>
-				  		<option value="i1">1</option>
-					    <option value="i2">2</option>
-					    <option value="i3">3</option>
-					    <option value="i4">4</option>
-					    <option value="i5">5</option>
-					    <option value="i6">6</option>
-					    <option value="i7">7</option>
-					    <option value="i8">8</option>
-					    <option value="i9">9</option>
-					    <option value="i10">10</option>
-					    <option value="i11">11</option>
-					    <option value="i12">12</option>
+				  		<option value="0">0</option>
+				  		<option value="1">1</option>
+					    <option value="2">2</option>
+					    <option value="3">3</option>
+					    <option value="4">4</option>
+					    <option value="5">5</option>
+					    <option value="6">6</option>
+					    <option value="7">7</option>
+					    <option value="8">8</option>
+					    <option value="9">9</option>
+					    <option value="10">10</option>
+					    <option value="11">11</option>
+					    <option value="12">12</option>
 				  	</select>
 				  </p>
 			  	<p>Eye Color:&nbsp;&nbsp;
@@ -206,8 +206,8 @@ $stmt->close();
 					    <option value="brown">Brown</option>
 					    <option value="hazel">Hazel</option>
 					    <option value="grey">Grey</option>
-					    <option value="blue-green">Blue & Green</option>
-					    <option value="fake-color">Colored Contacts</option>
+					    <option value="blue-green">Blue-green</option>
+					    <option value="colored contacts">Colored Contacts</option>
 			  		</select>
 			  	</p>
 			  	<p>Hair Color:&nbsp;&nbsp;
@@ -219,7 +219,7 @@ $stmt->close();
 					    <option value="black">Black</option>
 					    <option value="white">White</option>
 					    <option value="grey">Grey</option>
-					    <option value="fake-color">Unnatural Color</option>
+					    <option value="unnatural color">Unnatural Color</option>
 			  		</select>
 			  	</p>
 			  	<p>Do I smoke:&nbsp;&nbsp;
@@ -246,12 +246,12 @@ $stmt->close();
 			  	<p>What kind of relationship I'm looking for:&nbsp;&nbsp;
 						<select id="intention" name="intention" size="1" required>
 							<option value="">[Choose]</option>
-					    <option value="serious">Serious/Long Term</option>
-					    <option value="dating">Dating/Short Term</option>
+					    <option value="serious/long term">Serious/Long Term</option>
+					    <option value="dating/short term">Dating/Short Term</option>
 					    <option value="marriage">Marriage</option>
-					    <option value="looking">Just Looking</option>
+					    <option value="just looking">Just Looking</option>
 					    <option value="hookup">Hookup</option>
-					    <option value="fwb">Friends With Benefits</option>
+					    <option value="friends with benefits">Friends With Benefits</option>
 			  		</select>
 			  	</p>
 					<p>Location (enter your zip and the rest will be completed automatically):
@@ -276,25 +276,25 @@ $stmt->close();
 					<p>Highest level of education:&nbsp;&nbsp;
 						<select id="education" name="education" size="1" required>
 							<option value="">[Choose]</option>
-					    <option value="pre-highS">Some High School or Lower</option>
-					    <option value="highS">High School Degree/GED</option>
-					    <option value="pre-coll">Some College</option>
-					    <option value="associate">Associate's Degree</option>
-					    <option value="bachelor">Bachelor's Degree</option>
-					    <option value="master">Master's Degree</option>
-					    <option value="doctor">Doctoral Degree</option>
+					    <option value="some high school or lower">Some High School or Lower</option>
+					    <option value="high school degree/GED">High School Degree/GED</option>
+					    <option value="some college">Some College</option>
+					    <option value="associate's degree">Associate's Degree</option>
+					    <option value="bachelor's degree">Bachelor's Degree</option>
+					    <option value="master's degree">Master's Degree</option>
+					    <option value="doctoral degree">Doctoral Degree</option>
 			  		</select>
 			  	</p>
 			  	<p>Ethnicity:&nbsp;&nbsp;
 			  		<select id="ethnicity" name="ethnicity" size="1" required>
 			  			<option value="">[Choose]</option>
-					    <option value="asian">Asian</option>
-					    <option value="black">Black/African</option>
-					    <option value="white">Caucasian</option>
-					    <option value="hispanic">Hispanic/Latino</option>
-					    <option value="native">Native American</option>
-					    <option value="pacific">Pacific Islander</option>
-					    <option value="mixed">Mixed Race</option>
+					    <option value="Asian">Asian</option>
+					    <option value="Black/African">Black/African</option>
+					    <option value="Caucasian">Caucasian</option>
+					    <option value="Hispanic/Latino">Hispanic/Latino</option>
+					    <option value="Native American">Native American</option>
+					    <option value="Pacific Islander">Pacific Islander</option>
+					    <option value="mixed race">Mixed Race</option>
 					    <option value="other">Other</option>
 			  		</select>
 			  	</p>
@@ -303,7 +303,7 @@ $stmt->close();
 			  		<select id="marital_status" name="marital_status" size="1" required>
 			  			<option value="">[Choose]</option>
 					    <option value="single">Single</option>
-					    <option value="relationship">In a Relationship</option>
+					    <option value="in a relationship">In a Relationship</option>
 					    <option value="engaged">Engaged</option>
 					    <option value="married">Married</option>
 					    <option value="divorced">Divorced</option>
@@ -314,10 +314,10 @@ $stmt->close();
 			  	<p>Have kids (if yes, how many)?:&nbsp;&nbsp;
 			  		<select id="kids" name="kids" size="1" required>
 			  			<option value="">[Choose]</option>
-					    <option value="yes1-2">Yes, 1 or 2</option>
-					    <option value="yes3-4">Yes, 3 or 4</option>
-					    <option value="yes5-6">Yes, 5 or 6</option>
-					    <option value="yes7-plus">Yes, 7+</option>
+					    <option value="yes, 1 or 2">Yes, 1 or 2</option>
+					    <option value="yes, 3 or 4">Yes, 3 or 4</option>
+					    <option value="yes, 5 or 6">Yes, 5 or 6</option>
+					    <option value="yes, 7+">Yes, 7+</option>
 					    <option value="no">No</option>
 			  		</select>
 			  	</p>

@@ -55,15 +55,15 @@ $stmt->close();
 					<p>Identifiles as: <?=$gender?></p>
 					<p>Profession: <?=$profession?></p>
 					<p>Lives in: <?=$city?>, <?=$state?></p>
-					<p>What <?=$first_name?> is looking for: <?=$intention?></p>
+					<p>Kind of relationship <?=$first_name?> is looking for: <?=$intention?></p>
 				</div>	
 				<div class="profile-right col-md-8">
 					<h2 class="profile-name"><?=$first_name?>'s Profile</h2>
-					<h4>Summary:</h4>
-					<p><?=$about_me?></p>
+					<p>Summary:</p>
+					<textarea style="font-size:1em;" disabled><?=$about_me?></textarea>
 					<div class="profile-info row">
 						<div class="col-md-6" style="padding: 0;">
-							<p><?=$marital_status?></p>
+							<p>Marital status: <?=$marital_status?></p>
 							<p>Highest level of education: <?=$education?></p>	
 							<p>Height: <?=$feet?>' <?=$inches?>"</p>
 							<p>Eye color: <?=$eyes?></p>

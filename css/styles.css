@@ -177,12 +177,13 @@ button.create-account-button {
 	margin: 0 auto;
 	font-weight: bold;
 	font-size: 1.35em;
-	background-color: #21c421; 
+	background-color: #00b300; 
 	border: 5px solid white;
   padding: 20px 15px;
   -webkit-box-shadow: 5px 5px 8px 0px rgba(0,0,0,0.69); 
 	box-shadow: 5px 5px 8px 0px rgba(0,0,0,0.69);
 	text-decoration: none;
+	border-radius: 20px;
 }
 
 button.create-account-button:hover {

@@ -486,9 +486,9 @@ div.profile-page {
 	padding: 0;
 }
 
-.profile-left p {
+div.profile-left p {
 	font-size: 1em;
-	padding-left: 10px;
+	padding-left: 0 5px 0 10px;
 }
 
 .profile-name {

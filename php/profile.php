@@ -63,7 +63,7 @@ $stmt->close();
 				<div class="profile-right col-md-8">
 					<h2 class="profile-name"><?=$first_name?>'s Profile</h2>
 					<p>Summary:</p>
-					<p style="font-size: 1em; font-weight: normal;"><?php echo $aboutme; ?></p>
+					<p class="profile-summary" style=""><?php echo $aboutme; ?></p>
 					<div class="profile-info row">
 						<div class="col-md-6" style="padding: 0;">
 							<p>Marital status: <span style="font-weight: normal;"><?=$marital_status?></span></p>

@@ -56,11 +56,11 @@ $stmt->close();
 					<div class="profile-left col-md-4">
 						<img height="250" class="main-profile-img">
 						<div class="profile-left-ps">
-							<p>Age: <span style="font-weight: normal;"><?=$age?></span></p>
-							<p>Identifiles as: <span style="font-weight: normal;"><?=$gender?></span></p>
-							<p>Profession: <span style="font-weight: normal;"><?=$profession?></span></p>
-							<p>Lives in: <span style="font-weight: normal;"><?=$city?>, <?=$state?></span></p>
-							<p>Kind of relationship <?=$first_name?> is looking for: <span style="font-weight: normal;"><?=$intention?></span></p>
+							<p style="padding: 10px 5px 2px 10px;">Age: <span style="font-weight: normal;"><?=$age?></span></p>
+							<p style="padding: 0 5px 2px 10px;">Identifiles as: <span style="font-weight: normal;"><?=$gender?></span></p>
+							<p style="padding: 0 5px 2px 10px;">Profession: <span style="font-weight: normal;"><?=$profession?></span></p>
+							<p style="padding: 0 5px 2px 10px;">Lives in: <span style="font-weight: normal;"><?=$city?>, <?=$state?></span></p>
+							<p style="padding: 0 5px 2px 10px;">Kind of relationship <?=$first_name?> is looking for: <span style="font-weight: normal;"><?=$intention?></span></p>
 						</div>
 					</div>	
 					<div class="profile-right col-md-8">

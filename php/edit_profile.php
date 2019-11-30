@@ -166,7 +166,7 @@ $stmt->close();
 					    <option value="Queer">Queer</option>
 					    <option value="Nonbinary">Nonbinary</option>
 					    <option value="Genderfluid">Genderfluid</option>
-					    <option value="Agender">Agender/Gender-Neutral</option>
+					    <option value="Agender/Gender-Neutral">Agender/Gender-Neutral</option>
 					    <option value="Transgender">Transgender</option>
 					    <option value="Gender Transition">Gender Transition</option>
 					  </select>

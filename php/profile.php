@@ -54,33 +54,33 @@ $stmt->close();
 			<div class="profile-page row">	
 				<div class="profile-left col-md-4">
 					<img height="250" class="main-profile-img">
-					<p>Age: <?=$age?></p>
-					<p>Identifiles as: <?=$gender?></p>
-					<p>Profession: <?=$profession?></p>
-					<p>Lives in: <?=$city?>, <?=$state?></p>
-					<p>Kind of relationship <?=$first_name?> is looking for: <?=$intention?></p>
+					<p>Age: <span style="font-weight: normal;"><?=$age?></span></p>
+					<p>Identifiles as: <span style="font-weight: normal;"><?=$gender?></span></p>
+					<p>Profession: <span style="font-weight: normal;"><?=$profession?></span></p>
+					<p>Lives in: <span style="font-weight: normal;"><?=$city?>, <?=$state?></span></p>
+					<p>Kind of relationship <?=$first_name?> is looking for: <span style="font-weight: normal;"><?=$intention?></span></p>
 				</div>	
 				<div class="profile-right col-md-8">
 					<h2 class="profile-name"><?=$first_name?>'s Profile</h2>
 					<p>Summary:</p>
-					<p style="font-size: 1em;"><?php echo $aboutme; ?></p>
+					<p style="font-size: 1em; font-weight: normal;"><?php echo $aboutme; ?></p>
 					<div class="profile-info row">
 						<div class="col-md-6" style="padding: 0;">
-							<p>Marital status: <?=$marital_status?></p>
-							<p>Highest level of education: <?=$education?></p>	
-							<p>Height: <?=$feet?>' <?=$inches?>"</p>
-							<p>Eye color: <?=$eyes?></p>
-							<p>Smokes: <?=$smoke?></p>
-							<p>Has kids: <?=$kids?></p>
+							<p>Marital status: <span style="font-weight: normal;"><?=$marital_status?></span></p>
+							<p>Highest level of education: <span style="font-weight: normal;"><?=$education?></span></p>	
+							<p>Height: <span style="font-weight: normal;"><?=$feet?>' <?=$inches?>"</span></p>
+							<p>Eye color: <span style="font-weight: normal;"><?=$eyes?></span></p>
+							<p>Smokes: <span style="font-weight: normal;"><?=$smoke?></span></p>
+							<p>Has kids: <span style="font-weight: normal;"><?=$kids?></span></p>
 							
 						</div>
 						<div class="col-md-6" style="padding: 0;">
-							<p>Ethnicity: <?=$ethnicity?></p>
-							<p>Religion: <?=$religion?></p>
-							<p>Owns a car/truck/etc: <?=$transportation?></p>
-							<p>Hair color: <?=$hair?></p>
-							<p>Drugs: <?=$drugs?></p>
-							<p>Wants kids: <?=$want_kids?></p>
+							<p>Ethnicity: <span style="font-weight: normal;"><?=$ethnicity?></span></p>
+							<p>Religion: <span style="font-weight: normal;"><?=$religion?></span></p>
+							<p>Owns a car/truck/etc: <span style="font-weight: normal;"><?=$transportation?></span></p>
+							<p>Hair color: <span style="font-weight: normal;"><?=$hair?></span></p>
+							<p>Drugs: <span style="font-weight: normal;"><?=$drugs?></span></p>
+							<p>Wants kids: <span style="font-weight: normal;"><?=$want_kids?></span></p>
 						</div>	
 					</div>
 				</div>		

@@ -73,7 +73,7 @@ $stmt->close();
 				<div class="profile-info row">
 					<div class="col-md-6" style="padding: 0;">
 						<p>Marital status: <span style="font-weight: normal;"><?=$marital_status?></span></p>
-						<p>Highest level of education: <span style="font-weight: normal;"><?=$education?></span></p>	
+						<p>Religion: <span style="font-weight: normal;"><?=$religion?></span></p>
 						<p>Height: <span style="font-weight: normal;"><?=$feet?>' <?=$inches?>"</span></p>
 						<p>Eye color: <span style="font-weight: normal;"><?=$eyes?></span></p>
 						<p>Smokes: <span style="font-weight: normal;"><?=$smoke?></span></p>
@@ -81,7 +81,7 @@ $stmt->close();
 					</div>
 					<div class="col-md-6" style="padding: 0;">
 						<p>Ethnicity: <span style="font-weight: normal;"><?=$ethnicity?></span></p>
-						<p>Religion: <span style="font-weight: normal;"><?=$religion?></span></p>
+						<p>Highest level of education: <span style="font-weight: normal;"><?=$education?></span></p>	
 						<p>Owns a car/truck/etc: <span style="font-weight: normal;"><?=$transportation?></span></p>
 						<p>Hair color: <span style="font-weight: normal;"><?=$hair?></span></p>
 						<p>Drugs: <span style="font-weight: normal;"><?=$drugs?></span></p>

@@ -479,7 +479,8 @@ div.profile-page {
 
 .main-profile-img {
 	width: 100%;
-	margin-top: 15px;
+	margin: 0;
+	padding: 0;
 }
 
 .profile-left {
@@ -498,7 +499,6 @@ div.profile-page {
 .profile-summary {
 	font-size: 1em; 
 	font-weight: normal;
-	border-bottom: 1em solid gray;
 }
 
 div.profile-info p {

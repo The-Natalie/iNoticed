@@ -304,8 +304,13 @@ $(document).ready(function(){
 				$('div.nav-light').html('<div class="nav-left"><div class="title"><a href="/">iNoticed</a></div></div><div class="nav-right"><a href="/php/dating_home.php"><i class="fas fa-envelope"></i>Home</a><a href="/php/messages.php"><i class="fas fa-envelope"></i>Messages</a><a href="/php/profile.php"><i class="fas fa-address-card"></i>My Profile</a><a href="/php/account_settings.php"><i class="fas fa-cog"></i>Account Settings</a><a href="/php/dating_logout.php"><i class="fas fa-sign-out-alt"></i>Log Out</a></div>');
 			}
 		}
+	//end of profile nav change	
 
-			
+
+	//Profile page images
+	//.profile-thumbnails
+
+
 
 
 

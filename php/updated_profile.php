@@ -228,8 +228,8 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
 		</div>
 
 		<div class="content">
+            <h2>Profile Update Results</h2>
             <div>
-    			<h2>Profile Update Results</h2>
     			<p><?php echo $param; ?></p>
                 <br />
                 <a href="/php/profile.php"><button type="button">View my profile  <i class="far fa-edit"></i></button></a>

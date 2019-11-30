@@ -62,6 +62,8 @@ $stmt->close();
 							<p style="padding: 0 5px 2px 10px;">Lives in: <span style="font-weight: normal;"><?=$city?>, <?=$state?></span></p>
 							<p style="padding: 0 5px 2px 10px;">Kind of relationship <?=$first_name?> is looking for: <span style="font-weight: normal;"><?=$intention?></span></p>
 						</div>
+						<div class="profile-thumbnails">
+						</div>
 					</div>	
 					<div class="profile-right col-md-8">
 						<h2 class="profile-name"><?=$first_name?>'s Profile</h2>
@@ -73,7 +75,7 @@ $stmt->close();
 				<div class="profile-info row">
 					<div class="col-md-6" style="padding: 0;">
 						<p>Marital status: <span style="font-weight: normal;"><?=$marital_status?></span></p>
-						<p>Religion: <span style="font-weight: normal;"><?=$religion?></span></p>
+						<p>Highest level of education: <span style="font-weight: normal;"><?=$education?></span></p>	
 						<p>Height: <span style="font-weight: normal;"><?=$feet?>' <?=$inches?>"</span></p>
 						<p>Eye color: <span style="font-weight: normal;"><?=$eyes?></span></p>
 						<p>Smokes: <span style="font-weight: normal;"><?=$smoke?></span></p>
@@ -81,7 +83,7 @@ $stmt->close();
 					</div>
 					<div class="col-md-6" style="padding: 0;">
 						<p>Ethnicity: <span style="font-weight: normal;"><?=$ethnicity?></span></p>
-						<p>Highest level of education: <span style="font-weight: normal;"><?=$education?></span></p>	
+						<p>Religion: <span style="font-weight: normal;"><?=$religion?></span></p>
 						<p>Owns a car/truck/etc: <span style="font-weight: normal;"><?=$transportation?></span></p>
 						<p>Hair color: <span style="font-weight: normal;"><?=$hair?></span></p>
 						<p>Drugs: <span style="font-weight: normal;"><?=$drugs?></span></p>

@@ -23,6 +23,13 @@ $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
 $stmt->bind_result($id, $first_name, $age, $gender, $feet, $inches, $eyes, $hair, $smoke, $drugs, $transportation, $intention, $zip, $city, $state, $profession, $education, $ethnicity, $religion, $marital_status, $kids, $want_kids, $about_me);
 $stmt->fetch();
+
+$education = htmlspecialchars($education);
+// $ethnicity = htmlspecialchars($ethnicity);
+// $marital_status = htmlspecialchars($marital_status);
+// $want_kids = htmlspecialchars($want_kids);
+
+
 $stmt->close();
 ?>
 

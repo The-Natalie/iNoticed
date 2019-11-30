@@ -51,7 +51,7 @@ $stmt->close();
 		</div>
 
 		<div class="content">
-			<div>
+			<div style="padding: 0;">
 				<div class="profile-page row">	
 					<div class="profile-left col-md-4">
 						<img height="250" class="main-profile-img">

@@ -479,15 +479,16 @@ div.profile-page {
 
 .main-profile-img {
 	width: 100%;
-	margin-top: 15px;
 }
 
 .profile-left {
 	background-color: #368B9F;
+	padding: 0;
 }
 
 .profile-left p {
 	font-size: 1em;
+	padding-left: 10px;
 }
 
 .profile-name {
@@ -501,7 +502,9 @@ div.profile-page {
 }
 
 div.profile-info {
-	padding-right: 0;
+	padding-top: 35px;
+	padding-left: 35px;
+	padding: 35px 0 25px 35px;
 }
 
 div.profile-info p {

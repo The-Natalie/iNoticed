@@ -23,13 +23,6 @@ $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
 $stmt->bind_result($id, $first_name, $age, $gender, $feet, $inches, $eyes, $hair, $smoke, $drugs, $transportation, $intention, $zip, $city, $state, $profession, $education, $ethnicity, $religion, $marital_status, $kids, $want_kids, $about_me);
 $stmt->fetch();
-
-$education = JSON.parse($education);
-// $ethnicity = htmlspecialchars($ethnicity);
-// $marital_status = htmlspecialchars($marital_status);
-// $want_kids = htmlspecialchars($want_kids);
-
-
 $stmt->close();
 ?>
 
@@ -45,7 +38,7 @@ $stmt->close();
 	var drugs = "<?=$drugs;?>";
 	var transportation = "<?=$transportation;?>";
 	var intention = "<?=$intention;?>"; 
-	var education = "<?=$education;?>"; 
+	var education = "JSON.parse(<?=$education;?>)"; 
 	var ethnicity = "<?=$ethnicity;?>";
 	var marital_status = "<?=$marital_status;?>"; 
 	var kids = "<?=$kids;?>"; 

@@ -482,7 +482,7 @@ div.profile-page {
 }
 
 .profile-left {
-	background-color: #1BACAC;
+	background: linear-gradient(307deg, rgba(111,203,123,1) 0%, rgba(177,207,181,1) 25%, rgba(191,213,194,1) 50%, rgba(149,208,157,1) 75%, rgba(111,203,123,1) 100%); 	
 	padding: 0;
 }
 

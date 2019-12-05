@@ -38,7 +38,7 @@ $stmt->close();
 	var drugs = "<?=$drugs;?>";
 	var transportation = "<?=$transportation;?>";
 	var intention = "<?=$intention;?>"; 
-	var education = "<?=json_encode($education);?>"; 
+	var education = "<?=($education);?>"; 
 	var ethnicity = "<?=$ethnicity;?>";
 	var marital_status = "<?=$marital_status;?>"; 
 	var kids = "<?=$kids;?>"; 

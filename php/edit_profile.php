@@ -38,7 +38,7 @@ $stmt->close();
 	var drugs = "<?=$drugs;?>";
 	var transportation = "<?=$transportation;?>";
 	var intention = "<?=$intention;?>"; 
-	var education = "<?=($education);?>"; 
+	var education = "<?=$education;?>"; 
 	var ethnicity = "<?=$ethnicity;?>";
 	var marital_status = "<?=$marital_status;?>"; 
 	var kids = "<?=$kids;?>"; 
@@ -279,10 +279,10 @@ $stmt->close();
 					    <option value="some high school or lower">Some High School or Lower</option>
 					    <option value="high school degree/GED">High School Degree/GED</option>
 					    <option value="some college">Some College</option>
-					    <option value="associate">Associate</option>
-					    <option value="bachelor">Bachelor</option>
-					    <option value="master">Master</option>
-					    <option value="doctoral">Doctoral</option>
+					    <option value="associate's degree">Associate's Degree</option>
+					    <option value="bachelor's degree">Bachelor's Degree</option>
+					    <option value="master's degree">Master's Degree</option>
+					    <option value="doctoral degree">Doctoral Degree</option>
 			  		</select>
 			  	</p>
 			  	<p>Ethnicity:&nbsp;&nbsp;

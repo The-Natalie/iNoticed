@@ -455,6 +455,16 @@ Dating Sub Pages
 	height: 40px;
 }
 
+.delete-account-button:hover {
+	font-size: 1.2em;
+	color: red;
+	border-color: red;
+}
+
+.update-email-button:hover, .update-password-button:hover, .edit-profile-button:hover, .generate-url-button:hover {
+	font-size: 1.2em;
+}
+
 #update-email-form, #update-password-form, #delete-account-form, div #generate-url {
 	padding-top: 10px;
 	padding-bottom: 15px;

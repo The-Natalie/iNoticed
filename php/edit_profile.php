@@ -402,9 +402,8 @@ $stmt->close();
 			  	<p>About me and what I'm looking for:</p>
 			  	<span  style="font-size: 1.3em;"><textarea id="about_me" name="about_me" style="min-width:75%;" rows="10"><?=$about_me?></textarea></span><br />
 					<input type="hidden" name="id" value="<?php echo $id; ?>"/>
-					<div style="margin-top: 20px; font-size: 1.5em; text-align: center">
-						<input class="submit-button" type="submit" value="Submit"/>
-					</div>
+					<div>
+						<input class="submit-button" style="margin-top: 20px; font-size: 1.8em;" type="submit" value="Submit"/>
 				</form>	
 			</div>
 		</div>

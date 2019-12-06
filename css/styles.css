@@ -12,6 +12,11 @@ body {
 	margin: 0 0;
 }
 
+button, input, select, textarea {
+  font-family : inherit;
+  font-size   : 100%;
+}
+
 .container {
 	max-width: none;
 	padding: 0 0;
@@ -444,7 +449,22 @@ Dating Sub Pages
 	margin: 0 0 10px 0;
 }
 
-.update-email-button, .update-password-button, .delete-account-button, .edit-profile-button, .generate-url-button {
+.submit-button {
+	cursor: pointer;
+	background: none;
+	border: 2px solid #1D4F5B;
+	border-radius: 8px;
+	color: #1D4F5B;
+	font-size: 1em;
+	font-weight: bold;
+	height: 30px;
+}
+
+.submit-button:hover {
+	background-color: #84ff84;
+}
+
+.update-email-button, .update-password-button, .delete-account-button, .edit-profile-button, .generate-url-button, .edit-button {
 	cursor: pointer;
 	margin-bottom: 15px;
 	background-color: #84ff84;
@@ -461,7 +481,7 @@ Dating Sub Pages
 	border-color: red;
 }
 
-.update-email-button:hover, .update-password-button:hover, .edit-profile-button:hover, .generate-url-button:hover {
+.update-email-button:hover, .update-password-button:hover, .edit-profile-button:hover, .generate-url-button:hover, .edit-button:hover {
 	font-size: 1.2em;
 }
 

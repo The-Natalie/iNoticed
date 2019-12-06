@@ -81,7 +81,7 @@ $stmt->close();
 					<form method="post" action="/php/update_email.php">
  								<input type="email" name="email" placeholder="New Email" required><br />
 						<input type="hidden" name="id" value="<?php echo $id; ?>"/>
- 						<input style="margin-top: 10px;" type="submit" value="Submit">
+ 						<input class="submit-button" style="margin-top: 10px;" type="submit" value="Submit">
 					</form>	
 				</div>
 				<br />
@@ -93,7 +93,7 @@ $stmt->close();
  						<input name="new-password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="New Password" required><br />
 						<input name="password_two" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Confirm New Password" required><br />
 						<input type="hidden" name="id" value="<?php echo $id; ?>"/>
- 						<input type="submit" value="Submit">
+ 						<input class="submit-button" type="submit" value="Submit">
 					</form>	
 				</div>
 				<br />
@@ -105,7 +105,7 @@ $stmt->close();
               <p>Are you sure you want to delete your account and profile? Once you click the 'Yes' button below, everything will be erased, and it can't be undone.</p><br>
             <p>
             	<input type="hidden" name="id" value="<?php echo trim($_POST["id"]); ?>"/>
-              <input type="submit" value="Yes" class="btn btn-danger">
+              <input class="submit-button" type="submit" value="Yes" class="btn btn-danger">
             </p>
            </form>  
          </div>      

@@ -7,6 +7,24 @@ if (!isset($_SESSION['loggedin'])) {
 	exit();
 } 
 
+$DATABASE_HOST = 'mysql.inoticed.org';
+$DATABASE_USER = 'ndhall';
+$DATABASE_PASS = 'natabata14';
+$DATABASE_NAME = 'inoticed_dating';
+$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+if (mysqli_connect_errno()) {
+	die ('Let dating@inoticed.org know the details of this error: Failed to connect to MySQL: ' . mysqli_connect_error());
+}
+
+//Get data from database
+$stmt = $con->prepare('SELECT id, first_name FROM accounts WHERE id = ?');
+// In this case we can use the account ID to get the account info.
+$stmt->bind_param('i', $_SESSION['id']);
+$stmt->execute();
+$stmt->bind_result($id, $first_name);
+$stmt->fetch();
+$stmt->close();
+
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +44,7 @@ if (!isset($_SESSION['loggedin'])) {
 
 		<div class="content">
 			<h2>Home Page</h2>
-			<p>Welcome back, <?=$_SESSION['name']?>!</p>
+			<p>Welcome back, <?=$first_name?>!</p>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 		<script

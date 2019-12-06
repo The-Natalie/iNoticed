@@ -17,6 +17,10 @@ button, input, select, textarea {
   font-size   : 100%;
 }
 
+input {
+	border-radius: 6px;
+}
+
 .container {
 	max-width: none;
 	padding: 0 0;

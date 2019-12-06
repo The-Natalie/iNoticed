@@ -102,7 +102,7 @@ $stmt->close();
 				<button class="delete-account-button" type="button">Delete account  <i class="fas fa-exclamation-triangle"></i></button>
 				<div id="delete-account-form">            
 					<form action="/php/delete.php" method="post">
-              <p>Are you sure you want to delete your account and profile? Once you click the 'Yes' button below, everything will be erased, and it can't be undone.</p><br>
+              <p>Are you sure you want to delete your account and profile? Once you click the 'Yes' button below, everything will be erased, and it can't be undone.</p>
             <p>
             	<input type="hidden" name="id" value="<?php echo trim($_POST["id"]); ?>"/>
               <input class="submit-button" type="submit" value="Yes" class="btn btn-danger">

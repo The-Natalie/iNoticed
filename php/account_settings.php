@@ -75,6 +75,8 @@ $stmt->close();
 					<p>This url is used on the card you pass out to others, so that they can view your profile.</p>
 				</div>
 				<br />
+				<br />
+
 				<button class="update-email-button" type="button">Update email  <i class="far fa-edit"></i></button>
 				<div id="update-email-form">
 					<form method="post" action="/php/update_email.php">
@@ -83,6 +85,7 @@ $stmt->close();
  						<input style="margin-top: 10px;" type="submit" value="Submit">
 					</form>	
 				</div>
+				<br />
 				<br />
 
 				<button class="update-password-button" type="button">Update password  <i class="far fa-edit"></i></button>
@@ -96,6 +99,7 @@ $stmt->close();
 				</div>
 				<br />
 				<br />
+				
 				<button class="delete-account-button" type="button">Delete account  <i class="fas fa-exclamation-triangle"></i></button>
 				<div id="delete-account-form">            
 					<form action="/php/delete.php" method="post">

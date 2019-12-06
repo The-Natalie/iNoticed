@@ -288,7 +288,7 @@ $(document).ready(function(){
 		var usernameVal = document.getElementById('get-username').value;
 		var uniqueURL = 'inoticed.org/profile/' + usernameVal;
 		$('p#unique-url').html(uniqueURL);
-		$('div#generate-url').css({'display': 'block'});
+		$('div#generate-url').css({'display': 'block', 'margin-bottom': '24px'});
 	});
 
 
@@ -307,10 +307,46 @@ $(document).ready(function(){
 	//end of profile nav change	
 
 
-	//Profile page images
+	//Profile page images*************************************************************************************
+
+	//Main image:
+	// $('#valued-form input.button').click(function(e) {
+	// 	e.preventDefault();
+	// 	var form = document.getElementById('valued-form');
+	// 	var formData = new FormData(form);
+	// 	var name = document.getElementById("form-name").value;
+	// 	var email = document.getElementById("form-email").value;
+
+	// 	if (name == '' || email == '') {
+	// 		$('p.form-submitted').html("Please complete all fields");		
+	// 	} else if(!email.match(emailFormat)) {
+	// 		$('p.form-submitted').html("Please enter a valid email address");		
+	// 	} else {
+	// 		$.ajax({
+	//       url: "/php/valued_form.php",
+	// 			type: 'POST',
+	// 			data: formData,
+	// 			cache: false,
+	// 			dataType: "json",
+	// 			processData: false,
+	// 			contentType: false
+	// 		});
+	// 		$('p.form-submitted').html("Your form has been submitted successfully");		
+	// 	}
+	// });
+	//End of main image post
+
+
+
+
+
+
+
+
 	//.profile-thumbnails
 
 
+	//End of profile page images*************************************************************************************
 
 
 

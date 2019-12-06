@@ -151,9 +151,80 @@ $stmt->close();
 		<div class="content">
 			<h2>Edit Profile</h2>
 			<div>
-				<a href="/php/profile.php"><button type="button">View my profile  <i class="far fa-edit"></i></button></a>
+				<a href="/php/profile.php"><button class="edit-button" type="button">View my profile  <i class="fas fa-address-card"></i></button></a>
 				<br />
 				<br />
+				<!-- <p>Upload main profile image:</p>
+				<form action="/php/edit_images.php" method="post" id="form" enctype="multipart/form-data"> 
+          <input class="main-img" type="file" name="mainImg" value="" />
+          <input type="submit" name="submitBtn" value="Upload" />
+          Any image added will override the current main image
+        </form>        
+ 				<p>Add/edit up to 8 additional images:</p>
+ 				<table>
+ 					<tr>
+ 						<td>
+ 							<p>Image 1:</p>
+							<form action="/php/edit_images.php" method="post" id="form" enctype="multipart/form-data"> 
+			          <input class="img1" type="file" name="img1" value="" />
+			          <input type="submit" name="submitBtn" value="Upload" />
+			        </form>  
+ 						</td>
+ 						<td>
+ 							<p>Image 1:</p>
+							<form action="/php/edit_images.php" method="post" id="form" enctype="multipart/form-data"> 
+			          <input class="img1" type="file" name="img1" value="" />
+			          <input type="submit" name="submitBtn" value="Upload" />
+			        </form>
+ 						</td>
+ 						<td>
+ 							<p>Image 1:</p>
+							<form action="/php/edit_images.php" method="post" id="form" enctype="multipart/form-data"> 
+			          <input class="img1" type="file" name="img1" value="" />
+			          <input type="submit" name="submitBtn" value="Upload" />
+			        </form>
+ 						</td>
+ 						<td>
+ 							<p>Image 1:</p>
+							<form action="/php/edit_images.php" method="post" id="form" enctype="multipart/form-data"> 
+			          <input class="img1" type="file" name="img1" value="" />
+			          <input type="submit" name="submitBtn" value="Upload" />
+			        </form>
+ 						</td>
+ 					</tr>
+ 					<tr>
+ 						<td>
+ 							<p>Image 1:</p>
+							<form action="/php/edit_images.php" method="post" id="form" enctype="multipart/form-data"> 
+			          <input class="img1" type="file" name="img1" value="" />
+			          <input type="submit" name="submitBtn" value="Upload" />
+			        </form>
+ 						</td>
+ 						<td>
+ 							<p>Image 1:</p>
+							<form action="/php/edit_images.php" method="post" id="form" enctype="multipart/form-data"> 
+			          <input class="img1" type="file" name="img1" value="" />
+			          <input type="submit" name="submitBtn" value="Upload" />
+			        </form>
+ 						</td>
+ 						<td>
+ 							<p>Image 1:</p>
+							<form action="/php/edit_images.php" method="post" id="form" enctype="multipart/form-data"> 
+			          <input class="img1" type="file" name="img1" value="" />
+			          <input type="submit" name="submitBtn" value="Upload" />
+			        </form>
+ 						</td>
+ 						<td>
+ 							<p>Image 1:</p>
+							<form action="/php/edit_images.php" method="post" id="form" enctype="multipart/form-data"> 
+			          <input class="img1" type="file" name="img1" value="" />
+			          <input type="submit" name="submitBtn" value="Upload" />
+			        </form>
+ 						</td>
+ 					</tr>
+ 				</table>
+        <br />
+        <br /> -->
 				<p>Edit Profile:</p>
 				<form id="edit_profile" method="post" action="/php/updated_profile.php">
 					<p>First Name:&nbsp;&nbsp;<input id ="first_name" type="text" name="first_name" size="20" value="<?=$first_name?>" required/></p>
@@ -329,9 +400,9 @@ $stmt->close();
 			  		</select>
 			  	</p>
 			  	<p>About me and what I'm looking for:</p>
-			  	<textarea id="about_me" name="about_me" style="min-width:75%;" rows="10"><?=$about_me?></textarea><br />
+			  	<textarea id="about_me" name="about_me" style="min-width:75%;" rows="10" style="font-size: 1.3em;"><?=$about_me?></textarea><br />
 					<input type="hidden" name="id" value="<?php echo $id; ?>"/>
-					<input style="margin-top: 10px;" type="submit" value="Submit"/>
+					<input class="submit-button" style="margin-top: 10px;" type="submit" value="Submit"/>
 				</form>	
 			</div>
 		</div>

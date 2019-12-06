@@ -12,14 +12,14 @@ body {
 	margin: 0 0;
 }
 
-button, input, select, textarea {
+button, input, select, textarea, label {
   font-family : inherit;
   font-size   : 100%;
 }
 
-input, select, textarea {
+input, select, textarea, label {
 	border-radius: 6px;
-	border-color: #1D4F5B;
+	border-color: #84FF84;
 }
 
 .container {

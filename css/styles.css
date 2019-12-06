@@ -458,10 +458,11 @@ Dating Sub Pages
 	font-size: 1em;
 	font-weight: bold;
 	height: 30px;
+	margin-top: 15px;
 }
 
 .submit-button:hover {
-	background-color: #84ff84;
+	background-color: #b3ffb3;
 }
 
 .update-email-button, .update-password-button, .delete-account-button, .edit-profile-button, .generate-url-button, .edit-button {

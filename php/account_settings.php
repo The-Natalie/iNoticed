@@ -81,7 +81,7 @@ $stmt->close();
 					<form method="post" action="/php/update_email.php">
  								<input type="email" name="email" placeholder="New Email" required><br />
 						<input type="hidden" name="id" value="<?php echo $id; ?>"/>
- 						<input class="submit-button" style="margin-top: 10px;" type="submit" value="Submit">
+ 						<input class="submit-button" type="submit" value="Submit">
 					</form>	
 				</div>
 				<br />
@@ -91,7 +91,7 @@ $stmt->close();
 				<div id="update-password-form">				
 					<form method="post" action="/php/update_password.php">
  						<input name="new-password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="New Password" required><br />
-						<input name="password_two" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Confirm New Password" required><br />
+						<input style="margin-top:10px;" name="password_two" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Confirm New Password" required><br />
 						<input type="hidden" name="id" value="<?php echo $id; ?>"/>
  						<input class="submit-button" type="submit" value="Submit">
 					</form>	

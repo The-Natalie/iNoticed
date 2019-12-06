@@ -328,17 +328,17 @@ $stmt->close();
 					<p>Location (enter your zip and the rest will be completed automatically):
 						<fieldset>
 							<div id="zipbox" class="control-group">
-								<label for="zip">Zip:&nbsp;&nbsp;</label>
-								<input id="zip" type="text" pattern="[0-9]*" name="zip" value="<?=$zip?>" required/>
+								<label for="zip" style="font-size: 1em;">Zip:&nbsp;&nbsp;</label>
+								<input id="zip"  style="font-size: 1em;" type="text" pattern="[0-9]*" name="zip" value="<?=$zip?>" required/>
 							</div>
 							<div>
 								<div id="citybox" class="control-group">
-									<label for="city">City:&nbsp;&nbsp;</label>
-									<input id="city" type="text" name="city" value="<?=$city?>" required/>
+									<label for="city" style="font-size: 1em;">City:&nbsp;&nbsp;</label>
+									<input style="font-size: 1em;" id="city" type="text" name="city" value="<?=$city?>" required/>
 								</div>
 								<div id="statebox" class="control-group">
-									<label for="state">State:&nbsp;&nbsp;</label>
-									<input id="state" type="text" name="state" value="<?=$state?>" required/>
+									<label for="state"  style="font-size: 1em;">State:&nbsp;&nbsp;</label>
+									<input style="font-size: 1em;" id="state" type="text" name="state" value="<?=$state?>" required/>
 								</div>
 							</div>
 						</fieldset>
@@ -400,9 +400,9 @@ $stmt->close();
 			  		</select>
 			  	</p>
 			  	<p>About me and what I'm looking for:</p>
-			  	<textarea id="about_me" name="about_me" style="min-width:75%;" rows="10" style="font-size: 1.3em;"><?=$about_me?></textarea><br />
+			  	<textarea id="about_me" name="about_me" style="min-width:75%;" rows="10"><span  style="font-size: 1.3em;"><?=$about_me?></span></textarea><br />
 					<input type="hidden" name="id" value="<?php echo $id; ?>"/>
-					<input class="submit-button" style="margin-top: 10px;" type="submit" value="Submit"/>
+					<input class="submit-button" style="margin-top: 10px; font-size: 1em;" type="submit" value="Submit"/>
 				</form>	
 			</div>
 		</div>

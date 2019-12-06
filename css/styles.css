@@ -17,8 +17,9 @@ button, input, select, textarea {
   font-size   : 100%;
 }
 
-input {
+input, select, textarea {
 	border-radius: 6px;
+	border-color: #1D4F5B;
 }
 
 .container {

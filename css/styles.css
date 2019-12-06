@@ -405,6 +405,7 @@ p.form-submitted {
 	cursor: pointer;
 	font-weight: bold;
 	color: #ffffff;
+	border-radius: none;
 }
 
 .login form input[type="submit"]:hover, .register form input[type="submit"]:hover, input.button:hover {

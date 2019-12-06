@@ -337,7 +337,7 @@ $stmt->close();
 									<input style="font-size: 1.25em;" id="city" type="text" name="city" value="<?=$city?>" required/>
 								</div>
 								<div id="statebox" class="control-group">
-									<label for="state"  style="font-size: 1em;">State:&nbsp;&nbsp;</label>
+									<label for="state"  style="font-size: 1.25em;">State:&nbsp;&nbsp;</label>
 									<input style="font-size: 1.25em;" id="state" type="text" name="state" value="<?=$state?>" required/>
 								</div>
 							</div>
@@ -402,7 +402,7 @@ $stmt->close();
 			  	<p>About me and what I'm looking for:</p>
 			  	<span  style="font-size: 1.3em;"><textarea id="about_me" name="about_me" style="min-width:75%;" rows="10"><?=$about_me?></textarea></span><br />
 					<input type="hidden" name="id" value="<?php echo $id; ?>"/>
-					<input class="submit-button" style="margin-top: 10px; font-size: 1.4em;" type="submit" value="Submit"/>
+					<input class="submit-button" style="margin-top: 10px; font-size: 1.5em;" type="submit" value="Submit"/>
 				</form>	
 			</div>
 		</div>

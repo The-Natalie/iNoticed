@@ -328,17 +328,17 @@ $stmt->close();
 					<p>Location (enter your zip and the rest will be completed automatically):
 						<fieldset>
 							<div id="zipbox" class="control-group">
-								<label for="zip" style="font-size: 1em;">Zip:&nbsp;&nbsp;</label>
-								<input id="zip"  style="font-size: 1em;" type="text" pattern="[0-9]*" name="zip" value="<?=$zip?>" required/>
+								<label for="zip" style="font-size: 1.25em;">Zip:&nbsp;&nbsp;</label>
+								<input id="zip"  style="font-size: 1.25em;" type="text" pattern="[0-9]*" name="zip" value="<?=$zip?>" required/>
 							</div>
 							<div>
 								<div id="citybox" class="control-group">
-									<label for="city" style="font-size: 1em;">City:&nbsp;&nbsp;</label>
-									<input style="font-size: 1em;" id="city" type="text" name="city" value="<?=$city?>" required/>
+									<label for="city" style="font-size: 1.25em;">City:&nbsp;&nbsp;</label>
+									<input style="font-size: 1.25em;" id="city" type="text" name="city" value="<?=$city?>" required/>
 								</div>
 								<div id="statebox" class="control-group">
 									<label for="state"  style="font-size: 1em;">State:&nbsp;&nbsp;</label>
-									<input style="font-size: 1em;" id="state" type="text" name="state" value="<?=$state?>" required/>
+									<input style="font-size: 1.25em;" id="state" type="text" name="state" value="<?=$state?>" required/>
 								</div>
 							</div>
 						</fieldset>

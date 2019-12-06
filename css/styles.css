@@ -447,6 +447,12 @@ Dating Sub Pages
 .update-email-button, .update-password-button, .delete-account-button, .edit-profile-button, .generate-url-button {
 	cursor: pointer;
 	margin-bottom: 15px;
+	background-color: #84ff84;
+	border: 2px solid #1D4F5B;
+	border-radius: 8px;
+	color: #1D4F5B;
+	font-weight: bold;
+	height: 40px;
 }
 
 #update-email-form, #update-password-form, #delete-account-form, div #generate-url {
@@ -514,3 +520,6 @@ div.profile-info p {
 	font-size: 1em;
 }
 
+.param {
+	display: none;
+}

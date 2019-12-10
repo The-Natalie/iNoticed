@@ -309,7 +309,8 @@ $(document).ready(function(){
 
 	//Profile page images*************************************************************************************
 
-	$('#submitButton').click(function () {
+	$('#submitButton').click(function (e) {
+		e.preventDefault();
 	  $('#uploadForm').ajaxForm({
       target: '#outputImage',
       url: '/php/edit_images.php',

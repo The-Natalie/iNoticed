@@ -154,77 +154,72 @@ $stmt->close();
 				<a href="/php/profile.php"><button class="edit-button" type="button">View my profile  <i class="fas fa-address-card"></i></button></a>
 				<br />
 				<br />
-				<!-- <p>Upload main profile image:</p>
-				<form action="/php/edit_images.php" method="post" id="form" enctype="multipart/form-data"> 
-          <input class="main-img" type="file" name="mainImg" value="" />
-          <input type="submit" name="submitBtn" value="Upload" />
-          Any image added will override the current main image
-        </form>        
+				<p>Upload main profile image:</p>
+				<p>(Max image size is 2MB. Any image added will override the current main image.)</p>
+ 				<div class="form-container">
+      		<form action="/php/edit_images.php" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+          	<input type="file" id="uploadImage" name="image_main" class="main-img" accept="image/jpeg, image/jpg, image/gif, image/png" /> 
+          	<input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image" />
+      		</form>
+      		<div class='progress' id="progressDivId">
+          	<div class='progress-bar' id='progressBar'></div>
+          	<div class='percent' id='percent'>0%</div>
+      		</div>
+      		<div style="height: 10px;"></div>
+      		<div id='outputImage'></div>
+  			</div>
+
+
+        <br />      
  				<p>Add/edit up to 8 additional images:</p>
  				<table>
  					<tr>
  						<td>
  							<p>Image 1:</p>
-							<form action="/php/edit_images.php" method="post" id="form" enctype="multipart/form-data"> 
-			          <input class="img1" type="file" name="img1" value="" />
-			          <input type="submit" name="submitBtn" value="Upload" />
-			        </form>  
+
+							<p>Delete</p>
  						</td>
  						<td>
- 							<p>Image 1:</p>
-							<form action="/php/edit_images.php" method="post" id="form" enctype="multipart/form-data"> 
-			          <input class="img1" type="file" name="img1" value="" />
-			          <input type="submit" name="submitBtn" value="Upload" />
-			        </form>
+ 							<p>Image 2:</p>
+							
+							<p>Delete</p>
  						</td>
  						<td>
- 							<p>Image 1:</p>
-							<form action="/php/edit_images.php" method="post" id="form" enctype="multipart/form-data"> 
-			          <input class="img1" type="file" name="img1" value="" />
-			          <input type="submit" name="submitBtn" value="Upload" />
-			        </form>
+ 							<p>Image 3:</p>
+							
+							<p>Delete</p>
  						</td>
  						<td>
- 							<p>Image 1:</p>
-							<form action="/php/edit_images.php" method="post" id="form" enctype="multipart/form-data"> 
-			          <input class="img1" type="file" name="img1" value="" />
-			          <input type="submit" name="submitBtn" value="Upload" />
-			        </form>
+ 							<p>Image 4:</p>
+							
+							<p>Delete</p>
  						</td>
  					</tr>
  					<tr>
  						<td>
- 							<p>Image 1:</p>
-							<form action="/php/edit_images.php" method="post" id="form" enctype="multipart/form-data"> 
-			          <input class="img1" type="file" name="img1" value="" />
-			          <input type="submit" name="submitBtn" value="Upload" />
-			        </form>
+ 							<p>Image 5:</p>
+							
+							<p>Delete</p>
  						</td>
  						<td>
- 							<p>Image 1:</p>
-							<form action="/php/edit_images.php" method="post" id="form" enctype="multipart/form-data"> 
-			          <input class="img1" type="file" name="img1" value="" />
-			          <input type="submit" name="submitBtn" value="Upload" />
-			        </form>
+ 							<p>Image 6:</p>
+							
+							<p>Delete</p>
  						</td>
  						<td>
- 							<p>Image 1:</p>
-							<form action="/php/edit_images.php" method="post" id="form" enctype="multipart/form-data"> 
-			          <input class="img1" type="file" name="img1" value="" />
-			          <input type="submit" name="submitBtn" value="Upload" />
-			        </form>
+ 							<p>Image 7:</p>
+							
+							<p>Delete</p>
  						</td>
  						<td>
- 							<p>Image 1:</p>
-							<form action="/php/edit_images.php" method="post" id="form" enctype="multipart/form-data"> 
-			          <input class="img1" type="file" name="img1" value="" />
-			          <input type="submit" name="submitBtn" value="Upload" />
-			        </form>
+ 							<p>Image 8:</p>
+							
+							<p>Delete</p>
  						</td>
  					</tr>
  				</table>
         <br />
-        <br /> -->
+        <br />
 				<p>Edit Profile:</p>
 				<form id="edit_profile" method="post" action="/php/updated_profile.php">
 					<p>First Name:&nbsp;&nbsp;<input id ="first_name" type="text" name="first_name" size="20" value="<?=$first_name?>" required/></p>

@@ -157,7 +157,7 @@ $stmt->close();
 				<p>Upload main profile image:</p>
 				<p>(Max image size is 2MB. Any image added will override the current main image.)</p>
  				<div class="form-container">
-      		<form action="/php/edit_images.php" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+      		<form  id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
           	<input type="file" id="uploadImage" name="image_main" class="main-img" accept="image/*" /> 
           	<input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image" />
       		</form>

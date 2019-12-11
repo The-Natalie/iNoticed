@@ -20,7 +20,7 @@ if (!isset($_SESSION['loggedin'])) {
 
 if (isset($_POST['btnSubmit'])) {
   $uploadfile = $_FILES["uploadImage"]["tmp_name"];
-  $folderPath = "*/user_images/";
+  $folderPath = "/user_images/";
   
   if (! is_writable($folderPath) || ! is_dir($folderPath)) {
     echo "error";

@@ -320,18 +320,6 @@ $(document).ready(function(){
         processData: false,
         contentType: false,
         cache: false,
-        xhr: function () {
-          var xhr =  new XMLHttpRequest();
-          xhr.upload.addEventListener("progress", function (evt) {
-            if (evt.lengthComputable) {
-              var percentComplete = evt.loaded / evt.total;
-              percentComplete = parseInt(percentComplete * 100);
-              //console.log(percentComplete);
-              $('progress').val(percentComplete);  
-            }
-          }, false);
-                return xhr;
-        },
         success: function (data) {
           $('.img').html(data);
         }

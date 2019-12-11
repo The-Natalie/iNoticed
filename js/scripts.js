@@ -309,97 +309,41 @@ $(document).ready(function(){
 
 	//Profile page images*************************************************************************************
 
-	// $("#uploadForm").on('submit',(function(e){
-	// 	e.preventDefault();
-	// 	$.ajax({
-	// 		url: "upload.php",
-	// 		type: "POST",
-	// 		data:  new FormData(this),
-	// 		contentType: false,
-	// 		cache: false,
-	// 		processData:false,
-	// 		success: function(data){
-	// 			$("#targetLayer").html(data);
-	// 		},
-	// 		error: function(){} 	        
-	// 	});
-	// }));
+
+	$(function(){
+	  $("#myForm").submit(function(e){
+      e.preventDefault();
+      $.ajax({
+        url: '/php/edit_images.php',
+        type: 'POST',
+        data: new FormData(this),
+        processData: false,
+        contentType: false,
+        cache: false,
+        xhr: function () {
+          var xhr =  new XMLHttpRequest();
+          xhr.upload.addEventListener("progress", function (evt) {
+            if (evt.lengthComputable) {
+              var percentComplete = evt.loaded / evt.total;
+              percentComplete = parseInt(percentComplete * 100);
+              //console.log(percentComplete);
+              $('progress').val(percentComplete);  
+            }
+          }, false);
+                return xhr;
+        },
+        success: function (data) {
+          $('.img').html(data);
+        }
+      });
+	  });
+	});
 
 
-	// $('#submitButton').click(function(e) {
-	// 	e.preventDefault();
-	// 	var form = document.getElementById('uploadForm');
-	// 	var formData = new FormData(form);
-		
-	// 	if (name == '' || email == '') {
-	// 		$('p.form-submitted').html("Please complete all fields");		
-	// 	} else if(!email.match(emailFormat)) {
-	// 		$('p.form-submitted').html("Please enter a valid email address");		
-	// 	} else {
-	// 		$.ajax({
-	//       url: "/php/valued_form.php",
-	// 			type: 'POST',
-	// 			data: formData,
-	// 			cache: false,
-	// 			dataType: "json",
-	// 			processData: false,
-	// 			contentType: false
-	// 		});
-	// 		$('p.form-submitted').html("Your form has been submitted successfully");		
-	// 	}
-	// });
 
 
-$('#submitButton').click(function () {
-    	    $('#uploadForm').ajaxForm({
-    	        target: '#outputImage',
-    	        url: '/php/edit_images.php',
-    	        beforeSubmit: function () {
-    	        	   if($("#uploadImage").val() == "") {
-    	        		   $("#outputImage").show();
-    	        		   $("#outputImage").html("<div class='error'>Choose a file to upload.</div>");
-                    return false; 
-                }
-    	            $("#progressDivId").css("display", "block");
-    	            var percentValue = '0%';
 
-    	            $('#progressBar').width(percentValue);
-    	            $('#percent').html(percentValue);
-    	        },
-    	        uploadProgress: function (event, position, total, percentComplete) {
 
-    	            var percentValue = percentComplete + '%';
-    	            $("#progressBar").animate({
-    	                width: '' + percentValue + ''
-    	            }, {
-    	                duration: 5000,
-    	                easing: "linear",
-    	                step: function (x) {
-                        percentText = Math.round(x * 100 / percentComplete);
-    	                    $("#percent").text(percentText + "%");
-                        if(percentText == "100") {
-                        	   $("#outputImage").show();
-                        }
-    	                }
-    	            });
-    	        },
-    	        error: function (response, status, e) {
-    	            alert('Oops something went.');
-    	        },
-    	        
-    	        complete: function (xhr) {
-    	            if (xhr.responseText && xhr.responseText != "error")
-    	            {
-    	            	  $("#outputImage").html(xhr.responseText);
-    	            }
-    	            else{  
-    	               	$("#outputImage").show();
-        	            	$("#outputImage").html("<div class='error'>Problem in uploading file.</div>");
-        	            	$("#progressBar").stop();
-    	            }
-    	        }
-    	    });
-    });
 
 
 	// $('#submitButton').click(function () {

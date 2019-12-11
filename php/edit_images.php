@@ -18,17 +18,15 @@ if (!isset($_SESSION['loggedin'])) {
 
 
 
-if (isset($_POST['btnSubmit'])) {
-  $uploadfile = $_FILES["uploadImage"]["tmp_name"];
-  $folderPath = "/user_images/";
-  
-  if (! is_writable($folderPath) || ! is_dir($folderPath)) {
-    echo "error";
-    exit();
-  }
-  if (move_uploaded_file($_FILES["uploadImage"]["tmp_name"], $folderPath . $_FILES["uploadImage"]["name"])) {
-    echo '<img src="' . $folderPath . "" . $_FILES["uploadImage"]["name"] . '">';
-    exit();
+if(isset($_FILES) && !empty($_FILES)) {
+  if(is_uploaded_file($_FILES['userImage']['tmp_name'])) {
+    $sourcePath = $_FILES['userImage']['tmp_name'];
+    $targetPath = "/user_images/".$_FILES['userImage']['name'];
+    if(move_uploaded_file($sourcePath,$targetPath)) {
+      ?>
+      <img src="<?php echo $targetPath; ?>">
+      <?php
+    }
   }
 }
 

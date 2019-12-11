@@ -318,7 +318,7 @@ $(document).ready(function(){
 			formdata = new FormData();
 			document.getElementById("btn").style.display = "none";
 		}
-	});
+	
 
 	function showUploadedItem (source) {
 		var list = document.getElementById("image-list");
@@ -368,7 +368,7 @@ $(document).ready(function(){
 			}
 		});
 	}
-
+});
 
 
 

@@ -7,20 +7,20 @@ if (!isset($_SESSION['loggedin'])) {
 	exit();
 }
 
-$DATABASE_HOST = 'mysql.inoticed.org';
-$DATABASE_USER = 'ndhall';
-$DATABASE_PASS = 'natabata14';
-$DATABASE_NAME = 'inoticed_dating';
-$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-if (mysqli_connect_errno()) {
-	die ('Let dating@inoticed.org know the details of this error: Failed to connect to MySQL: ' . mysqli_connect_error());
-}
+// $DATABASE_HOST = 'mysql.inoticed.org';
+// $DATABASE_USER = 'ndhall';
+// $DATABASE_PASS = 'natabata14';
+// $DATABASE_NAME = 'inoticed_dating';
+// $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+// if (mysqli_connect_errno()) {
+// 	die ('Let dating@inoticed.org know the details of this error: Failed to connect to MySQL: ' . mysqli_connect_error());
+// }
 
 
 foreach ($_FILES["images"]["error"] as $key => $error) {
   if ($error == UPLOAD_ERR_OK) {
     $name = $_FILES["images"]["name"][$key];
-    move_uploaded_file( $_FILES["images"]["tmp_name"][$key], "https://iNoticed.org/user_images/" . $_FILES['images']['name'][$key]);
+    move_uploaded_file( $_FILES["images"]["tmp_name"][$key], "uploads/" . $_FILES['images']['name'][$key]);
   }
 }
 $param = "Successfully Uploaded Images";

@@ -351,8 +351,7 @@ $(document).ready(function(){
 
 
 
-	$('#submitButton').click(function (e) {
-		e.preventDefault();
+	$('#submitButton').click(function () {
 	  $('#uploadForm').ajaxForm({
       target: '#outputImage',
       url: '/php/edit_images.php',

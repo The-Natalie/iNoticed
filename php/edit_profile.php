@@ -156,11 +156,13 @@ $stmt->close();
 				<br />
 				<p>Upload main profile image:</p>
 				<p>(Max image size is 2MB. Any image added will override the current main image.)</p>
-				<form action="" method="POST" id="myForm">
-    			<input type="file" name="userImage" accept="image/*">
-    			<input type="submit" value="Upload" class="submit-button">
+				<form method="post" enctype="multipart/form-data" action="/php/edit_images.php">
+					<input type="file" name="images" id="images" multiple />
+					<button type="submit" id="btn" class="submit-button">Upload Files!</button>
 				</form>
-				<div class="img"></div>
+				<div id="response"></div>
+				<ul id="image-list">
+				</ul>
 
 
  				<!-- <div class="form-container">
@@ -225,6 +227,7 @@ $stmt->close();
  						</td>
  					</tr>
  				</table>
+ 			</div>
         <br />
         <br />
 				<p>Edit Profile:</p>

@@ -7,28 +7,23 @@ if (!isset($_SESSION['loggedin'])) {
 	exit();
 }
 
-// $DATABASE_HOST = 'mysql.inoticed.org';
-// $DATABASE_USER = 'ndhall';
-// $DATABASE_PASS = 'natabata14';
-// $DATABASE_NAME = 'inoticed_dating';
-// $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-// if (mysqli_connect_errno()) {
-// 	die ('Let dating@inoticed.org know the details of this error: Failed to connect to MySQL: ' . mysqli_connect_error());
-// }
+$DATABASE_HOST = 'mysql.inoticed.org';
+$DATABASE_USER = 'ndhall';
+$DATABASE_PASS = 'natabata14';
+$DATABASE_NAME = 'inoticed_dating';
+$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+if (mysqli_connect_errno()) {
+	die ('Let dating@inoticed.org know the details of this error: Failed to connect to MySQL: ' . mysqli_connect_error());
+}
 
 
-
-if(isset($_FILES) && !empty($_FILES)) {
-  if(is_uploaded_file($_FILES['userImage']['tmp_name'])) {
-    $sourcePath = $_FILES['userImage']['tmp_name'];
-    $targetPath = "/user_images/".$_FILES['userImage']['name'];
-    if(move_uploaded_file($sourcePath,$targetPath)) {
-      ?>
-      <img src="<?php echo $targetPath; ?>">
-      <?php
-    }
+foreach ($_FILES["images"]["error"] as $key => $error) {
+  if ($error == UPLOAD_ERR_OK) {
+    $name = $_FILES["images"]["name"][$key];
+    move_uploaded_file( $_FILES["images"]["tmp_name"][$key], "uploads/" . $_FILES['images']['name'][$key]);
   }
 }
+$param = "Successfully Uploaded Images";
 
 // $stmt = $con->prepare('SELECT id FROM accounts WHERE id = ?');
 // $stmt->bind_param('i', $_SESSION['id']);

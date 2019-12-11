@@ -309,22 +309,61 @@ $(document).ready(function(){
 
 	//Profile page images*************************************************************************************
 
-	$('#submitButton').click(function () {
-		preventDefault();
+	// $("#uploadForm").on('submit',(function(e){
+	// 	e.preventDefault();
+	// 	$.ajax({
+	// 		url: "upload.php",
+	// 		type: "POST",
+	// 		data:  new FormData(this),
+	// 		contentType: false,
+	// 		cache: false,
+	// 		processData:false,
+	// 		success: function(data){
+	// 			$("#targetLayer").html(data);
+	// 		},
+	// 		error: function(){} 	        
+	// 	});
+	// }));
+
+
+	// $('#submitButton').click(function(e) {
+	// 	e.preventDefault();
+	// 	var form = document.getElementById('uploadForm');
+	// 	var formData = new FormData(form);
+		
+	// 	if (name == '' || email == '') {
+	// 		$('p.form-submitted').html("Please complete all fields");		
+	// 	} else if(!email.match(emailFormat)) {
+	// 		$('p.form-submitted').html("Please enter a valid email address");		
+	// 	} else {
+	// 		$.ajax({
+	//       url: "/php/valued_form.php",
+	// 			type: 'POST',
+	// 			data: formData,
+	// 			cache: false,
+	// 			dataType: "json",
+	// 			processData: false,
+	// 			contentType: false
+	// 		});
+	// 		$('p.form-submitted').html("Your form has been submitted successfully");		
+	// 	}
+	// });
+
+
+
+	$('#submitButton').click(function (e) {
+		e.preventDefault();
 	  $('#uploadForm').ajaxForm({
       target: '#outputImage',
       url: '/php/edit_images.php',
       beforeSubmit: function () {
-    	  $("#outputImage").hide();
     	  if($("#uploadImage").val() == "") {
-    		  $("#outputImage").show();
     		  $("#outputImage").html("<div class='error'>Error: Choose an image file to upload.</div>");
           return false; 
         } 
         var file_size = $('#uploadImage')[0].files[0].size;
 				if(file_size>2097152) {
 					$("#outputImage").html("<div class='error'>Error: Exceeded size 2MB</div>");
-					$("#outputImage").show();
 					return false;
 				} 
         $("#progressDivId").css("display", "block");
@@ -345,20 +384,17 @@ $(document).ready(function(){
 	          percentText = Math.round(x * 100 / percentComplete);
 	          $("#percent").text(percentText + "%");
 	          if(percentText == "100") {
-	          	$("#outputImage").show();
 	          }
           }
         });
       },
       error: function (response, status, e) {
-        $("#outputImage").show();
 	      $("#outputImage").html("<div class='error'>Oops something went wrong.</div>");
       },
       complete: function (xhr) {
         if (xhr.responseText && xhr.responseText != "error") {
           $("#outputImage").html(xhr.responseText);
         } else{  
-          $("#outputImage").show();
 	        $("#outputImage").html("<div class='error'>Problem in uploading file.</div>");
 	        $("#progressBar").stop();
         }

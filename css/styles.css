@@ -557,17 +557,17 @@ div.profile-info p {
 	font-size: 1em;
 }
 
-.param {
+/*.param {
 	display: none;
-}
+}*/
 
-#outputImage {
+/*#outputImage {
     display: none;
-}
+}*/
 
 .progress {
-    display: none;
-    position: relative;
+/*    display: none;
+*/    position: relative;
     margin: 20px;
     width: 400px;
     background-color: #ddd;

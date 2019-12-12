@@ -7,18 +7,26 @@ if (!isset($_SESSION['loggedin'])) {
 	exit();
 }
 
-// $DATABASE_HOST = 'mysql.inoticed.org';
-// $DATABASE_USER = 'ndhall';
-// $DATABASE_PASS = 'natabata14';
-// $DATABASE_NAME = 'inoticed_dating';
-// $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-// if (mysqli_connect_errno()) {
-// 	die ('Let dating@inoticed.org know the details of this error: Failed to connect to MySQL: ' . mysqli_connect_error());
-// }
+$DATABASE_HOST = 'mysql.inoticed.org';
+$DATABASE_USER = 'ndhall';
+$DATABASE_PASS = 'natabata14';
+$DATABASE_NAME = 'inoticed_dating';
+$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+if (mysqli_connect_errno()) {
+	die ('Let dating@inoticed.org know the details of this error: Failed to connect to MySQL: ' . mysqli_connect_error());
+}
+
+
+$stmt = $con->prepare('SELECT username FROM accounts WHERE id = ?');
+$stmt->bind_param('i', $_SESSION['id']);
+$stmt->execute();
+$stmt->store_result();
+$stmt->bind_result($username);
+$stmt->fetch();
 
 
 $target_dir = "uploads/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$target_file = $target_dir . basename($_FILES["fileToUpload"][$username]]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 // Check if image file is a actual image or fake image

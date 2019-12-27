@@ -151,82 +151,83 @@ $stmt->close();
 		<div class="content">
 			<h2>Edit Profile</h2>
 			<div>
-				<a href="/php/profile.php"><button class="edit-button" type="button">View my profile  <i class="fas fa-address-card"></i></button></a>
-				<br />
-				<br />
-				<p>Upload main profile image:</p>
-				<p>(Max image size is 2MB. Any image added will override the current main image.)</p>
-				<form action="/php/edit_images.php" method="post" enctype="multipart/form-data">
-    Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="hidden" name="id" value="<?php echo $id; ?>"/>
-    <input type="submit" value="Upload Image" name="submit">
-</form>
+				<div>
+					<a href="/php/profile.php"><button class="edit-button" type="button">View my profile  <i class="fas fa-address-card"></i></button></a>
+					<br />
+					<br />
+					<p>Upload main profile image:</p>
+					<p>(Max image size is 2MB. Any image added will override the current main image.)</p>
+					<form action="/php/edit_images.php" method="post" enctype="multipart/form-data">
+	    Select image to upload:
+	    <input type="file" name="fileToUpload" id="fileToUpload">
+	    <input type="hidden" name="id" value="<?php echo $id; ?>"/>
+	    <input type="submit" value="Upload Image" name="submit">
+	</form>
 
 
- 				<!-- <div class="form-container">
-      		<form  id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
-          	<input type="file" id="uploadImage" name="image_main" class="main-img" accept="image/*" /> 
-          	<input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image" />
-      		</form>
-      		<div class='progress' id="progressDivId">
-          	<div class='progress-bar' id='progressBar'></div>
-          	<div class='percent' id='percent'>0%</div>
-      		</div>
-      		<div style="height: 10px;"></div>
-      		<div id='outputImage'></div>
-  			</div> -->
+	 				<!-- <div class="form-container">
+	      		<form  id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+	          	<input type="file" id="uploadImage" name="image_main" class="main-img" accept="image/*" /> 
+	          	<input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image" />
+	      		</form>
+	      		<div class='progress' id="progressDivId">
+	          	<div class='progress-bar' id='progressBar'></div>
+	          	<div class='percent' id='percent'>0%</div>
+	      		</div>
+	      		<div style="height: 10px;"></div>
+	      		<div id='outputImage'></div>
+	  			</div> -->
 
 
-        <br />      
- 				<p>Add/edit up to 8 additional images:</p>
- 				<table>
- 					<tr>
- 						<td>
- 							<p>Image 1:</p>
+	        <br />      
+	 				<p>Add/edit up to 8 additional images:</p>
+	 				<table>
+	 					<tr>
+	 						<td>
+	 							<p>Image 1:</p>
 
-							<p>Delete</p>
- 						</td>
- 						<td>
- 							<p>Image 2:</p>
-							
-							<p>Delete</p>
- 						</td>
- 						<td>
- 							<p>Image 3:</p>
-							
-							<p>Delete</p>
- 						</td>
- 						<td>
- 							<p>Image 4:</p>
-							
-							<p>Delete</p>
- 						</td>
- 					</tr>
- 					<tr>
- 						<td>
- 							<p>Image 5:</p>
-							
-							<p>Delete</p>
- 						</td>
- 						<td>
- 							<p>Image 6:</p>
-							
-							<p>Delete</p>
- 						</td>
- 						<td>
- 							<p>Image 7:</p>
-							
-							<p>Delete</p>
- 						</td>
- 						<td>
- 							<p>Image 8:</p>
-							
-							<p>Delete</p>
- 						</td>
- 					</tr>
- 				</table>
- 			</div>
+								<p>Delete</p>
+	 						</td>
+	 						<td>
+	 							<p>Image 2:</p>
+								
+								<p>Delete</p>
+	 						</td>
+	 						<td>
+	 							<p>Image 3:</p>
+								
+								<p>Delete</p>
+	 						</td>
+	 						<td>
+	 							<p>Image 4:</p>
+								
+								<p>Delete</p>
+	 						</td>
+	 					</tr>
+	 					<tr>
+	 						<td>
+	 							<p>Image 5:</p>
+								
+								<p>Delete</p>
+	 						</td>
+	 						<td>
+	 							<p>Image 6:</p>
+								
+								<p>Delete</p>
+	 						</td>
+	 						<td>
+	 							<p>Image 7:</p>
+								
+								<p>Delete</p>
+	 						</td>
+	 						<td>
+	 							<p>Image 8:</p>
+								
+								<p>Delete</p>
+	 						</td>
+	 					</tr>
+	 				</table>
+	 			</div>
         <br />
         <br />
 				<p>Edit Profile:</p>
@@ -406,7 +407,6 @@ $stmt->close();
 			  	<p>About me and what I'm looking for:</p>
 			  	<span  style="font-size: 1.3em;"><textarea id="about_me" name="about_me" style="min-width:75%;" rows="10"><?=$about_me?></textarea></span><br />
 					<input type="hidden" name="id" value="<?php echo $id; ?>"/>
-					<div>
 						<input class="submit-button" style="margin-top: 20px; font-size: 1.6em; padding-bottom: 30px" type="submit" value="Submit"/>
 				</form>	
 			</div>

@@ -63,7 +63,6 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
       echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
     
-      $email = "";
       $is_error = "";
 
       // Processing form data when form is submitted
@@ -90,16 +89,66 @@ if ($uploadOk == 0) {
               $param = "Your photo has been posted sucessfully.";
             } else { 
               $param = "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
-              $is_error = "1";
+               $is_error = "1";
+                }
             }
-          }
-                 
-          // Close statement
-          mysqli_stmt_close($stmt);
+             
+            // Close statement
+            mysqli_stmt_close($stmt);
         }
-
+        
         // Close connection
         mysqli_close($con);
+
+      } else{
+        // Check existence of id parameter before processing further
+        if(isset($_GET["id"])){
+          // Get URL parameter
+          $id =  trim($_GET["id"]);
+              
+          // Prepare a select statement
+          $sql = "SELECT * FROM accounts WHERE id = ?";
+          if($stmt = mysqli_prepare($con, $sql)){
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "i", $param_id);
+                  
+            // Set parameters
+            $param_id = $id;
+                  
+            // Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt)){
+              $result = mysqli_stmt_get_result($stmt);
+          
+              if(mysqli_num_rows($result) == 1){
+                /* Fetch result row as an associative array. Since the result set
+                contains only one row, we don't need to use while loop */
+                $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                  
+                // Retrieve individual field value
+                $target_file = $row["image_main"];
+              } else{
+                // URL doesn't contain valid id. 
+                $param = "Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.";                    
+                $is_error = "1";
+                exit();
+              }
+              
+            } else{
+                $param = "Oops! Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
+                $is_error = "1";
+            }
+          }
+              
+              // Close statement
+              mysqli_stmt_close($stmt);
+              
+              // Close connection
+              mysqli_close($con);
+        }  else{
+          // URL doesn't contain id parameter. 
+          $param = "URL doesn't contain id parameter. Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.";
+          $is_error = "1";
+        }
       }
 
 } else {
@@ -151,7 +200,8 @@ if ($uploadOk == 0) {
 // mysqli_stmt_close($stmt);
 // mysqli_close($con);
 
-
+mysqli_stmt_close($stmt);
+mysqli_close($con);
 ?>
 
 

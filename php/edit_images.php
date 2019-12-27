@@ -32,36 +32,36 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
+        $param1 = "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
     } else {
-        echo "File is not an image.";
+        $param1 = "File is not an image.";
         $uploadOk = 0;
     }
 }
 // Check if file already exists
 if (file_exists($target_file)) {
-    echo "Sorry, file already exists.";
+    $param1 = "Sorry, file already exists.";
     $uploadOk = 0;
 }
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 500000) {
-  echo "Sorry, your file is too large.";
+  $param1 = "Sorry, your file is too large.";
   $uploadOk = 0;
 }
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" ) {
-  echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+  $param1 = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
   $uploadOk = 0;
 }
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
-  echo "Sorry, your file was not uploaded.";
+  $param1 = "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-      echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+      $param1 = "Your photo has been saved as ". basename( $_FILES["fileToUpload"]["name"]). " ";
     
       $is_error = "";
 
@@ -86,9 +86,9 @@ if ($uploadOk == 0) {
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
               // Records updated successfully. 
-              $param = "Your photo has been posted sucessfully.";
+              $param = "It has been posted sucessfully.";
             } else { 
-              $param = "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
+              $param = "It was NOT posted sucessfully. Please try again later. Or let dating@inoticed.org know the details of your problem.";
                $is_error = "1";
                 }
             }
@@ -132,7 +132,7 @@ if ($uploadOk == 0) {
                 $is_error = "1";
                 exit();
               }
-              
+
             } else{
                 $param = "Oops! Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
                 $is_error = "1";
@@ -152,7 +152,7 @@ if ($uploadOk == 0) {
       }
 
 } else {
-        echo "Sorry, there was an error uploading your file.";
+        $param1 = "Sorry, there was an error uploading your file.";
     }
 }
 
@@ -224,11 +224,14 @@ mysqli_close($con);
 
     <div class="content">
       <h2>Add/Edit Image Results</h2>
-      <p><?php echo $param; ?></p>
-      <br />
-      <a href="/php/profile.php"><button class="edit-button" type="button">View my profile  <i class="fas fa-address-card"></i></button></a>
-      <br />
-      <a href="/php/profile.php"><button class="edit-button" type="button">Edit my profile  <i class="far fa-edit"></i></button></a>
+      <div>
+        <p><?php echo $param1; ?></p>
+        <p><?php echo $param; ?></p>
+        <br />
+        <a href="/php/profile.php"><button class="edit-button" type="button">View my profile  <i class="fas fa-address-card"></i></button></a>
+        <br />
+        <a href="/php/edit_profile.php"><button class="edit-button" type="button">Edit my profile  <i class="far fa-edit"></i></button></a>
+        </div>
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 

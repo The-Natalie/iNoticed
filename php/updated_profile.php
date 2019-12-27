@@ -53,162 +53,162 @@ $is_error = "";
 
 // Processing form data when form is submitted
 if(isset($_POST["id"]) && !empty($_POST["id"])){
-    // Get hidden input value
-    $id = $_POST["id"];
+  // Get hidden input value
+  $id = $_POST["id"];
         
-        // Validate (I removed validation because html does it, but left the other info)
-        $input_first_name = trim($_POST["first_name"]);
-        $input_age = trim($_POST["age"]);
-        $input_gender = trim($_POST["gender"]);
-        $input_feet = trim($_POST["feet"]);
-        $input_inches = trim($_POST["inches"]);
-        $input_eyes = trim($_POST["eyes"]);
-        $input_hair = trim($_POST["hair"]);
-        $input_smoke = trim($_POST["smoke"]);
-        $input_drugs = trim($_POST["drugs"]);
-        $input_transportation = trim($_POST["transportation"]);
-        $input_intention = trim($_POST["intention"]);
-        $input_zip = trim($_POST["zip"]);
-        $input_city = trim($_POST["city"]);
-        $input_state = trim($_POST["state"]);
-        $input_profession = trim($_POST["profession"]);
-        $input_education = trim($_POST["education"]);
-        $input_ethnicity = trim($_POST["ethnicity"]);
-        $input_religion = trim($_POST["religion"]);
-        $input_marital_status = trim($_POST["marital_status"]);
-        $input_kids = trim($_POST["kids"]);
-        $input_want_kids = trim($_POST["want_kids"]);
-        $input_about_me = trim($_POST["about_me"]);
+  // Validate (I removed validation because html does it, but left the other info)
+  $input_first_name = trim($_POST["first_name"]);
+  $input_age = trim($_POST["age"]);
+  $input_gender = trim($_POST["gender"]);
+  $input_feet = trim($_POST["feet"]);
+  $input_inches = trim($_POST["inches"]);
+  $input_eyes = trim($_POST["eyes"]);
+  $input_hair = trim($_POST["hair"]);
+  $input_smoke = trim($_POST["smoke"]);
+  $input_drugs = trim($_POST["drugs"]);
+  $input_transportation = trim($_POST["transportation"]);
+  $input_intention = trim($_POST["intention"]);
+  $input_zip = trim($_POST["zip"]);
+  $input_city = trim($_POST["city"]);
+  $input_state = trim($_POST["state"]);
+  $input_profession = trim($_POST["profession"]);
+  $input_education = trim($_POST["education"]);
+  $input_ethnicity = trim($_POST["ethnicity"]);
+  $input_religion = trim($_POST["religion"]);
+  $input_marital_status = trim($_POST["marital_status"]);
+  $input_kids = trim($_POST["kids"]);
+  $input_want_kids = trim($_POST["want_kids"]);
+  $input_about_me = trim($_POST["about_me"]);
 
-        $first_name = $input_first_name;
-        $age = $input_age;
-        $gender = $input_gender;
-        $feet = $input_feet;
-        $inches = $input_inches;
-        $eyes = $input_eyes;
-        $hair = $input_hair;
-        $smoke = $input_smoke;
-        $drugs = $input_drugs;
-        $transportation = $input_transportation;
-        $intention = $input_intention;
-        $zip = $input_zip;
-        $city = $input_city;
-        $state = $input_state;
-        $profession = $input_profession;
-        $education = $input_education;
-        $ethnicity = $input_ethnicity;
-        $religion = $input_religion;
-        $marital_status = $input_marital_status;
-        $kids = $input_kids;
-        $want_kids = $input_want_kids;
-        $about_me = $input_about_me;
+  $first_name = $input_first_name;
+  $age = $input_age;
+  $gender = $input_gender;
+  $feet = $input_feet;
+  $inches = $input_inches;
+  $eyes = $input_eyes;
+  $hair = $input_hair;
+  $smoke = $input_smoke;
+  $drugs = $input_drugs;
+  $transportation = $input_transportation;
+  $intention = $input_intention;
+  $zip = $input_zip;
+  $city = $input_city;
+  $state = $input_state;
+  $profession = $input_profession;
+  $education = $input_education;
+  $ethnicity = $input_ethnicity;
+  $religion = $input_religion;
+  $marital_status = $input_marital_status;
+  $kids = $input_kids;
+  $want_kids = $input_want_kids;
+  $about_me = $input_about_me;
 
-        // Check input errors before inserting in database
-        if(empty($is_error)){
-            // Prepare an update statement
-            $sql = "UPDATE accounts SET first_name=?, age=?, gender=?, feet=?, inches=?, eyes=?, hair=?, smoke=?, drugs=?, transportation=?, intention=?, zip=?, city=?, state=?, profession=?, education=?, ethnicity=?, religion=?, marital_status=?, kids=?, want_kids=?, about_me=? WHERE id=?";
-             
-            if($stmt = mysqli_prepare($con, $sql)){
-                // Bind variables to the prepared statement as parameters
-                mysqli_stmt_bind_param($stmt, "sisssssssssissssssssssi", $param_first_name, $param_age, $param_gender, $param_feet, $param_inches, $param_eyes, $param_hair, $param_smoke, $param_drugs, $param_transportation, $param_intention, $param_zip, $param_city, $param_state, $param_profession, $param_education, $param_ethnicity, $param_religion, $param_marital_status, $param_kids, $param_want_kids, $param_about_me, $param_id);
-                
-                // Set parameters
-                $param_first_name = $first_name;
-                $param_age = $age;
-                $param_gender = $gender;
-                $param_feet = $feet;
-                $param_inches = $inches;
-                $param_eyes = $eyes;
-                $param_hair = $hair;
-                $param_smoke = $smoke;
-                $param_drugs = $drugs;
-                $param_transportation = $transportation;
-                $param_intention = $intention;
-                $param_zip = $zip;
-                $param_city = $city;
-                $param_state = $state;
-                $param_profession = $profession;
-                $param_education = $education;
-                $param_ethnicity = $ethnicity;
-                $param_religion = $religion;
-                $param_marital_status = $marital_status;
-                $param_kids = $kids;
-                $param_want_kids = $want_kids;
-                $param_about_me = $about_me;
-                $param_id = $id;
-                
-                // Attempt to execute the prepared statement
-                if(mysqli_stmt_execute($stmt)){
-                    // Records updated successfully. Redirect to landing page
-                    $param = "Your profile has been updated sucessfully.";
-                } else { 
-                    $param = "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
-                    $is_error = "1";
-                }
-            }
-             
-            // Close statement
-            mysqli_stmt_close($stmt);
-        }
-        
-        // Close connection
-        mysqli_close($con);
+  // Check input errors before inserting in database
+  if(empty($is_error)){
+    // Prepare an update statement
+    $sql = "UPDATE accounts SET first_name=?, age=?, gender=?, feet=?, inches=?, eyes=?, hair=?, smoke=?, drugs=?, transportation=?, intention=?, zip=?, city=?, state=?, profession=?, education=?, ethnicity=?, religion=?, marital_status=?, kids=?, want_kids=?, about_me=? WHERE id=?";
+     
+    if($stmt = mysqli_prepare($con, $sql)){
+      // Bind variables to the prepared statement as parameters
+      mysqli_stmt_bind_param($stmt, "sisssssssssissssssssssi", $param_first_name, $param_age, $param_gender, $param_feet, $param_inches, $param_eyes, $param_hair, $param_smoke, $param_drugs, $param_transportation, $param_intention, $param_zip, $param_city, $param_state, $param_profession, $param_education, $param_ethnicity, $param_religion, $param_marital_status, $param_kids, $param_want_kids, $param_about_me, $param_id);
+          
+      // Set parameters
+      $param_first_name = $first_name;
+      $param_age = $age;
+      $param_gender = $gender;
+      $param_feet = $feet;
+      $param_inches = $inches;
+      $param_eyes = $eyes;
+      $param_hair = $hair;
+      $param_smoke = $smoke;
+      $param_drugs = $drugs;
+      $param_transportation = $transportation;
+      $param_intention = $intention;
+      $param_zip = $zip;
+      $param_city = $city;
+      $param_state = $state;
+      $param_profession = $profession;
+      $param_education = $education;
+      $param_ethnicity = $ethnicity;
+      $param_religion = $religion;
+      $param_marital_status = $marital_status;
+      $param_kids = $kids;
+      $param_want_kids = $want_kids;
+      $param_about_me = $about_me;
+      $param_id = $id;
+          
+      // Attempt to execute the prepared statement
+      if(mysqli_stmt_execute($stmt)){
+        // Records updated successfully. Redirect to landing page
+        $param = "Your profile has been updated sucessfully.";
+      } else { 
+        $param = "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
+        $is_error = "1";
+      }
+    }
+       
+    // Close statement
+    mysqli_stmt_close($stmt);
+  }
+
+  // Close connection
+  mysqli_close($con);
 
 
 } else{
-    // Check existence of id parameter before processing further
-    if(isset($_GET["id"])){
-        // Get URL parameter
-        $id =  trim($_GET["id"]);
-        
-        // Prepare a select statement
-        $sql = "SELECT * FROM accounts WHERE id = ?";
-        if($stmt = mysqli_prepare($con, $sql)){
-            // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "i", $param_id);
+  // Check existence of id parameter before processing further
+  if(isset($_GET["id"])){
+    // Get URL parameter
+    $id =  trim($_GET["id"]);
+      
+    // Prepare a select statement
+    $sql = "SELECT * FROM accounts WHERE id = ?";
+    if($stmt = mysqli_prepare($con, $sql)){
+      // Bind variables to the prepared statement as parameters
+      mysqli_stmt_bind_param($stmt, "i", $param_id);
+          
+      // Set parameters
+      $param_id = $id;
             
-            // Set parameters
-            $param_id = $id;
-            
-            // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
-                $result = mysqli_stmt_get_result($stmt);
+      // Attempt to execute the prepared statement
+      if(mysqli_stmt_execute($stmt)){
+        $result = mysqli_stmt_get_result($stmt);
     
-                if(mysqli_num_rows($result) == 1){
-                    /* Fetch result row as an associative array. Since the result set
-                    contains only one row, we don't need to use while loop */
-                    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+        if(mysqli_num_rows($result) == 1){
+          /* Fetch result row as an associative array. Since the result set
+          contains only one row, we don't need to use while loop */
+          $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     
-                    // Retrieve individual field value
-                    $first_name = $row["first_name"];
-                } else{
-                    // URL doesn't contain valid id. 
-                $param = "Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.";                    
-                $is_error = "1";
-                }
-                
-            } else{
-                $param = "Oops! Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
-                $is_error = "1";
-            }
+          // Retrieve individual field value
+          $first_name = $row["first_name"];
+        } else{
+          // URL doesn't contain valid id. 
+          $param = "Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.";                    
+          $is_error = "1";
         }
-        
-        // Close statement
-        mysqli_stmt_close($stmt);
-        
-        // Close connection
-        mysqli_close($con);
-    }  else{
-        // URL doesn't contain id parameter. 
-        $param = "URL doesn't contain id parameter. Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.";
+                
+      } else{
+        $param = "Oops! Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
         $is_error = "1";
+      }
     }
+        
+    // Close statement
+    mysqli_stmt_close($stmt);
+    
+    // Close connection
+    mysqli_close($con);
+  }  else{
+    // URL doesn't contain id parameter. 
+    $param = "URL doesn't contain id parameter. Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.";
+    $is_error = "1";
+  }
 }
 // Close statement
-        mysqli_stmt_close($stmt);
+mysqli_stmt_close($stmt);
         
-        // Close connection
-        mysqli_close($con);
+// Close connection
+mysqli_close($con);
 ?>
 
 

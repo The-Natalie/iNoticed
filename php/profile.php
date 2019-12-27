@@ -54,7 +54,7 @@ $stmt->close();
 			<div style="padding: 0;">
 				<div class="profile-page row">	
 					<div class="profile-left col-md-4">
-						<img height="250" class="main-profile-img" src="/php/<?php echo $targetPath; ?>">
+						<img height="250" class="main-profile-img" src="/php/<?php echo $image_main; ?>">
 						<div class="profile-left-ps">
 							<p style="padding: 10px 5px 2px 10px;">Age: <span style="font-weight: normal;"><?=$age?></span></p>
 							<p style="padding: 0 5px 2px 10px;">Identifiles as: <span style="font-weight: normal;"><?=$gender?></span></p>

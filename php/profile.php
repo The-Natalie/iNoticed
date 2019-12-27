@@ -20,11 +20,11 @@ if (mysqli_connect_errno()) {
 }
 
 //Get data from database
-$stmt = $con->prepare('SELECT id, first_name, age, gender, feet, inches, eyes, hair, smoke, drugs, transportation, intention, zip, city, state, profession, education, ethnicity, religion, marital_status, kids, want_kids, about_me FROM accounts WHERE id = ?');
+$stmt = $con->prepare('SELECT id, first_name, age, gender, feet, inches, eyes, hair, smoke, drugs, transportation, intention, zip, city, state, profession, education, ethnicity, religion, marital_status, kids, want_kids, about_me FROM accounts, image_main WHERE id = ?');
 // In this case we can use the account ID to get the account info.
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
-$stmt->bind_result($id, $first_name, $age, $gender, $feet, $inches, $eyes, $hair, $smoke, $drugs, $transportation, $intention, $zip, $city, $state, $profession, $education, $ethnicity, $religion, $marital_status, $kids, $want_kids, $about_me);
+$stmt->bind_result($id, $first_name, $age, $gender, $feet, $inches, $eyes, $hair, $smoke, $drugs, $transportation, $intention, $zip, $city, $state, $profession, $education, $ethnicity, $religion, $marital_status, $kids, $want_kids, $about_me, $image_main);
 $stmt->fetch();
 
 $aboutme = nl2br($about_me);
@@ -54,7 +54,7 @@ $stmt->close();
 			<div style="padding: 0;">
 				<div class="profile-page row">	
 					<div class="profile-left col-md-4">
-						<img height="250" class="main-profile-img">
+						<img height="250" class="main-profile-img" src="/php/<?php echo $targetPath; ?>">
 						<div class="profile-left-ps">
 							<p style="padding: 10px 5px 2px 10px;">Age: <span style="font-weight: normal;"><?=$age?></span></p>
 							<p style="padding: 0 5px 2px 10px;">Identifiles as: <span style="font-weight: normal;"><?=$gender?></span></p>

@@ -25,7 +25,7 @@ $stmt->bind_result($username);
 $stmt->fetch();
 
 $target_dir = "uploads/";
-$target_file = $target_dir . $username . basename($_FILES["fileToUpload"]["name"]);
+$target_file = $target_dir . $username . "_" . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 // Check if image file is a actual image or fake image
@@ -46,23 +46,63 @@ if (file_exists($target_file)) {
 }
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 500000) {
-    echo "Sorry, your file is too large.";
-    $uploadOk = 0;
+  echo "Sorry, your file is too large.";
+  $uploadOk = 0;
 }
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" ) {
-    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-    $uploadOk = 0;
+  echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+  $uploadOk = 0;
 }
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
+  echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-    } else {
+      echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+    
+      $email = "";
+      $is_error = "";
+
+      // Processing form data when form is submitted
+      if(isset($_POST["id"]) && !empty($_POST["id"])){
+        // Get hidden input value
+        $id = $_POST["id"];
+
+        // Check input errors before inserting in database
+        if(empty($is_error)){
+          // Prepare an update statement
+          $sql = "UPDATE accounts SET image_main=? WHERE id=?";
+                 
+          if($stmt = mysqli_prepare($con, $sql)){
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "si", $param_target_file, $param_id);
+                    
+            // Set parameters
+            $param_target_file = $target_file;
+            $param_id = $id;
+                    
+            // Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt)){
+              // Records updated successfully. 
+              $param = "Your photo has been posted sucessfully.";
+            } else { 
+              $param = "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
+              $is_error = "1";
+            }
+          }
+                 
+          // Close statement
+          mysqli_stmt_close($stmt);
+        }
+
+        // Close connection
+        mysqli_close($con);
+      }
+
+} else {
         echo "Sorry, there was an error uploading your file.";
     }
 }

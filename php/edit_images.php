@@ -29,12 +29,10 @@ $target_file = $target_dir . $username . "_" . basename($_FILES["fileToUpload"][
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 $value = $_REQUEST['fileToUpload'];
-echo $value;
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
-        $param2 = "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
     } else {
         $param2 = "File is not an image.";
@@ -244,6 +242,7 @@ mysqli_close($con);
         <p><?php echo $param2; ?></p>
         <p><?php echo $param1; ?></p>
         <p><?php echo $param; ?></p>
+        <p style="color:blue;"><?php echo $value; ?></p>
         <br />
         <a href="/php/profile.php"><button class="edit-button" type="button">View my profile  <i class="fas fa-address-card"></i></button></a>
         <br />

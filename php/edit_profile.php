@@ -143,7 +143,6 @@ $stmt->close();
 		<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"> 
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"> 
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
-		<script type="text/javascript" src="jquery.form.min.js"></script>
 	</head>
 	<body id="loggedin">
 

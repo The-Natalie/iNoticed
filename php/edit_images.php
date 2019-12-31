@@ -29,15 +29,18 @@ $target_file = $target_dir . $username . "_" . basename($_FILES["fileToUpload"][
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 $value;
+
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if($check !== false) {
-        $uploadOk = 1;
-    } else {
-        $param2 = "File is not an image.";
-        $uploadOk = 0;
-    }
+  $input_value = trim($_POST["fileToUpload"]);
+  $value = $input_value;
+  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+  if($check !== false) {
+      $uploadOk = 1;
+  } else {
+      $param2 = "File is not an image.";
+      $uploadOk = 0;
+  }
 }
 // Check if file already exists
 if (file_exists($target_file)) {
@@ -69,9 +72,7 @@ if ($uploadOk == 0) {
         // Get hidden input value
         $id = $_POST["id"];
 
-        $input_value = trim($_POST["fileToUpload"]);
-
-        $value = $input_value;
+        
 
         // Check input errors before inserting in database
         if(empty($is_error)){

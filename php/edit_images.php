@@ -72,10 +72,10 @@ if ($uploadOk == 0) {
 
         // Check input errors before inserting in database
         if(empty($is_error)){
-          $value = $_POST['fileToUpload'];
           // Prepare an update statement
-          $sql = "UPDATE accounts SET `".$variable."` =? WHERE id=?";
-         
+          $sql = "UPDATE accounts SET image_main=? WHERE id=?";
+                           // $sql = "UPDATE accounts SET `".$variable."` =? WHERE id=?";
+
           if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "si", $param_target_file, $param_id);
@@ -83,7 +83,6 @@ if ($uploadOk == 0) {
             // Set parameters
             $param_target_file = $target_file;
             $param_id = $id;
-
                     
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -158,20 +157,20 @@ if ($uploadOk == 0) {
   }
 }
 
-// if (isset($_POST['btnSubmit'])) {
-//   $uploadfile = $_FILES["uploadImage"]["tmp_name"];
-//   $folderPath = "uploads/";
-
-// $target_dir = "uploads/";
-// $target_file = $target_dir . $username . "_" . basename($_FILES["fileToUpload"]["name"]);
+if (isset($_POST['btnSubmit'])) {
+  $uploadfile = $_FILES["uploadImage"]["tmp_name"];
+  $folderPath = "uploads/";
   
-//   if (! is_writable($folderPath) || ! is_dir($folderPath)) {
-//     $param = "error";
-//   }
-//   if (move_uploaded_file($_FILES["uploadImage"]["tmp_name"], $folderPath . $_FILES["uploadImage"]["name"])) {
-//     $param = '<img src="' . $folderPath . "" . $_FILES["uploadImage"]["name"] . '">';
-//   }
-// }
+$target_dir = "uploads/";
+$target_file = $target_dir . $username . "_" . basename($_FILES["fileToUpload"]["name"]);
+  
+  if (! is_writable($folderPath) || ! is_dir($folderPath)) {
+    $param = "error";
+  }
+  if (move_uploaded_file($_FILES["uploadImage"]["tmp_name"], $folderPath . $_FILES["uploadImage"]["name"])) {
+    $param = '<img src="' . $folderPath . "" . $_FILES["uploadImage"]["name"] . '">';
+  }
+}
 
 // $stmt = $con->prepare('SELECT id FROM accounts WHERE id = ?');
 // $stmt->bind_param('i', $_SESSION['id']);

@@ -159,20 +159,20 @@ if ($uploadOk == 0) {
   }
 }
 
-if (isset($_POST['btnSubmit'])) {
-  $uploadfile = $_FILES["uploadImage"]["tmp_name"];
-  $folderPath = "uploads/";
+// if (isset($_POST['btnSubmit'])) {
+//   $uploadfile = $_FILES["uploadImage"]["tmp_name"];
+//   $folderPath = "uploads/";
 
-$target_dir = "uploads/";
-$target_file = $target_dir . $username . "_" . basename($_FILES["fileToUpload"]["name"]);
+// $target_dir = "uploads/";
+// $target_file = $target_dir . $username . "_" . basename($_FILES["fileToUpload"]["name"]);
   
-  if (! is_writable($folderPath) || ! is_dir($folderPath)) {
-    $param = "error";
-  }
-  if (move_uploaded_file($_FILES["uploadImage"]["tmp_name"], $folderPath . $_FILES["uploadImage"]["name"])) {
-    $param = '<img src="' . $folderPath . "" . $_FILES["uploadImage"]["name"] . '">';
-  }
-}
+//   if (! is_writable($folderPath) || ! is_dir($folderPath)) {
+//     $param = "error";
+//   }
+//   if (move_uploaded_file($_FILES["uploadImage"]["tmp_name"], $folderPath . $_FILES["uploadImage"]["name"])) {
+//     $param = '<img src="' . $folderPath . "" . $_FILES["uploadImage"]["name"] . '">';
+//   }
+// }
 
 // $stmt = $con->prepare('SELECT id FROM accounts WHERE id = ?');
 // $stmt->bind_param('i', $_SESSION['id']);

@@ -73,6 +73,7 @@ if ($uploadOk == 0) {
         // Check input errors before inserting in database
         if(empty($is_error)){
           $value = $_POST['fileToUpload'];
+          echo $value;
           // Prepare an update statement
           $sql = "UPDATE accounts SET `".$value."` =? WHERE id=?";
 

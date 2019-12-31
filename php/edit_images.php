@@ -28,6 +28,8 @@ $target_dir = "uploads/";
 $target_file = $target_dir . $username . "_" . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+$value = $_POST['fileToUpload'];
+echo $value;
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
@@ -72,8 +74,6 @@ if ($uploadOk == 0) {
 
         // Check input errors before inserting in database
         if(empty($is_error)){
-          $value = $_POST['fileToUpload'];
-          echo $value;
           // Prepare an update statement
           $sql = "UPDATE accounts SET `".$value."` =? WHERE id=?";
 

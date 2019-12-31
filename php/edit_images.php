@@ -32,27 +32,27 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
-        $param1 = "File is an image - " . $check["mime"] . ".";
+        $param2 = "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
     } else {
-        $param1 = "File is not an image.";
+        $param2 = "File is not an image.";
         $uploadOk = 0;
     }
 }
 // Check if file already exists
 if (file_exists($target_file)) {
-    $param1 = "Sorry, file already exists.";
+    $param2 = "Sorry, file already exists.";
     $uploadOk = 0;
 }
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 500000) {
-  $param1 = "Sorry, your file is too large.";
+  $param2 = "Sorry, your file is too large.";
   $uploadOk = 0;
 }
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" ) {
-  $param1 = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+  $param2 = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
   $uploadOk = 0;
 }
 // Check if $uploadOk is set to 0 by an error
@@ -242,6 +242,7 @@ mysqli_close($con);
     <div class="content">
       <h2>Add/Edit Image Results</h2>
       <div>
+        <p><?php echo $param2; ?></p>
         <p><?php echo $param1; ?></p>
         <p><?php echo $param; ?></p>
         <br />

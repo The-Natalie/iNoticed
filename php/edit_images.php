@@ -28,7 +28,7 @@ $target_dir = "uploads/";
 $target_file = $target_dir . $username . "_" . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-$value = $_GET["fileToUpload"];
+$value = $_POST["fileToUpload"];
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
@@ -73,7 +73,7 @@ if ($uploadOk == 0) {
         // Check input errors before inserting in database
         if(empty($is_error)){
           // Prepare an update statement
-          $sql = "UPDATE accounts SET `".$value."` =? WHERE id=?";
+          $sql = "UPDATE accounts SET ".$value."=? WHERE id=?";
 
           if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -243,7 +243,7 @@ mysqli_close($con);
         <p><?php echo $param2; ?></p>
         <p><?php echo $param1; ?></p>
         <p><?php echo $param; ?></p>
-        <p style="color:blue;"><?php echo $value; ?></p>
+        <p style="color:blue;">Value: <?php echo $value; ?></p>
         <br />
         <a href="/php/profile.php"><button class="edit-button" type="button">View my profile  <i class="fas fa-address-card"></i></button></a>
         <br />

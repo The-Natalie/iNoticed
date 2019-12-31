@@ -28,12 +28,10 @@ $target_dir = "uploads/";
 $target_file = $target_dir . $username . "_" . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-$value;
+$value = trim($_POST["fileToUpload"]);
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
-  $input_value = trim($_POST["fileToUpload"]);
-  $value = $input_value;
   $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
   if($check !== false) {
       $uploadOk = 1;
@@ -71,8 +69,6 @@ if ($uploadOk == 0) {
       if(isset($_POST["id"]) && !empty($_POST["id"])){
         // Get hidden input value
         $id = $_POST["id"];
-
-        
 
         // Check input errors before inserting in database
         if(empty($is_error)){

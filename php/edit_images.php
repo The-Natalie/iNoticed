@@ -74,7 +74,8 @@ if ($uploadOk == 0) {
         if(empty($is_error)){
           $value = $_POST['fileToUpload'];
           // Prepare an update statement
-          $sql = "UPDATE accounts SET " . mysqli_real_escape_string($con, $value) ." =? WHERE id=?";
+          $sql = "UPDATE accounts SET `".$variable."` =? WHERE id=?";
+         
           if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "si", $param_target_file, $param_id);

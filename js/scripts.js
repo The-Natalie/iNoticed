@@ -310,130 +310,120 @@ $(document).ready(function(){
 	//Profile page images*************************************************************************************
 
 
-	(function () {
-		var input = document.getElementById("images");
-		var formdata = false;
+// 	(function () {
+// 		var input = document.getElementById("images");
+// 		var formdata = false;
 
-		if (window.FormData) {
-			formdata = new FormData();
-			document.getElementById("btn").style.display = "none";
-		}
+// 		if (window.FormData) {
+// 			formdata = new FormData();
+// 			document.getElementById("btn").style.display = "none";
+// 		}
 	
 
-	function showUploadedItem (source) {
-		var list = document.getElementById("image-list");
-		var li = document.createElement("li");
-		var img = document.createElement("img");
-		img.src = source;
-		li.appendChild(img);
-		list.appendChild(li);
-	}
+// 	function showUploadedItem (source) {
+// 		var list = document.getElementById("image-list");
+// 		var li = document.createElement("li");
+// 		var img = document.createElement("img");
+// 		img.src = source;
+// 		li.appendChild(img);
+// 		list.appendChild(li);
+// 	}
 
-	if (input.addEventListener) {
-		input.addEventListener("change", function (evt) {
-			var i = 0, len = this.files.length, img, reader, file;
+// 	if (input.addEventListener) {
+// 		input.addEventListener("change", function (evt) {
+// 			var i = 0, len = this.files.length, img, reader, file;
 
-			document.getElementById("response").innerHTML = "Uploading . . ."
+// 			document.getElementById("response").innerHTML = "Uploading . . ."
 
-			for ( ; i < len; i++ ) {
-				file = this.files[i];
+// 			for ( ; i < len; i++ ) {
+// 				file = this.files[i];
 
-				if (!!file.type.match(/image.*/)) {
-				}
-			}
+// 				if (!!file.type.match(/image.*/)) {
+// 				}
+// 			}
 
-		}, false);
-	}
+// 		}, false);
+// 	}
 
-	if ( window.FileReader ) {
-		reader = new FileReader();
-		reader.onloadend = function (e) {
-			showUploadedItem(e.target.result);
-		};
-		reader.readAsDataURL(file);
-	}
-	if (formdata) {
-		formdata.append("images[]", file);
-	}
+// 	if ( window.FileReader ) {
+// 		reader = new FileReader();
+// 		reader.onloadend = function (e) {
+// 			showUploadedItem(e.target.result);
+// 		};
+// 		reader.readAsDataURL(file);
+// 	}
+// 	if (formdata) {
+// 		formdata.append("images[]", file);
+// 	}
 
-	if (formdata) {
-		$.ajax({
-			url: "/php/edit_images.php",
-			type: "POST",
-			data: formdata,
-			processData: false,
-			contentType: false,
-			success: function (res) {
-				document.getElementById("response").innerHTML = res;
-			}
-		});
-	}
-});
-
-
-
-	// $('#submitButton').click(function () {
-	//   $('#uploadForm').ajaxForm({
- //      target: '#outputImage',
- //      url: '/php/edit_images.php',
- //      beforeSubmit: function () {
- //    	  if($("#uploadImage").val() == "") {
- //    		  $("#outputImage").html("<div class='error'>Error: Choose an image file to upload.</div>");
- //          return false; 
- //        } 
- //        var file_size = $('#uploadImage')[0].files[0].size;
-	// 			if(file_size>2097152) {
-	// 				$("#outputImage").html("<div class='error'>Error: Exceeded size 2MB</div>");
-	// 				return false;
-	// 			} 
- //        $("#progressDivId").css("display", "block");
- //        var percentValue = '0%';
-
- //        $('#progressBar').width(percentValue);
- //        $('#percent').html(percentValue);
- //      },
- //    	uploadProgress: function (event, position, total, percentComplete) {
- //        var percentValue = percentComplete + '%';
- //        $("#progressBar").animate({
- //          width: '' + percentValue + ''
- //        }, 
- //        {
- //          duration: 5000,
- //          easing: "linear",
- //          step: function (x) {
-	//           percentText = Math.round(x * 100 / percentComplete);
-	//           $("#percent").text(percentText + "%");
-	//           if(percentText == "100") {
-	//           }
- //          }
- //        });
- //      },
- //      error: function (response, status, e) {
-	//       $("#outputImage").html("<div class='error'>Oops something went wrong.</div>");
- //      },
- //      complete: function (xhr) {
- //        if (xhr.responseText && xhr.responseText != "error") {
- //          $("#outputImage").html(xhr.responseText);
- //        } else{  
-	//         $("#outputImage").html("<div class='error'>Problem in uploading file.</div>");
-	//         $("#progressBar").stop();
- //        }
- //      }
-	//   });
-	// });
-
-
+// 	if (formdata) {
+// 		$.ajax({
+// 			url: "/php/edit_images.php",
+// 			type: "POST",
+// 			data: formdata,
+// 			processData: false,
+// 			contentType: false,
+// 			success: function (res) {
+// 				document.getElementById("response").innerHTML = res;
+// 			}
+// 		});
+// 	}
+// });
 
 	//End of main image post
 
 
-
-
-
-
-
-
 	//.profile-thumbnails
+  // $('#submitButton').click(function () {
+  //   $('#uploadForm').ajaxForm({
+  //     target: '#outputImage',
+  //     url: '/php/edit_images.php',
+  //     beforeSubmit: function () {
+  //   	  $("#outputImage").hide();
+  // 	   	if($("#uploadImage").val() == "") {
+  // 		  	$("#outputImage").show();
+  // 		   	$("#outputImage").html("<div class='error'>Choose a file to upload.</div>");
+  //         return false; 
+  //       }
+  //       $("#progressDivId").css("display", "block");
+  //       var percentValue = '0%';
+
+  //       $('#progressBar').width(percentValue);
+  //       $('#percent').html(percentValue);
+  //     },
+  //     uploadProgress: function (event, position, total, percentComplete) {
+
+	 //      var percentValue = percentComplete + '%';
+	 //      $("#progressBar").animate({
+	 //          width: '' + percentValue + ''
+	 //      }, {
+  //         duration: 5000,
+  //         easing: "linear",
+  //         step: function (x) {
+  //           percentText = Math.round(x * 100 / percentComplete);
+  //           $("#percent").text(percentText + "%");
+  //           if(percentText == "100") {
+  //       	   	$("#outputImage").show();
+  //           }
+  //         }
+  //       });
+  //     },
+  //     error: function (response, status, e) {
+  //       alert('Oops something went.');
+  //     },
+  	        
+  //     complete: function (xhr) {
+  //       if (xhr.responseText && xhr.responseText != "error") {
+  //     	  $("#outputImage").html(xhr.responseText);
+  //       } else{  
+  //        	$("#outputImage").show();
+  //       	$("#outputImage").html("<div class='error'>Problem in uploading file.</div>");
+  //       	$("#progressBar").stop();
+  //       }
+  //     }
+  //   });
+  // });
+
 
 
 	//End of profile page images*************************************************************************************

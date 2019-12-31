@@ -73,7 +73,7 @@ if ($uploadOk == 0) {
         // Check input errors before inserting in database
         if(empty($is_error)){
           // Prepare an update statement
-          $sql = "UPDATE accounts SET image_main=? WHERE id=?";
+          $sql = "UPDATE accounts SET $_POST['fileToUpload']=? WHERE id=?";
                  
           if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -151,10 +151,25 @@ if ($uploadOk == 0) {
         }
       }
 
-} else {
-        $param1 = "Sorry, there was an error uploading your file.";
-    }
+  } else {
+    $param1 = "Sorry, there was an error uploading your file.";
+  }
 }
+
+// if (isset($_POST['btnSubmit'])) {
+//   $uploadfile = $_FILES["uploadImage"]["tmp_name"];
+//   $folderPath = "uploads/";
+
+// $target_dir = "uploads/";
+// $target_file = $target_dir . $username . "_" . basename($_FILES["fileToUpload"]["name"]);
+  
+//   if (! is_writable($folderPath) || ! is_dir($folderPath)) {
+//     $param = "error";
+//   }
+//   if (move_uploaded_file($_FILES["uploadImage"]["tmp_name"], $folderPath . $_FILES["uploadImage"]["name"])) {
+//     $param = '<img src="' . $folderPath . "" . $_FILES["uploadImage"]["name"] . '">';
+//   }
+// }
 
 // $stmt = $con->prepare('SELECT id FROM accounts WHERE id = ?');
 // $stmt->bind_param('i', $_SESSION['id']);

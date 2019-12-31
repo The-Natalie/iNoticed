@@ -142,6 +142,8 @@ $stmt->close();
 		<link rel="stylesheet" type="text/css" href="/css/styles.css"> 
 		<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"> 
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"> 
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="jquery.form.min.js"></script>
 	</head>
 	<body id="loggedin">
 
@@ -156,28 +158,14 @@ $stmt->close();
 					<br />
 					<br />
 					<p>Upload main profile image:</p>
-					<p>(Max image size is 2MB. Any image added will override the current main image.)</p>
+					<p>(Max image size is 2MB)</p>
 					<form action="/php/edit_images.php" method="post" enctype="multipart/form-data">
-	    Select image to upload:
-	    <input type="file" name="fileToUpload" id="fileToUpload">
-	    <input type="hidden" name="id" value="<?php echo $id; ?>"/>
-	    <input type="submit" value="Upload Image" name="submit">
-	</form>
-
-
-	 				<!-- <div class="form-container">
-	      		<form  id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
-	          	<input type="file" id="uploadImage" name="image_main" class="main-img" accept="image/*" /> 
-	          	<input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image" />
-	      		</form>
-	      		<div class='progress' id="progressDivId">
-	          	<div class='progress-bar' id='progressBar'></div>
-	          	<div class='percent' id='percent'>0%</div>
-	      		</div>
-	      		<div style="height: 10px;"></div>
-	      		<div id='outputImage'></div>
-	  			</div> -->
-
+				    Select image to upload:
+				    <input type="file" name="fileToUpload" id="fileToUpload" value="image_main">
+				    <input type="hidden" name="id" value="<?php echo $id; ?>"/>
+				    <input type="submit" value="Upload Image" name="submit">
+					</form>
+					<p>Delete</p>
 
 	        <br />      
 	 				<p>Add/edit up to 8 additional images:</p>
@@ -185,7 +173,17 @@ $stmt->close();
 	 					<tr>
 	 						<td>
 	 							<p>Image 1:</p>
-
+    						<!-- <div class="form-container">
+					        <form action="/php/edit_images.php" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+				            <input type="file" id="uploadImage" name="uploadImage" /> <input id="submitButton" type="submit" name='btnSubmit' value="Submit Image" />
+					        </form>
+        					<div class='progress' id="progressDivId">
+	            			<div class='progress-bar' id='progressBar'></div>
+	            			<div class='percent' id='percent'>0%</div>
+        					</div>
+        					<div style="height: 10px;"></div>
+        					<div id='outputImage'></div>
+  							</div> -->
 								<p>Delete</p>
 	 						</td>
 	 						<td>

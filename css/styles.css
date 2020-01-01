@@ -605,3 +605,7 @@ div.profile-info p {
 #outputImage img {
 	max-width: 200px;
 }
+
+.percent {
+	display: none;
+}

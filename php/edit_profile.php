@@ -173,7 +173,7 @@ $stmt->close();
 	 					<tr>
 	 						<td>
 	 							<p>Image 1:</p>
-    						<!-- <div class="form-container">
+    						<div class="form-container">
 					        <form action="/php/edit_images.php" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
 				            <input type="file" id="uploadImage" name="uploadImage" /> <input id="submitButton" type="submit" name='btnSubmit' value="Submit Image" />
 					        </form>
@@ -183,7 +183,7 @@ $stmt->close();
         					</div>
         					<div style="height: 10px;"></div>
         					<div id='outputImage'></div>
-  							</div> -->
+  							</div>
 								<p>Delete</p>
 	 						</td>
 	 						<td>

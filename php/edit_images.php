@@ -156,64 +156,17 @@ if ($uploadOk == 0) {
   }
 }
 
-// if (isset($_POST['btnSubmit'])) {
-//   $uploadfile = $_FILES["uploadImage"]["tmp_name"];
-//   $folderPath = "uploads/";
+if (isset($_POST['btnSubmit'])) {
+  $uploadfile = $_FILES["uploadImage"]["tmp_name"];
+  $folderPath = "uploads/";
 
-// $target_dir = "uploads/";
-// $target_file = $target_dir . $username . "_" . basename($_FILES["fileToUpload"]["name"]);
-  
-//   if (! is_writable($folderPath) || ! is_dir($folderPath)) {
-//     $param = "error";
-//   }
-//   if (move_uploaded_file($_FILES["uploadImage"]["tmp_name"], $folderPath . $_FILES["uploadImage"]["name"])) {
-//     $param = '<img src="' . $folderPath . "" . $_FILES["uploadImage"]["name"] . '">';
-//   }
-// }
-
-// $stmt = $con->prepare('SELECT id FROM accounts WHERE id = ?');
-// $stmt->bind_param('i', $_SESSION['id']);
-// $stmt->execute();
-// $stmt->store_result();
-// $stmt->bind_result($id);
-// $stmt->fetch();
-
-
-
-
-// $fileName = $_FILES['image_main']['name'];
-// $target = "/user_images/";          
-// $fileTarget = $target.$fileName;     
-// $result = move_uploaded_file($fileTarget)
-// $image_main = "";
-
-// if($result) { 
-//   if(isset($_POST["id"]) && !empty($_POST["id"])){
-//     // Get hidden input value
-//     $id = $_POST["id"];
-
-//     $input_image_main = ($_POST[$fileTarget]);
-
-//     $image_main = $input_image_main;
-
-//     if(empty($is_error)){
-//     // Prepare an update statement
-//     $sql = "UPDATE accounts SET image_main=? WHERE id=?";
-
-//       if($stmt = mysqli_prepare($con, $sql)){
-//         // Bind variables to the prepared statement as parameters
-//         mysqli_stmt_bind_param($stmt, "si", $param_image_main, $param_id);
-        
-//         // Set parameters
-//         $param_image_main = $image_main;
-//         $param_id = $id;
-//         mysqli_stmt_execute($stmt)
-//       }
-//     }
-//   }
-// }
-// mysqli_stmt_close($stmt);
-// mysqli_close($con);
+  if (! is_writable($folderPath) || ! is_dir($folderPath)) {
+    echo "error";
+  }
+  if (move_uploaded_file($_FILES["uploadImage"]["tmp_name"], $folderPath . $username . "_" . $_FILES["uploadImage"]["name"])) {
+    echo '<img src="' . $folderPath . "" . $username . "_" . $_FILES["uploadImage"]["name"] . '">';
+  }
+}
 
 mysqli_stmt_close($stmt);
 mysqli_close($con);
@@ -243,7 +196,6 @@ mysqli_close($con);
         <p><?php echo $param2; ?></p>
         <p><?php echo $param1; ?></p>
         <p><?php echo $param; ?></p>
-        <p style="color:blue;">Value: <?php echo $value1; ?></p>
         <br />
         <a href="/php/profile.php"><button class="edit-button" type="button">View my profile  <i class="fas fa-address-card"></i></button></a>
         <br />

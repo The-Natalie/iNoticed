@@ -606,6 +606,6 @@ div.profile-info p {
 	max-width: 200px;
 }
 
-.percent {
+#progressDivId {
 	display: none;
 }

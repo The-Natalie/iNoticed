@@ -324,7 +324,6 @@ $('#uploadImage').on('change', function() {
       url: '/php/edit_images.php',
       beforeSubmit: function () {
     	  $("#outputImage").hide();
-    	  $('#progressDivId').hide();
   	   	if($("#uploadImage").val() == "") {
   		  	$("#outputImage").show();
   		   	$("#outputImage").html("<div class='error'>Choose a file to upload.</div>");

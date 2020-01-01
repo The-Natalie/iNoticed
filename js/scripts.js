@@ -341,7 +341,7 @@ $('#uploadImage').on('change', function() {
 	      $("#progressBar").animate({
 	          width: '' + percentValue + ''
 	      }, {
-          duration: 5000,
+          // duration: 5000,
           easing: "linear",
           step: function (x) {
             percentText = Math.round(x * 100 / percentComplete);

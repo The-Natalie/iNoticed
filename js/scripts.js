@@ -344,8 +344,8 @@ $(document).ready(function(){
  
         }
  
-    }
-
+    });
+	
 // $('#uploadImage').on('change', function() { 
 //   if(this.files[0].size > 2097153) {
 //    	$("#outputImage").show();

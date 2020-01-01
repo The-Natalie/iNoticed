@@ -166,6 +166,7 @@ if (isset($_POST['btnSubmit'])) {
   $uploadfile = $_FILES["uploadImage"]["tmp_name"];
   $folderPath = "uploads/";
   $value = $_POST["img_value"]; 
+  $target_file = $folderPath . $username . "_" . basename($_FILES["fileToUpload"]["name"]);
 
 
   if (! is_writable($folderPath) || ! is_dir($folderPath)) {
@@ -185,10 +186,10 @@ if (isset($_POST['btnSubmit'])) {
 
           if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "si", $param_uploadfile, $param_id);
+            mysqli_stmt_bind_param($stmt, "si", $param_target_file, $param_id);
                     
             // Set parameters
-            $param_uploadfile = $uploadfile;
+            $param_target_file = $target_file;
             $param_id = $id;
                     
             // Attempt to execute the prepared statement

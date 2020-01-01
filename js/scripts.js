@@ -310,10 +310,11 @@ $(document).ready(function(){
 	//Profile page images*************************************************************************************
 
 $('#uploadImage').on('change', function() { 
-  if(this.files[0].size > 2000000) {
+  if(this.files[0].size > 2097153) {
    	$("#outputImage").show();
    	$("#outputImage").html("<div class='error'>File is too big. Please upload a file that is 2mb or smaller.</div>");
    	this.value = "";
+   	$("#progressBar").stop();
   }
 });
 
@@ -352,7 +353,8 @@ $('#uploadImage').on('change', function() {
         });
       },
       error: function (response, status, e) {
-        alert('Oops something went.');
+      	$("#progressBar").stop();
+        alert('Oops something went wrong.');
       },
   	        
       complete: function (xhr) {

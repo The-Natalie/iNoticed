@@ -315,11 +315,13 @@ $(document).ready(function(){
       url: '/php/edit_images.php',
       beforeSubmit: function () {
     	  $("#outputImage").hide();
-    	  if(this.files[0].size > 2097153) {
-         	$("#outputImage").show();
-  		   	$("#outputImage").html("<div class='error'>File is too big. Please upload a file that is 2mb or smaller.</div>");
-          return false; 
-        }
+    	  $('#uploadImage').on('change', function() { 
+	    	  if(this.files[0].size > 2097153) {
+	         	$("#outputImage").show();
+	  		   	$("#outputImage").html("<div class='error'>File is too big. Please upload a file that is 2mb or smaller.</div>");
+	          return false; 
+	        }
+	      });
   	   	if($("#uploadImage").val() == "") {
   		  	$("#outputImage").show();
   		   	$("#outputImage").html("<div class='error'>Choose a file to upload.</div>");

@@ -30,7 +30,7 @@ $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 $submitted_array = array_keys($_POST['fileToUpload']);
-$value = ($_POST['fileToUpload'][$submitted_array[0]]); 
+$value1 = ($_POST['fileToUpload'][$submitted_array[0]]); 
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
@@ -245,7 +245,7 @@ mysqli_close($con);
         <p><?php echo $param2; ?></p>
         <p><?php echo $param1; ?></p>
         <p><?php echo $param; ?></p>
-        <p style="color:blue;">Value: <?php echo $value; ?></p>
+        <p style="color:blue;">Value: <?php echo $value1; ?></p>
         <br />
         <a href="/php/profile.php"><button class="edit-button" type="button">View my profile  <i class="fas fa-address-card"></i></button></a>
         <br />

@@ -160,8 +160,9 @@ $stmt->close();
 					<p>(Max image size is 2MB)</p>
 					<form action="/php/edit_images.php" method="post" enctype="multipart/form-data">
 				    Select image to upload:
-				    <input type="file" name="fileToUpload" id="fileToUpload" value="image_main">
+				    <input type="file" name="fileToUpload" id="fileToUpload" >
 				    <input type="hidden" name="id" value="<?php echo $id; ?>"/>
+				    <input type="hidden" name="img_value" value="image_main"/>
 				    <input type="submit" value="Upload Image" name="submit">
 					</form>
 					<p>Delete</p>

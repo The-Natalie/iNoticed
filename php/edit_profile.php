@@ -175,14 +175,16 @@ $stmt->close();
 	 							<p>Image 1:</p>
     						<div class="form-container">
 					        <form action="/php/edit_images.php" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
-				            <input type="file" id="uploadImage" name="uploadImage" /> <input id="submitButton" type="submit" name='btnSubmit' value="Submit Image" />
+					        	<input type="hidden" name="img_value" value="image1"/>
+				            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" /> 
+				            <input id="submitButton" type="submit" name='btnSubmit' value="Submit Image"  />
 					        </form>
         					<div class='progress' id="progressDivId">
 	            			<div class='progress-bar' id='progressBar'></div>
 	            			<div class='percent' id='percent'>0%</div>
         					</div>
         					<div style="height: 10px;"></div>
-        					<div id='outputImage'></div>
+        					<div id='outputImage' style="max-width:200px;"></div>
   							</div>
 								<p>Delete</p>
 	 						</td>

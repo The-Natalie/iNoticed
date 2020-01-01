@@ -309,71 +309,6 @@ $(document).ready(function(){
 
 	//Profile page images*************************************************************************************
 
-
-// 	(function () {
-// 		var input = document.getElementById("images");
-// 		var formdata = false;
-
-// 		if (window.FormData) {
-// 			formdata = new FormData();
-// 			document.getElementById("btn").style.display = "none";
-// 		}
-	
-
-// 	function showUploadedItem (source) {
-// 		var list = document.getElementById("image-list");
-// 		var li = document.createElement("li");
-// 		var img = document.createElement("img");
-// 		img.src = source;
-// 		li.appendChild(img);
-// 		list.appendChild(li);
-// 	}
-
-// 	if (input.addEventListener) {
-// 		input.addEventListener("change", function (evt) {
-// 			var i = 0, len = this.files.length, img, reader, file;
-
-// 			document.getElementById("response").innerHTML = "Uploading . . ."
-
-// 			for ( ; i < len; i++ ) {
-// 				file = this.files[i];
-
-// 				if (!!file.type.match(/image.*/)) {
-// 				}
-// 			}
-
-// 		}, false);
-// 	}
-
-// 	if ( window.FileReader ) {
-// 		reader = new FileReader();
-// 		reader.onloadend = function (e) {
-// 			showUploadedItem(e.target.result);
-// 		};
-// 		reader.readAsDataURL(file);
-// 	}
-// 	if (formdata) {
-// 		formdata.append("images[]", file);
-// 	}
-
-// 	if (formdata) {
-// 		$.ajax({
-// 			url: "/php/edit_images.php",
-// 			type: "POST",
-// 			data: formdata,
-// 			processData: false,
-// 			contentType: false,
-// 			success: function (res) {
-// 				document.getElementById("response").innerHTML = res;
-// 			}
-// 		});
-// 	}
-// });
-
-	//End of main image post
-
-
-	//.profile-thumbnails
   $('#submitButton').click(function () {
     $('#uploadForm').ajaxForm({
       target: '#outputImage',
@@ -383,6 +318,11 @@ $(document).ready(function(){
   	   	if($("#uploadImage").val() == "") {
   		  	$("#outputImage").show();
   		   	$("#outputImage").html("<div class='error'>Choose a file to upload.</div>");
+          return false; 
+        }
+         if(this.files[0].size > 2097153) {
+         	$("#outputImage").show();
+  		   	$("#outputImage").html("<div class='error'>File is too big. Please upload a file that is 2mb or smaller.</div>");
           return false; 
         }
         $("#progressDivId").css("display", "block");
@@ -425,6 +365,18 @@ $(document).ready(function(){
   });
 
 
+function validate() {
+	$("#file_error").html("");
+	$(".demoInputBox").css("border-color","#F0F0F0");
+	var file_size = $('#file')[0].files[0].size;
+	if(file_size>2097152) {
+		$("#file_error").html("File size is greater than 2MB");
+		$(".demoInputBox").css("border-color","#FF0000");
+		return false;
+	} 
+	return true;
+}
+        
 
 	//End of profile page images*************************************************************************************
 

@@ -331,7 +331,7 @@ $(document).ready(function(){
             if(totalSizeMb > maxSizeMb){
  
                 //Create an error message to show to the user.
-                var errorMsg = '<div class="error">File too large. Maximum file size is ' + maxSizeMb + 'MB. Selected file is ' + totalSizeMb.toFixed(2) + 'MB'</div>;
+                var errorMsg = '<div class="error">File too large. Maximum file size is ' + maxSizeMb + 'MB. Selected file is ' + totalSizeMb.toFixed(2) + 'MB</div>';
  
                 //Show the error.
 						   	$(".error").html(errorMsg);

@@ -310,12 +310,12 @@ $(document).ready(function(){
 	//Profile page images*************************************************************************************
 
 $('#uploadImage').on('change', function() { 
-	    	  if(this.files[0].size > 2000000) {
-	         	$("#outputImage").show();
-	  		   	$("#outputImage").html("<div class='error'>File is too big. Please upload a file that is 2mb or smaller.</div>");
-	  		   	this.value = "";
-	        }
-	      });
+  if(this.files[0].size > 2000000) {
+   	$("#outputImage").show();
+   	$("#outputImage").html("<div class='error'>File is too big. Please upload a file that is 2mb or smaller.</div>");
+   	this.value = "";
+  }
+});
 
   $('#submitButton').click(function () {
     $('#uploadForm').ajaxForm({

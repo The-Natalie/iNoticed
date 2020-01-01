@@ -597,3 +597,7 @@ div.profile-info p {
     margin-left: -20px;
     -webkit-border-radius: 4px;
 }
+
+.error {
+	color: red;
+}

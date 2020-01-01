@@ -331,11 +331,10 @@ $(document).ready(function(){
             if(totalSizeMb > maxSizeMb){
  
                 //Create an error message to show to the user.
-                var errorMsg = 'File too large. Maximum file size is ' + maxSizeMb + 'MB. Selected file is ' + totalSizeMb.toFixed(2) + 'MB';
+                var errorMsg = '<div class="error">File too large. Maximum file size is ' + maxSizeMb + 'MB. Selected file is ' + totalSizeMb.toFixed(2) + 'MB'</div>;
  
                 //Show the error.
-                $("#outputImage").show();
-						   	$("#outputImage").html(errorMsg);
+						   	$(".error").html(errorMsg);
 						   	this.value = "";
 
                 //Return FALSE.
@@ -345,7 +344,7 @@ $(document).ready(function(){
         }
  
     });
-	
+
 // $('#uploadImage').on('change', function() { 
 //   if(this.files[0].size > 2097153) {
 //    	$("#outputImage").show();
@@ -362,8 +361,7 @@ $(document).ready(function(){
       beforeSubmit: function () {
     	  $("#outputImage").hide();
   	   	if($("#uploadImage").val() == "") {
-  		  	$("#outputImage").show();
-  		   	$("#outputImage").html("<div class='error'>Choose a file to upload.</div>");
+			   	$(".error").html("<div class='error'>Choose a file to upload.</div>");
           return false; 
         }
         $("#progressDivId").css("display", "block");
@@ -397,8 +395,7 @@ $(document).ready(function(){
         if (xhr.responseText && xhr.responseText != "error") {
       	  $("#outputImage").html(xhr.responseText);
         } else{  
-         	$("#outputImage").show();
-        	$("#outputImage").html("<div class='error'>Problem in uploading file.</div>");
+         	$(".error").html("<div class='error'>Problem in uploading file.</div>");
         	$("#progressBar").stop();
         }
       }

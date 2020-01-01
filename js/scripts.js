@@ -310,7 +310,6 @@ $(document).ready(function(){
 	//Profile page images*************************************************************************************
 
 //check that image is less than 2mb
-	function upload(){
  
         //The maximum size that the uploaded file can be.
         var maxSizeMb = 2; 
@@ -345,7 +344,7 @@ $(document).ready(function(){
  
         }
  
-    }
+    
 
 // $('#uploadImage').on('change', function() { 
 //   if(this.files[0].size > 2097153) {

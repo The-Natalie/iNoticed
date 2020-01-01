@@ -310,8 +310,10 @@ $(document).ready(function(){
 	//Profile page images*************************************************************************************
 
 //check that image is less than 2mb
-	var maxSizeMb = 2;
+	function upload(){
  
+        //The maximum size that the uploaded file can be.
+        var maxSizeMb = 2; 
         //Get the file that has been selected by
         //using JQuery's selector.
         var file = $('#uploadImage')[0].files[0];
@@ -405,17 +407,7 @@ $(document).ready(function(){
   });
 
 
-function validate() {
-	$("#file_error").html("");
-	$(".demoInputBox").css("border-color","#F0F0F0");
-	var file_size = $('#file')[0].files[0].size;
-	if(file_size>2097152) {
-		$("#file_error").html("File size is greater than 2MB");
-		$(".demoInputBox").css("border-color","#FF0000");
-		return false;
-	} 
-	return true;
-}
+
         
 
 	//End of profile page images*************************************************************************************

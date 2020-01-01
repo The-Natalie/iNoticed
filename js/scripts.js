@@ -324,6 +324,7 @@ $('#uploadImage').on('change', function() {
       url: '/php/edit_images.php',
       beforeSubmit: function () {
     	  $("#outputImage").hide();
+    	  $('#progressBar').hide();
   	   	if($("#uploadImage").val() == "") {
   		  	$("#outputImage").show();
   		   	$("#outputImage").html("<div class='error'>Choose a file to upload.</div>");
@@ -336,7 +337,7 @@ $('#uploadImage').on('change', function() {
         $('#percent').html(percentValue);
       },
       uploadProgress: function (event, position, total, percentComplete) {
-
+      	$('#progressBar').show();
 	      var percentValue = percentComplete + '%';
 	      $("#progressBar").animate({
 	          width: '' + percentValue + ''

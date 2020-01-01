@@ -28,7 +28,9 @@ $target_dir = "uploads/";
 $target_file = $target_dir . $username . "_" . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-$value = $_GET["fileToUpload"];
+
+$submitted_array = array_keys($_POST['fileToUpload']);
+$value = ($_POST['fileToUpload'][$submitted_array[0]]); 
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {

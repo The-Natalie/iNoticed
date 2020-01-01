@@ -601,3 +601,7 @@ div.profile-info p {
 .error {
 	color: red;
 }
+
+#outputImage img {
+	max-width: 200px;
+}

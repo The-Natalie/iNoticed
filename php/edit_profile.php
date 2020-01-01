@@ -184,7 +184,7 @@ $stmt->close();
 	            			<div class='percent' id='percent'>0%</div>
         					</div>
         					<div style="height: 10px;"></div>
-        					<div id='outputImage' style="max-width:200px;"></div>
+        					<div id='outputImage'></div>
   							</div>
 								<p>Delete</p>
 	 						</td>

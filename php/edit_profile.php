@@ -175,6 +175,7 @@ $stmt->close();
 	 							<p>Image 1:</p>
     						<div class="form-container">
 					        <form action="/php/edit_images.php" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+					        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 					        	<input type="hidden" name="img_value" value="image1"/>
 				            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" /> 
 				            <input id="submitButton" type="submit" name='btnSubmit' value="Submit Image"  />

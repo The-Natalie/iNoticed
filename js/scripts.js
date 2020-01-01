@@ -309,14 +309,50 @@ $(document).ready(function(){
 
 	//Profile page images*************************************************************************************
 
-$('#uploadImage').on('change', function() { 
-  if(this.files[0].size > 2097153) {
-   	$("#outputImage").show();
-   	$("#outputImage").html("<div class='error'>File is too big. Please upload a file that is 2mb or smaller.</div>");
-   	this.value = "";
-   	$("#progressBar").stop();
-  }
-});
+//check that image is less than 2mb
+	var maxSizeMb = 2;
+ 
+        //Get the file that has been selected by
+        //using JQuery's selector.
+        var file = $('#uploadImage')[0].files[0];
+ 
+        //Make sure that a file has been selected before
+        //attempting to get its size.
+        if(file !== undefined){
+ 
+            //Get the size of the input file.
+            var totalSize = file.size;
+ 
+            //Convert bytes into MB.
+            var totalSizeMb = totalSize  / Math.pow(1024,2);
+ 
+            //Check to see if it is too large.
+            if(totalSizeMb > maxSizeMb){
+ 
+                //Create an error message to show to the user.
+                var errorMsg = 'File too large. Maximum file size is ' + maxSizeMb + 'MB. Selected file is ' + totalSizeMb.toFixed(2) + 'MB';
+ 
+                //Show the error.
+                $("#outputImage").show();
+						   	$("#outputImage").html(errorMsg);
+						   	this.value = "";
+
+                //Return FALSE.
+                return false;
+            }
+ 
+        }
+ 
+    }
+
+// $('#uploadImage').on('change', function() { 
+//   if(this.files[0].size > 2097153) {
+//    	$("#outputImage").show();
+//    	$("#outputImage").html("<div class='error'>File is too big. Please upload a file that is 2mb or smaller.</div>");
+//    	this.value = "";
+//    	$("#progressBar").stop();
+//   }
+// });
 
   $('#submitButton').click(function () {
     $('#uploadForm').ajaxForm({

@@ -166,7 +166,7 @@ if (isset($_POST['btnSubmit'])) {
   $uploadfile = $_FILES["uploadImage"]["tmp_name"];
   $folderPath = "uploads/";
   $value = $_POST["img_value"]; 
-  $target_file = $folderPath . $username . "_" . basename($_FILES["fileToUpload"]["name"]);
+  $target_file = $folderPath . $username . "_" . basename($_FILES["uploadImage"]["name"]);
 
 
   if (! is_writable($folderPath) || ! is_dir($folderPath)) {

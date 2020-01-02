@@ -136,6 +136,10 @@ h3 {
 	font-style: italic;
 }
 
+h4 {
+	color: #4da534;
+}
+
 p/*, input.kindness-ps*/  {
 	font-size: 1.25em;
 	color: #262626;

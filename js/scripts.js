@@ -308,52 +308,44 @@ $(document).ready(function(){
 
 
 	//Profile page images*************************************************************************************
-
-//check that image is less than 2mb
+	//check that image is less than 2mb
 	$('#uploadImage').on('change', function() {  
-        //The maximum size that the uploaded file can be.
-        var maxSizeMb = 2; 
-        //Get the file that has been selected by
-        //using JQuery's selector.
-        var file = $('#uploadImage')[0].files[0];
- 
-        //Make sure that a file has been selected before
-        //attempting to get its size.
-        if(file !== undefined){
- 
-            //Get the size of the input file.
-            var totalSize = file.size;
- 
-            //Convert bytes into MB.
-            var totalSizeMb = totalSize  / Math.pow(1024,2);
- 
-            //Check to see if it is too large.
-            if(totalSizeMb > maxSizeMb){
- 
-                //Create an error message to show to the user.
-                var errorMsg = '<div class="error">File too large. Maximum file size is ' + maxSizeMb + 'MB. Selected file is ' + totalSizeMb.toFixed(2) + 'MB</div>';
- 
-                //Show the error.
-						   	$(".error").html(errorMsg);
-						   	this.value = "";
+    //The maximum size that the uploaded file can be.
+    var maxSizeMb = 2; 
+    //Get the file that has been selected by
+    //using JQuery's selector.
+    var file = $('#uploadImage')[0].files[0];
 
-                //Return FALSE.
-                return false;
-            }
+    //Make sure that a file has been selected before
+    //attempting to get its size.
+    if(file !== undefined){
  
-        }
+      //Get the size of the input file.
+      var totalSize = file.size;
+
+      //Convert bytes into MB.
+      var totalSizeMb = totalSize  / Math.pow(1024,2);
+
+      //Check to see if it is too large.
+      if(totalSizeMb > maxSizeMb){
  
-    });
+        //Create an error message to show to the user.
+        var errorMsg = '<div class="error">File too large. Maximum file size is ' + maxSizeMb + 'MB. Selected file is ' + totalSizeMb.toFixed(2) + 'MB</div>';
 
-// $('#uploadImage').on('change', function() { 
-//   if(this.files[0].size > 2097153) {
-//    	$("#outputImage").show();
-//    	$("#outputImage").html("<div class='error'>File is too big. Please upload a file that is 2mb or smaller.</div>");
-//    	this.value = "";
-//    	$("#progressBar").stop();
-//   }
-// });
+        //Show the error.
+		   	$(".error").html(errorMsg);
+		   	this.value = "";
 
+        //Return FALSE.
+        return false;
+    	}
+
+    }
+ 
+  });
+	//end of image check
+
+	//image posting
   $('#submitButton').click(function () {
     $('#uploadForm').ajaxForm({
       target: '#outputImage',
@@ -401,10 +393,52 @@ $(document).ready(function(){
       }
     });
   });
+  //end of image posting
 
+	//Hide main image upload div
+	$('button.upload-main-img').click(function(e) {
+		$("#upload-main-img").css({"display": "block"});
+	});
 
+	//Hide image1 upload div
+	$('button.upload-img1').click(function(e) {
+		$("#upload-img1").css({"display": "block"});
+	});
 
-        
+	//Hide image2 upload div
+	$('button.upload-img2').click(function(e) {
+		$("#upload-img2").css({"display": "block"});
+	});
+
+	//Hide image3 upload div
+	$('button.upload-img3').click(function(e) {
+		$("#upload-img3").css({"display": "block"});
+	});
+
+	//Hide image4 upload div
+	$('button.upload-img4').click(function(e) {
+		$("#upload-img4").css({"display": "block"});
+	});
+
+	//Hide image5 upload div
+	$('button.upload-img5').click(function(e) {
+		$("#upload-img5").css({"display": "block"});
+	});
+
+	//Hide image6 upload div
+	$('button.upload-img6').click(function(e) {
+		$("#upload-img6").css({"display": "block"});
+	});
+
+	//Hide image7 upload div
+	$('button.upload-img7').click(function(e) {
+		$("#upload-img7").css({"display": "block"});
+	});
+
+	//Hide image8 upload div
+	$('button.upload-img8').click(function(e) {
+		$("#upload-img8").css({"display": "block"});
+	});
 
 	//End of profile page images*************************************************************************************
 

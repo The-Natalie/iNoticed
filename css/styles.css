@@ -606,10 +606,58 @@ div.profile-info p {
 	max-width: 200px;
 }
 
+.preview-images img {
+	max-width: 200px;
+}
+
 .percent {
 	display: none;
 }
 
 #progressDivId {
+	display: none;
+}
+
+.progress {
+	max-width: 280px;
+}
+
+.form-container {
+	max-width: 300px;
+}
+
+#upload-main-img {
+	display: none;
+}
+
+#upload-img1 {
+	display: none;
+}
+
+#upload-img2 {
+	display: none;
+}
+
+#upload-img3 {
+	display: none;
+}
+
+#upload-img4 {
+	display: none;
+}
+
+#upload-img5 {
+	display: none;
+}
+
+#upload-img6 {
+	display: none;
+}
+
+#upload-img7 {
+	display: none;
+}
+
+#upload-img8 {
 	display: none;
 }

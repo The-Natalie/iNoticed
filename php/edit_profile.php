@@ -323,9 +323,7 @@ $stmt->close();
 				  					</div>
 									</div>
 					    	</td>
-					  	</tr>
-
-					  	<tr>
+					  	
 					    	<td>
 					    		<h4>Image 3</h4>
 									<img class="preview-images image3" src="/php/<?php echo $image3; ?>">
@@ -353,7 +351,9 @@ $stmt->close();
 				  					</div>
 									</div>
 					    	</td>
-
+					    </tr>
+					    	
+					    <tr>
 					    	<td>
 					    		<h4>Image 4</h4>
 									<img class="preview-images image4" src="/php/<?php echo $image4; ?>">
@@ -381,9 +381,7 @@ $stmt->close();
 				  					</div>
 									</div>
 					    	</td>
-					  	</tr>
-
-					  	<tr>
+					  	
 					    	<td>
 					    		<h4>Image 5</h4>
 									<img class="preview-images image5" src="/php/<?php echo $image5; ?>">

@@ -236,7 +236,7 @@ $stmt->close();
 					<a href="/php/profile.php"><button class="edit-button" type="button">View my profile  <i class="fas fa-address-card"></i></button></a>
 					<br />
 					<br />
-					<h3>Main profile image</h3>
+					<h4>Main profile image</h4>
 					<img class="preview-images image_main" src="/php/<?php echo $image_main; ?>">
 					<button class="edit-button upload-main-img" type="button">Upload <i class="far fa-edit"></i></button>
 					<button class="edit-button delete-main-img" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
@@ -268,7 +268,7 @@ $stmt->close();
 	 					<table>
 					  	<tr>
 					    	<td>
-					    		<h3>Image 1</h3>
+					    		<h4>Image 1</h4>
 									<img class="preview-images image1" src="/php/<?php echo $image1; ?>">
 									<button class="edit-button upload-img1" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img1" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
@@ -294,7 +294,7 @@ $stmt->close();
 					    	</td>
 
 					    	<td>
-					    		<h3>Image 2</h3>
+					    		<h4>Image 2</h4>
 									<img class="preview-images image2" src="/php/<?php echo $image2; ?>">
 									<button class="edit-button upload-img2" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img2" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
@@ -322,7 +322,7 @@ $stmt->close();
 
 					  	<tr>
 					    	<td>
-					    		<h3>Image 3</h3>
+					    		<h4>Image 3</h4>
 									<img class="preview-images image3" src="/php/<?php echo $image3; ?>">
 									<button class="edit-button upload-img3" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img3" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
@@ -348,7 +348,7 @@ $stmt->close();
 					    	</td>
 
 					    	<td>
-					    		<h3>Image 4</h3>
+					    		<h4>Image 4</h4>
 									<img class="preview-images image4" src="/php/<?php echo $image4; ?>">
 									<button class="edit-button upload-img4" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img4" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
@@ -376,7 +376,7 @@ $stmt->close();
 
 					  	<tr>
 					    	<td>
-					    		<h3>Image 5</h3>
+					    		<h4>Image 5</h4>
 									<img class="preview-images image5" src="/php/<?php echo $image5; ?>">
 									<button class="edit-button upload-img5" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img5" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
@@ -402,7 +402,7 @@ $stmt->close();
 					    	</td>
 
 					    	<td>
-					    		<h3>Image 6</h3>
+					    		<h4>Image 6</h4>
 									<img class="preview-images image6" src="/php/<?php echo $image6; ?>">
 									<button class="edit-button upload-img6" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img6" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
@@ -430,7 +430,7 @@ $stmt->close();
 
 					  	<tr>
 					    	<td>
-					    		<h3>Image 7</h3>
+					    		<h4>Image 7</h4>
 									<img class="preview-images image7" src="/php/<?php echo $image7; ?>">
 									<button class="edit-button upload-img7" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img7" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
@@ -456,7 +456,7 @@ $stmt->close();
 					    	</td>
 
 					    	<td>
-					    		<h3>Image 8</h3>
+					    		<h4>Image 8</h4>
 									<img class="preview-images image8" src="/php/<?php echo $image8; ?>">
 									<button class="edit-button upload-img8" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img8" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>

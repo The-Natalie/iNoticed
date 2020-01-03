@@ -139,7 +139,7 @@ $stmt->close();
 	var image8 = "<?=$image8?>";
 
 	if (image_main == null || image_main === "") {
-		$("#upload-main-img").css({"display": "block", "max-width": "200px"});
+		$("img#upload-main-img").css({"display": "block", "max-width": "200px"});
 		$('button.delete-main-img').css({"display": "none"});
 		$('img.image_main').css({"display": "none"});
 	}	else {
@@ -147,7 +147,7 @@ $stmt->close();
 	}
 
 	if (image1 == null || image1=== "") {
-		$("#upload-img1").css({"display": "block", "max-width": "200px"});
+		$("img#upload-img1").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img1').css({"display": "none"});
 		$('img.image1').css({"display": "none"});
 	}	else {
@@ -155,7 +155,7 @@ $stmt->close();
 	}
 
 	if (image2 == null || image2=== "") {
-		$("#upload-img2").css({"display": "block", "max-width": "200px"});
+		$("img#upload-img2").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img2').css({"display": "none"});
 		$('img.image2').css({"display": "none"});
 	}	else {
@@ -163,7 +163,7 @@ $stmt->close();
 	}
 
 	if (image3 == null || image3=== "") {
-		$("#upload-img3").css({"display": "block", "max-width": "200px"});
+		$("img#upload-img3").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img3').css({"display": "none"});
 		$('img.image3').css({"display": "none"});
 	}	else {
@@ -171,7 +171,7 @@ $stmt->close();
 	}
 
 	if (image4 == null || image4=== "") {
-		$("#upload-img4").css({"display": "block", "max-width": "200px"});
+		$("img#upload-img4").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img4').css({"display": "none"});
 		$('img.image4').css({"display": "none"});
 	}	else {
@@ -179,7 +179,7 @@ $stmt->close();
 	}
 
 	if (image5 == null || image5=== "") {
-		$("#upload-img5").css({"display": "block", "max-width": "200px"});
+		$("img#upload-img5").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img5').css({"display": "none"});
 		$('img.image5').css({"display": "none"});
 	}	else {
@@ -187,7 +187,7 @@ $stmt->close();
 	}
 
 	if (image6 == null || image6=== "") {
-		$("#upload-img6").css({"display": "block", "max-width": "200px"});
+		$("img#upload-img6").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img6').css({"display": "none"});
 		$('img.image6').css({"display": "none"});
 	}	else {
@@ -195,7 +195,7 @@ $stmt->close();
 	}
 
 	if (image7 == null || image7=== "") {
-		$("#upload-img7").css({"display": "block", "max-width": "200px"});
+		$("img#upload-img7").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img7').css({"display": "none"});
 		$('img.image7').css({"display": "none"});
 	}	else {
@@ -203,7 +203,7 @@ $stmt->close();
 	}
 
 	if (image8 == null || image8=== "") {
-		$("#upload-img8").css({"display": "block", "max-width": "200px"});
+		$("img#upload-img8").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img8').css({"display": "none"});
 		$('img.image8').css({"display": "none"});
 	}	else {
@@ -238,8 +238,8 @@ $stmt->close();
 					<br />
 					<h3>Main profile image</h3>
 					<img class="preview-images image_main" src="/php/<?php echo $image_main; ?>">
-					<button class="edit-button" class="upload-main-img" type="button">Upload <i class="far fa-edit"></i></button>
-					<button class="edit-button" class="delete-main-img" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
+					<button class="edit-button upload-main-img" type="button">Upload <i class="far fa-edit"></i></button>
+					<button class="edit-button delete-main-img" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
 					<div id="upload-main-img">
 						<p>Upload main profile image:</p>
 						<p>(Max image size is 2MB)</p>				    
@@ -270,8 +270,8 @@ $stmt->close();
 					    	<td>
 					    		<h3>Image 1</h3>
 									<img class="preview-images image1" src="/php/<?php echo $image1; ?>">
-									<button class="edit-button" class="upload-img1" type="button">Upload <i class="far fa-edit"></i></button>
-									<button class="edit-button" class="delete-img1" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
+									<button class="edit-button upload-img1" type="button">Upload <i class="far fa-edit"></i></button>
+									<button class="edit-button delete-img1" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
 									<div id="upload-img1">
 										<p>Upload:</p>
 								    <div class="form-container">
@@ -296,8 +296,8 @@ $stmt->close();
 					    	<td>
 					    		<h3>Image 2</h3>
 									<img class="preview-images image2" src="/php/<?php echo $image2; ?>">
-									<button class="edit-button" class="upload-img2" type="button">Upload <i class="far fa-edit"></i></button>
-									<button class="edit-button" class="delete-img2" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
+									<button class="edit-button upload-img2" type="button">Upload <i class="far fa-edit"></i></button>
+									<button class="edit-button delete-img2" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
 									<div id="upload-img2">
 										<p>Upload:</p>
 								    <div class="form-container">
@@ -324,8 +324,8 @@ $stmt->close();
 					    	<td>
 					    		<h3>Image 3</h3>
 									<img class="preview-images image3" src="/php/<?php echo $image3; ?>">
-									<button class="edit-button" class="upload-img3" type="button">Upload <i class="far fa-edit"></i></button>
-									<button class="edit-button" class="delete-img3" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
+									<button class="edit-button upload-img3" type="button">Upload <i class="far fa-edit"></i></button>
+									<button class="edit-button delete-img3" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
 									<div id="upload-img3">
 										<p>Upload:</p>
 								    <div class="form-container">
@@ -350,8 +350,8 @@ $stmt->close();
 					    	<td>
 					    		<h3>Image 4</h3>
 									<img class="preview-images image4" src="/php/<?php echo $image4; ?>">
-									<button class="edit-button" class="upload-img4" type="button">Upload <i class="far fa-edit"></i></button>
-									<button class="edit-button" class="delete-img4" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
+									<button class="edit-button upload-img4" type="button">Upload <i class="far fa-edit"></i></button>
+									<button class="edit-button delete-img4" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
 									<div id="upload-img4">
 										<p>Upload:</p>
 								    <div class="form-container">
@@ -378,8 +378,8 @@ $stmt->close();
 					    	<td>
 					    		<h3>Image 5</h3>
 									<img class="preview-images image5" src="/php/<?php echo $image5; ?>">
-									<button class="edit-button" class="upload-img5" type="button">Upload <i class="far fa-edit"></i></button>
-									<button class="edit-button" class="delete-img5" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
+									<button class="edit-button upload-img5" type="button">Upload <i class="far fa-edit"></i></button>
+									<button class="edit-button delete-img5" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
 									<div id="upload-img5">
 										<p>Upload:</p>
 								    <div class="form-container">
@@ -404,8 +404,8 @@ $stmt->close();
 					    	<td>
 					    		<h3>Image 6</h3>
 									<img class="preview-images image6" src="/php/<?php echo $image6; ?>">
-									<button class="edit-button" class="upload-img6" type="button">Upload <i class="far fa-edit"></i></button>
-									<button class="edit-button" class="delete-img6" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
+									<button class="edit-button upload-img6" type="button">Upload <i class="far fa-edit"></i></button>
+									<button class="edit-button delete-img6" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
 									<div id="upload-img6">
 										<p>Upload:</p>
 								    <div class="form-container">
@@ -432,8 +432,8 @@ $stmt->close();
 					    	<td>
 					    		<h3>Image 7</h3>
 									<img class="preview-images image7" src="/php/<?php echo $image7; ?>">
-									<button class="edit-button" class="upload-img7" type="button">Upload <i class="far fa-edit"></i></button>
-									<button class="edit-button" class="delete-img7" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
+									<button class="edit-button upload-img7" type="button">Upload <i class="far fa-edit"></i></button>
+									<button class="edit-button delete-img7" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
 									<div id="upload-img7">
 										<p>Upload:</p>
 								    <div class="form-container">
@@ -458,8 +458,8 @@ $stmt->close();
 					    	<td>
 					    		<h3>Image 8</h3>
 									<img class="preview-images image8" src="/php/<?php echo $image8; ?>">
-									<button class="edit-button" class="upload-img8" type="button">Upload <i class="far fa-edit"></i></button>
-									<button class="edit-button" class="delete-img8" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
+									<button class="edit-button upload-img8" type="button">Upload <i class="far fa-edit"></i></button>
+									<button class="edit-button delete-img8" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
 									<div id="upload-img8">
 										<p>Upload:</p>
 								    <div class="form-container">

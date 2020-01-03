@@ -638,38 +638,11 @@ div.profile-info p {
 	display: none;
 }
 
- /*{
-	display: none;
-}
-
-#upload-img2 {
-	display: none;
-}
-
-#upload-img3 {
-	display: none;
-}
-
-#upload-img4 {
-	display: none;
-}
-
-#upload-img5 {
-	display: none;
-}
-
-#upload-img6 {
-	display: none;
-}
-
-#upload-img7 {
-	display: none;
-}
-
-#upload-img8 {
-	display: none;
-}*/
-
 .even-cols {
 	width: 33.33%;
+}
+
+#img-table table, th, td {
+  border: 1px solid black;
+  text-align: center;
 }

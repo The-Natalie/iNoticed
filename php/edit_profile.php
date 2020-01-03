@@ -239,6 +239,7 @@ $stmt->close();
 					<h4>Main profile image</h4>
 					<img class="preview-images image_main" src="/php/<?php echo $image_main; ?>">
 					<br/>
+					<br/>
 					<button class="edit-button upload-main-img" type="button">Upload <i class="far fa-edit"></i></button>
 					<button class="edit-button delete-main-img" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
 					<div id="upload-main-img">
@@ -265,7 +266,7 @@ $stmt->close();
 	        <br />      
 	 				<p>Add/edit up to 8 additional images:</p>
 	 				<p>(Max image size is 2MB each)</p>		
-	 				<div>
+	 				<div id="img-table">
 	 					<table style="width:100%;">
 					  	<tr>
 					    	<td class="even-cols">

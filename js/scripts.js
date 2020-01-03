@@ -398,46 +398,55 @@ $(document).ready(function(){
 	//Hide main image upload div
 	$('button.upload-main-img').click(function(e) {
 		$("#upload-main-img").css({"display": "block"});
+		$('button.upload-main-img').css({"display": "none"});
 	});
 
 	//Hide image1 upload div
 	$('button.upload-img1').click(function(e) {
 		$("#upload-img1").css({"display": "block"});
+		$('button.upload-img1').css({"display": "none"});
 	});
 
 	//Hide image2 upload div
 	$('button.upload-img2').click(function(e) {
 		$("#upload-img2").css({"display": "block"});
+		$('button.upload-img2').css({"display": "none"});
 	});
 
 	//Hide image3 upload div
 	$('button.upload-img3').click(function(e) {
 		$("#upload-img3").css({"display": "block"});
+		$('button.upload-img3').css({"display": "none"});
 	});
 
 	//Hide image4 upload div
 	$('button.upload-img4').click(function(e) {
 		$("#upload-img4").css({"display": "block"});
+		$('button.upload-img4').css({"display": "none"});
 	});
 
 	//Hide image5 upload div
 	$('button.upload-img5').click(function(e) {
 		$("#upload-img5").css({"display": "block"});
+		$('button.upload-img5').css({"display": "none"});
 	});
 
 	//Hide image6 upload div
 	$('button.upload-img6').click(function(e) {
 		$("#upload-img6").css({"display": "block"});
+		$('button.upload-img6').css({"display": "none"});
 	});
 
 	//Hide image7 upload div
 	$('button.upload-img7').click(function(e) {
 		$("#upload-img7").css({"display": "block"});
+		$('button.upload-img7').css({"display": "none"});
 	});
 
 	//Hide image8 upload div
 	$('button.upload-img8').click(function(e) {
 		$("#upload-img8").css({"display": "block"});
+		$('button.upload-img8').css({"display": "none"});
 	});
 
 	//End of profile page images*************************************************************************************

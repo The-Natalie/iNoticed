@@ -238,6 +238,7 @@ $stmt->close();
 					<br />
 					<h4>Main profile image</h4>
 					<img class="preview-images image_main" src="/php/<?php echo $image_main; ?>">
+					<br/>
 					<button class="edit-button upload-main-img" type="button">Upload <i class="far fa-edit"></i></button>
 					<button class="edit-button delete-main-img" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
 					<div id="upload-main-img">
@@ -265,11 +266,12 @@ $stmt->close();
 	 				<p>Add/edit up to 8 additional images:</p>
 	 				<p>(Max image size is 2MB each)</p>		
 	 				<div>
-	 					<table>
+	 					<table style="width:100;">
 					  	<tr>
 					    	<td>
 					    		<h4>Image 1</h4>
 									<img class="preview-images image1" src="/php/<?php echo $image1; ?>">
+									<br />
 									<button class="edit-button upload-img1" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img1" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
 									<div id="upload-img1">
@@ -296,6 +298,7 @@ $stmt->close();
 					    	<td>
 					    		<h4>Image 2</h4>
 									<img class="preview-images image2" src="/php/<?php echo $image2; ?>">
+									<br />
 									<button class="edit-button upload-img2" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img2" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
 									<div id="upload-img2">
@@ -324,6 +327,7 @@ $stmt->close();
 					    	<td>
 					    		<h4>Image 3</h4>
 									<img class="preview-images image3" src="/php/<?php echo $image3; ?>">
+									<br />
 									<button class="edit-button upload-img3" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img3" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
 									<div id="upload-img3">
@@ -350,6 +354,7 @@ $stmt->close();
 					    	<td>
 					    		<h4>Image 4</h4>
 									<img class="preview-images image4" src="/php/<?php echo $image4; ?>">
+									<br />
 									<button class="edit-button upload-img4" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img4" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
 									<div id="upload-img4">
@@ -378,6 +383,7 @@ $stmt->close();
 					    	<td>
 					    		<h4>Image 5</h4>
 									<img class="preview-images image5" src="/php/<?php echo $image5; ?>">
+									<br />
 									<button class="edit-button upload-img5" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img5" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
 									<div id="upload-img5">
@@ -404,6 +410,7 @@ $stmt->close();
 					    	<td>
 					    		<h4>Image 6</h4>
 									<img class="preview-images image6" src="/php/<?php echo $image6; ?>">
+									<br />
 									<button class="edit-button upload-img6" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img6" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
 									<div id="upload-img6">
@@ -432,6 +439,7 @@ $stmt->close();
 					    	<td>
 					    		<h4>Image 7</h4>
 									<img class="preview-images image7" src="/php/<?php echo $image7; ?>">
+									<br />
 									<button class="edit-button upload-img7" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img7" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
 									<div id="upload-img7">
@@ -458,6 +466,7 @@ $stmt->close();
 					    	<td>
 					    		<h4>Image 8</h4>
 									<img class="preview-images image8" src="/php/<?php echo $image8; ?>">
+									<br />
 									<button class="edit-button upload-img8" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img8" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
 									<div id="upload-img8">

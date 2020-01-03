@@ -268,7 +268,7 @@ $stmt->close();
 	 				<div>
 	 					<table style="width:100%;">
 					  	<tr>
-					    	<td>
+					    	<td class="even-cols">
 					    		<h4>Image 1</h4>
 									<img class="preview-images image1" src="/php/<?php echo $image1; ?>">
 									<br />
@@ -296,7 +296,7 @@ $stmt->close();
 									</div>
 					    	</td>
 
-					    	<td>
+					    	<td class="even-cols">
 					    		<h4>Image 2</h4>
 									<img class="preview-images image2" src="/php/<?php echo $image2; ?>">
 									<br />
@@ -324,7 +324,7 @@ $stmt->close();
 									</div>
 					    	</td>
 					  	
-					    	<td>
+					    	<td class="even-cols">
 					    		<h4>Image 3</h4>
 									<img class="preview-images image3" src="/php/<?php echo $image3; ?>">
 									<br />
@@ -354,7 +354,7 @@ $stmt->close();
 					    </tr>
 					    	
 					    <tr>
-					    	<td>
+					    	<td class="even-cols">
 					    		<h4>Image 4</h4>
 									<img class="preview-images image4" src="/php/<?php echo $image4; ?>">
 									<br />
@@ -382,7 +382,7 @@ $stmt->close();
 									</div>
 					    	</td>
 					  	
-					    	<td>
+					    	<td class="even-cols">
 					    		<h4>Image 5</h4>
 									<img class="preview-images image5" src="/php/<?php echo $image5; ?>">
 									<br />
@@ -410,7 +410,7 @@ $stmt->close();
 									</div>
 					    	</td>
 
-					    	<td>
+					    	<td class="even-cols">
 					    		<h4>Image 6</h4>
 									<img class="preview-images image6" src="/php/<?php echo $image6; ?>">
 									<br />
@@ -440,7 +440,7 @@ $stmt->close();
 					  	</tr>
 
 					  	<tr>
-					    	<td>
+					    	<td class="even-cols">
 					    		<h4>Image 7</h4>
 									<img class="preview-images image7" src="/php/<?php echo $image7; ?>">
 									<br />
@@ -468,7 +468,7 @@ $stmt->close();
 									</div>
 					    	</td>
 
-					    	<td>
+					    	<td class="even-cols">
 					    		<h4>Image 8</h4>
 									<img class="preview-images image8" src="/php/<?php echo $image8; ?>">
 									<br />

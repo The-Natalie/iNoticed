@@ -634,11 +634,11 @@ div.profile-info p {
 	max-width: 300px;
 }
 
-#upload-main-img {
+#upload-main-img, #upload-img1, #upload-img2, #upload-img3, #upload-img4, #upload-img5, #upload-img6, #upload-img7, #upload-img8 {
 	display: none;
 }
 
-#upload-img1 {
+ /*{
 	display: none;
 }
 
@@ -668,5 +668,8 @@ div.profile-info p {
 
 #upload-img8 {
 	display: none;
-}
+}*/
 
+.even-cols {
+	width: 33.33%;
+}

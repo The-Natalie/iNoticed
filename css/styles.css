@@ -643,6 +643,6 @@ div.profile-info p {
 }
 
 #img-table table, th, td {
-  border: 1px solid black;
+  border: 3px solid #84FF84;
   text-align: center;
 }

@@ -352,7 +352,7 @@ $(document).ready(function(){
       url: '/php/edit_images.php',
       beforeSubmit: function () {
     	  $("#outputImage").hide();
-  	   	if($("#uploadImage").val() == "") {
+  	   	if($("#uploadImage").val() === "" || $("#uploadImage").val() == null) {
 			   	$(".error").html("<div class='error'>Choose a file to upload.</div>");
           return false; 
         }

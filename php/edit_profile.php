@@ -236,35 +236,37 @@ $stmt->close();
 					<a href="/php/profile.php"><button class="edit-button" type="button">View my profile  <i class="fas fa-address-card"></i></button></a>
 					<br />
 					<br />
-					<h4>Main profile image</h4>
-					<img class="preview-images image_main" src="/php/<?php echo $image_main; ?>">
-					<br/>
-					<br/>
-					<button class="edit-button upload-main-img" type="button">Upload <i class="far fa-edit"></i></button>
-					<button class="edit-button delete-main-img" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-					<div id="upload-main-img">
-						<p>Upload main profile image:</p>
-						<p>(Max image size is 2MB)</p>				    
-				    <div class="form-container">
-			        <form action="/php/edit_images.php" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
-			        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
-			        	<input type="hidden" name="img_value" value="image_main"/>
-			        	Select image to upload:
-		            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" /> <br>
-		            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
-			        </form>
-	  					<div class='progress' id="progressDivId">
-	        			<div class='progress-bar' id='progressBar'></div>
-	        			<div class='percent' id='percent'>0%</div>
+					<div class="main-img-div">
+						<h4>Main profile image</h4>
+						<img class="preview-images image_main" src="/php/<?php echo $image_main; ?>">
+						<br/>
+						<br/>
+						<button class="edit-button upload-main-img" type="button">Upload <i class="far fa-edit"></i></button>
+						<button class="edit-button delete-main-img" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
+						<div id="upload-main-img">
+							<p>Upload main profile image:</p>
+							<p>(Max image size is 2MB)</p>				    
+					    <div class="form-container">
+				        <form action="/php/edit_images.php" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+				        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
+				        	<input type="hidden" name="img_value" value="image_main"/>
+				        	Select image to upload:
+			            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" /> <br>
+			            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
+				        </form>
+		  					<div class='progress' id="progressDivId">
+		        			<div class='progress-bar' id='progressBar'></div>
+		        			<div class='percent' id='percent'>0%</div>
+		  					</div>
+		  					<div style="height: 10px;"></div>
+		  					<div class="error"></div>
+		  					<div id='outputImage'></div>
 	  					</div>
-	  					<div style="height: 10px;"></div>
-	  					<div class="error"></div>
-	  					<div id='outputImage'></div>
-  					</div>
-					</div>
+						</div>
+					</div>	
 
 	        <br />      
-	 				<p>Add/edit up to 8 additional images:</p>
+	 				<p style="margin-bottom: 0px;">Add/edit up to 8 additional images:</p>
 	 				<p>(Max image size is 2MB each)</p>		
 	 				<div id="img-table">
 	 					<table style="width:100%;">

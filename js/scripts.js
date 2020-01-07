@@ -351,11 +351,7 @@ $(document).ready(function(){
       target: '#outputImage',
       url: '/php/edit_images.php',
       beforeSubmit: function () {
-    	  $("#outputImage").hide();
-  	   	if($("#uploadImage").val() == "") {
-			   	$(".error").html("<div class='error'>Choose a file to upload.</div>");
-          return false; 
-        }
+    	  $("img#outputImage").hide();
         $("div#progressDivId").css("display", "block");
         var percentValue = '0%';
 
@@ -373,7 +369,7 @@ $(document).ready(function(){
             percentText = Math.round(x * 100 / percentComplete);
             $("#percent").text(percentText + "%");
             if(percentText == "100") {
-        	   	$("#outputImage").show();
+        	   	$("img#outputImage").show();
             }
           }
         });
@@ -384,7 +380,7 @@ $(document).ready(function(){
   	        
       complete: function (xhr) {
         if (xhr.responseText && xhr.responseText != "error") {
-      	  $("#outputImage").html(xhr.responseText);
+      	  $(".error").html(xhr.responseText);
         } else{  
          	$(".error").html("<div class='error'>Problem in uploading file.</div>");
         	$("#progressBar").stop();

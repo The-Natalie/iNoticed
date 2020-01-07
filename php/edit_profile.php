@@ -246,7 +246,7 @@ $stmt->close();
 						<div id="upload-main-img">
 							<p>Upload main profile image:</p>
 							<p>(Max image size is 2MB)</p>				    
-					    <div class="form-container">
+					    <div class="form-container" style="text-align: center;">
 				        <form action="" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
 				        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 				        	<input type="hidden" name="img_value" value="image_main"/>

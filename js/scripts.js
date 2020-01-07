@@ -346,8 +346,7 @@ $(document).ready(function(){
 	//end of image check
 
 	//image posting
-  $('#submitButton').click(function (e) {
-  	e.preventDefault();
+  $('#submitButton').click(function () {
     $('#uploadForm').ajaxForm({
       target: '#outputImage',
       url: '/php/edit_images.php',
@@ -357,7 +356,7 @@ $(document).ready(function(){
 			   	$(".error").html("<div class='error'>Choose a file to upload.</div>");
           return false; 
         }
-        $("#progressDivId").css("display", "block");
+        $("div#progressDivId").css("display", "block");
         var percentValue = '0%';
 
         $('#progressBar').width(percentValue);
@@ -380,7 +379,6 @@ $(document).ready(function(){
         });
       },
       error: function (response, status, e) {
-      	$("#progressBar").stop();
         alert('Oops something went wrong.');
       },
   	        

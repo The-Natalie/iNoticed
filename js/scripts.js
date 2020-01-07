@@ -346,13 +346,14 @@ $(document).ready(function(){
 	//end of image check
 
 	//image posting
-  $('#submitButton').click(function () {
+  $('#submitButton').click(function (e) {
+  	e.preventDefault();
     $('#uploadForm').ajaxForm({
       target: '#outputImage',
       url: '/php/edit_images.php',
       beforeSubmit: function () {
     	  $("div#outputImage").hide();
-        $("div#progressDivId").css("display", "inline-block");
+        $("div#progressDivId").css("display", "block");
         var percentValue = '0%';
 
         $('#progressBar').width(percentValue);
@@ -380,7 +381,7 @@ $(document).ready(function(){
   	        
       complete: function (xhr) {
         if (xhr.responseText && xhr.responseText != "error") {
-      	   $("#outputImage").html("<br />" + xhr.responseText + "<br />");
+      	   $("#outputImage").html("<br />" + xhr.responseText);
         } else{  
          	$(".error").html("<div class='error'>Problem in uploading file.</div>");
         	$("#progressBar").stop();

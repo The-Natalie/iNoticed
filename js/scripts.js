@@ -351,7 +351,7 @@ $(document).ready(function(){
       target: '#outputImage',
       url: '/php/edit_images.php',
       beforeSubmit: function () {
-    	  $("img#outputImage").hide();
+    	  $("#outputImage img").hide();
         $("div#progressDivId").css("display", "block");
         var percentValue = '0%';
 
@@ -369,7 +369,7 @@ $(document).ready(function(){
             percentText = Math.round(x * 100 / percentComplete);
             $("#percent").text(percentText + "%");
             if(percentText == "100") {
-        	   	$("img#outputImage").show();
+        	   	$("#outputImage img").show();
             }
           }
         });

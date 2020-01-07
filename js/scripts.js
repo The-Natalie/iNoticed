@@ -380,7 +380,7 @@ $(document).ready(function(){
   	        
       complete: function (xhr) {
         if (xhr.responseText && xhr.responseText != "error") {
-      	  $(".error").html(xhr.responseText);
+      	   $("#outputImage").html("<br />" + xhr.responseText);
         } else{  
          	$(".error").html("<div class='error'>Problem in uploading file.</div>");
         	$("#progressBar").stop();

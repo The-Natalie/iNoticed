@@ -351,7 +351,7 @@ $(document).ready(function(){
       target: '#outputImage',
       url: '/php/edit_images.php',
       beforeSubmit: function () {
-    	  $("div#outputImage").hide();
+    	  $("#outputImage").hide();
         $("#progressDivId").css("display", "block");
         var percentValue = '0%';
 
@@ -369,7 +369,7 @@ $(document).ready(function(){
             percentText = Math.round(x * 100 / percentComplete);
             $("#percent").text(percentText + "%");
             if(percentText == "100") {
-        	   	$("div#outputImage").show();
+        	   	$("#outputImage").show();
             }
           }
         });
@@ -380,7 +380,7 @@ $(document).ready(function(){
   	        
       complete: function (xhr) {
         if (xhr.responseText && xhr.responseText != "error") {
-      	   $("div#outputImage").html(xhr.responseText);
+      	   $("#outputImage").html(xhr.responseText);
         } else{  
          	$(".error").html("<div class='error'>Problem in uploading file.</div>");
         	$("#progressBar").stop();
@@ -388,6 +388,17 @@ $(document).ready(function(){
       }
     });
   });
+
+
+    // $('#submitButton').click(function () {
+  //   $('#uploadForm').ajaxForm({
+  //     target: '#outputImage',
+  //     url: '/php/edit_images.php',
+  //     beforeSubmit: function () {
+  //   	  $("#outputImage").hide();
+
+
+
   //end of image posting
 
 	//Hide main image upload button and show the browse and submit button

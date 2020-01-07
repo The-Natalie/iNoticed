@@ -126,3 +126,42 @@ if (isset($_POST['btnSubmit'])) {
 mysqli_stmt_close($stmt);
 mysqli_close($con);
 ?>
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>iNoticed | Dating</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css"> 
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"> 
+  </head>
+  <body id="loggedin">
+
+    <div class="nav-light dating-signed-in-nav">
+    </div>
+
+    <div class="content">
+      <h2>Add/Edit Image Results</h2>
+      <div>
+        <p><?php echo $param2; ?></p>
+        <p><?php echo $param1; ?></p>
+        <p><?php echo $param; ?></p>
+        <br />
+        <a href="/php/profile.php"><button class="edit-button" type="button">View my profile  <i class="fas fa-address-card"></i></button></a>
+        <br />
+        <a href="/php/edit_profile.php"><button class="edit-button" type="button">Edit my profile  <i class="far fa-edit"></i></button></a>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/scripts.js"></script>
+  </body>
+</html>

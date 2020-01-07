@@ -352,7 +352,7 @@ $(document).ready(function(){
       url: '/php/edit_images.php',
       beforeSubmit: function () {
     	  $("div#outputImage").hide();
-        $("div#progressDivId").css("display", "block");
+        $("div#progressDivId").css("display", "inline-block");
         var percentValue = '0%';
 
         $('#progressBar').width(percentValue);
@@ -380,7 +380,7 @@ $(document).ready(function(){
   	        
       complete: function (xhr) {
         if (xhr.responseText && xhr.responseText != "error") {
-      	   $("#outputImage").html("<br />" + xhr.responseText);
+      	   $("#outputImage").html("<br />" + xhr.responseText + "<br />");
         } else{  
          	$(".error").html("<div class='error'>Problem in uploading file.</div>");
         	$("#progressBar").stop();

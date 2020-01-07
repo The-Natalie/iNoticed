@@ -254,7 +254,7 @@ $stmt->close();
 			            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
 			            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 				        </form>
-		  					<div style="width: 100%;">
+		  					<div style="width: 100%; text-align: center;">
 			  					<div class='progress' id="progressDivId">
 			        			<div class='progress-bar' id='progressBar'></div>
 			        			<div class='percent' id='percent'>0%</div>
@@ -290,7 +290,7 @@ $stmt->close();
 						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
 						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
-							        <div style="width: 100%;">
+							        <div style="width: 100%; text-align: center;">
 						  					<div class='progress' id="progressDivId">
 						        			<div class='progress-bar' id='progressBar'></div>
 						        			<div class='percent' id='percent'>0%</div>
@@ -320,7 +320,7 @@ $stmt->close();
 						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
 						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
-					  					<div style="width: 100%;">
+					  					<div style="width: 100%; text-align: center;">
 						  					<div class='progress' id="progressDivId">
 						        			<div class='progress-bar' id='progressBar'></div>
 						        			<div class='percent' id='percent'>0%</div>
@@ -350,7 +350,7 @@ $stmt->close();
 						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
 						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
-					  					<div style="width: 100%;">
+					  					<div style="width: 100%; text-align: center;">
 						  					<div class='progress' id="progressDivId">
 						        			<div class='progress-bar' id='progressBar'></div>
 						        			<div class='percent' id='percent'>0%</div>
@@ -382,7 +382,7 @@ $stmt->close();
 						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
 						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
-					  					<div style="width: 100%;">
+					  					<div style="width: 100%; text-align: center;">
 						  					<div class='progress' id="progressDivId">
 						        			<div class='progress-bar' id='progressBar'></div>
 						        			<div class='percent' id='percent'>0%</div>
@@ -412,7 +412,7 @@ $stmt->close();
 						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
 						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
-					  					<div style="width: 100%;">
+					  					<div style="width: 100%; text-align: center;">
 						  					<div class='progress' id="progressDivId">
 						        			<div class='progress-bar' id='progressBar'></div>
 						        			<div class='percent' id='percent'>0%</div>
@@ -442,7 +442,7 @@ $stmt->close();
 						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
 						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
-					  					<div style="width: 100%;">
+					  					<div style="width: 100%; text-align: center;">
 						  					<div class='progress' id="progressDivId">
 						        			<div class='progress-bar' id='progressBar'></div>
 						        			<div class='percent' id='percent'>0%</div>
@@ -474,7 +474,7 @@ $stmt->close();
 						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
 						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
-					  					<div style="width: 100%;">
+					  					<div style="width: 100%; text-align: center;">
 						  					<div class='progress' id="progressDivId">
 						        			<div class='progress-bar' id='progressBar'></div>
 						        			<div class='percent' id='percent'>0%</div>
@@ -504,7 +504,7 @@ $stmt->close();
 						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
 						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
-					  					<div style="width: 100%;">
+					  					<div style="width: 100%; text-align: center;">
 						  					<div class='progress' id="progressDivId">
 						        			<div class='progress-bar' id='progressBar'></div>
 						        			<div class='percent' id='percent'>0%</div>

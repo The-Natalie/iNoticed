@@ -260,9 +260,7 @@ $stmt->close();
 		  					</div>
 		  					<div style="height: 10px;"></div>
 		  					<div class="error"></div>
-		  					<div id='outputImage'>
-		  						<img src="/php/<?php echo $image_main; ?>">
-		  					</div>
+		  					<div id='outputImage'></div>
 	  					</div>
 						</div>
 					</div>	
@@ -296,9 +294,7 @@ $stmt->close();
 					  					</div>
 					  					<div style="height: 10px;"></div>
 					  					<div class="error"></div>
-					  					<div id='outputImage'>
-					  						<img src="/php/<?php echo $image1; ?>">
-					  					</div>
+					  					<div id='outputImage'></div>
 				  					</div>
 									</div>
 					    	</td>
@@ -326,9 +322,7 @@ $stmt->close();
 					  					</div>
 					  					<div style="height: 10px;"></div>
 					  					<div class="error"></div>
-					  					<div id='outputImage'>
-					  						<img src="/php/<?php echo $image2; ?>">
-					  					</div>
+					  					<div id='outputImage'></div>
 				  					</div>
 									</div>
 					    	</td>
@@ -356,9 +350,7 @@ $stmt->close();
 					  					</div>
 					  					<div style="height: 10px;"></div>
 					  					<div class="error"></div>
-					  					<div id='outputImage'>
-					  						<img src="/php/<?php echo $image3; ?>">
-					  					</div>
+					  					<div id='outputImage'></div>
 				  					</div>
 									</div>
 					    	</td>
@@ -388,9 +380,7 @@ $stmt->close();
 					  					</div>
 					  					<div style="height: 10px;"></div>
 					  					<div class="error"></div>
-					  					<div id='outputImage'>
-					  						<img src="/php/<?php echo $image4; ?>">
-					  					</div>
+					  					<div id='outputImage'></div>
 				  					</div>
 									</div>
 					    	</td>
@@ -418,9 +408,7 @@ $stmt->close();
 					  					</div>
 					  					<div style="height: 10px;"></div>
 					  					<div class="error"></div>
-					  					<div id='outputImage'>
-					  						<img src="/php/<?php echo $image5; ?>">
-					  					</div>
+					  					<div id='outputImage'></div>
 				  					</div>
 									</div>
 					    	</td>
@@ -448,9 +436,7 @@ $stmt->close();
 					  					</div>
 					  					<div style="height: 10px;"></div>
 					  					<div class="error"></div>
-					  					<div id='outputImage'>
-					  						<img src="/php/<?php echo $image6; ?>">
-					  					</div>
+					  					<div id='outputImage'></div>
 				  					</div>
 									</div>
 					    	</td>
@@ -480,9 +466,7 @@ $stmt->close();
 					  					</div>
 					  					<div style="height: 10px;"></div>
 					  					<div class="error"></div>
-					  					<div id='outputImage'>
-					  						<img src="/php/<?php echo $image7; ?>">
-					  					</div>
+					  					<div id='outputImage'></div>
 				  					</div>
 									</div>
 					    	</td>
@@ -510,9 +494,7 @@ $stmt->close();
 					  					</div>
 					  					<div style="height: 10px;"></div>
 					  					<div class="error"></div>
-					  					<div id='outputImage'>
-					  						<img src="/php/<?php echo $image8; ?>">
-					  					</div>
+					  					<div id='outputImage'></div>
 				  					</div>
 									</div>
 					    	</td>

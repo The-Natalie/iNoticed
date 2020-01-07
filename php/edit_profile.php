@@ -251,7 +251,7 @@ $stmt->close();
 				        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 				        	<input type="hidden" name="img_value" value="image_main"/>
 				        	Select image to upload:
-			            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" /> <br>
+			            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required/> <br>
 			            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 				        </form>
 		  					<div class='progress' id="progressDivId">
@@ -285,7 +285,7 @@ $stmt->close();
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image1"/>
 							        	Select image to upload:
-						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" /> <br>
+						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
 						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
 					  					<div class='progress' id="progressDivId">
@@ -313,7 +313,7 @@ $stmt->close();
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image2"/>
 							        	Select image to upload:
-						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" /> <br>
+						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
 						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
 					  					<div class='progress' id="progressDivId">
@@ -341,7 +341,7 @@ $stmt->close();
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image3"/>
 							        	Select image to upload:
-						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" /> <br>
+						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
 						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
 					  					<div class='progress' id="progressDivId">
@@ -371,7 +371,7 @@ $stmt->close();
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image4"/>
 							        	Select image to upload:
-						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" /> <br>
+						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
 						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
 					  					<div class='progress' id="progressDivId">
@@ -399,7 +399,7 @@ $stmt->close();
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image5"/>
 							        	Select image to upload:
-						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" /> <br>
+						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
 						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
 					  					<div class='progress' id="progressDivId">
@@ -427,7 +427,7 @@ $stmt->close();
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image6"/>
 							        	Select image to upload:
-						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" /> <br>
+						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
 						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
 					  					<div class='progress' id="progressDivId">
@@ -457,7 +457,7 @@ $stmt->close();
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image7"/>
 							        	Select image to upload:
-						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" /> <br>
+						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
 						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
 					  					<div class='progress' id="progressDivId">
@@ -485,7 +485,7 @@ $stmt->close();
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image8"/>
 							        	Select image to upload:
-						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" /> <br>
+						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
 						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
 					  					<div class='progress' id="progressDivId">

@@ -343,13 +343,6 @@ $(document).ready(function(){
     }
  
   });
-
-  if($("#uploadImage").get(0).files.length === 0) {
-   	$(".error").html("<div class='error'>Choose a file to upload.</div>");
-    return false; 
-    }
-
-
 	//end of image check
 
 	//image posting
@@ -359,6 +352,10 @@ $(document).ready(function(){
       url: '/php/edit_images.php',
       beforeSubmit: function () {
     	  $("#outputImage").hide();
+  	   	if($("#uploadImage").val() == "") {
+			   	$(".error").html("<div class='error'>Choose a file to upload.</div>");
+          return false; 
+        }
         $("#progressDivId").css("display", "block");
         var percentValue = '0%';
 

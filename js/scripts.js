@@ -346,8 +346,7 @@ $(document).ready(function(){
 	//end of image check
 
 	//image posting
-  $('#submitButton').click(function (e) {
-  	e.preventDefault();
+  $('#submitButton').click(function () {
     $('#uploadForm').ajaxForm({
       target: '#outputImage',
       url: '/php/edit_images.php',
@@ -381,7 +380,7 @@ $(document).ready(function(){
   	        
       complete: function (xhr) {
         if (xhr.responseText && xhr.responseText != "error") {
-      	   $("#outputImage").html("<br />" + xhr.responseText);
+      	   $("div#outputImage").html(xhr.responseText);
         } else{  
          	$(".error").html("<div class='error'>Problem in uploading file.</div>");
         	$("#progressBar").stop();

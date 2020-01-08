@@ -346,7 +346,8 @@ $(document).ready(function(){
 	//end of image check
 
 	//image posting
-  $('#submitButton').click(function () {
+  $('#submitButton').click(function (e) {
+  	e.preventDefault();
     $('#uploadForm').ajaxForm({
       target: '#outputImage',
       url: '/php/edit_images.php',

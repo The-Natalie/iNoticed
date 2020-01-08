@@ -247,20 +247,20 @@ $stmt->close();
 							<p>Upload main profile image:</p>
 							<p>(Max image size is 2MB)</p>				    
 					    <div class="form-container">
-				        <form action="" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+				        <form action="" id="uploadForm-main" name="frmupload" method="post" enctype="multipart/form-data">
 				        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 				        	<input type="hidden" name="img_value" value="image_main"/>
 				        	Select image to upload:
 			            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required/> <br>
-			            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
+			            <input id="submitButton-main" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 				        </form>
-		  					<div class='progress' id="progressDivId">
-		        			<div class='progress-bar' id='progressBar'></div>
-		        			<div class='percent' id='percent'>0%</div>
+		  					<div class='progress' id="progressDivId-main">
+		        			<div class='progress-bar' id='progressBar-main'></div>
+		        			<div class='percent' id='percent-main'>0%</div>
 		  					</div>
 		  					<div style="height: 10px;"></div>
-		  					<div class="error"></div>
-		  					<div id='outputImage'></div>
+		  					<div class="error-main error"></div>
+		  					<div id='outputImage-main'></div>
 	  					</div>
 						</div>
 					</div>	

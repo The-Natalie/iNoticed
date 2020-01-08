@@ -561,14 +561,6 @@ div.profile-info p {
 	font-size: 1em;
 }
 
-/*.param {
-	display: none;
-}*/
-
-/*#outputImage {
-    display: none;
-}*/
-
 .progress {
 /*    display: none;
 */    position: relative;
@@ -606,7 +598,7 @@ div.profile-info p {
 	color: red;
 }
 
-#outputImage img {
+#outputImage-main img {
 	max-width: 200px;
 }
 
@@ -622,7 +614,7 @@ div.profile-info p {
 	display: none;
 }
 
-#progressDivId {
+#progressDivId-main {
 	display: none;
 }
 

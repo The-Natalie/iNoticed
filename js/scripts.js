@@ -345,31 +345,31 @@ $(document).ready(function(){
   });
 	//end of image check
 
-	//image posting
-  $('#submitButton').click(function () {
-    $('#uploadForm').ajaxForm({
-      target: '#outputImage',
+	//main image posting
+  $('#submitButton-main').click(function () {
+    $('#uploadForm-main').ajaxForm({
+      target: '#outputImage-main',
       url: '/php/edit_images.php',
       beforeSubmit: function () {
-    	  $("#outputImage").hide();
-        $("#progressDivId").css("display", "block");
+    	  $("#outputImage-main").hide();
+        $("#progressDivId-main").css("display", "block");
         var percentValue = '0%';
 
-        $('#progressBar').width(percentValue);
-        $('#percent').html(percentValue);
+        $('#progressBar-main').width(percentValue);
+        $('#percent-main').html(percentValue);
       },
       uploadProgress: function (event, position, total, percentComplete) {
 	      var percentValue = percentComplete + '%';
-	      $("#progressBar").animate({
+	      $("#progressBar-main").animate({
 	          width: '' + percentValue + ''
 	      }, {
           // duration: 5000,
           easing: "linear",
           step: function (x) {
             percentText = Math.round(x * 100 / percentComplete);
-            $("#percent").text(percentText + "%");
+            $("#percent-main").text(percentText + "%");
             if(percentText == "100") {
-        	   	$("#outputImage").show();
+        	   	$("#outputImage.main").show();
             }
           }
         });
@@ -380,10 +380,10 @@ $(document).ready(function(){
   	        
       complete: function (xhr) {
         if (xhr.responseText && xhr.responseText != "error") {
-      	   $("#outputImage").html(xhr.responseText);
+      	   $("#outputImage-main").html(xhr.responseText);
         } else{  
-         	$(".error").html("<div class='error'>Problem in uploading file.</div>");
-        	$("#progressBar").stop();
+         	$(".error-main").html("<div class='error'>Problem in uploading file.</div>");
+        	$("#progressBar-main").stop();
         }
       }
     });

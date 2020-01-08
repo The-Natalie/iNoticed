@@ -35,7 +35,7 @@ if (isset($_POST['btnSubmit'])) {
     echo "error";
   }
   if (move_uploaded_file($_FILES["uploadImage"]["tmp_name"], $folderPath . $username . "_" . $_FILES["uploadImage"]["name"])) {
-    // echo '<img src="' . $folderPath . "" . $username . "_" . $_FILES["uploadImage"]["name"] . '">';
+    echo '<img src="' . $folderPath . "" . $username . "_" . $_FILES["uploadImage"]["name"] . '">';
           // Processing form data when form is submitted
       if(isset($_POST["id"]) && !empty($_POST["id"])){
         // Get hidden input value
@@ -130,7 +130,7 @@ mysqli_close($con);
 
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -164,4 +164,4 @@ mysqli_close($con);
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/js/scripts.js"></script>
   </body>
-</html>
+</html> -->

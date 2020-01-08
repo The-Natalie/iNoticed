@@ -35,7 +35,7 @@ if (isset($_POST['btnSubmit'])) {
     echo "error";
   }
   if (move_uploaded_file($_FILES["uploadImage"]["tmp_name"], $folderPath . $username . "_" . $_FILES["uploadImage"]["name"])) {
-    echo '<img src="' . $folderPath . "" . $username . "_" . $_FILES["uploadImage"]["name"] . '">';
+    echo '<img src="' . $folderPath . "" . $username . "_" . $_FILES["uploadImage"]["name"] . '"><br />';
           // Processing form data when form is submitted
       if(isset($_POST["id"]) && !empty($_POST["id"])){
         // Get hidden input value

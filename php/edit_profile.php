@@ -247,7 +247,7 @@ $stmt->close();
 							<p>Upload main profile image:</p>
 							<p>(Max image size is 2MB)</p>				    
 					    <div class="form-container">
-				        <form action="/php/edit_images.php" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+				        <form action="" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
 				        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 				        	<input type="hidden" name="img_value" value="image_main"/>
 				        	Select image to upload:
@@ -281,7 +281,7 @@ $stmt->close();
 									<div id="upload-img1">
 										<p>Upload:</p>
 								    <div class="form-container">
-							        <form action="/php/edit_images.php" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+							        <form action="" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image1"/>
 							        	Select image to upload:
@@ -309,7 +309,7 @@ $stmt->close();
 									<div id="upload-img2">
 										<p>Upload:</p>
 								    <div class="form-container">
-							        <form action="/php/edit_images.php" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+							        <form action="" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image2"/>
 							        	Select image to upload:
@@ -337,7 +337,7 @@ $stmt->close();
 									<div id="upload-img3">
 										<p>Upload:</p>
 								    <div class="form-container">
-							        <form action="/php/edit_images.php" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+							        <form action="" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image3"/>
 							        	Select image to upload:
@@ -367,7 +367,7 @@ $stmt->close();
 									<div id="upload-img4">
 										<p>Upload:</p>
 								    <div class="form-container">
-							        <form action="/php/edit_images.php" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+							        <form action="" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image4"/>
 							        	Select image to upload:
@@ -395,7 +395,7 @@ $stmt->close();
 									<div id="upload-img5">
 										<p>Upload:</p>
 								    <div class="form-container">
-							        <form action="/php/edit_images.php" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+							        <form action="" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image5"/>
 							        	Select image to upload:
@@ -423,7 +423,7 @@ $stmt->close();
 									<div id="upload-img6">
 										<p>Upload:</p>
 								    <div class="form-container">
-							        <form action="/php/edit_images.php" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+							        <form action="" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image6"/>
 							        	Select image to upload:
@@ -453,7 +453,7 @@ $stmt->close();
 									<div id="upload-img7">
 										<p>Upload:</p>
 								    <div class="form-container">
-							        <form action="/php/edit_images.php" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+							        <form action="" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image7"/>
 							        	Select image to upload:
@@ -481,7 +481,7 @@ $stmt->close();
 									<div id="upload-img8">
 										<p>Upload:</p>
 								    <div class="form-container">
-							        <form action="/php/edit_images.php" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+							        <form action="" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image8"/>
 							        	Select image to upload:

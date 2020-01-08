@@ -352,7 +352,7 @@ $(document).ready(function(){
       url: '/php/edit_images.php',
       beforeSubmit: function () {
     	  $("#outputImage-main").hide();
-        $("#progressDivId-main").css("display", "block");
+        $("#progressDivId-main").css("display", "inline-block");
         var percentValue = '0%';
 
         $('#progressBar-main').width(percentValue);

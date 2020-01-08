@@ -631,7 +631,7 @@ div.profile-info p {
 }
 
 .form-container {
-	width: 100%;
+	max-width: 300px;
 }
 
 #upload-main-img, #upload-img1, #upload-img2, #upload-img3, #upload-img4, #upload-img5, #upload-img6, #upload-img7, #upload-img8 {

@@ -351,8 +351,8 @@ $(document).ready(function(){
       target: '#outputImage',
       url: '/php/edit_images.php',
       beforeSubmit: function () {
-    	  $("#outputImage").hide();
-        $("#progressDivId").css("display", "block");
+    	  $("div#outputImage").hide();
+        $("div#progressDivId").css("display", "block");
         var percentValue = '0%';
 
         $('#progressBar').width(percentValue);
@@ -369,7 +369,7 @@ $(document).ready(function(){
             percentText = Math.round(x * 100 / percentComplete);
             $("#percent").text(percentText + "%");
             if(percentText == "100") {
-        	   	$("#outputImage").show();
+        	   	$("div#outputImage").show();
             }
           }
         });
@@ -380,7 +380,7 @@ $(document).ready(function(){
   	        
       complete: function (xhr) {
         if (xhr.responseText && xhr.responseText != "error") {
-      	   $("#outputImage").html(xhr.responseText);
+      	  $(".error").html(xhr.responseText);
         } else{  
          	$(".error").html("<div class='error'>Problem in uploading file.</div>");
         	$("#progressBar").stop();
@@ -388,61 +388,57 @@ $(document).ready(function(){
       }
     });
   });
-
-
-
-
   //end of image posting
 
-	//Hide main image upload button and show the browse and submit button
+	//Hide main image upload div
 	$('button.upload-main-img').click(function(e) {
 		$("#upload-main-img").css({"display": "block"});
 		$('button.upload-main-img').css({"display": "none"});
 	});
 
-	//Hide image1 upload button and show the browse and submit button
+	//Hide image1 upload div
 	$('button.upload-img1').click(function(e) {
 		$("#upload-img1").css({"display": "block"});
 		$('button.upload-img1').css({"display": "none"});
 	});
 
-	//Hide image2 upload button and show the browse and submit button
+	//Hide image2 upload div
 	$('button.upload-img2').click(function(e) {
 		$("#upload-img2").css({"display": "block"});
 		$('button.upload-img2').css({"display": "none"});
 	});
 
-	//Hide image3 upload button and show the browse and submit button
+	//Hide image3 upload div
 	$('button.upload-img3').click(function(e) {
 		$("#upload-img3").css({"display": "block"});
 		$('button.upload-img3').css({"display": "none"});
 	});
 
-	//Hide image4 upload button and show the browse and submit button
+	//Hide image4 upload div
 	$('button.upload-img4').click(function(e) {
 		$("#upload-img4").css({"display": "block"});
 		$('button.upload-img4').css({"display": "none"});
 	});
 
-	//Hide image5 upload button and show the browse and submit button
+	//Hide image5 upload div
 	$('button.upload-img5').click(function(e) {
 		$("#upload-img5").css({"display": "block"});
 		$('button.upload-img5').css({"display": "none"});
 	});
 
-	//Hide image6 upload button and show the browse and submit button
+	//Hide image6 upload div
 	$('button.upload-img6').click(function(e) {
 		$("#upload-img6").css({"display": "block"});
 		$('button.upload-img6').css({"display": "none"});
 	});
 
-	//Hide image7 upload button and show the browse and submit button
+	//Hide image7 upload div
 	$('button.upload-img7').click(function(e) {
 		$("#upload-img7").css({"display": "block"});
 		$('button.upload-img7').css({"display": "none"});
 	});
 
-	//Hide image8 upload button and show the browse and submit button
+	//Hide image8 upload div
 	$('button.upload-img8').click(function(e) {
 		$("#upload-img8").css({"display": "block"});
 		$('button.upload-img8').css({"display": "none"});

@@ -598,7 +598,7 @@ div.profile-info p {
 	color: red;
 }
 
-#outputImage-main img {
+#outputImage-main img, #outputImage-1 img, #outputImage-2 img, #outputImage-3 img, #outputImage-4 img, #outputImage-5 img, #outputImage-6 img, #outputImage-7 img, #outputImage-8 img {
 	max-width: 200px;
 }
 
@@ -614,7 +614,7 @@ div.profile-info p {
 	display: none;
 }
 
-#progressDivId-main {
+#progressDivId-main, #progressDivId-1, #progressDivId-2, #progressDivId-3, #progressDivId-4, #progressDivId-5, #progressDivId-6, #progressDivId-7, #progressDivId-8 {
 	display: none;
 }
 

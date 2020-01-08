@@ -389,64 +389,432 @@ $(document).ready(function(){
     });
   });
 
-
-
-
-  //end of image posting
-
-	//Hide main image upload button and show the browse and submit button
+	//Hide upload button and show the browse and submit button
 	$('button.upload-main-img').click(function(e) {
 		$("#upload-main-img").css({"display": "block"});
 		$('button.upload-main-img').css({"display": "none"});
 	});
 
-	//Hide image1 upload button and show the browse and submit button
+  //end of main image
+
+	
+
+	//image1 posting
+  $('#submitButton-1').click(function () {
+    $('#uploadForm-1').ajaxForm({
+      target: '#outputImage-1',
+      url: '/php/edit_images.php',
+      beforeSubmit: function () {
+    	  $("#outputImage-1").hide();
+        $("#progressDivId-1").css("display", "inline-block");
+        var percentValue = '0%';
+
+        $('#progressBar-1').width(percentValue);
+        $('#percent-1').html(percentValue);
+      },
+      uploadProgress: function (event, position, total, percentComplete) {
+	      var percentValue = percentComplete + '%';
+	      $("#progressBar-1").animate({
+	          width: '' + percentValue + ''
+	      }, {
+          // duration: 5000,
+          easing: "linear",
+          step: function (x) {
+            percentText = Math.round(x * 100 / percentComplete);
+            $("#percent-1").text(percentText + "%");
+            if(percentText == "100") {
+        	   	$("#outputImage-1").show();
+            }
+          }
+        });
+      },
+      error: function (response, status, e) {
+        alert('Oops something went wrong.');
+      },
+  	        
+      complete: function (xhr) {
+        if (xhr.responseText && xhr.responseText != "error") {
+      	   $("#outputImage-1").html(xhr.responseText);
+        } else{  
+         	$(".error-1").html("<div class='error'>Problem in uploading file.</div>");
+        	$("#progressBar-1").stop();
+        }
+      }
+    });
+  });
+
+	//Hide upload button and show the browse and submit button
 	$('button.upload-img1').click(function(e) {
 		$("#upload-img1").css({"display": "block"});
 		$('button.upload-img1').css({"display": "none"});
 	});
+  //end of image1
+
+
+
+	//image2 posting
+  $('#submitButton-2').click(function () {
+    $('#uploadForm-2').ajaxForm({
+      target: '#outputImage-2',
+      url: '/php/edit_images.php',
+      beforeSubmit: function () {
+    	  $("#outputImage-2").hide();
+        $("#progressDivId-2").css("display", "inline-block");
+        var percentValue = '0%';
+
+        $('#progressBar-2').width(percentValue);
+        $('#percent-2').html(percentValue);
+      },
+      uploadProgress: function (event, position, total, percentComplete) {
+	      var percentValue = percentComplete + '%';
+	      $("#progressBar-2").animate({
+	          width: '' + percentValue + ''
+	      }, {
+          // duration: 5000,
+          easing: "linear",
+          step: function (x) {
+            percentText = Math.round(x * 100 / percentComplete);
+            $("#percent-2").text(percentText + "%");
+            if(percentText == "100") {
+        	   	$("#outputImage-2").show();
+            }
+          }
+        });
+      },
+      error: function (response, status, e) {
+        alert('Oops something went wrong.');
+      },
+  	        
+      complete: function (xhr) {
+        if (xhr.responseText && xhr.responseText != "error") {
+      	   $("#outputImage-2").html(xhr.responseText);
+        } else{  
+         	$(".error-2").html("<div class='error'>Problem in uploading file.</div>");
+        	$("#progressBar-2").stop();
+        }
+      }
+    });
+  });
 
 	//Hide image2 upload button and show the browse and submit button
 	$('button.upload-img2').click(function(e) {
 		$("#upload-img2").css({"display": "block"});
 		$('button.upload-img2').css({"display": "none"});
 	});
+	//end of image2
+
+
+
+	//image3 posting
+  $('#submitButton-3').click(function () {
+    $('#uploadForm-3').ajaxForm({
+      target: '#outputImage-3',
+      url: '/php/edit_images.php',
+      beforeSubmit: function () {
+    	  $("#outputImage-3").hide();
+        $("#progressDivId-3").css("display", "inline-block");
+        var percentValue = '0%';
+
+        $('#progressBar-3').width(percentValue);
+        $('#percent-3').html(percentValue);
+      },
+      uploadProgress: function (event, position, total, percentComplete) {
+	      var percentValue = percentComplete + '%';
+	      $("#progressBar-3").animate({
+	          width: '' + percentValue + ''
+	      }, {
+          // duration: 5000,
+          easing: "linear",
+          step: function (x) {
+            percentText = Math.round(x * 100 / percentComplete);
+            $("#percent-3").text(percentText + "%");
+            if(percentText == "100") {
+        	   	$("#outputImage-3").show();
+            }
+          }
+        });
+      },
+      error: function (response, status, e) {
+        alert('Oops something went wrong.');
+      },
+  	        
+      complete: function (xhr) {
+        if (xhr.responseText && xhr.responseText != "error") {
+      	   $("#outputImage-3").html(xhr.responseText);
+        } else{  
+         	$(".error-3").html("<div class='error'>Problem in uploading file.</div>");
+        	$("#progressBar-3").stop();
+        }
+      }
+    });
+  });
 
 	//Hide image3 upload button and show the browse and submit button
 	$('button.upload-img3').click(function(e) {
 		$("#upload-img3").css({"display": "block"});
 		$('button.upload-img3').css({"display": "none"});
 	});
+  //end of image3
+
+
+	//image4 posting
+  $('#submitButton-4').click(function () {
+    $('#uploadForm-4').ajaxForm({
+      target: '#outputImage-4',
+      url: '/php/edit_images.php',
+      beforeSubmit: function () {
+    	  $("#outputImage-4").hide();
+        $("#progressDivId-4").css("display", "inline-block");
+        var percentValue = '0%';
+
+        $('#progressBar-4').width(percentValue);
+        $('#percent-4').html(percentValue);
+      },
+      uploadProgress: function (event, position, total, percentComplete) {
+	      var percentValue = percentComplete + '%';
+	      $("#progressBar-4").animate({
+	          width: '' + percentValue + ''
+	      }, {
+          // duration: 5000,
+          easing: "linear",
+          step: function (x) {
+            percentText = Math.round(x * 100 / percentComplete);
+            $("#percent-4").text(percentText + "%");
+            if(percentText == "100") {
+        	   	$("#outputImage-4").show();
+            }
+          }
+        });
+      },
+      error: function (response, status, e) {
+        alert('Oops something went wrong.');
+      },
+  	        
+      complete: function (xhr) {
+        if (xhr.responseText && xhr.responseText != "error") {
+      	   $("#outputImage-4").html(xhr.responseText);
+        } else{  
+         	$(".error-4").html("<div class='error'>Problem in uploading file.</div>");
+        	$("#progressBar-4").stop();
+        }
+      }
+    });
+  });
 
 	//Hide image4 upload button and show the browse and submit button
 	$('button.upload-img4').click(function(e) {
 		$("#upload-img4").css({"display": "block"});
 		$('button.upload-img4').css({"display": "none"});
 	});
+  //end of image4
+
+
+	//image5 posting
+  $('#submitButton-5').click(function () {
+    $('#uploadForm-5').ajaxForm({
+      target: '#outputImage-5',
+      url: '/php/edit_images.php',
+      beforeSubmit: function () {
+    	  $("#outputImage-5").hide();
+        $("#progressDivId-5").css("display", "inline-block");
+        var percentValue = '0%';
+
+        $('#progressBar-5').width(percentValue);
+        $('#percent-5').html(percentValue);
+      },
+      uploadProgress: function (event, position, total, percentComplete) {
+	      var percentValue = percentComplete + '%';
+	      $("#progressBar-5").animate({
+	          width: '' + percentValue + ''
+	      }, {
+          // duration: 5000,
+          easing: "linear",
+          step: function (x) {
+            percentText = Math.round(x * 100 / percentComplete);
+            $("#percent-5").text(percentText + "%");
+            if(percentText == "100") {
+        	   	$("#outputImage-5").show();
+            }
+          }
+        });
+      },
+      error: function (response, status, e) {
+        alert('Oops something went wrong.');
+      },
+  	        
+      complete: function (xhr) {
+        if (xhr.responseText && xhr.responseText != "error") {
+      	   $("#outputImage-5").html(xhr.responseText);
+        } else{  
+         	$(".error-5").html("<div class='error'>Problem in uploading file.</div>");
+        	$("#progressBar-5").stop();
+        }
+      }
+    });
+  });
 
 	//Hide image5 upload button and show the browse and submit button
 	$('button.upload-img5').click(function(e) {
 		$("#upload-img5").css({"display": "block"});
 		$('button.upload-img5').css({"display": "none"});
 	});
+  //end of image5
+
+
+	//image6 posting
+  $('#submitButton-6').click(function () {
+    $('#uploadForm-6').ajaxForm({
+      target: '#outputImage-6',
+      url: '/php/edit_images.php',
+      beforeSubmit: function () {
+    	  $("#outputImage-6").hide();
+        $("#progressDivId-6").css("display", "inline-block");
+        var percentValue = '0%';
+
+        $('#progressBar-6').width(percentValue);
+        $('#percent-6').html(percentValue);
+      },
+      uploadProgress: function (event, position, total, percentComplete) {
+	      var percentValue = percentComplete + '%';
+	      $("#progressBar-6").animate({
+	          width: '' + percentValue + ''
+	      }, {
+          // duration: 5000,
+          easing: "linear",
+          step: function (x) {
+            percentText = Math.round(x * 100 / percentComplete);
+            $("#percent-6").text(percentText + "%");
+            if(percentText == "100") {
+        	   	$("#outputImage-6").show();
+            }
+          }
+        });
+      },
+      error: function (response, status, e) {
+        alert('Oops something went wrong.');
+      },
+  	        
+      complete: function (xhr) {
+        if (xhr.responseText && xhr.responseText != "error") {
+      	   $("#outputImage-6").html(xhr.responseText);
+        } else{  
+         	$(".error-6").html("<div class='error'>Problem in uploading file.</div>");
+        	$("#progressBar-6").stop();
+        }
+      }
+    });
+  });
 
 	//Hide image6 upload button and show the browse and submit button
 	$('button.upload-img6').click(function(e) {
 		$("#upload-img6").css({"display": "block"});
 		$('button.upload-img6').css({"display": "none"});
 	});
+  //end of image6
+
+
+	//image7 posting
+  $('#submitButton-7').click(function () {
+    $('#uploadForm-7').ajaxForm({
+      target: '#outputImage-7',
+      url: '/php/edit_images.php',
+      beforeSubmit: function () {
+    	  $("#outputImage-7").hide();
+        $("#progressDivId-7").css("display", "inline-block");
+        var percentValue = '0%';
+
+        $('#progressBar-7').width(percentValue);
+        $('#percent-7').html(percentValue);
+      },
+      uploadProgress: function (event, position, total, percentComplete) {
+	      var percentValue = percentComplete + '%';
+	      $("#progressBar-7").animate({
+	          width: '' + percentValue + ''
+	      }, {
+          // duration: 5000,
+          easing: "linear",
+          step: function (x) {
+            percentText = Math.round(x * 100 / percentComplete);
+            $("#percent-7").text(percentText + "%");
+            if(percentText == "100") {
+        	   	$("#outputImage-7").show();
+            }
+          }
+        });
+      },
+      error: function (response, status, e) {
+        alert('Oops something went wrong.');
+      },
+  	        
+      complete: function (xhr) {
+        if (xhr.responseText && xhr.responseText != "error") {
+      	   $("#outputImage-7").html(xhr.responseText);
+        } else{  
+         	$(".error-7").html("<div class='error'>Problem in uploading file.</div>");
+        	$("#progressBar-7").stop();
+        }
+      }
+    });
+  });
 
 	//Hide image7 upload button and show the browse and submit button
 	$('button.upload-img7').click(function(e) {
 		$("#upload-img7").css({"display": "block"});
 		$('button.upload-img7').css({"display": "none"});
 	});
+  //end of image7
+
+
+	//image8 posting
+  $('#submitButton-8').click(function () {
+    $('#uploadForm-8').ajaxForm({
+      target: '#outputImage-8',
+      url: '/php/edit_images.php',
+      beforeSubmit: function () {
+    	  $("#outputImage-8").hide();
+        $("#progressDivId-8").css("display", "inline-block");
+        var percentValue = '0%';
+
+        $('#progressBar-8').width(percentValue);
+        $('#percent-8').html(percentValue);
+      },
+      uploadProgress: function (event, position, total, percentComplete) {
+	      var percentValue = percentComplete + '%';
+	      $("#progressBar-8").animate({
+	          width: '' + percentValue + ''
+	      }, {
+          // duration: 5000,
+          easing: "linear",
+          step: function (x) {
+            percentText = Math.round(x * 100 / percentComplete);
+            $("#percent-8").text(percentText + "%");
+            if(percentText == "100") {
+        	   	$("#outputImage-8").show();
+            }
+          }
+        });
+      },
+      error: function (response, status, e) {
+        alert('Oops something went wrong.');
+      },
+  	        
+      complete: function (xhr) {
+        if (xhr.responseText && xhr.responseText != "error") {
+      	   $("#outputImage-8").html(xhr.responseText);
+        } else{  
+         	$(".error-8").html("<div class='error'>Problem in uploading file.</div>");
+        	$("#progressBar-8").stop();
+        }
+      }
+    });
+  });
 
 	//Hide image8 upload button and show the browse and submit button
 	$('button.upload-img8').click(function(e) {
 		$("#upload-img8").css({"display": "block"});
 		$('button.upload-img8').css({"display": "none"});
 	});
+  //end of image8
 
 	//End of profile page images*************************************************************************************
 

@@ -282,20 +282,22 @@ $stmt->close();
 									<button class="edit-button delete-img1" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
 									<div id="upload-img1">
 								    <div class="form-container">
-							        <form action="" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+							        <form action="" id="uploadForm-1" name="frmupload" method="post" enctype="multipart/form-data">
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image1"/>
 							        	Select image to upload:
 						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required/> <br>
-						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
+						            <input id="submitButton-1" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
-					  					<div class='progress' id="progressDivId">
-					        			<div class='progress-bar' id='progressBar'></div>
-					        			<div class='percent' id='percent'>0%</div>
-					  					</div>
+							        <div style="width: 100%;">
+						  					<div class='progress' id="progressDivId-1">
+						        			<div class='progress-bar' id='progressBar-1'></div>
+						        			<div class='percent' id='percent-1'>0%</div>
+						  					</div>
+						  				</div>	
 					  					<div style="height: 10px;"></div>
-					  					<div class="error"></div>
-					  					<div id='outputImage'></div>
+					  					<div class="error-1 error"></div>
+					  					<div id='outputImage-1'></div>
 				  					</div>
 									</div>
 					    	</td>
@@ -307,22 +309,24 @@ $stmt->close();
 									<br/>
 									<button class="edit-button upload-img2" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img2" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-									<div id="upload-img2">
+									<div id="upload-img2">    
 								    <div class="form-container">
-							        <form action="" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+							        <form action="" id="uploadForm-2" name="frmupload" method="post" enctype="multipart/form-data">
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image2"/>
 							        	Select image to upload:
 						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required/> <br>
-						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
+						            <input id="submitButton-2" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
-					  					<div class='progress' id="progressDivId">
-					        			<div class='progress-bar' id='progressBar'></div>
-					        			<div class='percent' id='percent'>0%</div>
-					  					</div>
+							        <div style="width: 100%;">
+						  					<div class='progress' id="progressDivId-2">
+						        			<div class='progress-bar' id='progressBar-2'></div>
+						        			<div class='percent' id='percent-2'>0%</div>
+						  					</div>
+						  				</div>	
 					  					<div style="height: 10px;"></div>
-					  					<div class="error"></div>
-					  					<div id='outputImage'></div>
+					  					<div class="error-2 error"></div>
+					  					<div id='outputImage-2'></div>
 				  					</div>
 									</div>
 					    	</td>
@@ -334,22 +338,24 @@ $stmt->close();
 									<br/>
 									<button class="edit-button upload-img3" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img3" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-									<div id="upload-img3">
+									<div id="upload-img3">		    
 								    <div class="form-container">
-							        <form action="" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+							        <form action="" id="uploadForm-3" name="frmupload" method="post" enctype="multipart/form-data">
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image3"/>
 							        	Select image to upload:
 						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required/> <br>
-						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
+						            <input id="submitButton-3" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
-					  					<div class='progress' id="progressDivId">
-					        			<div class='progress-bar' id='progressBar'></div>
-					        			<div class='percent' id='percent'>0%</div>
-					  					</div>
+							        <div style="width: 100%;">
+						  					<div class='progress' id="progressDivId-3">
+						        			<div class='progress-bar' id='progressBar-3'></div>
+						        			<div class='percent' id='percent-3'>0%</div>
+						  					</div>
+						  				</div>	
 					  					<div style="height: 10px;"></div>
-					  					<div class="error"></div>
-					  					<div id='outputImage'></div>
+					  					<div class="error-3 error"></div>
+					  					<div id='outputImage-3'></div>
 				  					</div>
 									</div>
 					    	</td>
@@ -363,22 +369,24 @@ $stmt->close();
 									<br/>
 									<button class="edit-button upload-img4" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img4" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-									<div id="upload-img4">
+									<div id="upload-img4">   
 								    <div class="form-container">
-							        <form action="" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+							        <form action="" id="uploadForm-4" name="frmupload" method="post" enctype="multipart/form-data">
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image4"/>
 							        	Select image to upload:
 						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required/> <br>
-						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
+						            <input id="submitButton-4" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
-					  					<div class='progress' id="progressDivId">
-					        			<div class='progress-bar' id='progressBar'></div>
-					        			<div class='percent' id='percent'>0%</div>
-					  					</div>
+							        <div style="width: 100%;">
+						  					<div class='progress' id="progressDivId-4">
+						        			<div class='progress-bar' id='progressBar-4'></div>
+						        			<div class='percent' id='percent-4'>0%</div>
+						  					</div>
+						  				</div>	
 					  					<div style="height: 10px;"></div>
-					  					<div class="error"></div>
-					  					<div id='outputImage'></div>
+					  					<div class="error-4 error"></div>
+					  					<div id='outputImage-4'></div>
 				  					</div>
 									</div>
 					    	</td>
@@ -390,22 +398,24 @@ $stmt->close();
 									<br/>
 									<button class="edit-button upload-img5" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img5" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-									<div id="upload-img5">
+									<div id="upload-img5">	    
 								    <div class="form-container">
-							        <form action="" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+							        <form action="" id="uploadForm-5" name="frmupload" method="post" enctype="multipart/form-data">
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image5"/>
 							        	Select image to upload:
 						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required/> <br>
-						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
+						            <input id="submitButton-5" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
-					  					<div class='progress' id="progressDivId">
-					        			<div class='progress-bar' id='progressBar'></div>
-					        			<div class='percent' id='percent'>0%</div>
-					  					</div>
+							        <div style="width: 100%;">
+						  					<div class='progress' id="progressDivId-5">
+						        			<div class='progress-bar' id='progressBar-5'></div>
+						        			<div class='percent' id='percent-5'>0%</div>
+						  					</div>
+						  				</div>	
 					  					<div style="height: 10px;"></div>
-					  					<div class="error"></div>
-					  					<div id='outputImage'></div>
+					  					<div class="error-5 error"></div>
+					  					<div id='outputImage-5'></div>
 				  					</div>
 									</div>
 					    	</td>
@@ -417,22 +427,24 @@ $stmt->close();
 									<br/>
 									<button class="edit-button upload-img6" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img6" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-									<div id="upload-img6">
+									<div id="upload-img6">		    
 								    <div class="form-container">
-							        <form action="" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+							        <form action="" id="uploadForm-6" name="frmupload" method="post" enctype="multipart/form-data">
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image6"/>
 							        	Select image to upload:
 						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required/> <br>
-						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
+						            <input id="submitButton-6" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
-					  					<div class='progress' id="progressDivId">
-					        			<div class='progress-bar' id='progressBar'></div>
-					        			<div class='percent' id='percent'>0%</div>
-					  					</div>
+							        <div style="width: 100%;">
+						  					<div class='progress' id="progressDivId-6">
+						        			<div class='progress-bar' id='progressBar-6'></div>
+						        			<div class='percent' id='percent-6'>0%</div>
+						  					</div>
+						  				</div>	
 					  					<div style="height: 10px;"></div>
-					  					<div class="error"></div>
-					  					<div id='outputImage'></div>
+					  					<div class="error-6 error"></div>
+					  					<div id='outputImage-6'></div>
 				  					</div>
 									</div>
 					    	</td>
@@ -446,22 +458,24 @@ $stmt->close();
 									<br/>
 									<button class="edit-button upload-img7" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img7" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-									<div id="upload-img7">
+									<div id="upload-img7">		    
 								    <div class="form-container">
-							        <form action="" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+							        <form action="" id="uploadForm-7" name="frmupload" method="post" enctype="multipart/form-data">
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image7"/>
-							        	Select image to upload: &nbsp;
+							        	Select image to upload:
 						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required/> <br>
-						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
+						            <input id="submitButton-7" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
-					  					<div class='progress' id="progressDivId">
-					        			<div class='progress-bar' id='progressBar'></div>
-					        			<div class='percent' id='percent'>0%</div>
-					  					</div>
+							        <div style="width: 100%;">
+						  					<div class='progress' id="progressDivId-7">
+						        			<div class='progress-bar' id='progressBar-7'></div>
+						        			<div class='percent' id='percent-7'>0%</div>
+						  					</div>
+						  				</div>	
 					  					<div style="height: 10px;"></div>
-					  					<div class="error"></div>
-					  					<div id='outputImage'></div>
+					  					<div class="error-7 error"></div>
+					  					<div id='outputImage-7'></div>
 				  					</div>
 									</div>
 					    	</td>
@@ -473,22 +487,24 @@ $stmt->close();
 									<br/>
 									<button class="edit-button upload-img8" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img8" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-									<div id="upload-img8">
+									<div id="upload-img8">	    
 								    <div class="form-container">
-							        <form action="" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+							        <form action="" id="uploadForm-8" name="frmupload" method="post" enctype="multipart/form-data">
 							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 							        	<input type="hidden" name="img_value" value="image8"/>
-							        	Select image to upload: &nbsp;
+							        	Select image to upload:
 						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required/> <br>
-						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
+						            <input id="submitButton-8" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 							        </form>
-					  					<div class='progress' id="progressDivId">
-					        			<div class='progress-bar' id='progressBar'></div>
-					        			<div class='percent' id='percent'>0%</div>
-					  					</div>
+							        <div style="width: 100%;">
+						  					<div class='progress' id="progressDivId-8">
+						        			<div class='progress-bar' id='progressBar-8'></div>
+						        			<div class='percent' id='percent-8'>0%</div>
+						  					</div>
+						  				</div>	
 					  					<div style="height: 10px;"></div>
-					  					<div class="error"></div>
-					  					<div id='outputImage'></div>
+					  					<div class="error-8 error"></div>
+					  					<div id='outputImage-8'></div>
 				  					</div>
 									</div>
 					    	</td>

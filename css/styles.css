@@ -136,6 +136,10 @@ h3 {
 	font-style: italic;
 }
 
+h4 {
+	color: #4da534;
+}
+
 p/*, input.kindness-ps*/  {
 	font-size: 1.25em;
 	color: #262626;
@@ -606,10 +610,39 @@ div.profile-info p {
 	max-width: 200px;
 }
 
+.preview-images img, .image1, .image2, .image3, .image4, .image5, .image6, .image7, .image8 {
+	max-width: 200px;
+}
+
+.image_main {
+	max-height: 250px;
+}
+
 .percent {
 	display: none;
 }
 
 #progressDivId {
 	display: none;
+}
+
+.progress {
+	max-width: 280px;
+}
+
+.form-container {
+	max-width: 300px;
+}
+
+#upload-main-img, #upload-img1, #upload-img2, #upload-img3, #upload-img4, #upload-img5, #upload-img6, #upload-img7, #upload-img8 {
+	display: none;
+}
+
+.even-cols {
+	width: 33.33%;
+}
+
+#img-table table, th, td {
+  border: 3px solid #84FF84;
+  text-align: center;
 }

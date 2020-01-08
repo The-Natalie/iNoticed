@@ -57,9 +57,9 @@ if (isset($_POST['btnSubmit'])) {
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
               // Records updated successfully. 
-              echo "It has been posted sucessfully.";
+              echo "The image has been posted sucessfully.";
             } else { 
-              echo "It was NOT posted sucessfully. Please try again later. Or let dating@inoticed.org know the details of your problem.";
+              echo "The image was NOT posted sucessfully. Please try again later. Or let dating@inoticed.org know the details of your problem.";
                $is_error = "1";
                 }
             }

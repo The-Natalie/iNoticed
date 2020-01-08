@@ -254,10 +254,12 @@ $stmt->close();
 			            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required/> <br>
 			            <input id="submitButton-main" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 				        </form>
-		  					<div class='progress' id="progressDivId-main">
-		        			<div class='progress-bar' id='progressBar-main'></div>
-		        			<div class='percent' id='percent-main'>0%</div>
-		  					</div>
+				        <div style="width: 100%;">
+			  					<div class='progress' id="progressDivId-main">
+			        			<div class='progress-bar' id='progressBar-main'></div>
+			        			<div class='percent' id='percent-main'>0%</div>
+			  					</div>
+			  				</div>	
 		  					<div style="height: 10px;"></div>
 		  					<div class="error-main error"></div>
 		  					<div id='outputImage-main'></div>

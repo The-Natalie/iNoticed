@@ -369,7 +369,7 @@ $(document).ready(function(){
             percentText = Math.round(x * 100 / percentComplete);
             $("#percent-main").text(percentText + "%");
             if(percentText == "100") {
-        	   	$("#outputImage.main").show();
+        	   	$("#outputImage-main").show();
             }
           }
         });

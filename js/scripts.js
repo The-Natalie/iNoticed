@@ -308,51 +308,56 @@ $(document).ready(function(){
 
 
 	//Profile page images*************************************************************************************
-	//check that image is less than 2mb
+
+//check that image is less than 2mb
 	$('#uploadImage').on('change', function() {  
-    //The maximum size that the uploaded file can be.
-    var maxSizeMb = 2; 
-    //Get the file that has been selected by
-    //using JQuery's selector.
-    var file = $('#uploadImage')[0].files[0];
-
-    //Make sure that a file has been selected before
-    //attempting to get its size.
-    if(file !== undefined){
+        //The maximum size that the uploaded file can be.
+        var maxSizeMb = 2; 
+        //Get the file that has been selected by
+        //using JQuery's selector.
+        var file = $('#uploadImage')[0].files[0];
  
-      //Get the size of the input file.
-      var totalSize = file.size;
-
-      //Convert bytes into MB.
-      var totalSizeMb = totalSize  / Math.pow(1024,2);
-
-      //Check to see if it is too large.
-      if(totalSizeMb > maxSizeMb){
+        //Make sure that a file has been selected before
+        //attempting to get its size.
+        if(file !== undefined){
  
-        //Create an error message to show to the user.
-        var errorMsg = '<div class="error">File too large. Maximum file size is ' + maxSizeMb + 'MB. Selected file is ' + totalSizeMb.toFixed(2) + 'MB</div>';
-
-        //Show the error.
-		   	$(".error").html(errorMsg);
-		   	this.value = "";
-
-        //Return FALSE.
-        return false;
-    	}
-
-    }
+            //Get the size of the input file.
+            var totalSize = file.size;
  
-  });
-	//end of image check
+            //Convert bytes into MB.
+            var totalSizeMb = totalSize  / Math.pow(1024,2);
+ 
+            //Check to see if it is too large.
+            if(totalSizeMb > maxSizeMb){
+ 
+                //Create an error message to show to the user.
+                var errorMsg = '<div class="error">File too large. Maximum file size is ' + maxSizeMb + 'MB. Selected file is ' + totalSizeMb.toFixed(2) + 'MB</div>';
+ 
+                //Show the error.
+						   	$(".error").html(errorMsg);
+						   	this.value = "";
 
-	//image posting
+                //Return FALSE.
+                return false;
+            }
+ 
+        }
+ 
+    });
+
+// $('#uploadImage').on('change', function() { 
+//   if(this.files[0].size > 2097153) {
+//    	$("#outputImage").show();
+//    	$("#outputImage").html("<div class='error'>File is too big. Please upload a file that is 2mb or smaller.</div>");
+//    	this.value = "";
+//    	$("#progressBar").stop();
+//   }
+// });
+
   $('#submitButton').click(function () {
     $('#uploadForm').ajaxForm({
       target: '#outputImage',
       url: '/php/edit_images.php',
-      cache: false,
-			processData: false,
-			contentType: false,
       beforeSubmit: function () {
     	  $("#outputImage").hide();
   	   	if($("#uploadImage").val() == "") {
@@ -396,61 +401,10 @@ $(document).ready(function(){
       }
     });
   });
-  //end of image posting
 
-	//Hide main image upload div
-	$('button.upload-main-img').click(function(e) {
-		$("#upload-main-img").css({"display": "block"});
-		$('button.upload-main-img').css({"display": "none"});
-	});
 
-	//Hide image1 upload div
-	$('button.upload-img1').click(function(e) {
-		$("#upload-img1").css({"display": "block"});
-		$('button.upload-img1').css({"display": "none"});
-	});
 
-	//Hide image2 upload div
-	$('button.upload-img2').click(function(e) {
-		$("#upload-img2").css({"display": "block"});
-		$('button.upload-img2').css({"display": "none"});
-	});
-
-	//Hide image3 upload div
-	$('button.upload-img3').click(function(e) {
-		$("#upload-img3").css({"display": "block"});
-		$('button.upload-img3').css({"display": "none"});
-	});
-
-	//Hide image4 upload div
-	$('button.upload-img4').click(function(e) {
-		$("#upload-img4").css({"display": "block"});
-		$('button.upload-img4').css({"display": "none"});
-	});
-
-	//Hide image5 upload div
-	$('button.upload-img5').click(function(e) {
-		$("#upload-img5").css({"display": "block"});
-		$('button.upload-img5').css({"display": "none"});
-	});
-
-	//Hide image6 upload div
-	$('button.upload-img6').click(function(e) {
-		$("#upload-img6").css({"display": "block"});
-		$('button.upload-img6').css({"display": "none"});
-	});
-
-	//Hide image7 upload div
-	$('button.upload-img7').click(function(e) {
-		$("#upload-img7").css({"display": "block"});
-		$('button.upload-img7').css({"display": "none"});
-	});
-
-	//Hide image8 upload div
-	$('button.upload-img8').click(function(e) {
-		$("#upload-img8").css({"display": "block"});
-		$('button.upload-img8').css({"display": "none"});
-	});
+        
 
 	//End of profile page images*************************************************************************************
 

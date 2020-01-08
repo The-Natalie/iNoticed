@@ -17,11 +17,11 @@ if (mysqli_connect_errno()) {
 }
 
 //Get data from database
-$stmt = $con->prepare('SELECT id, first_name, age, gender, feet, inches, eyes, hair, smoke, drugs, transportation, intention, zip, city, state, profession, education, ethnicity, religion, marital_status, kids, want_kids, about_me, image_main, image1, image2, image3, image4, image5, image6, image7, image8 FROM accounts WHERE id = ?');
+$stmt = $con->prepare('SELECT id, first_name, age, gender, feet, inches, eyes, hair, smoke, drugs, transportation, intention, zip, city, state, profession, education, ethnicity, religion, marital_status, kids, want_kids, about_me FROM accounts WHERE id = ?');
 // In this case we can use the account ID to get the account info.
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
-$stmt->bind_result($id, $first_name, $age, $gender, $feet, $inches, $eyes, $hair, $smoke, $drugs, $transportation, $intention, $zip, $city, $state, $profession, $education, $ethnicity, $religion, $marital_status, $kids, $want_kids, $about_me, $image_main, $image1, $image2, $image3, $image4, $image5, $image6, $image7, $image8);
+$stmt->bind_result($id, $first_name, $age, $gender, $feet, $inches, $eyes, $hair, $smoke, $drugs, $transportation, $intention, $zip, $city, $state, $profession, $education, $ethnicity, $religion, $marital_status, $kids, $want_kids, $about_me);
 $stmt->fetch();
 $stmt->close();
 ?>
@@ -128,87 +128,7 @@ $stmt->close();
 		$("#want_kids option[value='" + want_kids + "']").attr('selected', 'selected'); 
 	}
 
-	var image_main = "<?=$image_main?>";   
-	var image1 = "<?=$image1?>";
-	var image2 = "<?=$image2?>";
-	var image3 = "<?=$image3?>";
-	var image4 = "<?=$image4?>";
-	var image5 = "<?=$image5?>";
-	var image6 = "<?=$image6?>";
-	var image7 = "<?=$image7?>";
-	var image8 = "<?=$image8?>";
 
-	if (image_main == null || image_main === "") {
-		$("img#upload-main-img").css({"display": "block", "max-width": "200px"});
-		$('button.delete-main-img').css({"display": "none"});
-		$('img.image_main').css({"display": "none"});
-	}	else {
-		$('button.upload-main-img').css({"display": "none"});
-	}
-
-	if (image1 == null || image1=== "") {
-		$("img#upload-img1").css({"display": "block", "max-width": "200px"});
-		$('button.delete-img1').css({"display": "none"});
-		$('img.image1').css({"display": "none"});
-	}	else {
-		$('button.upload-img1').css({"display": "none"});
-	}
-
-	if (image2 == null || image2=== "") {
-		$("img#upload-img2").css({"display": "block", "max-width": "200px"});
-		$('button.delete-img2').css({"display": "none"});
-		$('img.image2').css({"display": "none"});
-	}	else {
-		$('button.upload-img2').css({"display": "none"});
-	}
-
-	if (image3 == null || image3=== "") {
-		$("img#upload-img3").css({"display": "block", "max-width": "200px"});
-		$('button.delete-img3').css({"display": "none"});
-		$('img.image3').css({"display": "none"});
-	}	else {
-		$('button.upload-img3').css({"display": "none"});
-	}
-
-	if (image4 == null || image4=== "") {
-		$("img#upload-img4").css({"display": "block", "max-width": "200px"});
-		$('button.delete-img4').css({"display": "none"});
-		$('img.image4').css({"display": "none"});
-	}	else {
-		$('button.upload-img4').css({"display": "none"});
-	}
-
-	if (image5 == null || image5=== "") {
-		$("img#upload-img5").css({"display": "block", "max-width": "200px"});
-		$('button.delete-img5').css({"display": "none"});
-		$('img.image5').css({"display": "none"});
-	}	else {
-		$('button.upload-img5').css({"display": "none"});
-	}
-
-	if (image6 == null || image6=== "") {
-		$("img#upload-img6").css({"display": "block", "max-width": "200px"});
-		$('button.delete-img6').css({"display": "none"});
-		$('img.image6').css({"display": "none"});
-	}	else {
-		$('button.upload-img6').css({"display": "none"});
-	}
-
-	if (image7 == null || image7=== "") {
-		$("img#upload-img7").css({"display": "block", "max-width": "200px"});
-		$('button.delete-img7').css({"display": "none"});
-		$('img.image7').css({"display": "none"});
-	}	else {
-		$('button.upload-img7').css({"display": "none"});
-	}
-
-	if (image8 == null || image8=== "") {
-		$("img#upload-img8").css({"display": "block", "max-width": "200px"});
-		$('button.delete-img8').css({"display": "none"});
-		$('img.image8').css({"display": "none"});
-	}	else {
-		$('button.upload-img8').css({"display": "none"});
-	}
 
 });</script>
 
@@ -236,273 +156,80 @@ $stmt->close();
 					<a href="/php/profile.php"><button class="edit-button" type="button">View my profile  <i class="fas fa-address-card"></i></button></a>
 					<br />
 					<br />
-					<div class="main-img-div">
-						<h4>Main profile image</h4>
-						<img class="preview-images image_main" src="/php/<?php echo $image_main; ?>">
-						<br/>
-						<br/>
-						<button class="edit-button upload-main-img" type="button">Upload <i class="far fa-edit"></i></button>
-						<button class="edit-button delete-main-img" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-						<div id="upload-main-img">
-							<p>Upload main profile image:</p>
-							<p>(Max image size is 2MB)</p>				    
-					    <div class="form-container">
-				        <form  id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
-				        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
-				        	<input type="hidden" name="img_value" value="image_main"/>
-				        	Select image to upload:
-			            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required/> <br>
-			            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
-				        </form>
-		  					<div class='progress' id="progressDivId">
-		        			<div class='progress-bar' id='progressBar'></div>
-		        			<div class='percent' id='percent'>0%</div>
-		  					</div>
-		  					<div style="height: 10px;"></div>
-		  					<div class="error"></div>
-		  					<div id='outputImage'></div>
-	  					</div>
-						</div>
-					</div>	
+					<p>Upload main profile image:</p>
+					<p>(Max image size is 2MB)</p>
+					<form action="/php/edit_images.php" method="post" enctype="multipart/form-data">
+				    Select image to upload:
+				    <input type="file" name="fileToUpload" id="fileToUpload" >
+				    <input type="hidden" name="id" value="<?php echo $id; ?>"/>
+				    <input type="hidden" name="img_value" value="image_main"/>
+				    <input type="submit" value="Upload Image" name="submit">
+					</form>
+					<p>Delete</p>
 
 	        <br />      
-	 				<p style="margin-bottom: 0px;">Add/edit up to 8 additional images:</p>
-	 				<p>(Max image size is 2MB each)</p>		
-	 				<div id="img-table">
-	 					<table style="width:100%;">
-					  	<tr>
-					    	<td class="even-cols">
-					    		<h4>Image 1</h4>
-									<img class="preview-images image1" src="/php/<?php echo $image1; ?>">
-									<br />
-									<br />
-									<button class="edit-button upload-img1" type="button">Upload <i class="far fa-edit"></i></button>
-									<button class="edit-button delete-img1" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-									<div id="upload-img1">
-										<p>Upload:</p>
-								    <div class="form-container">
-							        <form  id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
-							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
-							        	<input type="hidden" name="img_value" value="image1"/>
-							        	Select image to upload:
-						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
-						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
-							        </form>
-					  					<div class='progress' id="progressDivId">
-					        			<div class='progress-bar' id='progressBar'></div>
-					        			<div class='percent' id='percent'>0%</div>
-					  					</div>
-					  					<div style="height: 10px;"></div>
-					  					<div class="error"></div>
-					  					<div id='outputImage'></div>
-				  					</div>
-									</div>
-					    	</td>
-
-					    	<td class="even-cols">
-					    		<h4>Image 2</h4>
-									<img class="preview-images image2" src="/php/<?php echo $image2; ?>">
-									<br />
-									<br />
-									<button class="edit-button upload-img2" type="button">Upload <i class="far fa-edit"></i></button>
-									<button class="edit-button delete-img2" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-									<div id="upload-img2">
-										<p>Upload:</p>
-								    <div class="form-container">
-							        <form  id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
-							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
-							        	<input type="hidden" name="img_value" value="image2"/>
-							        	Select image to upload:
-						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
-						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
-							        </form>
-					  					<div class='progress' id="progressDivId">
-					        			<div class='progress-bar' id='progressBar'></div>
-					        			<div class='percent' id='percent'>0%</div>
-					  					</div>
-					  					<div style="height: 10px;"></div>
-					  					<div class="error"></div>
-					  					<div id='outputImage'></div>
-				  					</div>
-									</div>
-					    	</td>
-					  	
-					    	<td class="even-cols">
-					    		<h4>Image 3</h4>
-									<img class="preview-images image3" src="/php/<?php echo $image3; ?>">
-									<br />
-									<br />
-									<button class="edit-button upload-img3" type="button">Upload <i class="far fa-edit"></i></button>
-									<button class="edit-button delete-img3" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-									<div id="upload-img3">
-										<p>Upload:</p>
-								    <div class="form-container">
-							        <form  id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
-							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
-							        	<input type="hidden" name="img_value" value="image3"/>
-							        	Select image to upload:
-						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
-						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
-							        </form>
-					  					<div class='progress' id="progressDivId">
-					        			<div class='progress-bar' id='progressBar'></div>
-					        			<div class='percent' id='percent'>0%</div>
-					  					</div>
-					  					<div style="height: 10px;"></div>
-					  					<div class="error"></div>
-					  					<div id='outputImage'></div>
-				  					</div>
-									</div>
-					    	</td>
-					    </tr>
-					    	
-					    <tr>
-					    	<td class="even-cols">
-					    		<h4>Image 4</h4>
-									<img class="preview-images image4" src="/php/<?php echo $image4; ?>">
-									<br />
-									<br />
-									<button class="edit-button upload-img4" type="button">Upload <i class="far fa-edit"></i></button>
-									<button class="edit-button delete-img4" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-									<div id="upload-img4">
-										<p>Upload:</p>
-								    <div class="form-container">
-							        <form  id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
-							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
-							        	<input type="hidden" name="img_value" value="image4"/>
-							        	Select image to upload:
-						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
-						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
-							        </form>
-					  					<div class='progress' id="progressDivId">
-					        			<div class='progress-bar' id='progressBar'></div>
-					        			<div class='percent' id='percent'>0%</div>
-					  					</div>
-					  					<div style="height: 10px;"></div>
-					  					<div class="error"></div>
-					  					<div id='outputImage'></div>
-				  					</div>
-									</div>
-					    	</td>
-					  	
-					    	<td class="even-cols">
-					    		<h4>Image 5</h4>
-									<img class="preview-images image5" src="/php/<?php echo $image5; ?>">
-									<br />
-									<br />
-									<button class="edit-button upload-img5" type="button">Upload <i class="far fa-edit"></i></button>
-									<button class="edit-button delete-img5" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-									<div id="upload-img5">
-										<p>Upload:</p>
-								    <div class="form-container">
-							        <form  id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
-							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
-							        	<input type="hidden" name="img_value" value="image5"/>
-							        	Select image to upload:
-						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
-						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
-							        </form>
-					  					<div class='progress' id="progressDivId">
-					        			<div class='progress-bar' id='progressBar'></div>
-					        			<div class='percent' id='percent'>0%</div>
-					  					</div>
-					  					<div style="height: 10px;"></div>
-					  					<div class="error"></div>
-					  					<div id='outputImage'></div>
-				  					</div>
-									</div>
-					    	</td>
-
-					    	<td class="even-cols">
-					    		<h4>Image 6</h4>
-									<img class="preview-images image6" src="/php/<?php echo $image6; ?>">
-									<br />
-									<br />
-									<button class="edit-button upload-img6" type="button">Upload <i class="far fa-edit"></i></button>
-									<button class="edit-button delete-img6" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-									<div id="upload-img6">
-										<p>Upload:</p>
-								    <div class="form-container">
-							        <form  id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
-							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
-							        	<input type="hidden" name="img_value" value="image6"/>
-							        	Select image to upload:
-						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
-						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
-							        </form>
-					  					<div class='progress' id="progressDivId">
-					        			<div class='progress-bar' id='progressBar'></div>
-					        			<div class='percent' id='percent'>0%</div>
-					  					</div>
-					  					<div style="height: 10px;"></div>
-					  					<div class="error"></div>
-					  					<div id='outputImage'></div>
-				  					</div>
-									</div>
-					    	</td>
-					  	</tr>
-
-					  	<tr>
-					    	<td class="even-cols">
-					    		<h4>Image 7</h4>
-									<img class="preview-images image7" src="/php/<?php echo $image7; ?>">
-									<br />
-									<br />
-									<button class="edit-button upload-img7" type="button">Upload <i class="far fa-edit"></i></button>
-									<button class="edit-button delete-img7" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-									<div id="upload-img7">
-										<p>Upload:</p>
-								    <div class="form-container">
-							        <form  id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
-							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
-							        	<input type="hidden" name="img_value" value="image7"/>
-							        	Select image to upload:
-						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
-						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
-							        </form>
-					  					<div class='progress' id="progressDivId">
-					        			<div class='progress-bar' id='progressBar'></div>
-					        			<div class='percent' id='percent'>0%</div>
-					  					</div>
-					  					<div style="height: 10px;"></div>
-					  					<div class="error"></div>
-					  					<div id='outputImage'></div>
-				  					</div>
-									</div>
-					    	</td>
-
-					    	<td class="even-cols">
-					    		<h4>Image 8</h4>
-									<img class="preview-images image8" src="/php/<?php echo $image8; ?>">
-									<br />
-									<br />
-									<button class="edit-button upload-img8" type="button">Upload <i class="far fa-edit"></i></button>
-									<button class="edit-button delete-img8" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-									<div id="upload-img8">
-										<p>Upload:</p>
-								    <div class="form-container">
-							        <form  id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
-							        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
-							        	<input type="hidden" name="img_value" value="image8"/>
-							        	Select image to upload:
-						            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required /> <br>
-						            <input id="submitButton" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
-							        </form>
-					  					<div class='progress' id="progressDivId">
-					        			<div class='progress-bar' id='progressBar'></div>
-					        			<div class='percent' id='percent'>0%</div>
-					  					</div>
-					  					<div style="height: 10px;"></div>
-					  					<div class="error"></div>
-					  					<div id='outputImage'></div>
-				  					</div>
-									</div>
-					    	</td>
-					  	</tr>
-						</table>	
-	 				</div>		    	
- 				</div>
-
+	 				<p>Add/edit up to 8 additional images:</p>
+	 				<table>
+	 					<tr>
+	 						<td>
+	 							<p>Image 1:</p>
+    						<div class="form-container">
+					        <form action="/php/edit_images.php" id="uploadForm" name="frmupload" method="post" enctype="multipart/form-data">
+					        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
+					        	<input type="hidden" name="img_value" value="image1"/>
+				            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" /> 
+				            <input id="submitButton" type="submit" name='btnSubmit' value="Submit Image"  />
+					        </form>
+        					<div class='progress' id="progressDivId">
+	            			<div class='progress-bar' id='progressBar'></div>
+	            			<div class='percent' id='percent'>0%</div>
+        					</div>
+        					<div style="height: 10px;"></div>
+        					<div class="error"></div>
+        					<div id='outputImage'></div>
+  							</div>
+								<p>Delete</p>
+	 						</td>
+	 						<td>
+	 							<p>Image 2:</p>
+								
+								<p>Delete</p>
+	 						</td>
+	 						<td>
+	 							<p>Image 3:</p>
+								
+								<p>Delete</p>
+	 						</td>
+	 						<td>
+	 							<p>Image 4:</p>
+								
+								<p>Delete</p>
+	 						</td>
+	 					</tr>
+	 					<tr>
+	 						<td>
+	 							<p>Image 5:</p>
+								
+								<p>Delete</p>
+	 						</td>
+	 						<td>
+	 							<p>Image 6:</p>
+								
+								<p>Delete</p>
+	 						</td>
+	 						<td>
+	 							<p>Image 7:</p>
+								
+								<p>Delete</p>
+	 						</td>
+	 						<td>
+	 							<p>Image 8:</p>
+								
+								<p>Delete</p>
+	 						</td>
+	 					</tr>
+	 				</table>
+	 			</div>
         <br />
         <br />
 				<p>Edit Profile:</p>

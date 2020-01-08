@@ -346,11 +346,13 @@ $(document).ready(function(){
 	//end of image check
 
 	//image posting
-  $('#submitButton').click(function (e) {
-  	e.preventDefault();
+  $('#submitButton').click(function () {
     $('#uploadForm').ajaxForm({
       target: '#outputImage',
       url: '/php/edit_images.php',
+      cache: false,
+			processData: false,
+			contentType: false,
       beforeSubmit: function () {
     	  $("#outputImage").hide();
   	   	if($("#uploadImage").val() == "") {

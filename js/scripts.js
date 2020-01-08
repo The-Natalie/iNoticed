@@ -390,13 +390,6 @@ $(document).ready(function(){
   });
 
 
-    // $('#submitButton').click(function () {
-  //   $('#uploadForm').ajaxForm({
-  //     target: '#outputImage',
-  //     url: '/php/edit_images.php',
-  //     beforeSubmit: function () {
-  //   	  $("#outputImage").hide();
-
 
 
   //end of image posting

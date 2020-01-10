@@ -23,6 +23,8 @@ $value = $_POST['value'];
 $image = "";
 $is_error = "";
 $path = "";
+$folderPath = "/php/";
+
 
 $stmt = $con->prepare("SELECT id, ".$value." FROM accounts WHERE id = ?");
 $stmt->bind_param('i', $_SESSION['id']);
@@ -31,6 +33,8 @@ $stmt->store_result();
 $stmt->bind_result($id, $path);
 $stmt->fetch();
  
+$path = $folderPath . $path;
+
 //remove file from server
  // Check file exist or not 
  if( file_exists($path) ){ 

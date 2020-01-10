@@ -18,12 +18,20 @@ if ( mysqli_connect_errno() ) {
   die ('Let dating@inoticed.org know the details of this error: Failed to connect to MySQL: ' . mysqli_connect_error());
 }    
 
+// Define variables and initialize with empty values
+$value = $_POST['value'];
+$image = "";
+$is_error = "";
+$path = "";
 
+$stmt = $con->prepare("SELECT id, ".$value." FROM accounts WHERE id = ?");
+$stmt->bind_param('i', $_SESSION['id']);
+$stmt->execute();
+$stmt->store_result();
+$stmt->bind_result($id, $path);
+$stmt->fetch();
+ 
 //remove file from server
-if(isset($_POST['path'])){
- $path = $_POST['path']; 
- $path = urlencode($path);
-
  // Check file exist or not 
  if( file_exists($path) ){ 
   // Remove file 
@@ -37,20 +45,7 @@ if(isset($_POST['path'])){
  } 
 }
 
-
-//update field to NULL
-$stmt = $con->prepare('SELECT id FROM accounts WHERE id = ?');
-$stmt->bind_param('i', $_SESSION['id']);
-$stmt->execute();
-$stmt->store_result();
-$stmt->bind_result($id);
-$stmt->fetch();
- 
-// Define variables and initialize with empty values
-$value = $_POST['value'];
-$image = "";
-$is_error = "";
-
+//update field to NULL:
 // Processing form data when form is submitted
 if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Get hidden input value

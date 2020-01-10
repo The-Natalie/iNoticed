@@ -396,11 +396,9 @@ $(document).ready(function(){
 	});
 
 	//Delete image
-  $('button.delete-main-img').click(function(){
-    var dataID = $(this).data('id');
- 
+  $('button.delete-main-img').click(function(){ 
     // Selecting image source
-    var imgElement_src = $( '.image_'+dataID ).attr("src");
+    var imgElement_src = $("img.preview-images.image_main").attr("src");
 
     //Selecting image value and user ID for mysql column
     var imgValue = $('#value-main-image').val();

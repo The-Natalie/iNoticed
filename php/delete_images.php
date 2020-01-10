@@ -22,6 +22,7 @@ if ( mysqli_connect_errno() ) {
 //remove file from server
 if(isset($_POST['path'])){
  $path = $_POST['path']; 
+ $path = urldecode($path);
 
  // Check file exist or not 
  if( file_exists($path) ){ 

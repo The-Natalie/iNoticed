@@ -33,10 +33,10 @@ $stmt->store_result();
 $stmt->bind_result($id, $path);
 $stmt->fetch();
  
-$path = $folderPath . $path;
+$path1 = "https://inoticed.org/php/uploads/testing_curved_arrow.jpg";
 
 //remove file from server
-unlink("/php/uploads/testing_curved_arrow.jpg"); 
+unlink($path1); 
  //  // Set status 
  //  echo 1; 
  // }else{ 
@@ -73,6 +73,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 if(mysqli_stmt_execute($stmt)){
                     // Records updated successfully. 
                     echo "Your image has been removed sucessfully";
+                    echo $path1;
                 } else { 
                     echo "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
                     $is_error = "1";

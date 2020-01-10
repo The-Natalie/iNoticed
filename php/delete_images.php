@@ -46,6 +46,7 @@ $path = $folderPath . $path;
  }else{ 
   // Set status 
   echo 0; 
+  echo $path;
  } 
 
 //update field to NULL:

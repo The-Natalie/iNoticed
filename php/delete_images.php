@@ -36,7 +36,7 @@ $stmt->fetch();
 $path = $folderPath . $path;
 
 //remove file from server
-unlink($path); 
+unlink("/php/uploads/testing_curved_arrow.jpg"); 
  //  // Set status 
  //  echo 1; 
  // }else{ 

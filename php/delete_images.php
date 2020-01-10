@@ -36,11 +36,7 @@ $stmt->fetch();
 $path = $folderPath . $path;
 
 //remove file from server
- // Check file exist or not 
- if( file_exists($path) ){ 
-  // Remove file 
-  unlink($path); 
-
+ if( unlink($path)){ 
   // Set status 
   echo 1; 
  }else{ 

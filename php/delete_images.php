@@ -55,7 +55,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Get hidden input value
     $id = $_POST["id"];
         
-        // Validate email (I removed validation because html does it, but left the other info)
+        // Validate image (I removed validation because html does it, but left the other info)
         $input_image = NULL;
         $image = $input_image;
         
@@ -76,9 +76,9 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 // Attempt to execute the prepared statement
                 if(mysqli_stmt_execute($stmt)){
                     // Records updated successfully. 
-                    $echo "Your email has been updated sucessfully.";
+                    echo "Your image has been removed sucessfully";
                 } else { 
-                    $echo "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
+                    echo "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
                     $is_error = "1";
                 }
             }
@@ -120,7 +120,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     
                     // Retrieve individual field value
-                    $email = $row["email"];
+                    $image = $row[$value];
                 } else{
                     // URL doesn't contain valid id. 
                 echo "Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.";                    

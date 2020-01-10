@@ -36,14 +36,14 @@ $stmt->fetch();
 $path = $folderPath . $path;
 
 //remove file from server
- if( unlink($path)){ 
-  // Set status 
-  echo 1; 
- }else{ 
-  // Set status 
-  echo 0; 
-  echo $path;
- } 
+unlink($path); 
+ //  // Set status 
+ //  echo 1; 
+ // }else{ 
+ //  // Set status 
+ //  echo 0; 
+ //  echo $path;
+ // } 
 
 //update field to NULL:
 // Processing form data when form is submitted

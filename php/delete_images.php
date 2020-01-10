@@ -47,7 +47,6 @@ $path = $folderPath . $path;
   // Set status 
   echo 0; 
  } 
-}
 
 //update field to NULL:
 // Processing form data when form is submitted

@@ -395,6 +395,39 @@ $(document).ready(function(){
 		$('button.upload-main-img').css({"display": "none"});
 	});
 
+	//Delete image
+  $('button.delete-main-img').click(function(){
+    var dataID = $(this).data('id');
+ 
+    // Selecting image source
+    var imgElement_src = $( '.image_'+dataID ).attr("src");
+
+    //Selecting image value and user ID for mysql column
+    var imgValue = $('#value-main-image').val();
+    var userID = $('#user-id').val();
+ 
+    // AJAX request
+    $.ajax({
+      url: '/php/delete_images.php',
+      type: 'post',
+      data: {path: imgElement_src,
+      			value: imgValue,
+      			id: userID},
+      success: function(response){
+ 
+        // When removed: add message, show upload button, and hide delete button, main image and the upload div 
+        if(response == 1){
+          $("#delete-response-main").html("<p>This image has been deleted successfully</p>");
+          $("button.upload-main-img").css({"display": "block"});
+					$('button.delete-main-img').css({"display": "none"});
+					$('img.image_main').css({"display": "none"});
+					$("#upload-main-img").css({"display": "none"});
+
+        }
+      }
+    });
+  });
+
   //end of main image
 
 	
@@ -766,6 +799,7 @@ $(document).ready(function(){
 
 
 	//image8 posting
+
   $('#submitButton-8').click(function () {
     $('#uploadForm-8').ajaxForm({
       target: '#outputImage-8',
@@ -817,6 +851,7 @@ $(document).ready(function(){
   //end of image8
 
 	//End of profile page images*************************************************************************************
+
 
 
 

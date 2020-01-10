@@ -242,14 +242,15 @@ $stmt->close();
 						<br/>
 						<br/>
 						<button class="edit-button upload-main-img" type="button">Upload <i class="far fa-edit"></i></button>
-						<button class="edit-button delete-main-img" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
+						<button class="edit-button delete-main-img" data-id='main' type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
+						<div id="delete-response-main"></div>
 						<div id="upload-main-img">
 							<p>Upload main profile image:</p>
 							<p>(Max image size is 2MB)</p>				    
 					    <div class="form-container">
 				        <form action="" id="uploadForm-main" name="frmupload" method="post" enctype="multipart/form-data">
-				        	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
-				        	<input type="hidden" name="img_value" value="image_main"/>
+				        	<input id="user-id" type="hidden" name="id" value="<?php echo $id; ?>"/>
+				        	<input id="value-main-image" type="hidden" name="img_value" value="image_main"/>
 				        	Select image to upload:
 			            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required/> <br>
 			            <input id="submitButton-main" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />

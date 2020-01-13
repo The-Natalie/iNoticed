@@ -25,6 +25,7 @@ $is_error = "";
 $path = "";
 $folderPath = "/php/";
 
+unlink("php/uploads/testing_curved_arrow.jpg");
 
 $stmt = $con->prepare("SELECT id, ".$value." FROM accounts WHERE id = ?");
 $stmt->bind_param('i', $_SESSION['id']);
@@ -33,21 +34,21 @@ $stmt->store_result();
 $stmt->bind_result($id, $path);
 $stmt->fetch();
  
-$path = $folderPath . $path;
+// $path = $folderPath . $path;
 
-//remove file from server
- // Check file exist or not 
- if( file_exists($path) ){ 
-  // Remove file 
-  unlink($path); 
+// //remove file from server
+//  // Check file exist or not 
+//  if( file_exists($path) ){ 
+//   // Remove file 
+//   unlink($path); 
 
-  // Set status 
-  echo 1; 
- }else{ 
-  // Set status 
-  echo 0; 
-  echo $path;
- } 
+//   // Set status 
+//   echo 1; 
+//  }else{ 
+//   // Set status 
+//   echo 0; 
+//   echo $path;
+//  } 
 
 //update field to NULL:
 // Processing form data when form is submitted

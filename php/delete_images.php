@@ -33,17 +33,21 @@ $stmt->store_result();
 $stmt->bind_result($id, $path);
 $stmt->fetch();
  
-$path1 = "https://inoticed.org/php/uploads/testing_curved_arrow.jpg";
+$path = $folderPath . $path;
 
 //remove file from server
-unlink($path1); 
- //  // Set status 
- //  echo 1; 
- // }else{ 
- //  // Set status 
- //  echo 0; 
- //  echo $path;
- // } 
+ // Check file exist or not 
+ if( file_exists($path) ){ 
+  // Remove file 
+  unlink($path); 
+
+  // Set status 
+  echo 1; 
+ }else{ 
+  // Set status 
+  echo 0; 
+  echo $path;
+ } 
 
 //update field to NULL:
 // Processing form data when form is submitted
@@ -73,7 +77,6 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 if(mysqli_stmt_execute($stmt)){
                     // Records updated successfully. 
                     echo "Your image has been removed sucessfully";
-                    echo $path1;
                 } else { 
                     echo "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
                     $is_error = "1";

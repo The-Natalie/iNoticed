@@ -52,106 +52,106 @@ $stmt->fetch();
 
 //update field to NULL:
 // Processing form data when form is submitted
-if(isset($_POST["id"]) && !empty($_POST["id"])){
-    // Get hidden input value
-    $id = $_POST["id"];
+// if(isset($_POST["id"]) && !empty($_POST["id"])){
+//     // Get hidden input value
+//     $id = $_POST["id"];
         
-        // Validate image (I removed validation because html does it, but left the other info)
-        $input_image = NULL;
-        $image = $input_image;
+//         // Validate image (I removed validation because html does it, but left the other info)
+//         $input_image = NULL;
+//         $image = $input_image;
         
 
-        // Check input errors before inserting in database
-        if(empty($is_error)){
-            // Prepare an update statement
-            $sql = "UPDATE accounts SET ".$value."=? WHERE id=?";
+//         // Check input errors before inserting in database
+//         if(empty($is_error)){
+//             // Prepare an update statement
+//             $sql = "UPDATE accounts SET ".$value."=? WHERE id=?";
              
-            if($stmt = mysqli_prepare($con, $sql)){
-                // Bind variables to the prepared statement as parameters
-                mysqli_stmt_bind_param($stmt, "si", $param_image, $param_id);
+//             if($stmt = mysqli_prepare($con, $sql)){
+//                 // Bind variables to the prepared statement as parameters
+//                 mysqli_stmt_bind_param($stmt, "si", $param_image, $param_id);
                 
-                // Set parameters
-                $param_image = $image;
-                $param_id = $id;
+//                 // Set parameters
+//                 $param_image = $image;
+//                 $param_id = $id;
                 
-                // Attempt to execute the prepared statement
-                if(mysqli_stmt_execute($stmt)){
-                    // Records updated successfully. 
-                    echo "Your image has been removed sucessfully";
-                } else { 
-                    echo "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
-                    $is_error = "1";
-                }
-            }
+//                 // Attempt to execute the prepared statement
+//                 if(mysqli_stmt_execute($stmt)){
+//                     // Records updated successfully. 
+//                     echo "Your image has been removed sucessfully";
+//                 } else { 
+//                     echo "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
+//                     $is_error = "1";
+//                 }
+//             }
              
-            // Close statement
-            mysqli_stmt_close($stmt);
-        }
+//             // Close statement
+//             mysqli_stmt_close($stmt);
+//         }
         
-        // Close connection
-        mysqli_close($con);
+//         // Close connection
+//         mysqli_close($con);
 
-    // } else {
-    //      header("location: /php/account_settings.php");
-    //     echo "Your current password is incorrect.";
-    // }
+//     // } else {
+//     //      header("location: /php/account_settings.php");
+//     //     echo "Your current password is incorrect.";
+//     // }
 
-} else{
-    // Check existence of id parameter before processing further
-    if(isset($_GET["id"])){
-        // Get URL parameter
-        $id =  trim($_GET["id"]);
+// } else{
+//     // Check existence of id parameter before processing further
+//     if(isset($_GET["id"])){
+//         // Get URL parameter
+//         $id =  trim($_GET["id"]);
         
-        // Prepare a select statement
-        $sql = "SELECT * FROM accounts WHERE id = ?";
-        if($stmt = mysqli_prepare($con, $sql)){
-            // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "i", $param_id);
+//         // Prepare a select statement
+//         $sql = "SELECT * FROM accounts WHERE id = ?";
+//         if($stmt = mysqli_prepare($con, $sql)){
+//             // Bind variables to the prepared statement as parameters
+//             mysqli_stmt_bind_param($stmt, "i", $param_id);
             
-            // Set parameters
-            $param_id = $id;
+//             // Set parameters
+//             $param_id = $id;
             
-            // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
-                $result = mysqli_stmt_get_result($stmt);
+//             // Attempt to execute the prepared statement
+//             if(mysqli_stmt_execute($stmt)){
+//                 $result = mysqli_stmt_get_result($stmt);
     
-                if(mysqli_num_rows($result) == 1){
-                    /* Fetch result row as an associative array. Since the result set
-                    contains only one row, we don't need to use while loop */
-                    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+//                 if(mysqli_num_rows($result) == 1){
+//                     /* Fetch result row as an associative array. Since the result set
+//                     contains only one row, we don't need to use while loop */
+//                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     
-                    // Retrieve individual field value
-                    $image = $row[$value];
-                } else{
-                    // URL doesn't contain valid id. 
-                echo "Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.";                    
-                $is_error = "1";
-                exit();
-                }
+//                     // Retrieve individual field value
+//                     $image = $row[$value];
+//                 } else{
+//                     // URL doesn't contain valid id. 
+//                 echo "Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.";                    
+//                 $is_error = "1";
+//                 exit();
+//                 }
                 
-            } else{
-                echo "Oops! Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
-                $is_error = "1";
-            }
-        }
+//             } else{
+//                 echo "Oops! Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
+//                 $is_error = "1";
+//             }
+//         }
         
-        // Close statement
-        mysqli_stmt_close($stmt);
+//         // Close statement
+//         mysqli_stmt_close($stmt);
         
-        // Close connection
-        mysqli_close($con);
-    }  else{
-        // URL doesn't contain id parameter. 
-        echo "URL doesn't contain id parameter. Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.";
-        $is_error = "1";
-    }
-}
-// Close statement
-        mysqli_stmt_close($stmt);
+//         // Close connection
+//         mysqli_close($con);
+//     }  else{
+//         // URL doesn't contain id parameter. 
+//         echo "URL doesn't contain id parameter. Please sign out, sign back in, and try again. Or let dating@inoticed.org know the details of your problem.";
+//         $is_error = "1";
+//     }
+// }
+// // Close statement
+//         mysqli_stmt_close($stmt);
         
-        // Close connection
-        mysqli_close($con);
+//         // Close connection
+//         mysqli_close($con);
 
-die;
+// die;
 
 ?>

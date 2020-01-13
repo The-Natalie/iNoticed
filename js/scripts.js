@@ -414,13 +414,14 @@ $(document).ready(function(){
       success: function(response){
  
         // When removed: add message, show upload button, and hide delete button, main image and the upload div 
-        if(response == 1){
+        if(response == 0){
           $("#delete-response-main").html("<p>This image has been deleted successfully</p>");
           $("button.upload-main-img").css({"display": "block"});
 					$('button.delete-main-img').css({"display": "none"});
 					$('img.image_main').css({"display": "none"});
 					$("#upload-main-img").css({"display": "none"});
-
+        }	else {
+        	$("#delete-response-main").html("<p>There was an error deleting this image. Please try again later. Or let dating@inoticed.org know the details of your problem.</p>");
         }
       }
     });

@@ -25,7 +25,7 @@ $is_error = "";
 $path = "";
 $folderPath = "/php/";
 
-unlink("php/uploads/testing_curved_arrow.jpg");
+unlink("/php/uploads/testing_curved_arrow.jpg");
 
 $stmt = $con->prepare("SELECT id, ".$value." FROM accounts WHERE id = ?");
 $stmt->bind_param('i', $_SESSION['id']);

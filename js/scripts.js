@@ -414,7 +414,7 @@ $(document).ready(function(){
       success: function(response){
  
         // When removed: add message, show upload button, and hide delete button, main image and the upload div 
-        if(response == 0){
+        if(response == 1){
           $("#delete-response-main").html("<p>This image has been deleted successfully</p>");
           $("button.upload-main-img").css({"display": "block"});
 					$('button.delete-main-img').css({"display": "none"});

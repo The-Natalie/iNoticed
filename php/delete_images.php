@@ -76,9 +76,9 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 // Attempt to execute the prepared statement
                 if(mysqli_stmt_execute($stmt)){
                     // Records updated successfully. 
-                    echo "Your image has been removed sucessfully";
+                    // echo "Your image has been removed sucessfully";
                 } else { 
-                    echo "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
+                    // echo "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
                     $is_error = "1";
                 }
             }

@@ -25,7 +25,7 @@ $is_error = "";
 $path = "";
 $folderPath = "/php/";
 
-unlink("/php/uploads/testing_curved_arrow.jpg");
+unlink($_SERVER['DOCUMENT_ROOT'] . "/php/uploads/testing_curved_arrow.jpg");
 
 $stmt = $con->prepare("SELECT id, ".$value." FROM accounts WHERE id = ?");
 $stmt->bind_param('i', $_SESSION['id']);
@@ -39,6 +39,8 @@ $stmt->fetch();
 // //remove file from server
 //  // Check file exist or not 
 //  if( file_exists($path) ){ 
+//  //Make permissions executable
+//  chmod($path, 0777);
 //   // Remove file 
 //   unlink($path); 
 

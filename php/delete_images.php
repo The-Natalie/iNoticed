@@ -49,8 +49,8 @@ if( file_exists($path) ){
   echo 0; 
  } 
 
-update field to NULL:
-Processing form data when form is submitted
+// update field to NULL:
+// Processing form data when form is submitted
 if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Get hidden input value
     $id = $_POST["id"];

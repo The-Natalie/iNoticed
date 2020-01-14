@@ -397,9 +397,6 @@ $(document).ready(function(){
 
 	//Delete image
   $('button.delete-main-img').click(function(){ 
-    // Selecting image source
-    var imgElement_src = $("img.image_main").attr("src");
-
     //Selecting image value and user ID for mysql column
     var imgValue = $('#value-main-image').val();
     var userID = $('#user-id').val();
@@ -408,15 +405,14 @@ $(document).ready(function(){
     $.ajax({
       url: '/php/delete_images.php',
       type: 'post',
-      data: {path: imgElement_src,
-      			value: imgValue,
+      data: {value: imgValue,
       			id: userID},
       success: function(response){
  
         // When removed: add message, show upload button, and hide delete button, main image and the upload div 
         if(response == 1){
           $("#delete-response-main").html("<p>This image has been deleted successfully</p>");
-          $("button.upload-main-img").css({"display": "block"});
+          $("button.upload-main-img").css({"display": "block", "margin": "auto"});
 					$('button.delete-main-img').css({"display": "none"});
 					$('img.image_main').css({"display": "none"});
 					$("#upload-main-img").css({"display": "none"});
@@ -480,6 +476,34 @@ $(document).ready(function(){
 		$("#upload-img1").css({"display": "block"});
 		$('button.upload-img1').css({"display": "none"});
 	});
+
+	//Delete image
+  $('button.delete-img1').click(function(){ 
+    //Selecting image value and user ID for mysql column
+    var imgValue = $('#value-img1').val();
+    var userID = $('#user-id').val();
+ 
+    // AJAX request
+    $.ajax({
+      url: '/php/delete_images.php',
+      type: 'post',
+      data: {value: imgValue,
+      			id: userID},
+      success: function(response){
+ 
+        // When removed: add message, show upload button, and hide delete button, main image and the upload div 
+        if(response == 1){
+          $("#delete-response-img1").html("<p>This image has been deleted successfully</p>");
+          $("button.upload-img1").css({"display": "block", "margin": "auto"});
+					$('button.delete-img1').css({"display": "none"});
+					$('img.image1').css({"display": "none"});
+					$("#upload-img1").css({"display": "none"});
+        }	else {
+        	$("#delete-response-img1").html("<p>There was an error deleting this image. Please try again later. Or let dating@inoticed.org know the details of your problem.</p>");
+        }
+      }
+    });
+  });
   //end of image1
 
 
@@ -533,6 +557,34 @@ $(document).ready(function(){
 		$("#upload-img2").css({"display": "block"});
 		$('button.upload-img2').css({"display": "none"});
 	});
+
+	//Delete image
+  $('button.delete-img2').click(function(){ 
+    //Selecting image value and user ID for mysql column
+    var imgValue = $('#value-img2').val();
+    var userID = $('#user-id').val();
+ 
+    // AJAX request
+    $.ajax({
+      url: '/php/delete_images.php',
+      type: 'post',
+      data: {value: imgValue,
+      			id: userID},
+      success: function(response){
+ 
+        // When removed: add message, show upload button, and hide delete button, main image and the upload div 
+        if(response == 1){
+          $("#delete-response-img2").html("<p>This image has been deleted successfully</p>");
+          $("button.upload-img2").css({"display": "block", "margin": "auto"});
+					$('button.delete-img2').css({"display": "none"});
+					$('img.image2').css({"display": "none"});
+					$("#upload-img2").css({"display": "none"});
+        }	else {
+        	$("#delete-response-img2").html("<p>There was an error deleting this image. Please try again later. Or let dating@inoticed.org know the details of your problem.</p>");
+        }
+      }
+    });
+  });
 	//end of image2
 
 
@@ -586,6 +638,34 @@ $(document).ready(function(){
 		$("#upload-img3").css({"display": "block"});
 		$('button.upload-img3').css({"display": "none"});
 	});
+
+	//Delete image
+  $('button.delete-img3').click(function(){ 
+    //Selecting image value and user ID for mysql column
+    var imgValue = $('#value-img3').val();
+    var userID = $('#user-id').val();
+ 
+    // AJAX request
+    $.ajax({
+      url: '/php/delete_images.php',
+      type: 'post',
+      data: {value: imgValue,
+      			id: userID},
+      success: function(response){
+ 
+        // When removed: add message, show upload button, and hide delete button, main image and the upload div 
+        if(response == 1){
+          $("#delete-response-img3").html("<p>This image has been deleted successfully</p>");
+          $("button.upload-img3").css({"display": "block", "margin": "auto"});
+					$('button.delete-img3').css({"display": "none"});
+					$('img.image3').css({"display": "none"});
+					$("#upload-img3").css({"display": "none"});
+        }	else {
+        	$("#delete-response-img3").html("<p>There was an error deleting this image. Please try again later. Or let dating@inoticed.org know the details of your problem.</p>");
+        }
+      }
+    });
+  });
   //end of image3
 
 
@@ -638,6 +718,34 @@ $(document).ready(function(){
 		$("#upload-img4").css({"display": "block"});
 		$('button.upload-img4').css({"display": "none"});
 	});
+
+	//Delete image
+  $('button.delete-img4').click(function(){ 
+    //Selecting image value and user ID for mysql column
+    var imgValue = $('#value-img4').val();
+    var userID = $('#user-id').val();
+ 
+    // AJAX request
+    $.ajax({
+      url: '/php/delete_images.php',
+      type: 'post',
+      data: {value: imgValue,
+      			id: userID},
+      success: function(response){
+ 
+        // When removed: add message, show upload button, and hide delete button, main image and the upload div 
+        if(response == 1){
+          $("#delete-response-img4").html("<p>This image has been deleted successfully</p>");
+          $("button.upload-img4").css({"display": "block", "margin": "auto"});
+					$('button.delete-img4').css({"display": "none"});
+					$('img.image4').css({"display": "none"});
+					$("#upload-img4").css({"display": "none"});
+        }	else {
+        	$("#delete-response-img4").html("<p>There was an error deleting this image. Please try again later. Or let dating@inoticed.org know the details of your problem.</p>");
+        }
+      }
+    });
+  });
   //end of image4
 
 
@@ -690,6 +798,34 @@ $(document).ready(function(){
 		$("#upload-img5").css({"display": "block"});
 		$('button.upload-img5').css({"display": "none"});
 	});
+
+	//Delete image
+  $('button.delete-img5').click(function(){ 
+    //Selecting image value and user ID for mysql column
+    var imgValue = $('#value-img5').val();
+    var userID = $('#user-id').val();
+ 
+    // AJAX request
+    $.ajax({
+      url: '/php/delete_images.php',
+      type: 'post',
+      data: {value: imgValue,
+      			id: userID},
+      success: function(response){
+ 
+        // When removed: add message, show upload button, and hide delete button, main image and the upload div 
+        if(response == 1){
+          $("#delete-response-img5").html("<p>This image has been deleted successfully</p>");
+          $("button.upload-img5").css({"display": "block", "margin": "auto"});
+					$('button.delete-img5').css({"display": "none"});
+					$('img.image5').css({"display": "none"});
+					$("#upload-img5").css({"display": "none"});
+        }	else {
+        	$("#delete-response-img5").html("<p>There was an error deleting this image. Please try again later. Or let dating@inoticed.org know the details of your problem.</p>");
+        }
+      }
+    });
+  });
   //end of image5
 
 
@@ -742,6 +878,34 @@ $(document).ready(function(){
 		$("#upload-img6").css({"display": "block"});
 		$('button.upload-img6').css({"display": "none"});
 	});
+
+	//Delete image
+  $('button.delete-img6').click(function(){ 
+    //Selecting image value and user ID for mysql column
+    var imgValue = $('#value-img6').val();
+    var userID = $('#user-id').val();
+ 
+    // AJAX request
+    $.ajax({
+      url: '/php/delete_images.php',
+      type: 'post',
+      data: {value: imgValue,
+      			id: userID},
+      success: function(response){
+ 
+        // When removed: add message, show upload button, and hide delete button, main image and the upload div 
+        if(response == 1){
+          $("#delete-response-img6").html("<p>This image has been deleted successfully</p>");
+          $("button.upload-img6").css({"display": "block", "margin": "auto"});
+					$('button.delete-img6').css({"display": "none"});
+					$('img.image6').css({"display": "none"});
+					$("#upload-img6").css({"display": "none"});
+        }	else {
+        	$("#delete-response-img6").html("<p>There was an error deleting this image. Please try again later. Or let dating@inoticed.org know the details of your problem.</p>");
+        }
+      }
+    });
+  });
   //end of image6
 
 
@@ -794,6 +958,34 @@ $(document).ready(function(){
 		$("#upload-img7").css({"display": "block"});
 		$('button.upload-img7').css({"display": "none"});
 	});
+
+	//Delete image
+  $('button.delete-img7').click(function(){ 
+    //Selecting image value and user ID for mysql column
+    var imgValue = $('#value-img7').val();
+    var userID = $('#user-id').val();
+ 
+    // AJAX request
+    $.ajax({
+      url: '/php/delete_images.php',
+      type: 'post',
+      data: {value: imgValue,
+      			id: userID},
+      success: function(response){
+ 
+        // When removed: add message, show upload button, and hide delete button, main image and the upload div 
+        if(response == 1){
+          $("#delete-response-img7").html("<p>This image has been deleted successfully</p>");
+          $("button.upload-img7").css({"display": "block", "margin": "auto"});
+					$('button.delete-img7').css({"display": "none"});
+					$('img.image7').css({"display": "none"});
+					$("#upload-img7").css({"display": "none"});
+        }	else {
+        	$("#delete-response-img7").html("<p>There was an error deleting this image. Please try again later. Or let dating@inoticed.org know the details of your problem.</p>");
+        }
+      }
+    });
+  });
   //end of image7
 
 
@@ -847,6 +1039,34 @@ $(document).ready(function(){
 		$("#upload-img8").css({"display": "block"});
 		$('button.upload-img8').css({"display": "none"});
 	});
+
+	//Delete image
+  $('button.delete-img8').click(function(){ 
+    //Selecting image value and user ID for mysql column
+    var imgValue = $('#value-img8').val();
+    var userID = $('#user-id').val();
+ 
+    // AJAX request
+    $.ajax({
+      url: '/php/delete_images.php',
+      type: 'post',
+      data: {value: imgValue,
+      			id: userID},
+      success: function(response){
+ 
+        // When removed: add message, show upload button, and hide delete button, main image and the upload div 
+        if(response == 1){
+          $("#delete-response-img8").html("<p>This image has been deleted successfully</p>");
+          $("button.upload-img8").css({"display": "block", "margin": "auto"});
+					$('button.delete-img8').css({"display": "none"});
+					$('img.image8').css({"display": "none"});
+					$("#upload-img8").css({"display": "none"});
+        }	else {
+        	$("#delete-response-img8").html("<p>There was an error deleting this image. Please try again later. Or let dating@inoticed.org know the details of your problem.</p>");
+        }
+      }
+    });
+  });
   //end of image8
 
 	//End of profile page images*************************************************************************************

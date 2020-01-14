@@ -598,6 +598,17 @@ div.profile-info p {
 	color: red;
 }
 
+.error-smaller {
+	color: red;
+	font-size: 1em;
+	font-weight: normal;
+}
+
+.p-smaller {
+	font-size: 1em;
+	font-weight: normal;
+}
+
 #outputImage-main img, #outputImage-1 img, #outputImage-2 img, #outputImage-3 img, #outputImage-4 img, #outputImage-5 img, #outputImage-6 img, #outputImage-7 img, #outputImage-8 img {
 	max-width: 200px;
 }
@@ -641,4 +652,8 @@ div.profile-info p {
 
 .main-img-div {
 	text-align: center;
+}
+
+.thumbnail {
+	max-width: 150px;
 }

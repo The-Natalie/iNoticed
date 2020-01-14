@@ -475,6 +475,7 @@ $(document).ready(function(){
 	$('button.upload-img1').click(function(e) {
 		$("#upload-img1").css({"display": "block"});
 		$('button.upload-img1').css({"display": "none"});
+		$("#delete-response-main").html("");
 	});
 
 	//Delete image
@@ -556,6 +557,7 @@ $(document).ready(function(){
 	$('button.upload-img2').click(function(e) {
 		$("#upload-img2").css({"display": "block"});
 		$('button.upload-img2').css({"display": "none"});
+		$("#delete-response-img2").html("");
 	});
 
 	//Delete image
@@ -637,6 +639,7 @@ $(document).ready(function(){
 	$('button.upload-img3').click(function(e) {
 		$("#upload-img3").css({"display": "block"});
 		$('button.upload-img3').css({"display": "none"});
+		$("#delete-response-img3").html("");
 	});
 
 	//Delete image
@@ -717,6 +720,7 @@ $(document).ready(function(){
 	$('button.upload-img4').click(function(e) {
 		$("#upload-img4").css({"display": "block"});
 		$('button.upload-img4').css({"display": "none"});
+		$("#delete-response-img4").html("");
 	});
 
 	//Delete image
@@ -797,6 +801,7 @@ $(document).ready(function(){
 	$('button.upload-img5').click(function(e) {
 		$("#upload-img5").css({"display": "block"});
 		$('button.upload-img5').css({"display": "none"});
+		$("#delete-response-img5").html("");
 	});
 
 	//Delete image
@@ -877,6 +882,7 @@ $(document).ready(function(){
 	$('button.upload-img6').click(function(e) {
 		$("#upload-img6").css({"display": "block"});
 		$('button.upload-img6').css({"display": "none"});
+		$("#delete-response-img6").html("");
 	});
 
 	//Delete image
@@ -957,6 +963,7 @@ $(document).ready(function(){
 	$('button.upload-img7').click(function(e) {
 		$("#upload-img7").css({"display": "block"});
 		$('button.upload-img7').css({"display": "none"});
+		$("#delete-response-img7").html("");
 	});
 
 	//Delete image
@@ -1038,6 +1045,7 @@ $(document).ready(function(){
 	$('button.upload-img8').click(function(e) {
 		$("#upload-img8").css({"display": "block"});
 		$('button.upload-img8').css({"display": "none"});
+		$("#delete-response-img8").html("");
 	});
 
 	//Delete image

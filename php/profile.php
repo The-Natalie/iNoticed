@@ -20,11 +20,11 @@ if (mysqli_connect_errno()) {
 }
 
 //Get data from database
-$stmt = $con->prepare('SELECT id, first_name, age, gender, feet, inches, eyes, hair, smoke, drugs, transportation, intention, zip, city, state, profession, education, ethnicity, religion, marital_status, kids, want_kids, about_me, image_main FROM accounts WHERE id = ?');
+$stmt = $con->prepare('SELECT id, first_name, age, gender, feet, inches, eyes, hair, smoke, drugs, transportation, intention, zip, city, state, profession, education, ethnicity, religion, marital_status, kids, want_kids, about_me, image_main, image1, image2, image3, image4, image5, image6, image7, image8 FROM accounts WHERE id = ?');
 // In this case we can use the account ID to get the account info.
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
-$stmt->bind_result($id, $first_name, $age, $gender, $feet, $inches, $eyes, $hair, $smoke, $drugs, $transportation, $intention, $zip, $city, $state, $profession, $education, $ethnicity, $religion, $marital_status, $kids, $want_kids, $about_me, $image_main);
+$stmt->bind_result($id, $first_name, $age, $gender, $feet, $inches, $eyes, $hair, $smoke, $drugs, $transportation, $intention, $zip, $city, $state, $profession, $education, $ethnicity, $religion, $marital_status, $kids, $want_kids, $about_me, $image_main, $image1, $image2, $image3, $image4, $image5, $image6, $image7, $image8);
 $stmt->fetch();
 
 $aboutme = nl2br($about_me);
@@ -63,6 +63,25 @@ $stmt->close();
 							<p style="padding: 0 5px 2px 10px;">Kind of relationship <?=$first_name?> is looking for: <span style="font-weight: normal;"><?=$intention?></span></p>
 						</div>
 						<div class="profile-thumbnails">
+							<table>
+							  <tr>
+							    <td><img class="thumbnail" src="/php/<?php echo $image1; ?>"></td>
+							    <td><img class="thumbnail" src="/php/<?php echo $image2; ?>"></td>
+							  </tr>
+							  <tr>
+							    <td><img class="thumbnail" src="/php/<?php echo $image3; ?>"></td>
+							    <td><img class="thumbnail" src="/php/<?php echo $image4; ?>"></td>
+							  </tr>
+							  <tr>
+							    <td><img class="thumbnail" src="/php/<?php echo $image5; ?>"></td>
+							    <td><img class="thumbnail" src="/php/<?php echo $image6; ?>"></td>
+							  </tr>
+							  <tr>
+							    <td><img class="thumbnail" src="/php/<?php echo $image7; ?>"></td>
+							    <td><img class="thumbnail" src="/php/<?php echo $image8; ?>"></td>
+							  </tr>
+							</table>
+
 						</div>
 					</div>	
 					<div class="profile-right col-md-8">

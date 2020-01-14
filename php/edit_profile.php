@@ -243,7 +243,7 @@ $stmt->close();
 						<br/>
 						<button class="edit-button upload-main-img" type="button">Upload <i class="far fa-edit"></i></button>
 						<button class="edit-button delete-main-img" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-						<div id="delete-response-main"></div>
+						<div class="error-smaller" id="delete-response-main"></div>
 						<div id="upload-main-img">
 							<p>Upload main profile image:</p>
 							<p>(Max image size is 2MB)</p>				    
@@ -251,7 +251,7 @@ $stmt->close();
 				        <form action="" id="uploadForm-main" name="frmupload" method="post" enctype="multipart/form-data">
 				        	<input id="user-id" type="hidden" name="id" value="<?php echo $id; ?>"/>
 				        	<input id="value-main-image" type="hidden" name="img_value" value="image_main"/>
-				        	Select image to upload:
+				        	<p class="p-smaller">Select image to upload:</p>
 			            <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required/> <br>
 			            <input id="submitButton-main" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 				        </form>
@@ -263,7 +263,7 @@ $stmt->close();
 			  				</div>	
 		  					<div style="height: 10px;"></div>
 		  					<div class="error-main error"></div>
-		  					<div id='outputImage-main'></div>
+		  					<div class="p-smaller" id='outputImage-main'></div>
 	  					</div>
 						</div>
 					</div>	
@@ -281,13 +281,13 @@ $stmt->close();
 									<br/>
 									<button class="edit-button upload-img1" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img1" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-									<div id="delete-response-img1"></div>
+									<div class="error-smaller" id="delete-response-img1"></div>
 									<div id="upload-img1">
 									  <div class="form-container">
 									    <form action="" id="uploadForm-1" name="frmupload" method="post" enctype="multipart/form-data">
 									    	<input id="user-id" type="hidden" name="id" value="<?php echo $id; ?>"/>
 									    	<input id="value-img1" type="hidden" name="img_value" value="image1"/>
-									    	Select image to upload:
+									    	<p class="p-smaller">Select image to upload:</p>
 									      <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required/> <br>
 									      <input id="submitButton-1" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 									    </form>
@@ -299,7 +299,7 @@ $stmt->close();
 											</div>	
 											<div style="height: 10px;"></div>
 											<div class="error-1 error"></div>
-											<div id='outputImage-1'></div>
+											<div class="p-smaller" id='outputImage-1'></div>
 										</div>
 									</div>
 					    	</td>
@@ -311,13 +311,13 @@ $stmt->close();
 									<br/>
 									<button class="edit-button upload-img2" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img2" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-									<div id="delete-response-img2"></div>
+									<div class="error-smaller" id="delete-response-img2"></div>
 									<div id="upload-img2">
 									  <div class="form-container">
 									    <form action="" id="uploadForm-2" name="frmupload" method="post" enctype="multipart/form-data">
 									    	<input id="user-id" type="hidden" name="id" value="<?php echo $id; ?>"/>
 									    	<input id="value-img2" type="hidden" name="img_value" value="image2"/>
-									    	Select image to upload:
+									    	<p class="p-smaller">Select image to upload:</p>
 									      <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required/> <br>
 									      <input id="submitButton-2" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 									    </form>
@@ -329,7 +329,7 @@ $stmt->close();
 											</div>	
 											<div style="height: 10px;"></div>
 											<div class="error-2 error"></div>
-											<div id='outputImage-2'></div>
+											<div class="p-smaller" id='outputImage-2'></div>
 										</div>
 									</div>
 					    	</td>
@@ -341,13 +341,13 @@ $stmt->close();
 									<br/>
 									<button class="edit-button upload-img3" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img3" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-									<div id="delete-response-img3"></div>
+									<div class="error-smaller" id="delete-response-img3"></div>
 									<div id="upload-img3">
 									  <div class="form-container">
 									    <form action="" id="uploadForm-3" name="frmupload" method="post" enctype="multipart/form-data">
 									    	<input id="user-id" type="hidden" name="id" value="<?php echo $id; ?>"/>
 									    	<input id="value-img3" type="hidden" name="img_value" value="image3"/>
-									    	Select image to upload:
+									    	<p class="p-smaller">Select image to upload:</p>
 									      <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required/> <br>
 									      <input id="submitButton-3" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 									    </form>
@@ -359,7 +359,7 @@ $stmt->close();
 											</div>	
 											<div style="height: 10px;"></div>
 											<div class="error-3 error"></div>
-											<div id='outputImage-3'></div>
+											<div class="p-smaller" id='outputImage-3'></div>
 										</div>
 									</div>
 					    	</td>
@@ -373,13 +373,13 @@ $stmt->close();
 									<br/>
 									<button class="edit-button upload-img4" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img4" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-									<div id="delete-response-img4"></div>
+									<div class="error-smaller" id="delete-response-img4"></div>
 									<div id="upload-img4">
 									  <div class="form-container">
 									    <form action="" id="uploadForm-4" name="frmupload" method="post" enctype="multipart/form-data">
 									    	<input id="user-id" type="hidden" name="id" value="<?php echo $id; ?>"/>
 									    	<input id="value-img4" type="hidden" name="img_value" value="image4"/>
-									    	Select image to upload:
+									    	<p class="p-smaller">Select image to upload:</p>
 									      <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required/> <br>
 									      <input id="submitButton-4" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 									    </form>
@@ -391,7 +391,7 @@ $stmt->close();
 											</div>	
 											<div style="height: 10px;"></div>
 											<div class="error-4 error"></div>
-											<div id='outputImage-4'></div>
+											<div class="p-smaller" id='outputImage-4'></div>
 										</div>
 									</div>
 					    	</td>
@@ -403,13 +403,13 @@ $stmt->close();
 									<br/>
 									<button class="edit-button upload-img5" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img5" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-									<div id="delete-response-img5"></div>
+									<div class="error-smaller" id="delete-response-img5"></div>
 									<div id="upload-img5">
 									  <div class="form-container">
 									    <form action="" id="uploadForm-5" name="frmupload" method="post" enctype="multipart/form-data">
 									    	<input id="user-id" type="hidden" name="id" value="<?php echo $id; ?>"/>
 									    	<input id="value-img5" type="hidden" name="img_value" value="image5"/>
-									    	Select image to upload:
+									    	<p class="p-smaller">Select image to upload:</p>
 									      <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required/> <br>
 									      <input id="submitButton-5" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 									    </form>
@@ -421,7 +421,7 @@ $stmt->close();
 											</div>	
 											<div style="height: 10px;"></div>
 											<div class="error-5 error"></div>
-											<div id='outputImage-5'></div>
+											<div class="p-smaller" id='outputImage-5'></div>
 										</div>
 									</div>
 					    	</td>
@@ -433,13 +433,13 @@ $stmt->close();
 									<br/>
 									<button class="edit-button upload-img6" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img6" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-									<div id="delete-response-img6"></div>
+									<div class="error-smaller" id="delete-response-img6"></div>
 									<div id="upload-img6">
 									  <div class="form-container">
 									    <form action="" id="uploadForm-6" name="frmupload" method="post" enctype="multipart/form-data">
 									    	<input id="user-id" type="hidden" name="id" value="<?php echo $id; ?>"/>
 									    	<input id="value-img6" type="hidden" name="img_value" value="image6"/>
-									    	Select image to upload:
+									    	<p class="p-smaller">Select image to upload:</p>
 									      <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required/> <br>
 									      <input id="submitButton-6" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 									    </form>
@@ -451,7 +451,7 @@ $stmt->close();
 											</div>	
 											<div style="height: 10px;"></div>
 											<div class="error-6 error"></div>
-											<div id='outputImage-6'></div>
+											<div class="p-smaller" id='outputImage-6'></div>
 										</div>
 									</div>
 					    	</td>
@@ -465,13 +465,13 @@ $stmt->close();
 									<br/>
 									<button class="edit-button upload-img7" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img7" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-									<div id="delete-response-img7"></div>
+									<div class="error-smaller" id="delete-response-img7"></div>
 									<div id="upload-img7">
 									  <div class="form-container">
 									    <form action="" id="uploadForm-7" name="frmupload" method="post" enctype="multipart/form-data">
 									    	<input id="user-id" type="hidden" name="id" value="<?php echo $id; ?>"/>
 									    	<input id="value-img7" type="hidden" name="img_value" value="image7"/>
-									    	Select image to upload:
+									    	<p class="p-smaller">Select image to upload:</p>
 									      <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required/> <br>
 									      <input id="submitButton-7" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 									    </form>
@@ -483,7 +483,7 @@ $stmt->close();
 											</div>	
 											<div style="height: 10px;"></div>
 											<div class="error-7 error"></div>
-											<div id='outputImage-7'></div>
+											<div class="p-smaller" id='outputImage-7'></div>
 										</div>
 									</div>
 					    	</td>
@@ -495,13 +495,13 @@ $stmt->close();
 									<br/>
 									<button class="edit-button upload-img8" type="button">Upload <i class="far fa-edit"></i></button>
 									<button class="edit-button delete-img8" type="button">Delete <i class="fas fa-exclamation-triangle"></i></button>
-									<div id="delete-response-img8"></div>
+									<div class="error-smaller" id="delete-response-img8"></div>
 									<div id="upload-img8">
 									  <div class="form-container">
 									    <form action="" id="uploadForm-8" name="frmupload" method="post" enctype="multipart/form-data">
 									    	<input id="user-id" type="hidden" name="id" value="<?php echo $id; ?>"/>
 									    	<input id="value-img8" type="hidden" name="img_value" value="image8"/>
-									    	Select image to upload:
+									    	<p class="p-smaller">Select image to upload:</p>
 									      <input type="file" id="uploadImage" name="uploadImage" accept="image/*" required/> <br>
 									      <input id="submitButton-8" class="submit-button" type="submit" name='btnSubmit' value="Submit Image"  />
 									    </form>
@@ -513,7 +513,7 @@ $stmt->close();
 											</div>	
 											<div style="height: 10px;"></div>
 											<div class="error-8 error"></div>
-											<div id='outputImage-8'></div>
+											<div class="p-smaller" id='outputImage-8'></div>
 										</div>
 									</div>
 					    	</td>

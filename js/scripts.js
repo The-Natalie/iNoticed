@@ -8,8 +8,8 @@ $(document).ready(function(){
 	var signInLink = "/sign_in.html";
 	// var datingSignedInHomeLink = "/php/dating_home.php";
 	var messagesLink = "/php/messages.php";
-	var profileLink = "/php/edit_profile.php"
-	var editProfileLink = "/php/profile.php";
+	var profileLink = "/php/profile.php"
+	var editProfileLink = "/php/edit_profile.php";
 	var accountSettingsLink = "/php/account_settings.php";
 	var logoutLink = "/php/logout.php";
 

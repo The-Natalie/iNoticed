@@ -34,6 +34,59 @@ $stmt->close();
 
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">$(document).ready(function(){
+//Show or hide images on profile page****
+	var thmbMain = "<?=$image_main?>";   
+	var thmb1 = "<?=$image1?>";
+	var thmb2 = "<?=$image2?>";
+	var thmb3 = "<?=$image3?>";
+	var thmb4 = "<?=$image4?>";
+	var thmb5 = "<?=$image5?>";
+	var thmb6 = "<?=$image6?>";
+	var thmb7 = "<?=$image7?>";
+	var thmb8 = "<?=$image8?>";
+
+	if (thmbMain == null || thmbMain === "") {
+		$('img.thmb-main').css({"display": "none"});
+	}
+
+	if (thmb1 == null || thmb1 === "") {
+		$('img.thmb-1').css({"display": "none"});
+	}
+
+	if (thmb2 == null || thmb2 === "") {
+		$('img.thmb-2').css({"display": "none"});
+	}
+
+	if (thmb3 == null || thmb3 === "") {
+		$('img.thmb-3').css({"display": "none"});
+	}
+
+	if (thmb4 == null || thmb4 === "") {
+		$('img.thmb-4').css({"display": "none"});
+	}
+
+	if (thmb5 == null || thmb5 === "") {
+		$('img.thmb-5').css({"display": "none"});
+	}
+
+	if (thmb6 == null || thmb6 === "") {
+		$('img.thmb-6').css({"display": "none"});
+	}
+
+	if (thmb7 == null || thmb7 === "") {
+		$('img.thmb-7').css({"display": "none"});
+	}
+
+	if (thmb8 == null || thmb8 === "") {
+		$('img.thmb-8').css({"display": "none"});
+	}
+
+
+});</script>
+
+
 
 <!DOCTYPE html>
 <html>
@@ -65,20 +118,20 @@ $stmt->close();
 						<div class="profile-thumbnails">
 							<table>
 							  <tr>
-							    <td><img class="thumbnail" src="/php/<?php echo $image1; ?>"></td>
-							    <td><img class="thumbnail" src="/php/<?php echo $image2; ?>"></td>
+							    <td><img class="thumbnail thmb-1" src="/php/<?php echo $image1; ?>"></td>
+							    <td><img class="thumbnail thmb-2" src="/php/<?php echo $image2; ?>"></td>
 							  </tr>
 							  <tr>
-							    <td><img class="thumbnail" src="/php/<?php echo $image3; ?>"></td>
-							    <td><img class="thumbnail" src="/php/<?php echo $image4; ?>"></td>
+							    <td><img class="thumbnail thmb-3" src="/php/<?php echo $image3; ?>"></td>
+							    <td><img class="thumbnail thmb-4" src="/php/<?php echo $image4; ?>"></td>
 							  </tr>
 							  <tr>
-							    <td><img class="thumbnail" src="/php/<?php echo $image5; ?>"></td>
-							    <td><img class="thumbnail" src="/php/<?php echo $image6; ?>"></td>
+							    <td><img class="thumbnail thmb-5" src="/php/<?php echo $image5; ?>"></td>
+							    <td><img class="thumbnail thmb-6" src="/php/<?php echo $image6; ?>"></td>
 							  </tr>
 							  <tr>
-							    <td><img class="thumbnail" src="/php/<?php echo $image7; ?>"></td>
-							    <td><img class="thumbnail" src="/php/<?php echo $image8; ?>"></td>
+							    <td><img class="thumbnail thmb-7" src="/php/<?php echo $image7; ?>"></td>
+							    <td><img class="thumbnail thmb-8" src="/php/<?php echo $image8; ?>"></td>
 							  </tr>
 							</table>
 

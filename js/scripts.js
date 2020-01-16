@@ -348,6 +348,7 @@ $(document).ready(function(){
 
 	//main image posting
   $('#submitButton-main').click(function () {
+    $(".error-main").html("");
     $('#uploadForm-main').ajaxForm({
       target: '#outputImage-main',
       url: '/php/edit_images.php',
@@ -430,6 +431,7 @@ $(document).ready(function(){
 
 	//image1 posting
   $('#submitButton-1').click(function () {
+    $(".error-1").html("");
     $('#uploadForm-1').ajaxForm({
       target: '#outputImage-1',
       url: '/php/edit_images.php',
@@ -513,6 +515,7 @@ $(document).ready(function(){
 
 	//image2 posting
   $('#submitButton-2').click(function () {
+    $(".error-2").html("");
     $('#uploadForm-2').ajaxForm({
       target: '#outputImage-2',
       url: '/php/edit_images.php',
@@ -596,6 +599,7 @@ $(document).ready(function(){
 
 	//image3 posting
   $('#submitButton-3').click(function () {
+    $(".error-3").html("");
     $('#uploadForm-3').ajaxForm({
       target: '#outputImage-3',
       url: '/php/edit_images.php',
@@ -678,6 +682,7 @@ $(document).ready(function(){
 
 	//image4 posting
   $('#submitButton-4').click(function () {
+    $(".error-4").html("");
     $('#uploadForm-4').ajaxForm({
       target: '#outputImage-4',
       url: '/php/edit_images.php',
@@ -760,6 +765,7 @@ $(document).ready(function(){
 
 	//image5 posting
   $('#submitButton-5').click(function () {
+    $(".error-5").html("");
     $('#uploadForm-5').ajaxForm({
       target: '#outputImage-5',
       url: '/php/edit_images.php',
@@ -842,6 +848,7 @@ $(document).ready(function(){
 
 	//image6 posting
   $('#submitButton-6').click(function () {
+    $(".error-6").html("");
     $('#uploadForm-6').ajaxForm({
       target: '#outputImage-6',
       url: '/php/edit_images.php',
@@ -924,6 +931,7 @@ $(document).ready(function(){
 
 	//image7 posting
   $('#submitButton-7').click(function () {
+    $(".error-7").html("");
     $('#uploadForm-7').ajaxForm({
       target: '#outputImage-7',
       url: '/php/edit_images.php',
@@ -994,7 +1002,7 @@ $(document).ready(function(){
           $("button.upload-img7").css({"display": "block", "margin": "auto"});
 					$('button.delete-img7').css({"display": "none"});
 					$('img.image7').css({"display": "none"});
-					$("#upload-img7").css({"display": "none"});
+					$("#upload-img8").css({"display": "none"});
         }	else {
         	$("#delete-response-img7").html("<p>There was an error deleting this image. Please try again later. Or let dating@inoticed.org know the details of your problem.</p>");
         }
@@ -1007,6 +1015,7 @@ $(document).ready(function(){
 	//image8 posting
 
   $('#submitButton-8').click(function () {
+    $(".error-8").html("");
     $('#uploadForm-8').ajaxForm({
       target: '#outputImage-8',
       url: '/php/edit_images.php',

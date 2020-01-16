@@ -150,70 +150,70 @@ $stmt->close();
 		$("img#upload-img1").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img1').css({"display": "none"});
 		$('img.image1').css({"display": "none"});
-		$('td.td-image2').css({"display": "none"});
+		$('td.td-image2').css({"visibility": "hidden"});
 	}	else {
 		$('button.upload-img1').css({"display": "none"});
-		$('td.td-image2').css({"display": "block"});
+		$('td.td-image2').css({"visibility": "visible "});
 	}
 
 	if (image2 == null || image2=== "") {
 		$("img#upload-img2").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img2').css({"display": "none"});
 		$('img.image2').css({"display": "none"});
-		$('td.td-image3').css({"display": "none"});
+		$('td.td-image3').css({"visibility": "hidden"});
 	}	else {
 		$('button.upload-img2').css({"display": "none"});
-		$('td.td-image3').css({"display": "block"});
+		$('td.td-image3').css({"visibility": "visible "});
 	}
 
 	if (image3 == null || image3=== "") {
 		$("img#upload-img3").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img3').css({"display": "none"});
 		$('img.image3').css({"display": "none"});
-		$('td.td-image4').css({"display": "none"});
+		$('td.td-image4').css({"visibility": "hidden"});
 	}	else {
 		$('button.upload-img3').css({"display": "none"});
-		$('td.td-image4').css({"display": "block"});
+		$('td.td-image4').css({"visibility": "visible "});
 	}
 
 	if (image4 == null || image4=== "") {
 		$("img#upload-img4").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img4').css({"display": "none"});
 		$('img.image4').css({"display": "none"});
-		$('td.td-image5').css({"display": "none"});
+		$('td.td-image5').css({"visibility": "hidden"});
 	}	else {
 		$('button.upload-img4').css({"display": "none"});
-		$('td.td-image5').css({"display": "block"});
+		$('td.td-image5').css({"visibility": "visible "});
 	}
 
 	if (image5 == null || image5=== "") {
 		$("img#upload-img5").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img5').css({"display": "none"});
 		$('img.image5').css({"display": "none"});
-		$('td.td-image6').css({"display": "none"});
+		$('td.td-image6').css({"visibility": "hidden"});
 	}	else {
 		$('button.upload-img5').css({"display": "none"});
-		$('td.td-image6').css({"display": "block"});
+		$('td.td-image6').css({"visibility": "visible "});
 	}
 
 	if (image6 == null || image6=== "") {
 		$("img#upload-img6").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img6').css({"display": "none"});
 		$('img.image6').css({"display": "none"});
-		$('td.td-image7').css({"display": "none"});
+		$('td.td-image7').css({"visibility": "hidden"});
 	}	else {
 		$('button.upload-img6').css({"display": "none"});
-		$('td.td-image7').css({"display": "block"});
+		$('td.td-image7').css({"visibility": "visible "});
 	}
 
 	if (image7 == null || image7=== "") {
 		$("img#upload-img7").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img7').css({"display": "none"});
 		$('img.image7').css({"display": "none"});
-		$('td.td-image8').css({"display": "none"});
+		$('td.td-image8').css({"visibility": "hidden"});
 	}	else {
 		$('button.upload-img7').css({"display": "none"});
-		$('td.td-image8').css({"display": "block"});
+		$('td.td-image8').css({"visibility": "visible "});
 	}
 
 	if (image8 == null || image8=== "") {

@@ -150,56 +150,70 @@ $stmt->close();
 		$("img#upload-img1").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img1').css({"display": "none"});
 		$('img.image1').css({"display": "none"});
+		$('td.td-image2').css({"display": "none"});
 	}	else {
 		$('button.upload-img1').css({"display": "none"});
+		$('td.td-image2').css({"display": "block"});
 	}
 
 	if (image2 == null || image2=== "") {
 		$("img#upload-img2").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img2').css({"display": "none"});
 		$('img.image2').css({"display": "none"});
+		$('td.td-image3').css({"display": "none"});
 	}	else {
 		$('button.upload-img2').css({"display": "none"});
+		$('td.td-image3').css({"display": "block"});
 	}
 
 	if (image3 == null || image3=== "") {
 		$("img#upload-img3").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img3').css({"display": "none"});
 		$('img.image3').css({"display": "none"});
+		$('td.td-image4').css({"display": "none"});
 	}	else {
 		$('button.upload-img3').css({"display": "none"});
+		$('td.td-image4').css({"display": "block"});
 	}
 
 	if (image4 == null || image4=== "") {
 		$("img#upload-img4").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img4').css({"display": "none"});
 		$('img.image4').css({"display": "none"});
+		$('td.td-image5').css({"display": "none"});
 	}	else {
 		$('button.upload-img4').css({"display": "none"});
+		$('td.td-image5').css({"display": "block"});
 	}
 
 	if (image5 == null || image5=== "") {
 		$("img#upload-img5").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img5').css({"display": "none"});
 		$('img.image5').css({"display": "none"});
+		$('td.td-image6').css({"display": "none"});
 	}	else {
 		$('button.upload-img5').css({"display": "none"});
+		$('td.td-image6').css({"display": "block"});
 	}
 
 	if (image6 == null || image6=== "") {
 		$("img#upload-img6").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img6').css({"display": "none"});
 		$('img.image6').css({"display": "none"});
+		$('td.td-image7').css({"display": "none"});
 	}	else {
 		$('button.upload-img6').css({"display": "none"});
+		$('td.td-image7').css({"display": "block"});
 	}
 
 	if (image7 == null || image7=== "") {
 		$("img#upload-img7").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img7').css({"display": "none"});
 		$('img.image7').css({"display": "none"});
+		$('td.td-image8').css({"display": "none"});
 	}	else {
 		$('button.upload-img7').css({"display": "none"});
+		$('td.td-image8').css({"display": "block"});
 	}
 
 	if (image8 == null || image8=== "") {
@@ -304,7 +318,7 @@ $stmt->close();
 									</div>
 					    	</td>
 
-					    	<td class="even-cols">
+					    	<td class="even-cols td-image2">
 					    		<h4>Image 2</h4>
 									<img class="preview-images image2" src="/php/<?php echo $image2; ?>">
 									<br/>
@@ -334,7 +348,7 @@ $stmt->close();
 									</div>
 					    	</td>
 					  	
-					    	<td class="even-cols">
+					    	<td class="even-cols td-image3">
 					    		<h4>Image 3</h4>
 									<img class="preview-images image3" src="/php/<?php echo $image3; ?>">
 									<br/>
@@ -366,7 +380,7 @@ $stmt->close();
 					    </tr>
 					    	
 					    <tr>
-					    	<td class="even-cols">
+					    	<td class="even-cols td-image4">
 					    		<h4>Image 4</h4>
 									<img class="preview-images image4" src="/php/<?php echo $image4; ?>">
 									<br/>
@@ -396,7 +410,7 @@ $stmt->close();
 									</div>
 					    	</td>
 					  	
-					    	<td class="even-cols">
+					    	<td class="even-cols td-image5">
 					    		<h4>Image 5</h4>
 									<img class="preview-images image5" src="/php/<?php echo $image5; ?>">
 									<br/>
@@ -426,7 +440,7 @@ $stmt->close();
 									</div>
 					    	</td>
 
-					    	<td class="even-cols">
+					    	<td class="even-cols td-image6">
 					    		<h4>Image 6</h4>
 									<img class="preview-images image6" src="/php/<?php echo $image6; ?>">
 									<br/>
@@ -458,7 +472,7 @@ $stmt->close();
 					  	</tr>
 
 					  	<tr>
-					    	<td class="even-cols">
+					    	<td class="even-cols td-image7">
 					    		<h4>Image 7</h4>
 									<img class="preview-images image7" src="/php/<?php echo $image7; ?>">
 									<br/>
@@ -488,7 +502,7 @@ $stmt->close();
 									</div>
 					    	</td>
 
-					    	<td class="even-cols">
+					    	<td class="even-cols td-image8">
 					    		<h4>Image 8</h4>
 									<img class="preview-images image8" src="/php/<?php echo $image8; ?>">
 									<br/>

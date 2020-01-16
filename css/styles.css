@@ -450,7 +450,6 @@ Dating Sub Pages
 	padding: 5px;
 }
 .content > p table td:first-child, .content > div table td:first-child {
-	font-weight: bold;
 	color: #262626;
 	padding-right: 15px;
 }
@@ -645,7 +644,7 @@ div.profile-info p {
 	width: 33.33%;
 }
 
-#img-table table, th, td {
+#img-table table, #img-table th, #img-table td {
   border: 3px solid #84FF84;
   text-align: center;
 }

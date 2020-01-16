@@ -489,6 +489,7 @@ Dating Sub Pages
 	font-size: 1.2em;
 	color: red;
 	border-color: red;
+	background: none;
 }
 
 .update-email-button:hover, .update-password-button:hover, .edit-profile-button:hover, .generate-url-button:hover, .edit-button:hover {

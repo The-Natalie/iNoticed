@@ -477,7 +477,7 @@ Dating Sub Pages
 .update-email-button, .update-password-button, .delete-account-button, .edit-profile-button, .generate-url-button, .edit-button {
 	cursor: pointer;
 	margin-bottom: 15px;
-	background-color: #fcff93;
+	background: radial-gradient(circle, rgba(143,241,156,0.9415966215587798) 0%, rgba(135,237,208,0.7455181901862307) 65%, rgba(252,212,237,1) 100%);
 	border: 2px solid #1D4F5B;
 	border-radius: 8px;
 	color: #1D4F5B;
@@ -492,7 +492,7 @@ Dating Sub Pages
 }
 
 .update-email-button:hover, .update-password-button:hover, .edit-profile-button:hover, .generate-url-button:hover, .edit-button:hover {
-	font-size: 1.2em;
+	background: none;
 }
 
 #update-email-form, #update-password-form, #delete-account-form, div #generate-url {
@@ -528,7 +528,7 @@ div.profile-page {
 }
 
 .profile-left {
-	background: linear-gradient(307deg, rgba(111,203,123,1) 0%, rgba(177,207,181,1) 25%, rgba(191,213,194,1) 50%, rgba(149,208,157,1) 75%, rgba(111,203,123,1) 100%); 	
+	background:  linear-gradient(148deg, rgba(255,225,244,1) 27%, rgba(135,237,208,0.7455181901862307) 59%, rgba(143,241,156,0.9415966215587798) 100%); 	
 	padding: 0;
 }
 

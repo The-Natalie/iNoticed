@@ -33,12 +33,14 @@ if (isset($_POST['btnSubmit'])) {
 // Check if file already exists
   if (file_exists($target_file)) {
       echo "error";
+      exit();
   } 
 
   if (! is_writable($folderPath) || ! is_dir($folderPath)) {
     echo "error";
+    exit();
   }
-  
+
   if (move_uploaded_file($_FILES["uploadImage"]["tmp_name"], $folderPath . $username . "_" . $_FILES["uploadImage"]["name"])) {
     echo '<img src="' . $folderPath . "" . $username . "_" . $_FILES["uploadImage"]["name"] . '"><br />';
           // Processing form data when form is submitted

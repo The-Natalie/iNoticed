@@ -256,11 +256,11 @@ $stmt->close();
 
 	//hide rows that have no images
 	if ((image4 == null || image4=== "") && (image5 == null || image5=== "") && (image6 == null || image6=== ""))  {
-			$('tr.tr-2').css({"visibility": "hidden"});
+			$('tr.tr-2').css({"display": "none"});
 		}
 
 	if ((image7 == null || image7=== "") && (image8 == null || image8=== ""))  {
-			$('tr.tr-3').css({"visibility": "hidden"});
+			$('tr.tr-3').css({"display": "none"});
 		}
 
 	

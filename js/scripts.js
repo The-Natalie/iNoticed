@@ -718,6 +718,7 @@ $(document).ready(function(){
         if (xhr.responseText && xhr.responseText != "error") {
       	   $("#outputImage-4").html(xhr.responseText);
       	   $('td.td-image5').css({"visibility": "visible "});
+      	   $('tr.tr-2').css({"display": "table-row"});
         } else{  
          	$(".error-4").html("<div class='error'>Problem in uploading file, or you're attmepting to upload an image that already exists.</div>");
         	$("#progressBar-4").stop();
@@ -967,6 +968,7 @@ $(document).ready(function(){
         if (xhr.responseText && xhr.responseText != "error") {
       	   $("#outputImage-7").html(xhr.responseText);
       	   $('td.td-image7').css({"visibility": "visible "});
+      	   $('tr.tr-3').css({"display": "table-row"});
         } else{  
          	$(".error-7").html("<div class='error'>Problem in uploading file, or you're attmepting to upload an image that already exists.</div>");
         	$("#progressBar-7").stop();

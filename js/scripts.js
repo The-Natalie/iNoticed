@@ -385,6 +385,7 @@ $(document).ready(function(){
         if (xhr.responseText && xhr.responseText != "error") {
       	   $("#outputImage-main").html(xhr.responseText);
       	   $("#uploadForm-main").css({"display": "none"});
+      	   $("#progressDivId-main").css({"display": "none"});
         } else{  
         	$(".error-main").html("<div class='error'>Problem in uploading file, or you're attmepting to upload an image that already exists.</div>");
         	$("#progressBar-main").stop();
@@ -471,6 +472,7 @@ $(document).ready(function(){
       	   $("#outputImage-1").html(xhr.responseText);
       	   $('td.td-image2').css({"visibility": "visible "});
       	   $("#uploadForm-1").css({"display": "none"});
+      	   $("#progressDivId-1").css({"display": "none"});
         } else{  
          	$(".error-1").html("<div class='error'>Problem in uploading file, or you're attmepting to upload an image that already exists.</div>");
         	$("#progressBar-1").stop();
@@ -556,6 +558,7 @@ $(document).ready(function(){
       	   $("#outputImage-2").html(xhr.responseText);
       	   $('td.td-image3').css({"visibility": "visible "});
       	   $("#uploadForm-2").css({"display": "none"});
+      	   $("#progressDivId-2").css({"display": "none"});
         } else{  
          	$(".error-2").html("<div class='error'>Problem in uploading file, or you're attmepting to upload an image that already exists.</div>");
         	$("#progressBar-2").stop();
@@ -642,6 +645,7 @@ $(document).ready(function(){
       	   $('td.td-image4').css({"visibility": "visible "});
       	   $('tr.tr-2').css({"display": "table-row"});
       	   $("#uploadForm-3").css({"display": "none"});
+      	   $("#progressDivId-3").css({"display": "none"});
         } else{  
          	$(".error-3").html("<div class='error'>Problem in uploading file, or you're attmepting to upload an image that already exists.</div>");
         	$("#progressBar-3").stop();
@@ -726,6 +730,7 @@ $(document).ready(function(){
       	   $("#outputImage-4").html(xhr.responseText);
       	   $('td.td-image5').css({"visibility": "visible "});
       	   $("#uploadForm-4").css({"display": "none"});
+      	   $("#progressDivId-4").css({"display": "none"});
         } else{  
          	$(".error-4").html("<div class='error'>Problem in uploading file, or you're attmepting to upload an image that already exists.</div>");
         	$("#progressBar-4").stop();
@@ -810,6 +815,7 @@ $(document).ready(function(){
       	   $("#outputImage-5").html(xhr.responseText);
       	   $('td.td-image6').css({"visibility": "visible "});
       	   $("#uploadForm-5").css({"display": "none"});
+      	   $("#progressDivId-5").css({"display": "none"});
         } else{  
          	$(".error-5").html("<div class='error'>Problem in uploading file, or you're attmepting to upload an image that already exists.</div>");
         	$("#progressBar-5").stop();
@@ -895,6 +901,7 @@ $(document).ready(function(){
       	   $('td.td-image7').css({"visibility": "visible "});
       	   $('tr.tr-3').css({"display": "table-row"});
       	   $("#uploadForm-6").css({"display": "none"});
+      	   $("#progressDivId-6").css({"display": "none"});
         } else{  
          	$(".error-6").html("<div class='error'>Problem in uploading file, or you're attmepting to upload an image that already exists.</div>");
         	$("#progressBar-6").stop();
@@ -979,6 +986,7 @@ $(document).ready(function(){
       	   $("#outputImage-7").html(xhr.responseText);
       	   $('td.td-image8').css({"visibility": "visible "});
       	   $("#uploadForm-7").css({"display": "none"});
+      	   $("#progressDivId-7").css({"display": "none"});
         } else{  
          	$(".error-7").html("<div class='error'>Problem in uploading file, or you're attmepting to upload an image that already exists.</div>");
         	$("#progressBar-7").stop();
@@ -1063,6 +1071,7 @@ $(document).ready(function(){
         if (xhr.responseText && xhr.responseText != "error") {
       	   $("#outputImage-8").html(xhr.responseText);
       	   $("#uploadForm-8").css({"display": "none"});
+      	   $("#progressDivId-8").css({"display": "none"});
         } else{  
          	$(".error-8").html("<div class='error'>Problem in uploading file, or you're attmepting to upload an image that already exists.</div>");
         	$("#progressBar-8").stop();

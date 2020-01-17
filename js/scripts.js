@@ -396,6 +396,7 @@ $(document).ready(function(){
 	$('button.upload-main-img').click(function(e) {
 		$("#upload-main-img").css({"display": "block"});
 		$('button.upload-main-img').css({"display": "none"});
+		$("#delete-response-main").html("");
 	});
 
 	//Delete image
@@ -433,7 +434,6 @@ $(document).ready(function(){
 	//image1 posting
   $('#submitButton-1').click(function () {
     $(".error-1").html("");
-    $("#delete-response-img1").html("");
     $('#uploadForm-1').ajaxForm({
       target: '#outputImage-1',
       url: '/php/edit_images.php',
@@ -518,7 +518,6 @@ $(document).ready(function(){
 	//image2 posting
   $('#submitButton-2').click(function () {
     $(".error-2").html("");
-    $("#delete-response-img2").html("");
     $('#uploadForm-2').ajaxForm({
       target: '#outputImage-2',
       url: '/php/edit_images.php',
@@ -603,7 +602,6 @@ $(document).ready(function(){
 	//image3 posting
   $('#submitButton-3').click(function () {
     $(".error-3").html("");
-    $("#delete-response-img3").html("");
     $('#uploadForm-3').ajaxForm({
       target: '#outputImage-3',
       url: '/php/edit_images.php',
@@ -688,7 +686,6 @@ $(document).ready(function(){
 	//image4 posting
   $('#submitButton-4').click(function () {
     $(".error-4").html("");
-    $("#delete-response-img4").html("");
     $('#uploadForm-4').ajaxForm({
       target: '#outputImage-4',
       url: '/php/edit_images.php',
@@ -773,7 +770,6 @@ $(document).ready(function(){
 	//image5 posting
   $('#submitButton-5').click(function () {
     $(".error-5").html("");
-    $("#delete-response-img5").html("");
     $('#uploadForm-5').ajaxForm({
       target: '#outputImage-5',
       url: '/php/edit_images.php',
@@ -857,7 +853,6 @@ $(document).ready(function(){
 	//image6 posting
   $('#submitButton-6').click(function () {
     $(".error-6").html("");
-    $("#delete-response-img6").html("");
     $('#uploadForm-6').ajaxForm({
       target: '#outputImage-6',
       url: '/php/edit_images.php',
@@ -942,7 +937,6 @@ $(document).ready(function(){
 	//image7 posting
   $('#submitButton-7').click(function () {
     $(".error-7").html("");
-    $("#delete-response-img7").html("");
     $('#uploadForm-7').ajaxForm({
       target: '#outputImage-7',
       url: '/php/edit_images.php',
@@ -1027,7 +1021,6 @@ $(document).ready(function(){
 
   $('#submitButton-8').click(function () {
     $(".error-8").html("");
-    $("#delete-response-img8").html("");
     $('#uploadForm-8').ajaxForm({
       target: '#outputImage-8',
       url: '/php/edit_images.php',

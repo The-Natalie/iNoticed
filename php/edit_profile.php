@@ -150,7 +150,6 @@ $stmt->close();
 		$("img#upload-img1").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img1').css({"display": "none"});
 		$('img.image1').css({"display": "none"});
-		$('td.td-image2').css({"visibility": "hidden"});
 	}	else {
 		$('button.upload-img1').css({"display": "none"});
 		$('td.td-image2').css({"visibility": "visible "});
@@ -160,7 +159,6 @@ $stmt->close();
 		$("img#upload-img2").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img2').css({"display": "none"});
 		$('img.image2').css({"display": "none"});
-		$('td.td-image3').css({"visibility": "hidden"});
 	}	else {
 		$('button.upload-img2').css({"display": "none"});
 		$('td.td-image3').css({"visibility": "visible "});
@@ -170,7 +168,6 @@ $stmt->close();
 		$("img#upload-img3").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img3').css({"display": "none"});
 		$('img.image3').css({"display": "none"});
-		$('td.td-image4').css({"visibility": "hidden"});
 	}	else {
 		$('button.upload-img3').css({"display": "none"});
 		$('td.td-image4').css({"visibility": "visible "});
@@ -180,7 +177,6 @@ $stmt->close();
 		$("img#upload-img4").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img4').css({"display": "none"});
 		$('img.image4').css({"display": "none"});
-		$('td.td-image5').css({"visibility": "hidden"});
 	}	else {
 		$('button.upload-img4').css({"display": "none"});
 		$('td.td-image5').css({"visibility": "visible "});
@@ -190,7 +186,6 @@ $stmt->close();
 		$("img#upload-img5").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img5').css({"display": "none"});
 		$('img.image5').css({"display": "none"});
-		$('td.td-image6').css({"visibility": "hidden"});
 	}	else {
 		$('button.upload-img5').css({"display": "none"});
 		$('td.td-image6').css({"visibility": "visible "});
@@ -200,7 +195,6 @@ $stmt->close();
 		$("img#upload-img6").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img6').css({"display": "none"});
 		$('img.image6').css({"display": "none"});
-		$('td.td-image7').css({"visibility": "hidden"});
 	}	else {
 		$('button.upload-img6').css({"display": "none"});
 		$('td.td-image7').css({"visibility": "visible "});
@@ -210,7 +204,6 @@ $stmt->close();
 		$("img#upload-img7").css({"display": "block", "max-width": "200px"});
 		$('button.delete-img7').css({"display": "none"});
 		$('img.image7').css({"display": "none"});
-		$('td.td-image8').css({"visibility": "hidden"});
 	}	else {
 		$('button.upload-img7').css({"display": "none"});
 		$('td.td-image8').css({"visibility": "visible "});
@@ -223,6 +216,44 @@ $stmt->close();
 	}	else {
 		$('button.upload-img8').css({"display": "none"});
 	}
+
+	//Show images on edit page when images aren't deleted in order, but randomly
+	//for image 2:
+	if ((image1 == null || image1=== "") && (image3 == null || image3=== "") && (image4 == null || image4=== "") && (image5 == null || image5=== "") && (image6 == null || image6=== "") && (image7 == null || image7=== "") && (image8 == null || image8=== "")) {
+		$('td.td-image2').css({"visibility": "hidden"});
+	}
+
+	//for image 3:
+	if ((image2 == null || image2=== "") && (image4 == null || image4=== "") && (image5 == null || image5=== "") && (image6 == null || image6=== "") && (image7 == null || image7=== "") && (image8 == null || image8=== "")) {
+		$('td.td-image3').css({"visibility": "hidden"});
+	}
+
+	//for image 4:
+	if ((image3 == null || image3=== "") && (image5 == null || image5=== "") && (image6 == null || image6=== "") && (image7 == null || image7=== "") && (image8 == null || image8=== "")) {
+		$('td.td-image4').css({"visibility": "hidden"});
+	}
+
+	//for image 5:
+	if ((image4 == null || image4=== "") && (image6 == null || image6=== "") && (image7 == null || image7=== "") && (image8 == null || image8=== "")) {
+		$('td.td-image5').css({"visibility": "hidden"});
+	}
+
+	//for image 6:
+	if ((image5 == null || image5=== "") && (image7 == null || image7=== "") && (image8 == null || image8=== "")) {
+		$('td.td-image6').css({"visibility": "hidden"});
+	}
+
+	//for image 7:
+	if ((image6 == null || image6=== "") && (image8 == null || image8=== "")) {
+		$('td.td-image7').css({"visibility": "hidden"});
+	}
+
+	//for image 8:
+	if (image7 == null || image7=== "") {
+		$('td.td-image8').css({"visibility": "hidden"});
+	}
+
+	
 
 });</script>
 

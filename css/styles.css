@@ -526,6 +526,7 @@ div.profile-page {
 
 .main-profile-img {
 	height: auto;
+	padding: 0;
 }
 
 .profile-left {

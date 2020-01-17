@@ -384,6 +384,7 @@ $(document).ready(function(){
       complete: function (xhr) {
         if (xhr.responseText && xhr.responseText != "error") {
       	   $("#outputImage-main").html(xhr.responseText);
+      	   $("#upload-main-img").css({"display": "none"});
         } else{  
         	$(".error-main").html("<div class='error'>Problem in uploading file, or you're attmepting to upload an image that already exists.</div>");
         	$("#progressBar-main").stop();
@@ -469,6 +470,7 @@ $(document).ready(function(){
         if (xhr.responseText && xhr.responseText != "error") {
       	   $("#outputImage-1").html(xhr.responseText);
       	   $('td.td-image2').css({"visibility": "visible "});
+      	   $("#upload-img1").css({"display": "none"});
         } else{  
          	$(".error-1").html("<div class='error'>Problem in uploading file, or you're attmepting to upload an image that already exists.</div>");
         	$("#progressBar-1").stop();
@@ -553,6 +555,7 @@ $(document).ready(function(){
         if (xhr.responseText && xhr.responseText != "error") {
       	   $("#outputImage-2").html(xhr.responseText);
       	   $('td.td-image3').css({"visibility": "visible "});
+      	   $("#upload-img2").css({"display": "none"});
         } else{  
          	$(".error-2").html("<div class='error'>Problem in uploading file, or you're attmepting to upload an image that already exists.</div>");
         	$("#progressBar-2").stop();
@@ -638,6 +641,7 @@ $(document).ready(function(){
       	   $("#outputImage-3").html(xhr.responseText);
       	   $('td.td-image4').css({"visibility": "visible "});
       	   $('tr.tr-2').css({"display": "table-row"});
+      	   $("#upload-img3").css({"display": "none"});
         } else{  
          	$(".error-3").html("<div class='error'>Problem in uploading file, or you're attmepting to upload an image that already exists.</div>");
         	$("#progressBar-3").stop();
@@ -722,6 +726,7 @@ $(document).ready(function(){
       	   $("#outputImage-4").html(xhr.responseText);
       	   $('td.td-image5').css({"visibility": "visible "});
       	   $('tr.tr-2').css({"display": "table-row"});
+      	   $("#upload-img4").css({"display": "none"});
         } else{  
          	$(".error-4").html("<div class='error'>Problem in uploading file, or you're attmepting to upload an image that already exists.</div>");
         	$("#progressBar-4").stop();
@@ -805,6 +810,7 @@ $(document).ready(function(){
         if (xhr.responseText && xhr.responseText != "error") {
       	   $("#outputImage-5").html(xhr.responseText);
       	   $('td.td-image6').css({"visibility": "visible "});
+      	   $("#upload-img5").css({"display": "none"});
         } else{  
          	$(".error-5").html("<div class='error'>Problem in uploading file, or you're attmepting to upload an image that already exists.</div>");
         	$("#progressBar-5").stop();
@@ -889,6 +895,7 @@ $(document).ready(function(){
       	   $("#outputImage-6").html(xhr.responseText);
       	   $('td.td-image7').css({"visibility": "visible "});
       	   $('tr.tr-3').css({"display": "table-row"});
+      	   $("#upload-img6").css({"display": "none"});
         } else{  
          	$(".error-6").html("<div class='error'>Problem in uploading file, or you're attmepting to upload an image that already exists.</div>");
         	$("#progressBar-6").stop();
@@ -971,7 +978,8 @@ $(document).ready(function(){
       complete: function (xhr) {
         if (xhr.responseText && xhr.responseText != "error") {
       	   $("#outputImage-7").html(xhr.responseText);
-      	   $('td.td-image7').css({"visibility": "visible "});
+      	   $('td.td-image8').css({"visibility": "visible "});
+      	   $("#upload-img7").css({"display": "none"});
         } else{  
          	$(".error-7").html("<div class='error'>Problem in uploading file, or you're attmepting to upload an image that already exists.</div>");
         	$("#progressBar-7").stop();
@@ -1055,6 +1063,7 @@ $(document).ready(function(){
       complete: function (xhr) {
         if (xhr.responseText && xhr.responseText != "error") {
       	   $("#outputImage-8").html(xhr.responseText);
+      	   $("#upload-img8").css({"display": "none"});
         } else{  
          	$(".error-8").html("<div class='error'>Problem in uploading file, or you're attmepting to upload an image that already exists.</div>");
         	$("#progressBar-8").stop();

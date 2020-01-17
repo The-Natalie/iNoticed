@@ -219,37 +219,37 @@ $stmt->close();
 
 	//Show images on edit page when images aren't deleted in order, but randomly
 	//for image 2:
-	if ((image1 == null || image1=== "") && (image3 == null || image3=== "") && (image4 == null || image4=== "") && (image5 == null || image5=== "") && (image6 == null || image6=== "") && (image7 == null || image7=== "") && (image8 == null || image8=== "")) {
+	if ((image1 == null || image1=== "") && (image2 == null || image2=== "") && (image3 == null || image3=== "") && (image4 == null || image4=== "") && (image5 == null || image5=== "") && (image6 == null || image6=== "") && (image7 == null || image7=== "") && (image8 == null || image8=== "")) {
 		$('td.td-image2').css({"visibility": "hidden"});
 	}
 
 	//for image 3:
-	if ((image2 == null || image2=== "") && (image4 == null || image4=== "") && (image5 == null || image5=== "") && (image6 == null || image6=== "") && (image7 == null || image7=== "") && (image8 == null || image8=== "")) {
+	if ((image2 == null || image2=== "") && (image3 == null || image3=== "") && (image4 == null || image4=== "") && (image5 == null || image5=== "") && (image6 == null || image6=== "") && (image7 == null || image7=== "") && (image8 == null || image8=== "")) {
 		$('td.td-image3').css({"visibility": "hidden"});
 	}
 
 	//for image 4:
-	if ((image3 == null || image3=== "") && (image5 == null || image5=== "") && (image6 == null || image6=== "") && (image7 == null || image7=== "") && (image8 == null || image8=== "")) {
+	if ((image3 == null || image3=== "") && (image4 == null || image4=== "") && (image5 == null || image5=== "") && (image6 == null || image6=== "") && (image7 == null || image7=== "") && (image8 == null || image8=== "")) {
 		$('td.td-image4').css({"visibility": "hidden"});
 	}
 
 	//for image 5:
-	if ((image4 == null || image4=== "") && (image6 == null || image6=== "") && (image7 == null || image7=== "") && (image8 == null || image8=== "")) {
+	if ((image4 == null || image4=== "") && (image5 == null || image5=== "") && (image6 == null || image6=== "") && (image7 == null || image7=== "") && (image8 == null || image8=== "")) {
 		$('td.td-image5').css({"visibility": "hidden"});
 	}
 
 	//for image 6:
-	if ((image5 == null || image5=== "") && (image7 == null || image7=== "") && (image8 == null || image8=== "")) {
+	if ((image5 == null || image5=== "") && (image6 == null || image6=== "") && (image7 == null || image7=== "") && (image8 == null || image8=== "")) {
 		$('td.td-image6').css({"visibility": "hidden"});
 	}
 
 	//for image 7:
-	if ((image6 == null || image6=== "") && (image8 == null || image8=== "")) {
+	if ((image6 == null || image6=== "") && (image7 == null || image7=== "") && (image8 == null || image8=== "")) {
 		$('td.td-image7').css({"visibility": "hidden"});
 	}
 
 	//for image 8:
-	if (image7 == null || image7=== "") {
+	if ((image7 == null || image7=== "") && (image8 == null || image8=== ""))  {
 		$('td.td-image8').css({"visibility": "hidden"});
 	}
 

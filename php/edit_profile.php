@@ -253,6 +253,16 @@ $stmt->close();
 		$('td.td-image8').css({"visibility": "hidden"});
 	}
 
+
+	//hide rows that have no images
+	if ((image4 == null || image4=== "") && (image5 == null || image5=== "") && (image6 == null || image6=== ""))  {
+			$('tr.tr-2').css({"visibility": "hidden"});
+		}
+
+	if ((image7 == null || image7=== "") && (image8 == null || image8=== ""))  {
+			$('tr.tr-3').css({"visibility": "hidden"});
+		}
+
 	
 
 });</script>
@@ -410,7 +420,7 @@ $stmt->close();
 					    	</td>
 					    </tr>
 					    	
-					    <tr>
+					    <tr class="tr-2">
 					    	<td class="even-cols td-image4">
 					    		<h4>Image 4</h4>
 									<img class="preview-images image4" src="/php/<?php echo $image4; ?>">
@@ -502,7 +512,7 @@ $stmt->close();
 					    	</td>
 					  	</tr>
 
-					  	<tr>
+					  	<tr class="tr-3">
 					    	<td class="even-cols td-image7">
 					    		<h4>Image 7</h4>
 									<img class="preview-images image7" src="/php/<?php echo $image7; ?>">

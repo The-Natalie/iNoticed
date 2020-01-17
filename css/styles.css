@@ -658,3 +658,8 @@ div.profile-info p {
 .thumbnail {
 	max-width: 150px;
 }
+
+.thumbnail:hover {
+	transform: scale(3.5);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}

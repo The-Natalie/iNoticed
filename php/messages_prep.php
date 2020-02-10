@@ -7,34 +7,34 @@ if (!isset($_SESSION['loggedin'])) {
 	exit();
 } 
 
-// $DATABASE_HOST = 'mysql.inoticed.org';
-// $DATABASE_USER = 'ndhall';
-// $DATABASE_PASS = 'natabata14';
-// $DATABASE_NAME = 'inoticed_dating';
-// // Try and connect using the info above.
-// $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-// if ( mysqli_connect_errno() ) {
-// 	// If there is an error with the connection, stop the script and display the error.
-// 	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
-// }
+$DATABASE_HOST = 'mysql.inoticed.org';
+$DATABASE_USER = 'ndhall';
+$DATABASE_PASS = 'natabata14';
+$DATABASE_NAME = 'inoticed_dating';
+// Try and connect using the info above.
+$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+if ( mysqli_connect_errno() ) {
+	// If there is an error with the connection, stop the script and display the error.
+	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
+}
 
-	$dbhost = 'mysql.inoticed.org';
-	$dbname = 'inoticed_dating';
-	$dbuser = 'ndhall';
-	$dbpass = 'natabata14';
+	// $dbhost = 'mysql.inoticed.org';
+	// $dbname = 'inoticed_dating';
+	// $dbuser = 'ndhall';
+	// $dbpass = 'natabata14';
 
-	try{
-		$db = new PDO("mysql:dbhost=$dbhost;dbname=$dbname", "$dbuser", "$dbpass");
-	}catch( PDOException $e ){
-		echo $e->getMessage();
-	}
+	// try{
+	// 	$db = new PDO("mysql:dbhost=$dbhost;dbname=$dbname", "$dbuser", "$dbpass");
+	// }catch( PDOException $e ){
+	// 	echo $e->getMessage();
+	// }
 
 switch( $_REQUEST['action'] ) {
 	case "sendMessage":
 
-		//global $db;
+		//global $con;
 		session_start();
-		$query = $db->prepare("INSERT INTO messages SET username=?, message=?");
+		$query = $con->prepare("INSERT INTO messages SET username=?, message=?");
 		$run = $query->execute([$_SESSION['username'], $_REQUEST['message']]);
 		if( $run ) {
 			echo 1;
@@ -43,7 +43,7 @@ switch( $_REQUEST['action'] ) {
 	break;
 	case "getMessages":
 		session_start();
-		$query = $db->prepare("SELECT * FROM messages");
+		$query = $con->prepare("SELECT * FROM messages");
 		$run = $query->execute();
 		$rs = $query->fetchAll(PDO::FETCH_OBJ);
 		$chat = '';

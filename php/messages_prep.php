@@ -26,6 +26,40 @@ $stmt->bind_result($id, $username);
 $stmt->fetch();
 
 
+$my_message = "Testing 1,2,3";
+
+        // Check input errors before inserting in database
+        if(empty($is_error)){
+            // Prepare an update statement
+            $sql = "UPDATE messages SET message=? WHERE id=1";
+             
+            if($stmt = mysqli_prepare($con, $sql)){
+                // Bind variables to the prepared statement as parameters
+                mysqli_stmt_bind_param($stmt, "s", $param_my_message);
+                
+                // Set parameters
+                $param_my_message = $my_message;
+                
+                // Attempt to execute the prepared statement
+                if(mysqli_stmt_execute($stmt)){
+                    // Records updated successfully. 
+                    $param = "Your email has been updated sucessfully.";
+                } else { 
+                    $param = "Something went wrong. Please try again later. Or let dating@inoticed.org know the details of your problem.";
+                    $is_error = "1";
+                }
+            }
+             
+            // Close statement
+            mysqli_stmt_close($stmt);
+        }
+        
+        // Close connection
+        mysqli_close($con);
+
+
+
+
 
 
 switch( $_REQUEST['action'] ) {

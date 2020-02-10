@@ -77,7 +77,7 @@ if (!isset($_SESSION['loggedin'])) {
 
 		$('form').submit(function() {
 			var message = $('.textarea').val();
-			$.post('handlers/messages.php?action=sendMessage&message='+message, function(response) {
+			$.post('/php/messages_prep.php?action=sendMessage&message='+message, function(response) {
 				if( response==1 ) {
 					LoadChat();
 					document.getElementById('messageFrm').reset();

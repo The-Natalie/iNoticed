@@ -18,24 +18,23 @@ if ( mysqli_connect_errno() ) {
 	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
-	// $dbhost = 'mysql.inoticed.org';
-	// $dbname = 'inoticed_dating';
-	// $dbuser = 'ndhall';
-	// $dbpass = 'natabata14';
+$stmt = $con->prepare('SELECT id, username FROM accounts WHERE id = ?');
+// In this case we can use the account ID to get the account info.
+$stmt->bind_param('i', $_SESSION['id']);
+$stmt->execute();
+$stmt->bind_result($id, $username);
+$stmt->fetch();
 
-	// try{
-	// 	$db = new PDO("mysql:dbhost=$dbhost;dbname=$dbname", "$dbuser", "$dbpass");
-	// }catch( PDOException $e ){
-	// 	echo $e->getMessage();
-	// }
+
+
 
 switch( $_REQUEST['action'] ) {
 	case "sendMessage":
 
 		//global $con;
 		session_start();
-		$query = $con->prepare("INSERT INTO messages SET username=?, message=?");
-		$run = $query->execute([$_SESSION['username'], $_REQUEST['message']]);
+		$query = $con->prepare("INSERT INTO messages SET ".$username."=?, message=?");
+		$run = $query->execute([$username, $_REQUEST['message']]);
 		if( $run ) {
 			echo 1;
 			exit;
@@ -48,7 +47,7 @@ switch( $_REQUEST['action'] ) {
 		$rs = $query->fetchAll(PDO::FETCH_OBJ);
 		$chat = '';
 		foreach( $rs as $message ) {
-			$chat .= '<div class="single-message '.(($_SESSION['username']==$message->username)?'right':'left').'">
+			$chat .= '<div class="single-message '.(($username==$message->username)?'right':'left').'">
 						<strong>'.$message->username.': </strong><br /> <p>'.$message->message.'</p>
 						<br />
 						<span>'.date('h:i a', strtotime($message->date)).'</span>
@@ -59,5 +58,6 @@ switch( $_REQUEST['action'] ) {
 		echo $chat;
 	break;
 }
+$stmt->close();
 
 ?>

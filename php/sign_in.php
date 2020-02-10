@@ -18,6 +18,22 @@ if ( !isset($_POST['username'], $_POST['password']) ) {
 	die ('Please fill both the username and password field!');
 }
 
+// //Chat implementation
+// if (!empty($_POST['username']) && !empty($_POST['password'])) {
+// 	include ('/php/messages.php');
+// 	$chat = new Chat();
+// 	$user = $chat->loginUsers($_POST['username'], $_POST['password']);
+// 	if(!empty($user)) {
+// 		$_SESSION['username'] = $user[0]['username'];
+// 		$_SESSION['userid'] = $user[0]['userid'];
+// 		$lastInsertId = $chat->insertUserLoginDetails($user[0]['userid']);
+// 		$_SESSION['login_details_id'] = $lastInsertId;
+// 		header("Location:index.php");
+// 	} else {
+// 		$param = "Invalid username or password!";
+// 	}
+// }
+
 // Prepare our SQL, preparing the SQL statement will prevent SQL injection.
 if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?')) {
 	// Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"

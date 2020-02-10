@@ -37,10 +37,57 @@ if (!isset($_SESSION['loggedin'])) {
 		</div>
 
 		<div class="content">
-			<h2>Home Page</h2>
-			<p>Welcome back, <?=$_SESSION['name']?>!</p>
+			<h2>Messages</h2>
+			<div>
+				<div class="chat_wrapper">
+					<div id="abc"></div>
+					<div id="chat"></div>
+					<form method="POST" id="messageFrm">
+						<textarea name="message" cols="30" rows="7" class="textarea" placeholder="Please Type a message to send"></textarea>
+					</form>
+				</div>
+			</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+	<script>
+		LoadChat();
+		setInterval(function() {
+			LoadChat();
+		}, 1000);
+
+		function LoadChat() {
+			$.post('/php/messages_prep.php?action=getMessages', function(response){
+				var scrollpos = $('#chat').scrollTop();
+				var scrollpos = parseInt(scrollpos) + 520;
+				var scrollHeight = $('#chat').prop('scrollHeight');
+
+				$('#chat').html(response);
+				if( scrollpos < scrollHeight ) {
+					
+				} else{
+					$('#chat').scrollTop( $('#chat').prop('scrollHeight') );
+				}
+			});
+		}
+		
+		$('.textarea').keyup(function(e) {
+			if( e.which == 13  || e.keyCode == 13) {
+				$('form').submit();
+			}
+		});
+
+		$('form').submit(function() {
+			var message = $('.textarea').val();
+			$.post('handlers/messages.php?action=sendMessage&message='+message, function(response) {
+				if( response==1 ) {
+					LoadChat();
+					document.getElementById('messageFrm').reset();
+				}
+			});
+			return false;
+		});
+	</script>
+			</div>
 		</div>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 		<script
 			  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
 			  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="

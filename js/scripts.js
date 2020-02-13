@@ -405,7 +405,7 @@ $(document).ready(function(){
   $('button.delete-main-img').click(function(){ 
     //Selecting image value and user ID for mysql column
     var imgValue = $('#value-main-image').val();
-    const userID = $('#user-id').val();
+    var userID = $('#user-id').val();
  
     // AJAX request
     $.ajax({
@@ -1298,5 +1298,4 @@ $(window).on('resize', function(){
 	});
 	//End of zippopotam.us
 
-console.log(userID);
 });

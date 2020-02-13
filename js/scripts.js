@@ -405,7 +405,7 @@ $(document).ready(function(){
   $('button.delete-main-img').click(function(){ 
     //Selecting image value and user ID for mysql column
     var imgValue = $('#value-main-image').val();
-    var userID = $('#user-id').val();
+    const userID = $('#user-id').val();
  
     // AJAX request
     $.ajax({

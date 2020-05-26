@@ -25,11 +25,7 @@ $stmt->store_result();
 $stmt->bind_result($password, $email, $id, $username);
 $stmt->fetch();
 
-//Email activation check
-// if ($activation_code == '') {
-// // user not activated, redirect or display msg
-// 	header('Location: /please_activate.html');
-// }
+
 
 $stmt->close();
 ?>
@@ -66,7 +62,7 @@ $stmt->close();
 				</table>
 				<br />
 				<form>
-					<input id="get-username" type="hidden" name="id" value="<?php echo $username; ?>"/>
+					<input id="get-username" type="hidden" name="username" value="<?php echo $username; ?>"/>
 					<button class="generate-url-button" type="button">Generate profile url  <i class="fas fa-sync-alt"></i></button>
 				</form>
 				<div id="generate-url">

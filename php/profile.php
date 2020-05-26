@@ -163,8 +163,8 @@ $stmt->close();
 					</div>	
 				</div>
 
-				<div>
-					<a href="create_message.php?id=<?=$id->id?>"><button class="edit-button" type="button"><i class="fas fa-envelope"></i>Message <?=$first_name?></button></a>  
+				<div class="msg-button">
+					<a href="create_message.php?id=<?=$id?>"><button class="edit-button" type="button"><i class="fas fa-envelope"></i>Message <?=$first_name?></button></a>  
 				</div>
 			</div>
 		</div>

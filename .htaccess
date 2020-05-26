@@ -4,4 +4,4 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
 
 Options +FollowSymlinks
 RewriteEngine on
-RewriteRule ^profile/([^/]+) /php/profile.php?id=$1 [R,NC]
+RewriteRule ^profile/([^/]+) /php/profile.php?username=$1 [R,NC]

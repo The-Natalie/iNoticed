@@ -44,10 +44,6 @@ $thread_result = mysqli_query($con, $stmt3);
 
 
 if(!empty($_POST)) {
-	$token = $_POST['csrf'];
-	if(!Token::check($token)) {
-		die("Token doesn't match!");
-	}
 	$date = date("M-d-y H:i:s")  //he did Y-m-d
 	$fields = array(
 		'thread_id' => $thread_id,
@@ -125,7 +121,6 @@ if(!empty($_POST)) {
 					<div class="compose-msg">
 						<form name="create-msg" action="create_message.php?id=<?=$id?>" method="post">
 							<textarea class="textarea" rows="5" cols="50" name="message" placeholder="Please type a message to send"></textarea>
-							<input type="hidden" name="csrf" value="<?=Token::generate();?>" /><br />
 							<button class="submit-button" type="submit" name="send_message">Send Messsage</button>
 						</form>
 					</div>	

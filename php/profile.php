@@ -162,6 +162,10 @@ $stmt->close();
 						<p>Wants kids: <span style="font-weight: normal;"><?=$want_kids?></span></p>
 					</div>	
 				</div>
+
+				<div>
+					<a href="create_message.php?id=<?=$id->id?>"><button class="edit-button" type="button"><i class="fas fa-envelope"></i>Message <?=$first_name?></button></a>  
+				</div>
 			</div>
 		</div>
 

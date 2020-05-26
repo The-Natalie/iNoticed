@@ -665,51 +665,137 @@ div.profile-info p {
 	z-index: 9;
 }
 
-//Messages 
-.chat_wrapper {
-	width:70%;
-	margin:10px auto;
-	background:#ffffff;
-}
-#chat {
-	min-height:500px;
-	height:500px;
-	overflow:auto;
-	border:1px solid #b3b3b3;
-	padding:10px;
-}
-.textarea {
-	width:96%;
-	border:1px solid #b3b3b3;
-	outline:none;
-	padding:10px;
-	margin-top:10px;
-}
-.single-message {
-	max-width:400px;
-	margin:5px 0px 5px 0px;
-	padding:5px 10px 5px 10px;
-	border:1px solid #b3b3b3;
-	border-radius:5px;
-}
-.single-message p {
-	font-size:14px;
-	margin-top:5px;
-}
-.single-message span {
-	float:right;
-	font-size:12px;
+#prev-msgs {
+	margin-bottom: 20px;
 }
 
-.left {
-	float:left;
+.left-msg {
+	text-align: left;
 }
-.right {
-	float:right;
-	background:#7faaef;
-	color:#000;
-	
+
+.img-sent-div-left {
+	float: left;
 }
-.clear {
-	clear:both;
+
+.img-sent-div-left img {
+	width: 50px;
+	height: auto;
+}
+
+.msg-name {
+	font-size: 0.9em;
+	font-weight: bold;
+}
+
+.right-msg {
+	text-align: right;
+}
+
+.img-sent-div-right {
+	float: right;
+}
+
+.img-sent-div-right img {
+	width: 50px;
+	height: auto;
+}
+
+.content p.sent-text {
+	font-size: 0.6em;
+	font-weight: normal;
+	padding: 5px 0 0 0;
+}
+
+.talk-bubble-left, .talk-bubble-right {
+  display: inline-block;
+  position: relative;
+	max-width: 75%;
+	height: auto;
+}
+
+.talk-bubble-left {
+	background-color: #00aabb;
+	margin-left: 20px;
+}
+
+.talk-bubble-right {
+	background-color: #00ff80;
+	margin-right: 20px;
+}
+
+.round{
+  border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+}
+
+
+/* Right triangle, left side slightly down */
+.tri-right.border.left-in:before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: -40px;
+	right: auto;
+  top: 30px;
+	bottom: auto;
+	border: 20px solid;
+	border-color: #666 #666 transparent transparent;
+}
+.tri-right.left-in:after{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: -20px;
+	right: auto;
+  top: 38px;
+	bottom: auto;
+	border: 12px solid;
+	border-color: #00aabb #00aabb transparent transparent;
+}
+
+/* Right triangle, right side slightly down*/
+.tri-right.border.right-in:before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: auto;
+	right: -40px;
+  top: 30px;
+	bottom: auto;
+	border: 20px solid;
+	border-color: #666 transparent transparent #666;
+}
+.tri-right.right-in:after{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: auto;
+	right: -20px;
+  top: 38px;
+	bottom: auto;
+	border: 12px solid;
+	border-color: #00ff80 transparent transparent #00ff80;
+}
+
+/* talk bubble contents */
+.talktext{
+  padding: 1em;
+	text-align: left;
+  line-height: 1.5em;
+}
+.talktext p{
+  /* remove webkit p margins */
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  font-size: 1em;
+  font-weight: normal;
+}
+
+.compose-msg textarea {
+	width: 100%;
 }

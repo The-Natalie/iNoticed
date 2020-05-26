@@ -7,6 +7,12 @@ if (!isset($_SESSION['loggedin'])) {
 	exit();
 } 
 
+
+$db = DB::getInstance();
+$settingsQ = $db->query("SELECT * FROM accounts");
+$settings = $settingsQ->first();
+
+
 // $DATABASE_HOST = 'mysql.inoticed.org';
 // $DATABASE_USER = 'ndhall';
 // $DATABASE_PASS = 'natabata14';
@@ -19,17 +25,23 @@ if (!isset($_SESSION['loggedin'])) {
 // }
 
 
+$messagesQ = $db->query("SELECT * FROM messages WHERE msg_to = ? AND deleted != 1 ORDER BY sent_on DESC",array($user->data()->id));
+$messages = messagesQ->results();
+
+
+
+
 ?>
 
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
+		<meta charset="utf-8" />
 		<title>iNoticed | Dating</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="/css/styles.css"> 
-		<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"> 
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"> 
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+		<link rel="stylesheet" type="text/css" href="/css/styles.css" /> 
+		<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" /> 
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" /> 
 	</head>
 	<body id="loggedin">
 
@@ -39,54 +51,27 @@ if (!isset($_SESSION['loggedin'])) {
 		<div class="content">
 			<h2>Messages</h2>
 			<div>
-				<div class="chat_wrapper">
-					<div id="abc"></div>
-					<div id="chat"></div>
-					<form method="POST" id="messageFrm">
-						<textarea name="message" cols="30" rows="7" class="textarea" placeholder="Please Type a message to send"></textarea>
-					</form>
-				</div>
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>From</th>
+							<th>Sent On</th>
+							<th>Read Message</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<?php foreach($messages as $m) { ?>
+								<a href="message.php?id=<?=$m->id?>"><td><?php echouser($m->msg_from);?></td></a>
+								<td><?=$m->sent_on?></td>
+								<td><?php myBin($m->msg_read);?></td>
+						</tr>
+						<?php	} //end foreach ?> 
+					</tbody>
+				</table>
 			</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
-	<script>
-		LoadChat();
-		setInterval(function() {
-			LoadChat();
-		}, 1000);
-
-		function LoadChat() {
-			$.post('/php/messages_prep.php?action=getMessages', function(response){
-				var scrollpos = $('#chat').scrollTop();
-				var scrollpos = parseInt(scrollpos) + 520;
-				var scrollHeight = $('#chat').prop('scrollHeight');
-
-				$('#chat').html(response);
-				if( scrollpos < scrollHeight ) {
-					
-				} else{
-					$('#chat').scrollTop( $('#chat').prop('scrollHeight') );
-				}
-			});
-		}
-		
-		$('.textarea').keyup(function(e) {
-			if( e.which == 13  || e.keyCode == 13) {
-				$('form').submit();
-			}
-		});
-
-		$('form').submit(function() {
-			var message = $('.textarea').val();
-			$.post('/php/messages_prep.php?action=sendMessage&message='+message, function(response) {
-				if( response==1 ) {
-					LoadChat();
-					document.getElementById('messageFrm').reset();
-				}
-			});
-			return false;
-		});
-	</script>
-			</div>
+		</div>	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 		<script
 			  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
 			  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="

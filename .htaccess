@@ -2,6 +2,6 @@ RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
 
-
-RewriteEngine On
-RewriteRule ^profile/(.+)$ /php/profile.php?user=$1 [R,L]
+Options +FollowSymlinks
+RewriteEngine on
+RewriteRule ^profile/([^/]+) /php/profile.php?id=$1 [R,NC]

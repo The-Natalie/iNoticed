@@ -62,7 +62,7 @@ $stmt->close();
 				</table>
 				<br />
 				<form>
-					<input id="get-username" type="hidden" name="user" value="<?php echo $username; ?>"/>
+					<input id="get-username" type="hidden" name="id" value="<?php echo $username; ?>"/>
 					<button class="generate-url-button" type="button">Generate profile url  <i class="fas fa-sync-alt"></i></button>
 				</form>
 				<div id="generate-url">

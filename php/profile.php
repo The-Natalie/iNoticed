@@ -99,7 +99,7 @@ $stmt->close();
 		});
 	}	
 
-	if (<?=$their_username?> == 'a') {
+	if ('<?=$their_username?>' === 'a') {
 		$('.msg-button').css({"display": "none"});
 	}
 

@@ -20,16 +20,8 @@ if (mysqli_connect_errno()) {
 	die ('Let dating@inoticed.org know the details of this error: Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
-$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] 
-                === 'on' ? "https" : "http") . "://" . 
-          $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']; 
-
-$url_pos = strrpos($url, '/');
-$url_id = $url_pos === false ? $url : substr($url, $url_pos + 1);
-
-$their_username = $url_id;
-
-if ($their_username !== 'profile.php') {
+if (isset($_GET['id'])) {
+	$their_username = $_GET['id'];
 	$stmt = $con->prepare('SELECT id, first_name, age, gender, feet, inches, eyes, hair, smoke, drugs, transportation, intention, zip, city, state, profession, education, ethnicity, religion, marital_status, kids, want_kids, about_me, image_main, image1, image2, image3, image4, image5, image6, image7, image8 FROM accounts WHERE username = $their_username');
 } else {
 	$stmt = $con->prepare('SELECT id, first_name, age, gender, feet, inches, eyes, hair, smoke, drugs, transportation, intention, zip, city, state, profession, education, ethnicity, religion, marital_status, kids, want_kids, about_me, image_main, image1, image2, image3, image4, image5, image6, image7, image8 FROM accounts WHERE id = ?');

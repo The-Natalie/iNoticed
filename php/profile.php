@@ -5,8 +5,10 @@ session_start();
 // This determines what a visitor can see based on whether or not they're signed in
 if (!isset($_SESSION['loggedin'])) {
 	$user_state = 'signed-out-nav';
+	$signed_in	= false;
 } else {
 	$user_state = 'signed-in-nav';
+	$signed_in = true;
 }
 
 
@@ -19,9 +21,13 @@ if (mysqli_connect_errno()) {
 	die ('Let dating@inoticed.org know the details of this error: Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
-//Get data from database
-$stmt = $con->prepare('SELECT id, first_name, age, gender, feet, inches, eyes, hair, smoke, drugs, transportation, intention, zip, city, state, profession, education, ethnicity, religion, marital_status, kids, want_kids, about_me, image_main, image1, image2, image3, image4, image5, image6, image7, image8 FROM accounts WHERE id = ?');
-// In this case we can use the account ID to get the account info.
+if (isset($_GET['username'])) {
+	$their_username = $_GET['username'];
+	$stmt = $con->prepare('SELECT id, first_name, age, gender, feet, inches, eyes, hair, smoke, drugs, transportation, intention, zip, city, state, profession, education, ethnicity, religion, marital_status, kids, want_kids, about_me, image_main, image1, image2, image3, image4, image5, image6, image7, image8 FROM accounts WHERE username = $their_username');
+} else {
+	$stmt = $con->prepare('SELECT id, first_name, age, gender, feet, inches, eyes, hair, smoke, drugs, transportation, intention, zip, city, state, profession, education, ethnicity, religion, marital_status, kids, want_kids, about_me, image_main, image1, image2, image3, image4, image5, image6, image7, image8 FROM accounts WHERE id = ?');
+}
+
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
 $stmt->bind_result($id, $first_name, $age, $gender, $feet, $inches, $eyes, $hair, $smoke, $drugs, $transportation, $intention, $zip, $city, $state, $profession, $education, $ethnicity, $religion, $marital_status, $kids, $want_kids, $about_me, $image_main, $image1, $image2, $image3, $image4, $image5, $image6, $image7, $image8);

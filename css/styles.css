@@ -665,8 +665,9 @@ div.profile-info p {
 	z-index: 9;
 }
 
-.msg-button button.edit-button {
-	margin: auto;
+.msg-button {
+	text-align: center;
+	padding-bottom: 15px;
 }
 
 #prev-msgs {

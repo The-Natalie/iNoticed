@@ -5,10 +5,8 @@ session_start();
 // This determines what a visitor can see based on whether or not they're signed in
 if (!isset($_SESSION['loggedin'])) {
 	$user_state = 'signed-out-nav';
-	$signed_in	= false;
 } else {
 	$user_state = 'signed-in-nav';
-	$signed_in = true;
 }
 
 $DATABASE_HOST = 'mysql.inoticed.org';
@@ -92,10 +90,10 @@ $stmt->close();
 		$('img.thmb-8').css({"display": "none"});
 	}
 
-	if ('<?=$signed_in?>' === 'false') {
-		$('.edit-button p').click(function(e) {
+	if ('<?=$user_state?>' === 'signed-out-nav') {
+		$('.edit-button').click(function(e) {
 			e.preventDefault();
-			$('.msg-button').html("Please sign up or login to send messages.");
+			$('.msg-button p').css({"color": "red"}).html("Please sign up or sign in to send messages.");
 		});
 	}	
 
@@ -117,9 +115,9 @@ $stmt->close();
 		<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"> 
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"> 
 	</head>
-	<body id="loggedin">
+	<body>
 
-		<div class="nav-light dating-signed-in-nav">
+		<div class="nav-light dating-<?=$user_state?>">
 		</div>
 
 		<div class="content">
@@ -182,7 +180,7 @@ $stmt->close();
 					</div>	
 				</div>
 
-				<div class="msg-button"><p></p>
+				<div class="msg-button"><p ></p>
 					<a href="create_message.php?id=<?=$id?>"><button class="edit-button" type="button"><i class="fas fa-envelope"></i> Message <?=$first_name?></button></a>  
 				</div>
 			</div>

@@ -92,14 +92,16 @@ $stmt->close();
 		$('img.thmb-8').css({"display": "none"});
 	}
 
-if (<?=$signed_in?> == false) {
-	$('.edit-button p').click(function(e) {
-		e.preventDefault();
-		$('.msg-button').html("Please sign up or login to send messages.");
-}
+	if (<?=$signed_in?> == false) {
+		$('.edit-button p').click(function(e) {
+			e.preventDefault();
+			$('.msg-button').html("Please sign up or login to send messages.");
+		});
+	}	
 
-if (<?=$their_username?> == 'a') {
-	$('.msg-button').css({"display": "none"});
+	if (<?=$their_username?> == 'a') {
+		$('.msg-button').css({"display": "none"});
+	}
 
 });</script>
 

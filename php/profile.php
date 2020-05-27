@@ -5,10 +5,10 @@ session_start();
 // This determines what a visitor can see based on whether or not they're signed in
 if (!isset($_SESSION['loggedin'])) {
 	$user_state = 'signed-out-nav';
-	$signed_in	= false;
+	// $signed_in	= false;
 } else {
 	$user_state = 'signed-in-nav';
-	$signed_in = true;
+	// $signed_in = true;
 }
 
 

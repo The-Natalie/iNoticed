@@ -92,7 +92,7 @@ $stmt->close();
 		$('img.thmb-8').css({"display": "none"});
 	}
 
-	if (<?=$signed_in?> == false) {
+	if ('<?=$signed_in?>' === 'false') {
 		$('.edit-button p').click(function(e) {
 			e.preventDefault();
 			$('.msg-button').html("Please sign up or login to send messages.");
@@ -183,7 +183,7 @@ $stmt->close();
 				</div>
 
 				<div class="msg-button"><p></p>
-					<a href="create_message.php?id=<?=$id?>"><button class="edit-button" type="button"><i class="fas fa-envelope"></i>Message <?=$first_name?></button></a>  
+					<a href="create_message.php?id=<?=$id?>"><button class="edit-button" type="button"><i class="fas fa-envelope"></i> Message <?=$first_name?></button></a>  
 				</div>
 			</div>
 		</div>

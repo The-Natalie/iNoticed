@@ -43,19 +43,16 @@ $stmt3 = "SELECT * FROM messages WHERE thread_id = $thread_id ORDER BY sent_on D
 $thread_result = mysqli_query($con, $stmt3);		
 
 
-if(!empty($_POST)) {
+if (!empty($_POST)) {
 	$date = date("M-d-y H:i:s")  //he did Y-m-d
-	$fields = array(
-		'thread_id' => $thread_id,
-		'msg_from'  => $my_id,
-		'msg_to'    => $their_id,
-		'msg_body'  => Input::get('message'),
-		'sent_on'   => $date,
-	);
-	$db->insert('messages',$fields);
-	Redirect::to('create_message.php?msg=Message+sent!');
+	$stmt4 = $con->prepare('INSERT INTO messages (thread_id, msg_from, msg_to, message, sent_on ) VALUES (?, ?, ?, ?, ?)')) {
+	// We do not want to expose passwords in our database, so hash the password and use password_verify when a user logs in.
+	$stmt->bind_param('siiss', $thread_id, $my_id, $their_id, Input::get('message'), $date);
+	$stmt->execute();
+} else {
+	// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
+	echo =  'Could not prepare statement. Try again. If you\'ve tried multiple times, contact dating@inoticed.org with the details of the problem';
 }
-
 
 ?>
 

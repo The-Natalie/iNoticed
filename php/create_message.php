@@ -1,5 +1,4 @@
 <?php
-// require_once '/php/DB.php';
 // We need to use sessions, so you should always start sessions using the below code.
 session_start();
 // If the user is not logged in redirect to the login page...
@@ -19,40 +18,48 @@ if ( mysqli_connect_errno() ) {
 	die ('Let dating@inoticed.org know the details of this error: Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
-$stmt = $con->prepare('SELECT id, username, first_name, image_main FROM accounts WHERE id = ?');
-$stmt->bind_param('i', $_SESSION['id']);
-$stmt->execute();
-$stmt->bind_result($my_id, $my_username, $my_first_name, $my_image_main);
-$stmt->fetch();
-
+$my_id = $_SESSION['id'];
+$their_first_name = "";
 if (isset($_GET['id'])) {
 $their_id = $_GET['id'];
 }
 
-$stmt2 = $con->prepare('SELECT username, first_name, image_main FROM accounts WHERE id = $their_id');
+$stmt = $con->prepare("SELECT username, first_name, image_main FROM accounts WHERE id = ?");
+$stmt->bind_param("i", $my_id);
 $stmt->execute();
-$stmt2->bind_result($their_username, $their_first_name, $their_image_main);
-$stmt2->fetch();
+$stmt->bind_result($my_username, $my_first_name, $my_image_main);
+$stmt->fetch();
+$stmt->bind_param("i", $their_id);
+$stmt->execute();
+$stmt->bind_result($their_username, $their_first_name, $their_image_main);
+$stmt->fetch();
+$stmt->close();
 
 $our_names = [strtolower($my_username), strtolower($their_username)];  //strtolower is for lowercase
 sort($our_names);
 $thread_id = $our_names[0] . "_" . $our_names[1];
 
-//gets the thread of past messages and puts them in order
-$stmt3 = "SELECT * FROM messages WHERE thread_id = $thread_id ORDER BY sent_on DESC";
-$thread_result = mysqli_query($con, $stmt3);		
 
+//gets the thread of past messages and puts them in order	
+if ($their_first_name !== "") {
+  $sql = "SELECT * FROM messages WHERE thread_id = '$thread_id' ORDER BY sent_on ASC";
+  $result = mysqli_query($con, $sql);
+    
+}
 
 if (!empty($_POST)) {
-	$date = date("M-d-y H:i:s")  //he did Y-m-d
-	$stmt4 = $con->prepare('INSERT INTO messages (thread_id, msg_from, msg_to, message, sent_on ) VALUES (?, ?, ?, ?, ?)')) {
-	// We do not want to expose passwords in our database, so hash the password and use password_verify when a user logs in.
-	$stmt->bind_param('siiss', $thread_id, $my_id, $their_id, Input::get('message'), $date);
-	$stmt->execute();
-} else {
-	// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
-	echo =  'Could not prepare statement. Try again. If you\'ve tried multiple times, contact dating@inoticed.org with the details of the problem';
+	$message = htmlspecialchars($_POST["message"]);
+  $message = $con->real_escape_string($message);
+  $date = date("Y-m-d H:i:s");  
+
+  $stmt4 = "INSERT INTO messages (thread_id, msg_from, msg_to, message, sent_on) VALUES ('$thread_id', '$my_id', '$their_id', '$message', '$date')";
+  if(mysqli_query($con, $stmt4)){
+    header('Location: create_message.php?id=' . $their_id);
+  } else{
+    echo "ERROR: Not able to execute query. " . mysqli_error($con);
+  }
 }
+
 
 ?>
 
@@ -76,47 +83,48 @@ if (!empty($_POST)) {
 			<div>
 				<div class="msg_wrapper">
 					<div id="prev-msgs">
-						<? php	if (mysqli_num_rows($thread_result) > 0) {
-					    while($row = mysqli_fetch_assoc($thread_result)) {
-					    	if($row["msg_to"] == $my_id) { ?>
-					    							    						
-									<div class="left-msg">
-										<p class="msg-name"><?=$my_first_name?></p>
-										<div class="img-sent-div-left">
-											<img src="/php/<?php echo $my_image_main; ?>" />
-											<p class="sent-text"><?=$thread_result["sent_on"]?></p>
-										</div>
-										<div class="talk-bubble-left tri-right round left-in">
-										  <div class="talktext">
-										    <p><?=$thread_result[message]?></p>
-										  </div>
-										</div>
-									</div>
-
-								<? php  } else {  ?>
-					    	
-
-									<div class="right-msg">
-										<p class="msg-name"><?=$their_name?></p>
-										<div class="img-sent-div-right">
-											<img src="/php/<?php echo $their_image_main; ?>" />
-											<p class="sent-text"><?=$thread_result["sent_on"]?></p>
-										</div>
-										<div class="talk-bubble-right tri-right round right-in">
-										  <div class="talktext">
-										    <p><?=$thread_result[message]?></p>
-										  </div>
-										</div>
-									</div>
-
-								<? php  }
-							  	}
-								} else {
-									echo "There are no previous messages";
-								}  ?>	
+						<?php 
+              if (mysqli_num_rows($result) > 0) {
+                while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                  $left_message =	'		
+                    <div class="left-msg">
+                      <p class="msg-name">' . $my_first_name . '</p>
+                      <div class="img-sent-div-left">
+                        <img src="/php/' . $my_image_main . '" />
+                        <p class="sent-text">' . $row["sent_on"] . '</p>
+                      </div>
+                      <div class="talk-bubble-left tri-right round left-in">
+                        <div class="talktext">
+                          <p class="talktext-p">' . $row[nl2br("message")] . '</p>
+                        </div>
+                      </div>
+                    </div>';
+                  $right_message =	'		
+                    <div class="right-msg">
+                      <p class="msg-name">' . $their_first_name . '</p>
+                      <div class="img-sent-div-right">
+                        <img src="/php/' . $their_image_main . '" />
+                        <p class="sent-text">' . $row["sent_on"] . '</p>
+                      </div>
+                      <div class="talk-bubble-right tri-right round right-in">
+                        <div class="talktext">
+                          <p class="talktext-p">' . $row[nl2br("message")] . '</p>
+                        </div>
+                      </div>
+                    </div>';
+		              if($row["msg_to"] == $my_id) {     
+	                  echo $left_message;
+		              } 
+		              if($row["msg_from"] == $my_id) { 
+	                  echo $right_message;
+		              }
+	              }
+              } else {
+                echo "There are no previous messages";
+              }   ?> 		
 					</div>
 					<div class="compose-msg">
-						<form name="create-msg" action="create_message.php?id=<?=$id?>" method="post">
+						<form name="create-msg" action="<?php echo (htmlspecialchars($_SERVER['PHP_SELF'])).'?id='.$their_id?>" method="post">
 							<textarea class="textarea" rows="5" cols="50" name="message" placeholder="Please type a message to send"></textarea>
 							<button class="submit-button" type="submit" name="send_message">Send Messsage</button>
 						</form>

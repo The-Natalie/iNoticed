@@ -42,7 +42,7 @@ $thread_id = $our_names[0] . "_" . $our_names[1];
 
 //gets the thread of past messages and puts them in order	
 if ($their_first_name !== "") {
-  $sql = "SELECT * FROM messages WHERE thread_id = '$thread_id' ORDER BY sent_on ASC";
+  $sql = "SELECT * FROM messages WHERE thread_id = '$thread_id' ORDER BY sent_on DESC";
   $result = mysqli_query($con, $sql);
     
 }
@@ -82,6 +82,15 @@ if (!empty($_POST)) {
 			<h2>Messages</h2>
 			<div>
 				<div class="msg_wrapper">
+					<div class="compose-msg">
+						<form name="create-msg" action="<?php echo (htmlspecialchars($_SERVER['PHP_SELF'])).'?id='.$their_id?>" method="post">
+							<div class="msg-text-n-button">
+								<textarea class="textarea" id="msg-textarea" rows="3" cols="auto" name="message" placeholder="Please type a message to send"></textarea>
+								<button id="msg-button"  class="edit-button" type="submit" name="send_message">Send Messsage</button>
+							</div>
+						</form>
+					</div>	
+
 					<div id="prev-msgs">
 						<?php 
               if (mysqli_num_rows($result) > 0) {
@@ -95,7 +104,7 @@ if (!empty($_POST)) {
                       </div>
                       <div class="talk-bubble-left tri-right round left-in">
                         <div class="talktext">
-                          <p class="talktext-p">' . $row[nl2br("message")] . '</p>
+                          <p id="talktext-p">' . $row[nl2br("message")] . '</p>
                         </div>
                       </div>
                     </div>';
@@ -108,7 +117,7 @@ if (!empty($_POST)) {
                       </div>
                       <div class="talk-bubble-right tri-right round right-in">
                         <div class="talktext">
-                          <p class="talktext-p">' . $row[nl2br("message")] . '</p>
+                          <p id="talktext-p">' . $row[nl2br("message")] . '</p>
                         </div>
                       </div>
                     </div>';
@@ -123,12 +132,7 @@ if (!empty($_POST)) {
                 echo "There are no previous messages";
               }   ?> 		
 					</div>
-					<div class="compose-msg">
-						<form name="create-msg" action="<?php echo (htmlspecialchars($_SERVER['PHP_SELF'])).'?id='.$their_id?>" method="post">
-							<textarea class="textarea" rows="5" cols="50" name="message" placeholder="Please type a message to send"></textarea>
-							<button class="submit-button" type="submit" name="send_message">Send Messsage</button>
-						</form>
-					</div>	
+	
 				</div>
 			</div>
 		</div>

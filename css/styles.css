@@ -676,6 +676,7 @@ div.profile-info p {
 
 .left-msg {
 	text-align: left;
+	clear: both;
 }
 
 .img-sent-div-left {
@@ -694,6 +695,7 @@ div.profile-info p {
 
 .right-msg {
 	text-align: right;
+	clear: both;
 }
 
 .img-sent-div-right {
@@ -750,6 +752,28 @@ div.profile-info p {
   margin: 0;
 }
 
-.compose-msg textarea {
+.compose-msg {
+	padding-bottom: 25px;
+}
+
+/*.compose-msg textarea {
 	width: 100%;
+}*/
+
+.msg-text-n-button {
+	display: flex;
+}
+
+#msg-textarea {
+	flex: 0 0 80%;
+}
+
+#msg-button {
+	flex: 0 0 20%;
+	height: auto;
+	margin: 0;
+}
+
+#msg-button:hover {
+	background-color: #b3ffb3;
 }

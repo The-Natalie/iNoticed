@@ -777,3 +777,11 @@ div.profile-info p {
 #msg-button:hover {
 	background-color: #b3ffb3;
 }
+
+.msg_not_read {
+	font-weight: normal;
+}
+
+.msg_read {
+	font-weight: bold;
+}

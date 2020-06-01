@@ -38,6 +38,12 @@ $stmt->close();
 $our_names = [strtolower($my_username), strtolower($their_username)];  //strtolower is for lowercase
 sort($our_names);
 $thread_id = $our_names[0] . "_" . $our_names[1];
+$msg_read = 1;
+
+$stmt2 = $con->prepare("UPDATE messages SET msg_read = ? WHERE thread_id = ? AND msg_to = ?");
+$stmt2->bind_param("isi", $msg_read, $thread_id, $my_id);
+$stmt2->execute();
+$stmt2->close();
 
 
 //gets the thread of past messages and puts them in order	
@@ -52,11 +58,11 @@ if (!empty($_POST)) {
   $message = $con->real_escape_string($message);
   $date = date("Y-m-d H:i:s");  
 
-  $stmt4 = "INSERT INTO messages (thread_id, msg_from, msg_to, message, sent_on) VALUES ('$thread_id', '$my_id', '$their_id', '$message', '$date')";
+  $stmt4 = "INSERT INTO messages (thread_id, msg_from, msg_from_name, msg_to, msg_to_name, message, sent_on) VALUES ('$thread_id', '$my_id', '$my_first_name', '$their_id', '$their_first_name', '$message', '$date')";
   if(mysqli_query($con, $stmt4)){
     header('Location: create_message.php?id=' . $their_id);
   } else{
-    echo "ERROR: Not able to execute query. " . mysqli_error($con);
+    echo "ERROR: " . mysqli_error($con);
   }
 }
 
@@ -129,7 +135,7 @@ if (!empty($_POST)) {
 		              }
 	              }
               } else {
-                echo "There are no previous messages";
+                echo "There are no previous messages. This is your only chance to make a first impression. Better make it good, or hope that they get amnesia...";
               }   ?> 		
 					</div>
 	

@@ -785,3 +785,13 @@ div.profile-info p {
 .msg_read {
 	font-weight: bold;
 }
+.ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+table {
+    table-layout: auto;
+    width: 100%;   
+}

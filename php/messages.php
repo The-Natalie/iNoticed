@@ -26,11 +26,20 @@ $my_id = $_SESSION['id'];
 //message is bolded or something if it hasn't been read yet
 //*********** on create message page, when page loads, any messages sent before current time mark as read.
 
-$sql = "SELECT * FROM messages WHERE id IN ( SELECT MAX(id) FROM messages GROUP BY thread_id) ORDER BY sent_on DESC";
+$sql = "SELECT * FROM messages WHERE msg_to = '$my_id' ORDER BY sent_on DESC";
 $result = mysqli_query($con, $sql);
 
-
 ?>
+
+<script type="text/javascript">$(document).ready(function(){
+	let ogMessage = $('.ellipsis').text();
+	if (ogMessage.length > 50) {
+		let newMessage = (ogMessage).slice(0,50);
+	  $('.ellipsis').html(newMessage + '...');
+	}
+
+});</script>
+
 
 <!DOCTYPE html>
 <html>
@@ -50,7 +59,7 @@ $result = mysqli_query($con, $sql);
 		<div class="content">
 			<h2>Messages</h2>
 			<div>
-				<table class="table table-hover">
+				<table class="table table-striped">
 					<thead>
 						<tr>
 							<th>From</th>
@@ -62,21 +71,22 @@ $result = mysqli_query($con, $sql);
 							<?php 
 							if (mysqli_num_rows($result) > 0) {
   							while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {  
-  								if($row["msg_to"] == $my_id && $row["msg_read"] == '0') { ?>
-  									<a href="/php/create_message.php?id=<?=$their_id?>" class="msg_not_read"><tr>
+                                  if($row["msg_read"] == '1') { ?>
+  									<tr class="msg_not_read">
   								<?php 
-  								} else {  ?>
-	  								<a href="/php/create_message.php?id=<?=$their_id?>" class="msg_read"><tr>
-	  							<?php }  ?>
-		  								<td><?php $row["msg_from_name"]; ?></td>
-		  								<td><?php substr($row["message"], 0, 50); ?></td>
-		  								<td><?php $row["sent_on"]; ?></td>
+  								} 
+                                  if  ($row["msg_read"] == '0') {  ?>
+	  								<tr class="msg_read">
+  								  <?php }  ?>
+		  								<td><?php echo $row["msg_from_name"]; ?></td>
+		  								<td class="ellipsis"><?php echo $row["message"]; ?></td>
+		  								<td><?php echo $row["sent_on"]; ?></td>
+                                    </tr>    
 									<?php 
 								} 	
 							} else {
 							  echo "You don't have any messages, yet. Don't worry, it's not you, it's me. As the saying goes, right?";
 							}   ?>
-						</tr></a>
 					</tbody>
 				</table>
 			</div>

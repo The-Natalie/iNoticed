@@ -71,6 +71,12 @@ $result = mysqli_query($con, $sql);
 							<?php 
 							if (mysqli_num_rows($result) > 0) {
   							while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {  
+  								$ogMessage = $row["message"];
+  								if (strlen($ogMessage) > 50) {
+							      $newMessage = substr($ogMessage, 0, 50);
+								  } else {
+							      $newMessage = $ogMessage;
+								  }
                                   if($row["msg_read"] == '1') { ?>
   									<tr class="msg_not_read">
   								<?php 
@@ -79,7 +85,7 @@ $result = mysqli_query($con, $sql);
 	  								<tr class="msg_read">
   								  <?php }  ?>
 		  								<td><?php echo $row["msg_from_name"]; ?></td>
-		  								<td class="ellipsis"><?php echo $row["message"]; ?></td>
+		  								<td class="ellipsis"><?php echo $newMessage . "..."; ?></td>
 		  								<td><?php echo $row["sent_on"]; ?></td>
                                     </tr>    
 									<?php 

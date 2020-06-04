@@ -24,6 +24,16 @@ $stmt->execute();
 $stmt->bind_result($id, $first_name, $age, $gender, $feet, $inches, $eyes, $hair, $smoke, $drugs, $transportation, $intention, $zip, $city, $state, $profession, $education, $ethnicity, $religion, $marital_status, $kids, $want_kids, $about_me, $image_main, $image1, $image2, $image3, $image4, $image5, $image6, $image7, $image8);
 $stmt->fetch();
 $stmt->close();
+
+$my_id = $_SESSION['id'];
+
+//sees how many messages are unread
+$unread_count = "";
+if ($unread_result = $con->query("SELECT id FROM messages WHERE msg_to = '$my_id' AND msg_read = 0")) {
+  $unread_count = $unread_result->num_rows;
+  $unread_result->close();
+}
+
 ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -766,5 +776,19 @@ $stmt->close();
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="/js/scripts.js"></script>
+		<script type="text/javascript">
+    	$(document).ready(function(){
+        //message notification
+				let unread_count = '<?=$unread_count?>';
+				if ('<?= isset($_SESSION['loggedin']) ?>' == '1') {
+					if (unread_count == '1') {
+						$('span.grammar').text(''); 
+					}
+					if (unread_count > '0') {
+						$('sup.msg-notification').text(unread_count);
+					}
+				}
+    	});
+  	</script>
 	</body>
 </html>

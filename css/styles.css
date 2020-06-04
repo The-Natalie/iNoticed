@@ -780,10 +780,12 @@ div.profile-info p {
 
 .msg_not_read {
 	font-weight: normal;
+	cursor: pointer;
 }
 
 .msg_read {
 	font-weight: bold;
+	cursor: pointer;
 }
 .ellipsis {
     overflow: hidden;
@@ -794,4 +796,11 @@ div.profile-info p {
 table {
     table-layout: auto;
     width: 100%;   
+}
+
+sup {
+	padding-right: 5px;
+	padding-left: 2px;
+	color: #66ff66;
+	font-size: 1em;
 }

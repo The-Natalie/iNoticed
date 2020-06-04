@@ -35,6 +35,16 @@ $stmt->bind_result($their_username, $their_first_name, $their_image_main);
 $stmt->fetch();
 $stmt->close();
 
+if ($my_image_main == '') {
+	$my_image_main = "../images/no_image.png";
+}
+
+if ($their_image_main == '') {
+	$their_image_main = "../images/no_image.png";
+}
+
+
+
 $our_names = [strtolower($my_username), strtolower($their_username)];  //strtolower is for lowercase
 sort($our_names);
 $thread_id = $our_names[0] . "_" . $our_names[1];
@@ -45,19 +55,24 @@ $stmt2->bind_param("isi", $msg_read, $thread_id, $my_id);
 $stmt2->execute();
 $stmt2->close();
 
+//sees how many messages are unread
+$unread_count = "";
+if ($unread_result = $con->query("SELECT id FROM messages WHERE msg_to = '$my_id' AND msg_read = 0")) {
+    $unread_count = $unread_result->num_rows;
+    $unread_result->close();
+}
 
 //gets the thread of past messages and puts them in order	
 if ($their_first_name !== "") {
   $sql = "SELECT * FROM messages WHERE thread_id = '$thread_id' ORDER BY sent_on DESC";
   $result = mysqli_query($con, $sql);
-    
 }
 
+//takes message from form and posts it to database
 if (!empty($_POST)) {
 	$message = htmlspecialchars($_POST["message"]);
   $message = $con->real_escape_string($message);
   $date = date("Y-m-d H:i:s");  
-
   $stmt4 = "INSERT INTO messages (thread_id, msg_from, msg_from_name, msg_to, msg_to_name, message, sent_on) VALUES ('$thread_id', '$my_id', '$my_first_name', '$their_id', '$their_first_name', '$message', '$date')";
   if(mysqli_query($con, $stmt4)){
     header('Location: create_message.php?id=' . $their_id);
@@ -150,5 +165,19 @@ if (!empty($_POST)) {
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="/js/scripts.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+        //message notification
+				let unread_count = '<?=$unread_count?>';
+				if ('<?= isset($_SESSION['loggedin']) ?>' == '1') {
+					if (unread_count == '1') {
+						$('span.grammar').text(''); 
+					}
+					if (unread_count > '0') {
+						$('sup.msg-notification').text(unread_count);
+					}
+				}
+    	});
+  	</script>
 	</body>
 </html>

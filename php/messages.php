@@ -20,25 +20,17 @@ if ( mysqli_connect_errno() ) {
 
 $my_id = $_SESSION['id'];
 
-//most recent message from thread, so that there is only 1 message displayed for each thread/person it's from
-//their first name, fist 40 characters of message, time it was sent, their id (explained on next line)
-//clicking on the message takes you to the create message page, so we need to grab the id of the person it's from and put it in the url
-//message is bolded or something if it hasn't been read yet
-//*********** on create message page, when page loads, any messages sent before current time mark as read.
+//sees how many messages are unread
+$unread_count = "";
+if ($unread_result = $con->query("SELECT id FROM messages WHERE msg_to = '$my_id' AND msg_read = 0")) {
+  $unread_count = $unread_result->num_rows;
+  $unread_result->close();
+}
 
 $sql = "SELECT * FROM messages WHERE msg_to = '$my_id' ORDER BY sent_on DESC";
 $result = mysqli_query($con, $sql);
 
 ?>
-
-<script type="text/javascript">$(document).ready(function(){
-	let ogMessage = $('.ellipsis').text();
-	if (ogMessage.length > 50) {
-		let newMessage = (ogMessage).slice(0,50);
-	  $('.ellipsis').html(newMessage + '...');
-	}
-
-});</script>
 
 
 <!DOCTYPE html>
@@ -77,17 +69,17 @@ $result = mysqli_query($con, $sql);
 								  } else {
 							      $newMessage = $ogMessage;
 								  }
-                                  if($row["msg_read"] == '1') { ?>
-  									<tr class="msg_not_read">
+                  if($row["msg_read"] == '1') { ?>
+  									<tr class="msg_not_read" data-value="<?php echo $row['msg_from']; ?>">
   								<?php 
   								} 
-                                  if  ($row["msg_read"] == '0') {  ?>
-	  								<tr class="msg_read">
-  								  <?php }  ?>
+                  if  ($row["msg_read"] == '0') {  ?>
+	  								<tr class="msg_read" data-value="<?php echo $row['msg_from']; ?>">
+								  <?php }  ?>
 		  								<td><?php echo $row["msg_from_name"]; ?></td>
 		  								<td class="ellipsis"><?php echo $newMessage . "..."; ?></td>
 		  								<td><?php echo $row["sent_on"]; ?></td>
-                                    </tr>    
+                    </tr>    
 									<?php 
 								} 	
 							} else {
@@ -105,5 +97,30 @@ $result = mysqli_query($con, $sql);
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="/js/scripts.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+        $('.msg_not_read').click(function() {
+          let msgValue = $(this).data('value');
+          location.href = '/php/create_message.php?id=' + msgValue;
+        })
+        $('.msg_read').click(function() {
+          let msgValue = $(this).data('value');
+          location.href = '/php/create_message.php?id=' + msgValue;
+        })
+
+				//message notification
+				let unread_count = '<?=$unread_count?>';
+				if ('<?= isset($_SESSION['loggedin']) ?>' == '1') {
+					if (unread_count == '1') {
+						$('span.grammar').text(''); 
+					}
+					if (unread_count > '0') {
+						$('sup.msg-notification').text(unread_count);
+					}
+				}
+
+        //for only displaying 1 message from each person: if siblings text is the same, display none? make sure to use ids or usernames, because first names can repeat
+    	});
+  	</script>
 	</body>
 </html>

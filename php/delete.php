@@ -6,42 +6,39 @@ if (!isset($_SESSION['loggedin'])) {
     exit();
 }
 
-    $DATABASE_HOST = 'mysql.inoticed.org';
-    $DATABASE_USER = 'ndhall';
-    $DATABASE_PASS = 'natabata14';
-    $DATABASE_NAME = 'inoticed_dating';
-    // Try and connect using the info above.
-    $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-    if ( mysqli_connect_errno() ) {
-        // If there is an error with the connection, stop the script and display the error.
-        die ('Let dating@inoticed.org know the details of this error: Failed to connect to MySQL: ' . mysqli_connect_error());
-    }    
+$config = parse_ini_file('../../private/config.ini');
+$con = mysqli_connect($config['servername'], $config['username'], $config['password'], $config['dbdating']);
 
-    $stmt = $con->prepare('SELECT id FROM accounts WHERE id = ?');
-    $stmt->bind_param('i', $_SESSION['id']);
-    $stmt->execute();
-    $stmt->store_result();
-    $stmt->bind_result($id);
-    $stmt->fetch();
+if ( mysqli_connect_errno() ) {
+    // If there is an error with the connection, stop the script and display the error.
+    die ('Let dating@inoticed.org know the details of this error: Failed to connect to MySQL: ' . mysqli_connect_error());
+}    
 
-    // Prepare a delete statement
-    $sql = "DELETE FROM accounts WHERE id = $id";
+$stmt = $con->prepare('SELECT id FROM accounts WHERE id = ?');
+$stmt->bind_param('i', $_SESSION['id']);
+$stmt->execute();
+$stmt->store_result();
+$stmt->bind_result($id);
+$stmt->fetch();
+
+// Prepare a delete statement
+$sql = "DELETE FROM accounts WHERE id = $id";
+
+if($stmt = mysqli_prepare($con, $sql)){
+    // Bind variables to the prepared statement as parameters
+    mysqli_stmt_bind_param($stmt, "i", $param_id);
     
-    if($stmt = mysqli_prepare($con, $sql)){
-        // Bind variables to the prepared statement as parameters
-        mysqli_stmt_bind_param($stmt, "i", $param_id);
-        
-        // Set parameters
-        $param_id = trim($id);
-        
-        // Attempt to execute the prepared statement
-        if(mysqli_stmt_execute($stmt)){
-            // Records deleted successfully.
-            $param = "Your account has been closed sucessfully. We're sorry to see you go, but we hope it's because you found what you were looking for!"; 
-        } else{
-            $param = "Oops! Something went wrong. Please sign in and try again. Or let dating@inoticed.org know the details of your problem.";
-        }
+    // Set parameters
+    $param_id = trim($id);
+    
+    // Attempt to execute the prepared statement
+    if(mysqli_stmt_execute($stmt)){
+        // Records deleted successfully.
+        $param = "Your account has been closed sucessfully. We're sorry to see you go, but we hope it's because you found what you were looking for!"; 
+    } else{
+        $param = "Oops! Something went wrong. Please sign in and try again. Or let dating@inoticed.org know the details of your problem.";
     }
+}
 mysqli_stmt_close($stmt);
     
 $my_id = $_SESSION['id'];

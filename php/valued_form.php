@@ -7,12 +7,9 @@ $cardsRequested=$_POST['cardsRequested'];
 if (!empty($name)){
 if (!empty($email)){
 if (!empty($cardsRequested)){
-$host = "mysql.inoticed.org";
-$dbusername = "ndhall";
-$dbpassword = "natabata14";
-$dbname = "inoticed_cards_requests";
-// Create connection
-$conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
+  $config = parse_ini_file('../../private/config.ini');
+  $conn = mysqli_connect($config['servername'], $config['username'], $config['password'], $config['dbcards']);
+
 if (mysqli_connect_error()){
 	die('Let dating@inoticed.org know the details of this error: Connect Error ('. mysqli_connect_errno() .') '
 	. mysqli_connect_error());

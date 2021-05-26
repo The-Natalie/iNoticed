@@ -7,13 +7,9 @@ if (!isset($_SESSION['loggedin'])) {
     exit();
 }
 
+$config = parse_ini_file('../../private/config.ini');
+$con = mysqli_connect($config['servername'], $config['username'], $config['password'], $config['dbdating']);
 
-$DATABASE_HOST = 'mysql.inoticed.org';
-$DATABASE_USER = 'ndhall';
-$DATABASE_PASS = 'natabata14';
-$DATABASE_NAME = 'inoticed_dating';
-// Try and connect using the info above.
-$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 if ( mysqli_connect_errno() ) {
 	// If there is an error with the connection, stop the script and display the error.
 	die ($param = 'Let dating@inoticed.org know the details of this error: Failed to connect to MySQL: ' . mysqli_connect_error());

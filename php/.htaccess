@@ -1,3 +1,0 @@
-Options +FollowSymlinks 
-RewriteEngine on 
-RewriteRule ^profile/([^/]+) /php/profile.php?user=$1 [R,NC]

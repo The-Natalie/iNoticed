@@ -9,11 +9,9 @@ if (!isset($_SESSION['loggedin'])) {
 	$user_state = 'signed-in-nav';
 }
 
-$DATABASE_HOST = 'mysql.inoticed.org';
-$DATABASE_USER = 'ndhall';
-$DATABASE_PASS = 'natabata14';
-$DATABASE_NAME = 'inoticed_dating';
-$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+$config = parse_ini_file('../../private/config.ini');
+$con = mysqli_connect($config['servername'], $config['username'], $config['password'], $config['dbdating']);
+
 if (mysqli_connect_errno()) {
 	die ('Let dating@inoticed.org know the details of this error: Failed to connect to MySQL: ' . mysqli_connect_error());
 }
